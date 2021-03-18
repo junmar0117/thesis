@@ -27,7 +27,7 @@
     </nav>
 
     <div class="login-box">
-        <img src="login.ico" style="float:left" width="80px" height="100px" >
+        <img src="./assets/login.ico" style="float:left" width="80px" height="100px" >
         <h1>Login</h1>
         <div class="textbox">
             <i class="fas fa-user"></i>

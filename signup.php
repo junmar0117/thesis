@@ -27,7 +27,7 @@
     </nav>
 
     <div class="login-box">
-        <img src="signup.png" style="float:left" width="80px" height="100px">
+        <img src="./assets/signup.png" style="float:left" width="80px" height="100px">
         <h1>Sign Up</h1>
 
         <div class="textbox">
