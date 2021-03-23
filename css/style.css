@@ -70,6 +70,18 @@ body{
     font-family: 'Courier New', Courier, monospace;
 }
 
+.btn2{
+    width: 100%;
+    background: none;
+    border: 2px solid #ff0000;
+    color: black;
+    padding: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    margin: 12px 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
 nav{
     background: #0082e6;
     height: 80px;
@@ -211,4 +223,29 @@ section{
 .footer-section-links ul li a{
     font-family: Courier, monospace;
     font-size: 20px;
+}
+
+.wrapper{
+    padding: 5px;
+    max-width: 960px;
+    width: 95%;
+    margin: 43px auto;
+}
+
+.columns{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin: 5px 0;
+    height: auto;
+}
+
+.column{
+    flex: 1;
+    border: 1px solid #666;
+    margin: 2px;
+    padding: 10px;
+    background: #3af4d5;
+    transition: 0.3s;
+    text-align: center;
 }
