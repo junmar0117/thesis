@@ -17,19 +17,20 @@ include_once('header.html');
     <div class="login-box">
         <img src="./assets/login.ico" style="float:left" width="80px" height="100px" >
         <h1>Login</h1>
+        <form action="C_checklogin.php" method="POST">
         <div class="textbox">
             <i class="fas fa-user"></i>
-            <input type="text" placeholder="Username" name="" value="">
+            <input type="text" placeholder="Username" required="required" name="username" placeholder="Enter Username">
         </div>
 
         <div class="textbox">
             <i class="fas fa-lock"></i>
-            <input type="password" placeholder="Password" name="" value="">
+            <input type="password" placeholder="Password" name="password" placeholder="Enter Password">
         </div>
         
 
-        <input class="btn" type="button" name="" value="Sign In">
-        <a href="register.php">No account? Register here!</a>
+        <input type="submit" value="Login"><br>
+        <a href="C_register.php">No account? Register here!</a>
     </div>
 
     <section>
