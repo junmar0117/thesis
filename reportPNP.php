@@ -25,8 +25,36 @@
         </ul>
     </nav>
     <section>
-    
+        <div class="container">
+            <div class="title">
+                <form action="/action_page.php">
+                    <div class="user-details">
+                        <div class="input-box">
+                            <label for="nameOfInci">Name of Incident</label>
+                            <input type="text" id="nameOfIncident" name="labelNameInci" placeholder="Name of Incident" required>
+                        </div>
+                        <div class="input-box">
+                            <label for="dateOfInci">Date of Incident</label>
+                            <input type="date" id="dateOfInci" name="dateOfIncident" required>
+                        </div>
+                        <div class="input-box">
+                            <label for="placeOfInci">Place of Incident</label>
+                            <input type="text" id="placeOfIncident" name="labelPlaceInci" placeholder="Place of Incident" required>
+                        </div>
+                        <div class="input-box">
+                            <label for="file">Attach Image or Video for Proof of Incident</label>
+                            <input type="file" id="fileAttachment" required>
+                        </div>
+                        <div class="input-box">   
+                            <input type="submit" value="Submit">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
     </section>
+
+    
 
     <div class="footer">
             <div class="footer-section-about" id="first">
