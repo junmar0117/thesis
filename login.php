@@ -26,8 +26,10 @@ include_once('header.html');
             <i class="fas fa-lock"></i>
             <input type="password" placeholder="Password" name="" value="">
         </div>
+        
 
         <input class="btn" type="button" name="" value="Sign In">
+        <a href="register.php">No account? Register here!</a>
     </div>
 
     <section>
