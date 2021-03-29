@@ -224,28 +224,3 @@ section{
     font-family: Courier, monospace;
     font-size: 20px;
 }
-
-.wrapper{
-    padding: 5px;
-    max-width: 960px;
-    width: 95%;
-    margin: 43px auto;
-}
-
-.columns{
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    margin: 5px 0;
-    height: auto;
-}
-
-.column{
-    flex: 1;
-    border: 1px solid #666;
-    margin: 2px;
-    padding: 10px;
-    background: #3af4d5;
-    transition: 0.3s;
-    text-align: center;
-}

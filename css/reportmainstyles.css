@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Lexend:wght@600&display=swap');
+
+body{
+    margin:0;
+}
+
+.reportmainwrapper{
+    padding: 5px;
+    max-width: 1300px;
+    width: 95%;
+    margin: 30px auto;
+}
+
+.reportmaincolumns{
+    display: flex;
+    flex-flow: row wrap;
+    
+}
+
+.reportmaincolumn{
+    flex: 1;
+    border: 1px solid #000000;
+    margin: 20px;
+    background: white;
+    cursor:pointer;
+    display:block;
+    transition: border 0.1s;
+}
+
+.reportmaincolumn:hover{
+    border: 2px solid #FF0049;
+}
+
+.reportmaincontainer {
+    justify-content: space-between;
+    flex-direction: column;
+    height: 46px;
+    display: flex;
+    border-top: 1px solid #000000;
+  }
+.reportmaincontainer .reportmainbtn-holder {
+    justify-content: flex-end;
+    display: flex;
+}
+
+#reportmainbtn{
+    border: 0;
+    margin: 1px;
+    height: 45px;
+    background-color: white;
+    cursor:pointer;
+    font-family: 'Dela Gothic One', cursive;
+    padding-left: 79.5%;
+    transition: all 0.3s;
+}
+
+#reportmainbtn:hover{
+    color: #ff0049;
+}
+
+#reportmainbtn:hover:after{
+    width: 100%;
+}
+
+.reportmaincolumn > p{
+    color:black;
+    font-size: 15px;
+}
+
+.imgreportmain{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.reportmainheader{
+    font-size:30px;
+}
