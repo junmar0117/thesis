@@ -6,9 +6,10 @@
     <meta charset = "utf-8">
     <title> Home Page </title>
     <meta name ="viewport" content="width=devoce-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/styles.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
     <nav>
         <input type="checkbox" id="check">
@@ -26,7 +27,7 @@
     </nav>
     <section>
         <div class="container">
-            <div class="title">
+            <div class="title">Report Page</div>
                 <form action="/action_page.php">
                     <div class="user-details">
                         <div class="input-box">
@@ -35,22 +36,21 @@
                         </div>
                         <div class="input-box">
                             <label for="dateOfInci">Date of Incident</label>
-                            <input type="date" id="dateOfInci" name="dateOfIncident" required>
+                            <input type="datetime-local" id="dateOfInci" name="dateOfIncident" required>
                         </div>
                         <div class="input-box">
                             <label for="placeOfInci">Place of Incident</label>
                             <input type="text" id="placeOfIncident" name="labelPlaceInci" placeholder="Place of Incident" required>
                         </div>
-                        <div class="input-box">
+                        <div>
                             <label for="file">Attach Image or Video for Proof of Incident</label>
                             <input type="file" id="fileAttachment" required>
                         </div>
-                        <div class="input-box">   
+                        <div class="button">   
                             <input type="submit" value="Submit">
                         </div>
                     </div>
                 </form>
-            </div>
         </div>
     </section>
 
