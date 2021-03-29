@@ -30,8 +30,8 @@
         <form action="register.php" method="POST">
             <input type="text" id="name" required="required" name="name" placeholder="Enter Name"><br>
             <input type="int" id="age" required="required" name="age" placeholder="Enter Age"><br>
-            <input type="text" id="address" required="required" name="address" placeholder="Enter Email"><br>
-            <input type="email" id="email" required="required" name="email" placeholder="Enter email"><br>
+            <input type="text" id="address" required="required" name="address" placeholder="Enter Address"><br>
+            <input type="email" id="email" required="required" name="email" placeholder="Enter Email"><br>
             <input type="text" id="username" required="required" name="username" placeholder="Enter Username"><br>
             <input type="password" id="password" required="required" name="password" placeholder="Enter Password"><br>
             <input type="submit" value="Register"><br>
@@ -52,12 +52,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 	$password = ($_POST['password']);
     $bool = true;
 
-    $db_name = "thesisdb";
-	$db_username = "root";
-	$db_pass = "";
-	$db_host = "localhost";
-	$con = mysqli_connect("$db_host","$db_username","$db_pass", "$db_name") or die(mysqli_error()); //Connect to server
-	//require 'connection.php';
+	require 'connection.php';
 	$query = "SELECT * from civilians";
 	$results = mysqli_query($con, $query); //Query the users table
 
