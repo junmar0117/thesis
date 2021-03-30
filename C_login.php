@@ -12,8 +12,6 @@ include_once('header.html');
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-   
-
     <div class="login-box">
         <img src="./assets/login.ico" style="float:left" width="80px" height="100px" >
         <h1>Login</h1>
@@ -28,7 +26,6 @@ include_once('header.html');
             <input type="password" placeholder="Password" name="password" placeholder="Enter Password">
         </div>
         
-
         <input type="submit" value="Login"><br>
         <a href="C_register.php">No account? Register here!</a>
     </div>
