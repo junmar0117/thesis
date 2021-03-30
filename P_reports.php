@@ -6,7 +6,7 @@
     <meta charset = "utf-8">
     <title> Home Page </title>
     <meta name ="viewport" content="width=devoce-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/styles.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -60,8 +60,8 @@
                 <option value="none">Choose an option: </option>
                 <option value="childabuse">Child Abuse</option>
                 <option value="saab">Neighborhood Conflict</option>
-                <option value="opel">Opel</option>
-                <option value="audi">Audi</option>
+                <option value="opel">Fight</option>
+                <option value="audi">Quarantine Violators</option>
             </select>
         </div>
 
