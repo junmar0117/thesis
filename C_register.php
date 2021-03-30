@@ -1,42 +1,52 @@
 <html lang="en">
 <head>
     <meta charset = "utf-8">
-    <title> Sign Up </title>
+    <title> R & R | Civilian Register </title>
     <meta name ="viewport" content="width=devoce-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/C_register_login.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <nav>
-        <input type="checkbox" id="check">
-        <label for="check" class="checkbtn">
-            <i class="fas fa-bars"></i>
-        </label>
-        <label class="logo">R&R</label>
-        <ul>
-            <li><a href="#">HOME</a></li>
-            <li><a href="#">HOME</a></li>
-            <li><a href="#">HOME</a></li>
-            <li><a href="#">HOME</a></li>
-            <li><a href="#">HOME</a></li>
-        </ul>
-    </nav>
-
   
-    <div class="login-box">
-    <img src="./assets/signup.png" style="float:left" width="80px" height="100px">
+    <div class="register-box">
+        <h1>R & R</h1>
+        <h2>Create your Account</h2>
         
-        <h1>Sign Up</h1>
         <form action="C_register.php" method="POST">
-            <input type="text" id="name" required="required" name="name" placeholder="Enter Name"><br>
-            <input type="int" id="age" required="required" name="age" placeholder="Enter Age"><br>
-            <input type="text" id="address" required="required" name="address" placeholder="Enter Address"><br>
-            <input type="email" id="email" required="required" name="email" placeholder="Enter Email"><br>
-            <input type="text" id="username" required="required" name="username" placeholder="Enter Username"><br>
-            <input type="password" id="password" required="required" name="password" placeholder="Enter Password"><br>
-            <input type="submit" value="Register"><br>
-            <a href="C_login.php">Have an Account? Login Here!</a>
+        <div class="register-box2">
+            <input type="text" id="name" required="required" name="name" placeholder="">
+            <label>Enter Name</label>
+        </div>
+
+        <div class="register-box2">
+            <input type="int" id="age" required="required" name="age" placeholder="">
+            <label>Enter Age</label>
+        </div>
+
+        <div class="register-box2">
+            <input type="text" id="address" required="required" name="address" placeholder="">
+            <label>Enter Home Address</label>
+        </div>
+
+        <div class="register-box2">
+            <input type="text" id="email" required="required" name="email" placeholder="">
+            <label>Enter Email</label>
+        </div>
+
+        <div class="register-box2">
+            <input type="text" id="username" required="required" name="username" placeholder="">
+            <label>Enter Username</label>
+        </div>
+
+        <div class="register-box2">
+            <input type="password" id="password" required="required" name="password" placeholder="">
+            <label>Enter Password</label>
+        </div>
+
+            <input type="submit" value="Register" class="C_registerbtn">
+            <a href="C_login.php" id="signininstead">Sign in instead</a>
         </form>
+        </div>
     </div>
 </body>
 </html>

@@ -8,26 +8,27 @@ include_once('header.html');
     <meta charset = "utf-8">
     <title> Login Page </title>
     <meta name ="viewport" content="width=devoce-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/C_register_login.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="login-box">
-        <img src="./assets/login.ico" style="float:left" width="80px" height="100px" >
         <h1>Login</h1>
+        <h2>Input username and password</h2>
         <form action="C_checklogin.php" method="POST">
-        <div class="textbox">
-            <i class="fas fa-user"></i>
-            <input type="text" placeholder="Username" required="required" name="username" placeholder="Enter Username">
+
+        <div class="login-box2">
+            <input type="text" required="required" name="username" placeholder="">
+            <label>Username</label>
         </div>
 
-        <div class="textbox">
-            <i class="fas fa-lock"></i>
-            <input type="password" placeholder="Password" name="password" placeholder="Enter Password">
+        <div class="login-box2">
+            <input type="password" required="required" name="password" placeholder="">
+            <label>Password</label>
         </div>
         
-        <input type="submit" value="Login"><br>
-        <a href="C_register.php">No account? Register here!</a>
+        <input type="submit" value="Login" class="C_loginbtn">
+        <a href="C_register.php" id="signupinstead">Sign up instead</a>
     </div>
     <section>
     
