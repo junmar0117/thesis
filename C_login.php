@@ -32,7 +32,6 @@ include_once('header.html');
         <input type="submit" value="Login"><br>
         <a href="C_register.php">No account? Register here!</a>
     </div>
-
     <section>
     
     </section>

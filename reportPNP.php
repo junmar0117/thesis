@@ -25,32 +25,32 @@
             <li><a href="#">HOME</a></li>
         </ul>
     </nav>
+    
     <section>
-        <div class="container">
-            <div class="title">Report Page</div>
-                <form action="/action_page.php">
-                    <div class="user-details">
-                        <div class="input-box">
-                            <label for="nameOfInci">Name of Incident</label>
-                            <input type="text" id="nameOfIncident" name="labelNameInci" placeholder="Name of Incident" required>
-                        </div>
-                        <div class="input-box">
-                            <label for="dateOfInci">Date of Incident</label>
-                            <input type="datetime-local" id="dateOfInci" name="dateOfIncident" required>
-                        </div>
-                        <div class="input-box">
-                            <label for="placeOfInci">Place of Incident</label>
-                            <input type="text" id="placeOfIncident" name="labelPlaceInci" placeholder="Place of Incident" required>
-                        </div>
-                        <div>
-                            <label for="file">Attach Image or Video for Proof of Incident</label>
-                            <input type="file" id="fileAttachment" required>
-                        </div>
-                        <div class="button">   
-                            <input type="submit" value="Submit">
-                        </div>
-                    </div>
-                </form>
+        <div class="login-box">
+        <h1>REPORT INCIDENT PNP</h1>
+        <form action="C_checklogin.php" method="POST">
+        <div class="textbox">
+            <label for="nameOfInci">Name of Incident</label>
+            <input type="text" id="nameOfIncident" name="labelNameInci" placeholder="Name of Incident" required>
+        </div>
+
+        <div class="textbox">
+            <label for="dateOfInci">Date of Incident</label>
+            <input type="datetime-local" id="dateOfInci" name="dateOfIncident" required>
+        </div>
+        
+        <div class="textbox">
+            <label for="placeOfInci">Place of Incident</label>
+            <input type="text" id="placeOfIncident" name="labelPlaceInci" placeholder="Place of Incident" required>
+        </div>
+
+        <div class="textbox">
+            <label for="file">Attach Image or Video for Proof of Incident</label>
+            <input type="file" id="fileAttachment" required>
+        </div>
+
+        <input type="submit" value="SUBMIT"><br>
         </div>
     </section>
 
