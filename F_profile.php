@@ -31,39 +31,31 @@
         <form action="" method="POST">
         
         <div class="textbox1">
-            <label for="fullName">Full Name</label>
-            <input type="text" id="nameOfIncident" name="labelNameInci" placeholder="Full Name" required>
-        </div>
-
-        <div class="textbox1">
-            <label for="dateOfInci">Date of Incident</label>
-            <input type="datetime-local" id="dateOfInci" name="dateOfIncident" required>
-        </div>
-        
-        <div class="textbox1">
-            <label for="placeOfInci">Place of Incident</label>
-            <input type="text" id="placeOfIncident" name="labelPlaceInci" placeholder="Place of Incident" required>
-        </div>
-
-        <div class="textbox1">
-            <label for="descOfInci">Description of Incident</label>
-            <input type="text" id="descOfIncident" name="labelDescInci" placeholder="Description of Incident" required>
-        </div>
-
-        <div class="textbox1">
-            <label for="file">Attach an Image or Video for Proof of Incident</label>
-            <input type="file" id="fileAttachment" required>
-        </div>
-
-        <div class="textbox1">
-            <label for="typeOfInci">Type of Incident:</label>
-            <select name="typeOfInci" id="type" required>
-                <option value="none">Choose an option: </option>
-                <option value="childabuse">Child Abuse</option>
-                <option value="saab">Neighborhood Conflict</option>
-                <option value="opel">Fight</option>
-                <option value="audi">Quarantine Violators</option>
-            </select>
+        <table>
+            <tr>
+                <th>Firstname</th>
+            </tr>
+            <tr>
+                <td>Peter</td>
+                <td>Griffin</td>
+                <td>$100</td>
+            </tr>
+            <tr>
+                <td>Lois</td>
+                <td>Griffin</td>
+                <td>$150</td>
+            </tr>
+            <tr>
+                <td>Joe</td>
+                <td>Swanson</td>
+                <td>$300</td>
+            </tr>
+            <tr>
+                <td>Cleveland</td>
+                <td>Brown</td>
+                <td>$250</td>
+            </tr>
+        </table>
         </div>
 
         <input type="submit" value="SUBMIT"><br>
