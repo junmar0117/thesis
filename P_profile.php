@@ -33,7 +33,7 @@
         <div class="textbox1">
         <table>
             <tr>
-                <th><img src="./assets/dellyy.jpg" height="250px" width="250px"></th>
+                <th><img src="./assets/dellyy.jpg" class="imground" height="250px" width="250px"></th>
             </tr>
             <tr>
                 <td>Peter</td>

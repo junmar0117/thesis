@@ -25,10 +25,10 @@ include_once('header.html');
         <form class="login-form">
           <h3>Profile</h3>
           <div class="pic">
-            <img src="assets/admin.png" alt="">
+            <img src="./assets/admin.png" alt="">
           </div>
-          <p>Hello, <?php print "$user" ?>!</p>
-          <button class="submit-btn"><a href="register.php">REPORT<a/></button>
+          <p>Hello, <?php print "" ?>!</p>
+          <button class="submit-btn"><a href="register.php">zREPORT<a/></button>
         </form>
         <!-- Login form End -->
       </div>

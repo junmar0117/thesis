@@ -25,10 +25,14 @@ body{
     background-size:cover;
 } 
 
+.imground{
+    border-radius: 50%;
+}
+
 .profileBox{
     width: 800px;
     position: absolute;
-    top: 50%;
+    top: 38%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: black;
@@ -38,7 +42,7 @@ body{
     float: left;
     font-size: 40px;
     border-bottom: 6px solid #ff0000;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
     padding: 13px 0; 
 }
 
