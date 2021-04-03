@@ -54,8 +54,6 @@
         </table>
         </div>
 
-        <input type="submit" value="SUBMIT"><br>
-
         <div class="btn1">
         <a href=''><button type="button">ADD ACCOUNT</button></a>
         </div>

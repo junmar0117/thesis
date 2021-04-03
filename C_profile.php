@@ -28,7 +28,7 @@ include_once('header.html');
             <img src="assets/admin.png" alt="">
           </div>
           <p>Hello, <?php print "$user" ?>!</p>
-          <button class="submit-btn"><a href="register.php"> Add New Admin<a/></button>
+          <button class="submit-btn"><a href="register.php">REPORT<a/></button>
         </form>
         <!-- Login form End -->
       </div>
