@@ -6,7 +6,7 @@
     <meta charset = "utf-8">
     <title> Home Page </title>
     <meta name ="viewport" content="width=devoce-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/style.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -33,32 +33,26 @@
         <div class="textbox1">
         <table>
             <tr>
-                <th>Firstname</th>
+                <th><img src="./assets/dellyy.jpg" height="250px" width="250px"></th>
             </tr>
             <tr>
                 <td>Peter</td>
                 <td>Griffin</td>
-                <td>$100</td>
             </tr>
             <tr>
                 <td>Lois</td>
                 <td>Griffin</td>
-                <td>$150</td>
             </tr>
             <tr>
                 <td>Joe</td>
                 <td>Swanson</td>
-                <td>$300</td>
             </tr>
             <tr>
                 <td>Cleveland</td>
                 <td>Brown</td>
-                <td>$250</td>
             </tr>
         </table>
         </div>
-
-        <input type="submit" value="SUBMIT"><br>
 
         <div class="btn1">
         <a href=''><button type="button">ADD ACCOUNT</button></a>

@@ -14,7 +14,7 @@ table {
   th, td {
     padding: 8px;
     text-align: left;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 0px solid #ddd;
   }
 
 body{
@@ -300,7 +300,7 @@ section{
 
 button{
     position: absolute;
-    top: 30%;
+    top: 110%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
