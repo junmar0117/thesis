@@ -1,6 +1,7 @@
 <?php
-include_once('header.html');
+//$user = $_SESSION['user'];
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,77 +12,29 @@ include_once('header.html');
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <nav>
-        <input type="checkbox" id="check">
-        <label for="check" class="checkbtn">
-            <i class="fas fa-bars"></i>
-        </label>
-        <label class="logo">R&R</label>
-        <ul>
-            <li><a href="#">HOME</a></li>
-            <li><a href="#">HOME</a></li>
-            <li><a href="#">HOME</a></li>
-            <li><a href="#">HOME</a></li>
-            <li><a href="#">HOME</a></li>
-        </ul>
-    </nav>
+<nav>
+<?php
+include_once('header.html');
+?>
+</nav>
     <section>
-
-    <div class="profileBox">
-        <h1>Barangay User Profile</h1>
-        <form action="" method="POST">
-        
-        <div class="textbox1">
-        <table>
-            <tr>
-                <th>Firstname</th>
-            </tr>
-            <tr>
-                <td>Peter</td>
-                <td>Griffin</td>
-                <td>$100</td>
-            </tr>
-            <tr>
-                <td>Lois</td>
-                <td>Griffin</td>
-                <td>$150</td>
-            </tr>
-            <tr>
-                <td>Joe</td>
-                <td>Swanson</td>
-                <td>$300</td>
-            </tr>
-            <tr>
-                <td>Cleveland</td>
-                <td>Brown</td>
-                <td>$250</td>
-            </tr>
-        </table>
-        </div>
-
-
-        <input type="submit" value="SUBMIT"><br>
+    <div class="login-page">
+    <div class="box">
+      <div class="form">
+        <!-- Login form Start -->
+        <form class="login-form">
+          <h3>Profile</h3>
+          <div class="pic">
+            <img src="assets/admin.png" alt="">
+          </div>
+          <p>Hello, <?php print "$user" ?>!</p>
+          <button class="submit-btn"><a href="register.php"> Add New Admin<a/></button>
         </form>
+        <!-- Login form End -->
+      </div>
     </div>
+  </div>
     </section>
-
-    <div class="footer">
-            <div class="footer-section-about" id="first">
-                <p style="font-family: Courier; font-size: 35px; font-weight: bold;">ABOUT US</p>
-            </div>
-            <div class="footer-section-links" id="second">
-            <ul>
-                <li><a href="#">HOME</a></li>
-                <li><a href="#">HOME</a></li>
-                <li><a href="#">HOME</a></li>
-                <li><a href="#">HOME</a></li>
-                <li><a href="#">HOME</a></li>
-            </ul>
-            </div>
-        <div class="footer-bottom">
-            &copy; Copyright © R&R 2021 Digital All Rights Reserved
-        </div>
-    </div>
 </body>
 <footer>
 <?php
