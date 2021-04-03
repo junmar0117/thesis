@@ -47,16 +47,11 @@ include_once('header.html');
         </div>
 
             <input type="submit" value="Register" class="C_registerbtn">
-            <a href="C_login.php" id="signininstead">Sign in instead</a>
+            <a href="C_login.php" id="signininstead">Already have an account? Log in here.</a>
         </form>
         </div>
     </div>
 </body>
-<footer>
-<?php
-include_once('footer.html');
-?>
-</footer>
 </html>
 
 <?php
