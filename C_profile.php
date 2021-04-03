@@ -1,4 +1,5 @@
 <?php
+include_once('header.html');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -82,6 +83,11 @@
         </div>
     </div>
 </body>
+<footer>
+<?php
+include_once('footer.html');
+?>
+</footer>
 </html>
 
 

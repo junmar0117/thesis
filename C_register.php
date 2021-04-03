@@ -1,3 +1,6 @@
+<?php
+include_once('header.html');
+?>
 <html lang="en">
 <head>
     <meta charset = "utf-8">
@@ -49,6 +52,11 @@
         </div>
     </div>
 </body>
+<footer>
+<?php
+include_once('footer.html');
+?>
+</footer>
 </html>
 
 <?php
@@ -75,7 +83,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 		{
 			$bool = false; // sets bool to false
 			Print '<script>alert("Username has been taken!");</script>'; //Prompts the user
-			Print '<script>window.location.assign("register.php");</script>'; // redirects to register.php
+			Print '<script>window.location.assign("C_register.php");</script>'; // redirects to register.php
 		}
     }
     
@@ -84,7 +92,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         {
           mysqli_query($con, "INSERT INTO civilians (name, age, address,email,username, password) VALUES ('$name','$age','$address','$email','$username','$password')"); //Inserts the value to table users
           print '<script>alert("Successfully Registered!"); </script>'; // Prompts the user
-          print '<script>window.location.assign("register.php");</script>'; // redirects to register.php
+          print '<script>window.location.assign("C_register.php");</script>'; // redirects to register.php
         }
       
 	}
