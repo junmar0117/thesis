@@ -36,7 +36,7 @@ include_once('Userheader.html');
             <div class="profilePicDiv">
                 <a class="userdetailsheader">USER DETAILS</a>
                 <br>
-                <img src="./assets/dellyy.jpg" height="300px" width="300px">
+            
                 
                 <table class="profilePicTable">
                 <?php
@@ -56,10 +56,10 @@ include_once('Userheader.html');
                 Print '<th class="profileInfoHeader">ACCOUNT</th>';
                 Print '<td class="profileInfoContent">'."CIVILIAN" . "</td>";
                 Print "</tr>";
+                Print "</table>";
+                Print '<a class="editAccountCivilian" href="changePassword.php?id='. $row['id'] .'">Change Password</a>';
                 }
-                ?>
-                </table>
-                <a class="editAccountCivilian" href="#">EDIT ACCOUNT</a>
+                ?>                
             </div>
             
         <table class="profileInfo">
