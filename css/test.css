@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Lexend:wght@600&display=swap');
+
+body{
+    margin:0;
+    background-color: white;
+}
+/*---------------register----------*/
+.register-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 700px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: white;
+    box-sizing: border-box;
+    border: 2px solid;
+    border-left-color: #ff0049;
+    border-radius: 3px;
+}
+
+.register-box > h1{
+    margin: 0 0 20px;
+    padding: 5px 10px;
+    color: #ff0049;
+    font-family: 'Lexend', sans-serif;
+    border-left: 1px solid #ff0049;
+}
+
+.register-box > h2{
+    margin: 0 0 30px;
+    padding: 0;
+    color: #252525;
+    font-family: 'Lexend', sans-serif;
+}
+
+.register-box2{
+    position: relative;
+}
+
+.register-box .register-box2 input{
+    width: 100%;
+    padding: 5px 0;
+    font-size: 16px;
+    color: #000000;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #252525;
+    outline: none;
+    background: transparent;
+}
+
+
+.register-box .register-box2 label{
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 5px 0;
+    font-size: 16px;
+    color: #252525;
+    pointer-events: none;
+    transition: .5s;
+    font-family: 'Lexend', sans-serif;
+}
+
+.register-box .register-box2 input:focus ~ label, .register-box .register-box2 input:valid ~ label{
+    top: -25px;
+    left: 0;
+    color: #ff0049;
+    font-size: 15px;
+}
+
+.C_registerbtn{
+    color: black;
+    float: right;
+    padding: 5px 10px;
+    border: 2px solid black;
+    background-color: white;
+    cursor: pointer;
+    font-family: 'Lexend', sans-serif;
+    font-size: 16px;
+}
+
+.C_registerbtn:hover{
+    border: 2px solid #ff0049;
+    color:#ff0049;
+}
+
+#signininstead{
+    text-decoration:none;
+    font-family: 'Lexend', sans-serif;
+    color: #ff0049;
+    font-size: 16px;
+    padding: 5px 10px;
+    float:left;
+}
+
+#signininstead:hover{
+    color:#ff0049;
+    background-color: rgb(255, 235, 239);
+    border-radius: 10px;
+    
+}
+
+/*---------login-------------*/
+.login-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 700px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: white;
+    box-sizing: border-box;
+    border: 2px solid;
+    border-left-color: #ff0049;
+    border-radius: 3px;
+}
+
+.login-box2{
+    position: relative;
+}
+
+.login-box > h1{
+    margin: 0 0 20px;
+    padding: 5px 10px;
+    color: #ff0049;
+    font-family: 'Lexend', sans-serif;
+    border-left: 1px solid #ff0049;
+}
+
+.login-box > h2{
+    margin: 0 0 30px;
+    padding: 0;
+    color: #252525;
+    font-family: 'Lexend', sans-serif;
+}
+
+.login-box .login-box2 input{
+    width: 100%;
+    padding: 5px 0;
+    font-size: 16px;
+    color: #000000;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #252525;
+    outline: none;
+    background: transparent;
+}
+
+
+.login-box .login-box2 label{
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 5px 0;
+    font-size: 16px;
+    color: #252525;
+    pointer-events: none;
+    transition: .5s;
+    font-family: 'Lexend', sans-serif;
+}
+
+.login-box .login-box2 input:focus ~ label, .login-box .login-box2 input:valid ~ label{
+    top: -25px;
+    left: 0;
+    color: #ff0049;
+    font-size: 15px;
+}
+
+.C_loginbtn{
+    color: black;
+    float: right;
+    padding: 5px 10px;
+    border: 2px solid black;
+    background-color: white;
+    cursor: pointer;
+    font-family: 'Lexend', sans-serif;
+    font-size: 16px;
+}
+
+.C_loginbtn:hover{
+    border: 2px solid #ff0049;
+    color:#ff0049;
+}
+
+#signupinstead{
+    text-decoration:none;
+    font-family: 'Lexend', sans-serif;
+    color: #ff0049;
+    font-size: 16px;
+    padding: 5px 10px;
+    float:left;
+}
+
+#signupinstead:hover{
+    color:#ff0049;
+    background-color: rgb(255, 235, 239);
+    border-radius: 10px;
+    
+}
