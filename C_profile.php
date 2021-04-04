@@ -1,5 +1,12 @@
 <?php
-//$user = $_SESSION['user'];
+session_start();
+if($_SESSION['user']){ //checks if user is logged in
+}else{
+  header("location:index.php "); // redirects if user is not logged in
+}
+
+$user = $_SESSION['user']; //assigns user value
+//$id = $_SESSION['id']; 
 ?>
 
 <!DOCTYPE html>
@@ -30,43 +37,53 @@ include_once('Userheader.html');
                 <a class="userdetailsheader">USER DETAILS</a>
                 <br>
                 <img src="./assets/dellyy.jpg" height="300px" width="300px">
+                
                 <table class="profilePicTable">
-                    <tr>
-                        <th class="profileInfoHeader">NAME</th>
-                        <td class="profileInfoContent">bugabuga</td>
-                    </tr>
-                    <tr>
-                        <th class="profileInfoHeader">AGE</th>
-                        <td class="profileInfoContent">69</td>
-                    </tr>
-                    <tr>
-                        <th class="profileInfoHeader">ACCOUNT</th>
-                        <td class="profileInfoContent">Civilian</td>
-                    </tr>
+                <?php
+                require 'connection.php';    
+                $query = mysqli_query($con, "SELECT * from civilians where username = '$user' "); // SQL Query
+                while($row = mysqli_fetch_array($query))
+                {
+                Print "<tr>";
+                Print '<th class="profileInfoHeader">NAME</th>';
+                Print '<td class="profileInfoContent">'. $row['name'] . "</td>";
+                Print "</tr>";
+                Print "<tr>";
+                Print '<th class="profileInfoHeader">AGE</th>';
+                Print '<td class="profileInfoContent">'. $row['age'] . "</td>";
+                Print "</tr>";
+                Print "<tr>";
+                Print '<th class="profileInfoHeader">ACCOUNT</th>';
+                Print '<td class="profileInfoContent">'."CIVILIAN" . "</td>";
+                Print "</tr>";
+                }
+                ?>
                 </table>
                 <a class="editAccountCivilian" href="#">EDIT ACCOUNT</a>
             </div>
             
         <table class="profileInfo">
         <a class="aboutdetailsheader">ABOUT</a>
-            <tr>
-                <th class="profileInfoHeader">NAME</th>
-                <td class="profileInfoContent">bugabuga</td>
-                <th class="profileInfoHeader">USERNAME</th>
-                <td class="profileInfoContent">Griffin</td>
-            </tr>
-            <tr>
-                <th class="profileInfoHeader">EMAIL</th>
-                <td class="profileInfoContent">buga@rr.comrwerwerewr</td>
-                <th class="profileInfoHeader">PASSWORD</th>
-                <td class="profileInfoContent">********</td>
-            </tr>
-            <tr>
-                <th class="profileInfoHeader">ADDRESS</th>
-                <td class="profileInfoContent">Philippines</td>
-                <th class="profileInfoHeader">AGE</th>
-                <td class="profileInfoContent">69</td>
-            </tr>
+
+        <?php
+        require 'connection.php';    
+        $query = mysqli_query($con, "SELECT * from civilians where username = '$user' "); // SQL Query
+        while($row = mysqli_fetch_array($query))
+        {
+          Print "<tr>";
+          Print '<th class="profileInfoHeader">NAME</th>';
+          Print '<td class="profileInfoContent">'. $row['name'] . "</td>";
+          Print '<th class="profileInfoHeader">USERNAME</th>';
+          Print '<td class="profileInfoContent">'. $row['username'] . "</td>";
+          Print "</tr>";
+          Print "<tr>";
+          Print '<th class="profileInfoHeader">EMAIL</th>';
+          Print '<td class="profileInfoContent">'. $row['email'] . "</td>";
+          Print '<th class="profileInfoHeader">ADDRESS</th>';
+          Print '<td class="profileInfoContent">'. $row['address'] . "</td>";
+          Print "</tr>";
+        }
+		?>
         </table>
 
         <div class="profileReportBtn">
@@ -78,6 +95,7 @@ include_once('Userheader.html');
         </div>
 
         <table class="ProfileReportHistory">
+
             <tr>
                 <th>Report ID</th>
                 <th>Name</th>
