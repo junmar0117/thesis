@@ -18,22 +18,39 @@ include_once('header.html');
 ?>
 </nav>
     <section>
-    <div class="login-page">
-    <div class="box">
-      <div class="form">
-        <!-- Login form Start -->
-        <form class="login-form">
-          <h3>Profile</h3>
-          <div class="pic">
-            <img src="./assets/admin.png" alt="">
-          </div>
-          <p>Hello, <?php print "" ?>!</p>
-          <button class="submit-btn"><a href="register.php">zREPORT<a/></button>
+
+    <div class="profileBox">
+        <h1>Civilian User Profile</h1>
+        <form action="" method="POST">
+        
+        <div class="textbox1">
+        <h3>Hello, <?php print "" ?>!</h3>
+        <table>
+            <tr>
+                <th><img src="./assets/dellyy.jpg" height="250px" width="250px"></th>
+            </tr>
+            <tr>
+                <td>Peter</td>
+                <td>Griffin</td>
+            </tr>
+            <tr>
+                <td>Lois</td>
+                <td>Griffin</td>
+            </tr>
+            <tr>
+                <td>Joe</td>
+                <td>Swanson</td>
+            </tr>
+            <tr>
+                <td>Cleveland</td>
+                <td>Brown</td>
+            </tr>
+        </table>
+        </div>
+        <div class="btn1">
+        <a href=''><button type="button">REPORT INCIDENT</button></a>
+        </div>
         </form>
-        <!-- Login form End -->
-      </div>
-    </div>
-  </div>
     </section>
 </body>
 <footer>

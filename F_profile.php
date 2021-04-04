@@ -22,6 +22,7 @@ include_once('header.html');
         <form action="" method="POST">
         
         <div class="textbox1">
+        <h2>Firefighter Accounts:</h2>
         <table>
             <tr>
                 <th><img src="./assets/dellyy.jpg" height="250px" width="250px"></th>
