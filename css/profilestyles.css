@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Lexend:wght@500;600&display=swap');
+body{
+    margin:0;
+    background-color: #f1f1f1;
+}
+
+.AdminProfileTable{
+    width: 90%;
+    margin: auto; 
+}
+
+.AdminProfileTable, th, td{
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align:center;
+    font-family: 'Lexend', sans-serif;
+    font-size: 13px;
+}
+
+th, td{
+    padding: 10px;
+}
+
+td{
+    background-color: white;
+}
+
+th{
+    background-color: #252525;
+    color: white;
+    text-transform:uppercase;
+}
+
+.profileBox > h1{
+    margin-left: 5%;
+    font-family: 'Dela Gothic One', cursive;
+}
+
+
+input[type=button]{
+    color: #ff0049;
+    margin:0 0 1% 5%;
+    padding: 5px;
+    cursor:pointer;
+    border: 1px solid #ff0049;
+    background-color: white;
+    font-size: 15px;
+    font-family: 'Lexend', sans-serif;
+}
+
+input[type=button]:hover{
+    color: white;
+    background-color: #ff0049;
+}
+
+#AdminViewProfile, #AdminDelProfile{
+    color: #ff0049;
+}
+
+#AdminViewProfile:hover, #AdminDelProfile:hover{
+    cursor:pointer;
+    color: #ff0049;
+    text-decoration: underline;
+    background-color: rgb(245, 245, 245);
+}
+
+.profileInfo{
+    float:right;
+    margin-right: 7%;
+    padding: 20px;
+    width: 65%;
+    background-color: white;
+}
+
+.profileInfoHeader, .profileInfoContent{
+    color: black;
+    background-color: white;
+    text-align:left;
+    border: none;
+    font-size: 15px;
+    padding: 5px;
+}
+
+.profileInfoHeader{
+    width: 25%;
+}
+
+.profileInfoContent{
+    width: 25%;
+}
+
+.profilePicDiv{
+    margin-left: 7%;
+    float: left;
+}
+
+.profilePicTable{
+    background-color: white;
+    width: 300px;
+    padding: 20px;
+}
+
+.userdetailsheader{
+    float:left;
+    background-color: white;
+    width: 300px;
+    text-align:center;
+    font-family: 'Lexend', sans-serif;
+    font-size: 18px;
+    padding: 15px 0 15px 0;
+    font-weight:bold;
+}
+
+.aboutdetailsheader{
+    float:right;
+    background-color: white;
+    width: 65%;
+    text-align:center;
+    font-family: 'Lexend', sans-serif;
+    font-size: 18px;
+    padding: 15px 0 15px 0;
+    margin-right: 7%;
+    border-bottom: 1px solid #d4d4d4;
+    font-weight:bold;
+}
+
+.profileReportBtn{
+    float:right;
+    margin-right: 7%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 5px;
+    cursor:pointer;
+    border: 1px solid #ff0049;
+    background-color: white;
+    font-size: 15px;
+    font-family: 'Lexend', sans-serif;
+}
+
+.profileReportBtn:hover{
+    background-color: #ff0049;
+    color: white;
+}
+
+.ProfileReportHistory{
+    float:right;
+    width: 65%;
+    margin-right: 7%;
+    border-collapse: collapse;
+}
+ /*HISTORY header*/
+.profileRepHisHeader{
+    float:left;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left:1%;
+    padding: 5px;
+    font-size: 20px;
+    font-family: 'Lexend', sans-serif;
+    color: #ff0049;
+}
+
+/*civilian edit account button*/
+.editAccountCivilian{
+    float:left;
+    background-color: white;
+    width: 300px;
+    text-align:center;
+    font-family: 'Lexend', sans-serif;
+    font-size: 17px;
+    padding: 15px 0 15px 0;
+    border-top: 1px solid #d4d4d4;
+    text-decoration: none;
+    color: #ff0049;
+}
+
+.editAccountCivilian:hover{
+    background-color: #ff0049;
+    color: white;
+}
