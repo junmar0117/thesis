@@ -87,7 +87,7 @@ include_once('Userheader.html');
         </table>
 
         <div class="profileReportBtn">
-            <a>REPORT INCIDENT</a>
+            <a href="C_reportIncident.php">REPORT INCIDENT</a>
         </div>
 
         <div class="profileRepHisHeader">
