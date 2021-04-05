@@ -19,7 +19,7 @@ include_once('Userheader.html');
 
     <section>
     <div class="reportInci">
-        <h1>REPORT INCIDENT Police</h1>
+        <h1>REPORT I</h1>
         <form action="" method="POST">
         <div class="textbox1">
             <label for="nameOfInci">Name of Incident</label>

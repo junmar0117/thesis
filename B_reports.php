@@ -12,14 +12,14 @@
 <body>
     <nav>
 <?php
-include_once('header.html');
+include_once('Userheader.html');
 ?>
 </nav>
     </nav>
 
     <section>
     <div class="reportInci">
-        <h1>REPORT INCIDENT PNP</h1>
+        <h1>REPORT INCIDENT Local Barangay</h1>
         <form action="" method="POST">
         <div class="textbox1">
             <label for="nameOfInci">Name of Incident</label>
@@ -62,7 +62,7 @@ include_once('header.html');
     </div>
     </section>
 
-    <footer>
+<footer>
 <?php
 include_once('footer.html');
 ?>
