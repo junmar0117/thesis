@@ -88,7 +88,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         {
           mysqli_query($con, "INSERT INTO civilians (name, age, address,email,username, password) VALUES ('$name','$age','$address','$email','$username','$password')"); //Inserts the value to table users
           print '<script>alert("Successfully Registered!"); </script>'; // Prompts the user
-          print '<script>window.location.assign("C_register.php");</script>'; // redirects to register.php
+          print '<script>window.location.assign("C_login.php");</script>'; // redirects to register.php
         }
       
 	}
