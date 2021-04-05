@@ -27,18 +27,17 @@ margin:0;
   font-family: 'Lexend', sans-serif;
 }
 
-.topnav .icon {
-  display: none;
-}
-
 .topnav a:hover  {
   border-bottom: 1px solid #FF0049;
-  
 }
 
-.topnav .signuphovercolor:hover{
+.topnav a .signuphovercolor:hover{
   color:white;
   background-color: #FF0049;
+}
+
+.topnav .icon {
+  display: none;
 }
 
 @media screen and (max-width: 600px) {

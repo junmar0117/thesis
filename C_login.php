@@ -1,6 +1,3 @@
-<?php
-include_once('header.html');
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,6 +9,13 @@ include_once('header.html');
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
+
+    <nav>
+        <?php
+            include_once('header.html');
+        ?>
+    </nav>
+
     <div class="login-box">
         <h1>Login</h1>
         <h2>Input username and password</h2>

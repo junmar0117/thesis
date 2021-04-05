@@ -1,6 +1,4 @@
-<?php
-include_once('header.html');
-?>
+
 <html lang="en">
 <head>
     <meta charset = "utf-8">
@@ -10,9 +8,14 @@ include_once('header.html');
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  
+    
+    <nav>
+    <?php
+        include_once('header.html');
+    ?>
+    </nav>
+
     <div class="register-box">
-        <h1>R & R</h1>
         <h2>Create your Account</h2>
         
         <form action="C_register.php" method="POST">

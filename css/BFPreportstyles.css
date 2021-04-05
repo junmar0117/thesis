@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Lexend:wght@500;600&display=swap');
+body{
+    margin: 0;
+    background-color: #f1f1f1;
+}
+
+#CreportHeader{
+    font-family: 'Dela Gothic One', cursive;
+    font-size: 30px;
+    width: 85%;
+    background-color: white;
+    border-bottom: 1px solid #f1f1f1;
+    margin: 2% 5% 0% 5%;
+    padding-left:5%;
+    padding-top:4%;
+    padding-bottom:2%;
+}
+
+.CreportInci{
+    background-color: white;
+    padding: 2% 5% 5% 5%;
+    margin: 0% 5% 5% 5%;
+}
+
+label{
+    font-family: 'Lexend', sans-serif;
+    font-size: 20px;
+}
+
+input[type=text], input[type=datetime-local]{
+    cursor:text;
+    border: none;
+    border-bottom: 1px solid #252525;
+    margin-top: 1%;
+    margin-bottom: 3%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 15px;
+    font-family: 'Lexend', sans-serif;
+}
+
+input[type=text]{
+    width: 100%;
+}
+
+input[type=file]{
+    cursor: pointer;
+    margin-top: 1%;
+    margin-bottom: 3%;
+    padding: 15px;
+    background-color: #e2e2e2; 
+	border-radius: 5px;
+	font-size: 15px;
+    font-family: 'Lexend', sans-serif;
+}
+
+select{
+    cursor: pointer;
+    margin-top: 1%;
+    margin-bottom: 3%;
+    padding: 15px;
+    background-color: #e2e2e2; 
+	border-radius: 5px;
+	font-size: 15px;
+    font-family: 'Lexend', sans-serif;
+    border: none;
+}
+
+input[type=submit]{
+    float:right;
+    cursor: pointer;
+    margin-top: 1%;
+    margin-bottom: 5%;
+    padding: 10px;
+    background-color: white; 
+    color:black;
+	font-size: 15px;
+    font-family: 'Lexend', sans-serif;
+    border: 2px solid #ff0049;
+    width: 30%;
+    transition: 0.1s;
+}
+
+input[type=submit]:hover{
+    background-color: #ff0049;
+    color: white;
+}
+
+@media screen and (max-width: 600px) {
+    input[type=submit] {
+      width:100%;
+      margin-bottom: 10%;
+    }
+
+  }

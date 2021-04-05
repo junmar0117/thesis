@@ -19,14 +19,6 @@ body{
     border-radius: 3px;
 }
 
-.register-box > h1{
-    margin: 0 0 20px;
-    padding: 5px 10px;
-    color: #ff0049;
-    font-family: 'Lexend', sans-serif;
-    border-left: 1px solid #ff0049;
-}
-
 .register-box > h2{
     margin: 0 0 30px;
     padding: 0;
