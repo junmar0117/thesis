@@ -2,6 +2,7 @@
 session_start();
 $username = ($_POST['username']);
 $password = ($_POST['password']);
+$password = md5($password);
 
 require 'connection.php';
 $query = "SELECT * from civilians WHERE username='$username'";

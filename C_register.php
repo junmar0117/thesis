@@ -63,6 +63,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 	$email = ($_POST['email']);
 	$username = ($_POST['username']);
 	$password = ($_POST['password']);
+    $password = md5($password);
     $bool = true;
 
    

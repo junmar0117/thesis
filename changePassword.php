@@ -11,6 +11,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 {
     require "connection.php";
     $password = ($_POST['password']);
+    $password = md5($password);
     mysqli_query($con,"UPDATE civilians SET username='$password' where id='$id");
     header("location: C_profile.php");
 }
