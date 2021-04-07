@@ -7,10 +7,15 @@
 }
 
 .container-fluid{
-    font-family: 'Lexend', sans-serif;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 15px;
+  font-family: 'Lexend', sans-serif;
 }
 
 .row{
+    text-align: justify;
     font-family: 'Lexend', sans-serif;
 }
 
@@ -381,4 +386,15 @@ button:hover:after{
     transform: translateX(300px) skewX(-15deg);
     opacity: 1;
     transition: .7s;
+}
+
+.banner{
+    width: 100%;
+    display: block;
+}
+
+.banner > .banner-image{
+    width: 100%;
+    display: block;
+    height: 600px;
 }
