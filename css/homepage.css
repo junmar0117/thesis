@@ -1,0 +1,53 @@
+body{
+    margin:0;
+}
+
+.indexBG {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .indexBG img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .indexBG .btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: #555;
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  .indexBG .btn:hover {
+    background-color: black;
+  }
+
+.indexContent{
+    width: 100%;
+    margin: auto;
+}
+
+table{
+    width:100%;
+}
+
+p{
+    float:right;
+}
+
+.indexGuide td, .indexPBB td, .indexAbout td{
+    border-left: 1px solid black;
+    padding: 5%;
+    text-align: center;
+}
