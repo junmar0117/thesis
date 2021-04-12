@@ -154,10 +154,11 @@ if (in_array($fileActualExt, $allowed)){
         if($fileSize < 10000000){
             $fileNameNew = uniqid('', true).".". $fileActualExt;
 
-            $fileDestination = 'reports/'.$fileNameNew;
+            $fileDestination = 'reportFiles/'.$fileNameNew;
             move_uploaded_file($fileTmpName,$fileDestination);
             mysqli_query($con, "INSERT INTO reports (name, date, place, description, file, type, incident, time) VALUES ('$fullName','$date','$place','$description','$fileNameNew','$type','$incident','$time')"); //SQL query
-            header("location:C_reportIncident.php?uploadsucess");
+            Print '<script>alert("Report sucessfully sent!");</script>'; //Prompts the user
+            Print '<script>window.location.assign("C_reportIncident.php");</script>'; // redirects to login.php
             //header("location:allreports.php ");
 
         }else{
