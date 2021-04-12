@@ -1,4 +1,13 @@
 <?php
+session_start();
+if($_SESSION['user']){ //checks if user is logged in
+}else{
+  header("location:index.php "); // redirects if user is not logged in
+}
+
+$user = $_SESSION['user']; //assigns user value
+
+//$id = $_SESSION['id']; 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,37 +37,40 @@
         <div class="CreportInputBox">
             <label for="typeOfInci">Type of Incident:</label>
             <br>
-            <select name="typeOfInci" id="type" required>
-                <option value="none">-</option>
-                <option value="childabuse">Child Abuse</option>
-                <option value="saab">Neighborhood Conflict</option>
-                <option value="opel">Fight</option>
-                <option value="audi">Quarantine Violators</option>
+            <select name="type" id="type" required>
+                <option value="Child Abuse">Child Abuse</option>
+                <option value="Neighborhood Conflict">Neighborhood Conflict</option>
+                <option value="Fight">Fight</option>
+                <option value="Quarantine Violators">Quarantine Violators</option>
+                <option value="Others">Others</option>
             </select>
         </div>
+        <?php
+
+        ?>
 
         <div class="CreportInputBox">
             <label for="dateOfInci">Date of Incident</label>
             <br>
-            <input type="datetime-local" id="dateOfInci" name="dateOfIncident" required>
+            <input type="datetime-local" id="dateOfInci" name="date" required>
         </div>
         
         <div class="CreportInputBox">
             <label for="placeOfInci">Place of Incident</label>
             <br>
-            <input type="text" id="placeOfIncident" name="labelPlaceInci" placeholder="Place of Incident" required>
+            <input type="text" id="placeOfIncident" name="place" placeholder="Place of Incident" required>
         </div>
 
         <div class="CreportInputBox">
             <label for="descOfInci">Description of Incident</label>
             <br>
-            <input type="text" id="descOfIncident" name="labelDescInci" placeholder="Description of Incident" required>
+            <input type="text" id="descOfIncident" name="description" placeholder="Description of Incident" required>
         </div>
 
         <div class="CreportInputBox">
             <label for="file">Proof of Incident</label>
             <br>
-            <input type="file" id="fileAttachment" required>
+            <input type="file" name="file" id="fileAttachment" required>
         </div>
 
         <input type="submit" name="b_upload" value="S U B M I T"><br>
