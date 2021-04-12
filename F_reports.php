@@ -26,9 +26,15 @@
         
         <form action="" method="POST">
         <div class="CreportInputBox">
-            <label for="nameOfInci">Name of Incident</label>
+            <label for="typeOfInci">Type of Incident:</label>
             <br>
-            <input type="text" id="nameOfIncident" name="labelNameInci" placeholder="Name of Incident" required>
+            <select name="typeOfInci" id="type" required>
+                <option value="none">-</option>
+                <option value="childabuse">Child Abuse</option>
+                <option value="saab">Neighborhood Conflict</option>
+                <option value="opel">Fight</option>
+                <option value="audi">Quarantine Violators</option>
+            </select>
         </div>
 
         <div class="CreportInputBox">
@@ -53,18 +59,6 @@
             <label for="file">Proof of Incident</label>
             <br>
             <input type="file" id="fileAttachment" required>
-        </div>
-
-        <div class="CreportInputBox">
-            <label for="typeOfInci">Type of Incident:</label>
-            <br>
-            <select name="typeOfInci" id="type" required>
-                <option value="none">-</option>
-                <option value="childabuse">Child Abuse</option>
-                <option value="saab">Neighborhood Conflict</option>
-                <option value="opel">Fight</option>
-                <option value="audi">Quarantine Violators</option>
-            </select>
         </div>
 
         <input type="submit" name="f_upload" value="S U B M I T"><br>
