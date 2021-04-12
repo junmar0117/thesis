@@ -24,7 +24,7 @@
     <h1 id="CreportHeader">Local Barangay Incident Report</h1>
     <div class="CreportInci">
         
-        <form action="" method="POST">
+        <form action="sendReport.php" method="POST">
         <div class="CreportInputBox">
             <label for="nameOfInci">Name of Incident</label>
             <br>

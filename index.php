@@ -17,7 +17,7 @@
     
     <div class="indexBG">
         <img src="./assets/samplebanner1.jpg" alt="mpbg" style="width:100%">
-        <button class="btn">Report Now</button>
+        <a href ="C_login.php"><button  class="btn"> Login Now</button></a>
     </div>
 
     <div class="indexContent">
