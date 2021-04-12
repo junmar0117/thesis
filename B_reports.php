@@ -6,9 +6,11 @@ if($_SESSION['user']){ //checks if user is logged in
 }
 
 $user = $_SESSION['user']; //assigns user value
-
-//$id = $_SESSION['id']; 
 ?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,7 +35,7 @@ $user = $_SESSION['user']; //assigns user value
     <h1 id="CreportHeader">Local Barangay Incident Report</h1>
     <div class="CreportInci">
         
-        <form action="sendReport.php" method="POST">
+        <form action="sendReport.php" enctype="multipart/form-data" method="POST">
         <div class="CreportInputBox">
             <label for="typeOfInci">Type of Incident:</label>
             <br>
@@ -48,12 +50,6 @@ $user = $_SESSION['user']; //assigns user value
         <?php
 
         ?>
-
-        <div class="CreportInputBox">
-            <label for="dateOfInci">Date of Incident</label>
-            <br>
-            <input type="datetime-local" id="dateOfInci" name="date" required>
-        </div>
         
         <div class="CreportInputBox">
             <label for="placeOfInci">Place of Incident</label>
