@@ -27,6 +27,7 @@ include_once('header.html');
         
         <form action="" method="POST">
         <input type="button" value="Add Account +"></input>
+        </form>
         <table class="AdminProfileTable">
             <tr>
                 <th>Account ID</th>
@@ -46,7 +47,6 @@ include_once('header.html');
             </tr>
         </table>
         </div>
-        </form>
     </div>
     </section>
 </body>

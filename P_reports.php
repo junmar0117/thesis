@@ -67,7 +67,7 @@
             </select>
         </div>
 
-        <input type="submit" value="S U B M I T"><br>
+        <input type="submit" name="p_upload" value="S U B M I T"><br>
         </form>
     </div>
     
