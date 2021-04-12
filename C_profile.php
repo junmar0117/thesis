@@ -95,7 +95,7 @@ include_once('Userheader.html');
         </div>
 
         <table class="ProfileReportHistory">
-
+        
             <tr>
                 <th>Report ID</th>
                 <th>Name</th>
@@ -104,14 +104,21 @@ include_once('Userheader.html');
                 <th>Concern</th>
                 <th>View Report</th>
             </tr>
-            <tr>
-                <td>123456</td>
-                <td>Griffin</td>
-                <td>Peter</td>
-                <td>04/04/2021</td>
-                <td>Barangay</td>
-                <td id="AdminViewProfile" href="">View</td>
-            </tr>
+            <?php
+            require 'connection.php';    
+            $query = mysqli_query($con, "SELECT * from reports where username = '$user' "); // SQL Query
+            while($row = mysqli_fetch_array($query))
+            {
+            Print "<tr>";
+            Print '<td>'. $row['id'] . "</td>";
+            Print '<td>'. $row['name'] . "</td>";
+            Print '<td>'. $row['username'] . "</td>";
+            Print '<td>'.$row['date'] ." - ".$row['time']. "</td>";
+            Print '<td>'. $row['incident'] . "</td>";
+            Print '<td id="AdminViewProfile" href="">View</td>';
+            Print "</tr>";
+            }
+            ?>
         </table>
         </div>
 
