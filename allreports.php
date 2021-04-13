@@ -15,7 +15,7 @@ $user = $_SESSION['user']; //assigns user value
     <meta charset = "utf-8">
     <title> Home Page </title>
     <meta name ="viewport" content="width=devoce-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/profilestyle.css">
+    <link rel="stylesheet" href="./css/profilestyles.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -28,69 +28,25 @@ include_once('Userheader.html');
     <br>
     <br>
     <br>
+    <br>
+    <br>
+    <br>
+    <br>
     <section>
-
-    <div class="profileBox">
-        <h1 style="margin-left: 7%;">PROFILE</h1>
-        <form action="" method="POST">
-            <div class="profilePicDiv">
-                <a class="userdetailsheader">USER DETAILS</a>
-                <br>
-            
-                
-                <table class="profilePicTable">
-                <?php
-                require 'connection.php';    
-                $query = mysqli_query($con, "SELECT * from civilians where username = '$user' "); // SQL Query
-                while($row = mysqli_fetch_array($query))
-                {
-                Print "<tr>";
-                Print '<th class="profileInfoHeader">NAME</th>';
-                Print '<td class="profileInfoContent">'. $row['name'] . "</td>";
-                Print "</tr>";
-                Print "<tr>";
-                Print '<th class="profileInfoHeader">AGE</th>';
-                Print '<td class="profileInfoContent">'. $row['age'] . "</td>";
-                Print "</tr>";
-                Print "<tr>";
-                Print '<th class="profileInfoHeader">ACCOUNT</th>';
-                Print '<td class="profileInfoContent">'."CIVILIAN" . "</td>";
-                Print "</tr>";
-                Print "</table>";
-                Print '<a class="editAccountCivilian" href="changePassword.php?id='. $row['id'] .'">Change Password</a>';
-                }
-                ?>                
-            </div>
-            
-        <table class="profileInfo">
-        <a class="aboutdetailsheader">ABOUT</a>
- 
-    
-        </table>
-
-        <div class="profileReportBtn">
-            <a href="C_reportIncident.php">REPORT INCIDENT</a>
-        </div>
-
-        <div class="profileRepHisHeader">
-            <a>HISTORY</a>
-        </div>
-
-        <table class="ProfileReportHistory">
-        
+        <table class="AllReportHistory1">
             <tr>
                 <th>Report ID</th>
                 <th>Name</th>
                 <th>Username</th>
-                <th>Date Created</th>
-                <th>Concern</th>
-                <th>View Report</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Place</th>
+                <th>Incident</th>
+
             </tr>
         </table>
-        </div>
+    
 
-        
-        </form>
     </section>
 </body>
 </html>

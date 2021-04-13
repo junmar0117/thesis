@@ -148,6 +148,14 @@ input[type=button]:hover{
     margin-right: 7%;
     border-collapse: collapse;
 }
+
+.AllReportHistory1{
+    float:right;
+    width: 99%;
+    margin-right: .5%;
+    border-collapse: collapse;
+}
+
  /*HISTORY header*/
 .profileRepHisHeader{
     float:left;
