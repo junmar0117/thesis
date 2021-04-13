@@ -15,7 +15,7 @@ $user = $_SESSION['user']; //assigns user value
     <meta charset = "utf-8">
     <title> Home Page </title>
     <meta name ="viewport" content="width=devoce-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/profilestyles.css">
+    <link rel="stylesheet" href="./css/profilestyle.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -64,7 +64,7 @@ include_once('Userheader.html');
             
         <table class="profileInfo">
         <a class="aboutdetailsheader">ABOUT</a>
-
+ 
         <?php
         require 'connection.php';    
         $query = mysqli_query($con, "SELECT * from civilians where username = '$user' "); // SQL Query
