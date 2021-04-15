@@ -13,6 +13,9 @@
 <body>
 
     <nav>
+        <?php
+            include_once('header.html');
+        ?>
     </nav>
     
     <div class="indexBG">

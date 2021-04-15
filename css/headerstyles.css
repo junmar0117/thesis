@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Lexend:wght@600&display=swap');
 body {
-margin:0;
+  margin:0;
 }
 
 .topnav {
   overflow: hidden;
-  background-color: transparent;
+  background-color: white;
   /*background-color: #252525;*/
   padding: 10px 10px;
   width: 100%;
@@ -18,7 +18,7 @@ margin:0;
 .topnav a {
   float: left;
   display: block;
-  color: white;
+  color: #252525;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
