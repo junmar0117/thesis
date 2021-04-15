@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<div class="topnav" id="myTopnav">
+<div class="topnav" id="myTopnav" style="box-shadow:0px 1px 8px #CCCCCC;">
   <a href="index.php" class= "actives" style=" color: #FF0049; border-left: 1px solid #FF0049;"> R & R </a>
   <a href="#.php">PROFILE</a>
   <a href="#.php">MONITOR</a>
@@ -21,10 +21,11 @@ window.onscroll = function() {scrollFunction()};
 function scrollFunction() {
   if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
     document.getElementById("myTopnav").style.padding = "0px 0px";
-    document.getElementById("myTopnav").style.backgroundColor = "#252525";
+    document.getElementById("myTopnav").style.backgroundColor = "white";
+    document.getElementById("myTopnav").style.boxShadow = "0px 1px 8px #CCCCCC";
   } else {
     document.getElementById("myTopnav").style.padding = "10px 10px";
-    document.getElementById("myTopnav").style.backgroundColor = "transparent";
+    document.getElementById("myTopnav").style.backgroundColor = "white";
   }
 }
 

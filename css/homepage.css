@@ -1,54 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Lexend:wght@500&display=swap');
+
 body{
     margin:0;
     background-color: #f1f1f1;
 }
 
-.indexBG {
-    position: relative;
-    width: 100%;
-    max-width: 100%;
-  }
-  
-  .indexBG img {
-    width: 100%;
-    height: auto;
-  }
-  
-  .indexBG .btn {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    background-color: #555;
-    color: white;
-    font-size: 16px;
-    padding: 12px 24px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    text-align: center;
-  }
-  
-  .indexBG .btn:hover {
-    background-color: black;
-  }
-
-.indexContent{
-    width: 100%;
-    margin: auto;
+.hpFirstSection{
+    padding:0;
 }
 
-table{
+.hpFirst{
     width:100%;
+    background-color: #f1f1f1;
+    padding: 5% 8% 0% 8%;
+}
+
+.hpFirstHeader{
+  font-family: 'Dela Gothic One', cursive;
+  font-size: 50px;
+  color: #252525;
+  margin-left: 2%;
+}
+
+.hpFirstHeader:hover{
+   text-decoration: none;
+   color: black;
 }
 
 p{
-    float:right;
+  font-family: 'Lexend', sans-serif;
+  font-size: 20px;
 }
 
-.indexGuide td, .indexPBB td, .indexAbout td{
-    border-left: 1px solid black;
-    padding: 5%;
-    text-align: center;
+.hpFirstleftborder{
+    border-left: 2px solid #ff0049;
+    padding-left: 2%;
+    padding-bottom: 5%;
+}
+/*loginbutton*/
+.hpLoginbtn {
+  display: inline-block;
+  font-family: 'Dela Gothic One', cursive;
+  background-color: #ff0049;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 20px;
+  padding: 15px;
+  width: 24%;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.hpLoginbtn span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.hpLoginbtn span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.hpLoginbtn:hover span {
+  padding-right: 25px;
+}
+
+.hpLoginbtn:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+/*GUIDE*/
+.indexContent1{
+  padding: 0 1% 0 1%;
+}
+
+.indexGuide{
+  width:100%;
+  background-color: white;
+  padding: 0 9% 5% 9%;
+  border: 1px solid #cccccc;
+}
+
+.hpSecHeader{
+  font-family: 'Dela Gothic One', cursive;
+  font-size: 45px;
+  color: #252525;
+  float:left;
+  margin-bottom: 30px;
+  padding-top: 30px;
+  padding-right: 10px;
+  border-bottom: 2px solid #ff0049;
+  border-right: 2px solid #ff0049;
+}
+
+.hpSecHeader:hover{
+  text-decoration:none;
+  color: black;
+}
+
+.iGp{
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: 0px 1px 10px #CCCCCC;
+}
+
+.iGp i{
+  font-size: 70px;
+  width: 100%;
+  text-align:center;
+  padding: 50px 20px 50px 20px;
+}
+
+.iGp td, th{
+  width: 33.33%;
+  text-align: center;
+  font-size: 25px;
+  padding: 20px;
+  font-family: 'Lexend', sans-serif;
+  border: 1px solid #cccccc;
+}
+
+/*about us*/
+
+.indexContent2{
+  padding: 2% 0 2% 0;
+}
+
+table .indexAbout{
+  width:100%;
+  background-color: #f1f1f1;
+  padding: 5% 8% 0% 8%;
+}
+
+.indexAbout th{
+  width:50%;
+  padding: 30px;
+  border:none;
+}
+
+.hpSecHeader2{
+  font-family: 'Dela Gothic One', cursive;
+  text-align:center;
+}
+/*PNP BARANGAY BFP*/
+
+.indexContent3{
+  padding: 0;
+}
+
+.indexPBB{
+  width: 100%;
+  background-color: white;
+  padding: 6% 9% 5% 9%;
+}
+
+.hpSecHeader3{
+  font-family: 'Dela Gothic One', cursive;
+  font-size: 40px;
+  color: #252525;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #ff0049;
+}
+
+.hpSecHeader3:hover{
+  text-decoration: none;
+  color: black;
 }

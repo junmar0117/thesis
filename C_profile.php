@@ -13,7 +13,7 @@ $user = $_SESSION['user']; //assigns user value
 <html lang="en">
 <head>
     <meta charset = "utf-8">
-    <title> Home Page </title>
+    <title> R & R |  </title>
     <meta name ="viewport" content="width=devoce-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/profilestyles.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
@@ -24,6 +24,7 @@ $user = $_SESSION['user']; //assigns user value
 include_once('Userheader.html');
 ?>
 </nav>
+    <br>
     <br>
     <br>
     <br>
