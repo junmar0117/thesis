@@ -27,15 +27,11 @@ body {
   font-size: 15px;
   margin: 10px;
   font-family: 'Lexend', sans-serif;
+  transition: 0.1s;
 }
 
 .topnav a:hover  {
-  border-bottom: 1px solid #FF0049;
-}
-
-.topnav a .signuphovercolor:hover{
-  color:white;
-  background-color: #FF0049;
+  color: #ff0049;
 }
 
 .topnav .icon {

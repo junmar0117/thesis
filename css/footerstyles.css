@@ -11,9 +11,9 @@ body {
     padding:20px 0 10px 0;
     position: relative;
     height: auto;
-    background-color: #252525;
-    border-top:  1px solid #3d3d3d;
-    border-bottom:  1px solid #3d3d3d;
+    background-color: #FFFFFF;
+    border-top:  1px solid #CCCCCC;
+    border-bottom:  1px solid #CCCCCC;
   }
   .footer .col {
     width: 25%;
@@ -31,7 +31,7 @@ body {
     font-size: 20px;
     line-height: 17px;
     padding: 20px 0px 5px 0px;
-    color: rgb(255, 255, 255);
+    color: #252525;
     font-weight: normal;
     
     letter-spacing: 0.250em;
@@ -42,7 +42,7 @@ body {
     padding: 0;
   }
   .footer .col ul li {
-    color: #999999;
+    color: #252525;
     font-size: 18px;
     font-family: 'Lexend', sans-serif;
     font-weight: bold;
@@ -69,8 +69,8 @@ body {
   }
 
   .footersignlink{
-    border: 1px solid #FF0049;
-    color: white;
+    border: 2px solid #FF0049;
+    color: #252525;
     padding: 10px;
     margin: 30 0 20 0;
     text-decoration: none;
@@ -83,8 +83,9 @@ body {
   /* footer 2 styling*/
   .footer2{
     width: 100%;
-    background-color: #252525;
+    background-color: #FFFFFF;
     padding-top: 20px;
+    border-bottom: 1px solid #CCCCCC;
   }
   
   @media only screen and (min-width: 1280px) {

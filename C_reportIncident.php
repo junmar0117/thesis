@@ -24,6 +24,9 @@ $user = $_SESSION['user']; //assigns user value
 include_once('Userheader.html');
 ?>
 </nav>
+<br>
+<br>
+<br>
     <div style="padding:40px" class="reportmainwrapper">
         
         <section class="reportmaincolumns">

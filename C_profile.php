@@ -87,16 +87,10 @@ include_once('Userheader.html');
 		?>
         </table>
 
-        <div class="profileReportBtn">
-            <a href="C_reportIncident.php">REPORT INCIDENT</a>
-        </div>
-
-        <div class="profileRepHisHeader">
-            <a>HISTORY</a>
-        </div>
+            <a href="C_reportIncident.php" class="profileReportBtn">REPORT INCIDENT</a>
+            <a class="profileRepHisHeader" style="text-align:center;">INCIDENT REPORT HISTORY</a>
 
         <table class="ProfileReportHistory">
-        
             <tr>
                 <th>Report ID</th>
                 <th>Name</th>

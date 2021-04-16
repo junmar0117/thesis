@@ -47,7 +47,7 @@ p{
   text-align: center;
   font-size: 20px;
   padding: 15px;
-  width: 24%;
+  width: 25%;
   transition: all 0.5s;
   cursor: pointer;
 }
@@ -78,14 +78,16 @@ p{
 }
 /*GUIDE*/
 .indexContent1{
-  padding: 0 1% 0 1%;
+  padding: 0 2% 0 2%;
 }
 
 .indexGuide{
   width:100%;
   background-color: white;
-  padding: 0 9% 5% 9%;
-  border: 1px solid #cccccc;
+  padding: 0 0 5% 0;
+  border-left: 1px solid #cccccc;
+  border-right: 1px solid #cccccc;
+  border-bottom: 1px solid #cccccc;
 }
 
 .hpSecHeader{
@@ -95,9 +97,10 @@ p{
   float:left;
   margin-bottom: 30px;
   padding-top: 30px;
-  padding-right: 10px;
+  padding-left: 2%;
+  margin-left:6.2%;
   border-bottom: 2px solid #ff0049;
-  border-right: 2px solid #ff0049;
+  border-left: 2px solid #ff0049;
 }
 
 .hpSecHeader:hover{
@@ -106,6 +109,7 @@ p{
 }
 
 .iGp{
+  background-color: #252525;
   width: 100%;
   border-collapse: collapse;
   box-shadow: 0px 1px 10px #CCCCCC;
@@ -116,21 +120,66 @@ p{
   width: 100%;
   text-align:center;
   padding: 50px 20px 50px 20px;
+  border-right: 2px solid #ff0049;
+  border-radius: 100px;;
 }
 
-.iGp td, th{
-  width: 33.33%;
+.iGp th{
+  width: 30%;
   text-align: center;
   font-size: 25px;
   padding: 20px;
   font-family: 'Lexend', sans-serif;
-  border: 1px solid #cccccc;
 }
 
+.iGp td{
+  width: 70%;
+  float:left;
+  font-size: 20px;
+  padding: 20px;
+  font-family: 'Lexend', sans-serif;
+}
+
+.SelConH, .inputInfoH, .subInciH{
+  font-size: 30px;
+  font-family: 'Dela Gothic One', cursive;
+  color: #ff0049;
+}
+
+.SelConH:hover, .inputInfoH:hover, .subInciH:hover{
+  text-decoration:none;
+  color: #ff0049;
+}
+
+.guideSubhead{
+  color:white;
+  font-weight:bolder;
+  font-family: 'Lexend', sans-serif;
+}
+
+.guideSubhead:hover{
+  text-decoration:none;
+  color:#ffffff;
+}
+
+.guideSubhead2{
+  color:#FFFFFF;
+  font-family: 'Lexend', sans-serif;
+  font-weight: lighter;
+}
+
+.guideSubhead2:hover{
+  color:#FFFFFF;
+  text-decoration:none;
+}
+
+ul li{
+  color: #FFFFFF;
+}
 /*about us*/
 
 .indexContent2{
-  padding: 2% 0 2% 0;
+  padding: 2%;
 }
 
 table .indexAbout{
@@ -140,14 +189,55 @@ table .indexAbout{
 }
 
 .indexAbout th{
-  width:50%;
+  width:10%;
   padding: 30px;
-  border:none;
+  background-color:#252525;
+  color:#ff0049;
+  border-right:2px solid #ff0049;
+}
+
+.indexAbout td{
+  width:50%;
+  height:max-content;
+  padding: 30px;
+  border:1px solid #252525;
+  transition: 0.4s;
+}
+
+.indexAbout td:hover{
+  padding: 30px;
+  border:1px solid #252525;
+  background-color: #FFFFFF;
 }
 
 .hpSecHeader2{
-  font-family: 'Dela Gothic One', cursive;
+  font-family: 'Lexend', sans-serif;
   text-align:center;
+}
+
+.hpAboutHeader{
+  color: #252525;
+  font-family: 'Dela Gothic One', cursive;
+  font-size: 30px;
+  border-bottom: 1px solid #ff0049;
+}
+
+.hpAboutHeader:hover{
+  text-decoration:none;
+  color:black;
+}
+
+.AboutSubhead{
+  font-size:20px;
+  color:#252525;
+  text-transform:uppercase;
+  font-family: 'Lexend', sans-serif;
+  font-weight:bolder;
+}
+
+.AboutSubhead:hover{
+  color:#252525;
+  text-decoration:none;
 }
 /*PNP BARANGAY BFP*/
 
@@ -167,9 +257,73 @@ table .indexAbout{
   color: #252525;
   margin-bottom: 30px;
   border-bottom: 2px solid #ff0049;
+  float:right;
 }
 
 .hpSecHeader3:hover{
   text-decoration: none;
   color: black;
+}
+
+.indexPBBTable{
+  width:100%;
+  border-collapse: separate;
+  border-spacing: 15px 0px;
+}
+
+.indexPBBTable th{
+  width: 33.33%;
+  font-size: 20px;
+}
+
+.ipbbthead{
+  font-size: 25px;
+  color:#252525;
+  font-family: 'Dela Gothic One', cursive;
+  border-left: 1px solid #252525;
+  border-right: 1px solid #252525;
+  border-bottom: 1px solid #252525;
+  text-align:left;
+  padding: 5px;
+  
+}
+
+.PBBvstbtn{
+  display: inline-block;
+  font-family: 'Lexend', sans-serif;
+  background-color: #ff0049;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 20px;
+  padding: 15px;
+  width: 100%;
+  transition: all 0.5s;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.PBBvstbtn span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.PBBvstbtn span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.PBBvstbtn:hover span {
+  padding-right: 25px;
+}
+
+.PBBvstbtn:hover span:after {
+  opacity: 1;
+  right: 0;
 }
