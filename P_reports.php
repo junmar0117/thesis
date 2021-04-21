@@ -40,7 +40,13 @@ $user = $_SESSION['user']; //assigns user value
             <label for="typeOfInci">Type of Incident:</label>
             <br>
             <select name="type" id="type" required>
-                <option value="Fire">Fire</option>
+                <option value="Drugs">Drugs</option>
+                <option value="Theft and Robbery">Theft and Robbery</option>
+                <option value="Murder">Murder</option>
+                <option value="Physical Violence">Physical Violence</option>
+                <option value="Illegal Gambling">Illegal Gambling</option>
+                <option value="Missing and Found Persons ">Missing and Found Persons </option>
+                <option value="Quarantine Violators">Quarantine Violators</option>
                 <option value="Others">Others</option>
             </select>
         </div>

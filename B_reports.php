@@ -41,9 +41,11 @@ $user = $_SESSION['user']; //assigns user value
             <br>
             <select name="type" id="type" required>
                 <option value="Child Abuse">Child Abuse</option>
+                <option value="Violence Against Women">Violence Against Women</option>
+                <option value="Sexual Harrassment">Sexual Harrassmen</option>
                 <option value="Neighborhood Conflict">Neighborhood Conflict</option>
                 <option value="Fight">Fight</option>
-                <option value="Quarantine Violators">Quarantine Violators</option>
+                <option value="Fight">Community Conflict</option>
                 <option value="Others">Others</option>
             </select>
         </div>
