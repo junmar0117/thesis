@@ -32,6 +32,9 @@
         </div>
         
         <input type="submit" value="Login" class="C_loginbtn">
+        <a href="B_login.php" id="signupinstead">Barangay Account Sign in</a>
+        <a href="P_login.php" id="signupinstead">Police Account Sign in</a>
+        
     </div>
     <section>
     

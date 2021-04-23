@@ -32,6 +32,8 @@
         </div>
         
         <input type="submit" value="Login" class="C_loginbtn">
+        <a href="F_login.php" id="signupinstead">Firefighter Account Sign in</a>
+        <a href="P_login.php" id="signupinstead">Police Account Sign in</a>
     </div>
     <section>
     

@@ -5,7 +5,7 @@ $username = ($_POST['username']);
 $password = ($_POST['password']);
 
 
-$query = "SELECT * from users WHERE username='$username'";
+$query = "SELECT * from b_admin WHERE username='$username'";
 $results = mysqli_query($con, $query); //Query the users table if there are matching rows equal to $username
 $exists = mysqli_num_rows($con, $query); //Checks if username exists
 $table_users = "";
@@ -22,7 +22,7 @@ if(($username == $table_users) && ($password == $table_password)) // checks if t
 if($password == $table_password)
 {
 $_SESSION['user'] = $username; //set the username in a session. This serves as a global variable
-header("location: BarangayProfile.php"); // redirects the user to the authenticated home page
+header("location: B_profile.php"); // redirects the user to the authenticated home page
 }
 }
 else
