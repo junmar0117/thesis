@@ -19,7 +19,7 @@
     <div class="login-box">
         <h1>Police User Login</h1>
         <h2>Input username and password</h2>
-        <form action="B_checklogin.php" method="POST">
+        <form action="P_checklogin.php" method="POST">
 
         <div class="login-box2">
             <input type="text" required="required" name="username" placeholder="">

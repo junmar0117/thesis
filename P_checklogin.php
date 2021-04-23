@@ -21,7 +21,7 @@ if(($username == $table_users) && ($password == $table_password)) // checks if t
 if($password == $table_password)
 {
 $_SESSION['user'] = $username; //set the username in a session. This serves as a global variable
-header("location: PoliceProfile.php"); // redirects the user to the authenticated home page
+header("location: P_profile.php"); // redirects the user to the authenticated home page
 }
 }
 else
