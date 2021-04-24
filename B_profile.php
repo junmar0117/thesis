@@ -7,6 +7,7 @@
     <title>R & R | Local Barangay Profile (A)</title>
     <meta name ="viewport" content="width=devoce-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/profilestyles.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -48,6 +49,36 @@ include_once('B_Userheader.html');
                 <input type="button" value="Add Account +"></input><br><br>   
         </form>
     </div>
+    <div class="w3-container">  
+  <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Add Schedule</button>
+
+  <div id="id01" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="w3-container">
+        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+        <form action="" method="POST">
+            <div class="txt_field">
+                <span></span>
+                <input type="text" id="name" required="required" name="name" placeholder="ID"><br>
+            </div>    
+            <div class="txt_field">
+                <span></span>
+                <input type="text" id="username" required="required" name="username" placeholder="Name"><br>
+            </div>
+            <div class="txt_field">
+                <span></span>
+                <input type="text" id="position" required="required" name="position" placeholder="Position"><br>
+            </div>
+            <div class="txt_field">
+                <span></span>
+                <input type="datetime-local" id="birthdaytime" name="birthdaytime" placeholder="Date/Time">
+            </div>     
+                <input type="button" value="Add"></input><br><br>   
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
     <br>
     <br>
     <br>

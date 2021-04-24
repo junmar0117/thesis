@@ -2,7 +2,7 @@
 
 require "connection.php"; // Using database connection file here
 
-$id = $_GET['id'];; // get id through query string
+$id = $_GET['id']; // get id through query string
 
 $query = mysqli_query($con,"SELECT * from civilians where id='$id'"); // select query
 $row = mysqli_fetch_array($query); // fetch data
