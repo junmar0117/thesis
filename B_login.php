@@ -19,7 +19,7 @@
     <div class="login-box">
         <h1>Barangay User Login</h1>
         <h2>Input username and password</h2>
-        <form action="B_checklogin.php" method="POST">
+        <form action="adminCheckLogin.php" method="POST">
 
         <div class="login-box2">
             <input type="text" required="required" name="username" placeholder="">
@@ -31,7 +31,7 @@
             <label>Password</label>
         </div>
         
-        <input type="submit" value="Login" class="C_loginbtn">
+        <input type="submit" value="b_login" class="C_loginbtn">
         <a href="F_login.php" id="signupinstead">Firefighter Account Sign in</a>
         <a href="P_login.php" id="signupinstead">Police Account Sign in</a>
     </div>

@@ -6,7 +6,6 @@ if($_SESSION['user']){ //checks if user is logged in
 }
 
 $user = $_SESSION['user']; //assigns user value
-//$id = $_SESSION['id']; 
 ?>
 
 <?php
