@@ -14,7 +14,7 @@ $user = $_SESSION['user']; //assigns user value
     <meta charset = "utf-8">
     <title>R & R | Local Barangay Profile (A)</title>
     <meta name ="viewport" content="width=devoce-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/profilestyles.css">
+    <link rel="stylesheet" href="./css/profilestyle.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>

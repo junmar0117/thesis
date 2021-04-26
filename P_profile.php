@@ -14,7 +14,7 @@ $user = $_SESSION['user']; //assigns user value
     <meta charset = "utf-8">
     <title>R & R | Philippine National Police Profile (A)</title>
     <meta name ="viewport" content="width=devoce-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/profilestyles.css">
+    <link rel="stylesheet" href="./css/profilestyle.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
