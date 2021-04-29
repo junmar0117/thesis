@@ -1,20 +1,13 @@
 <?php
 session_start();
-if($_SESSION['user']){ //checks if user is logged in
-}else{
-  header("location:index.php "); // redirects if user is not logged in
-}
-
-$user = $_SESSION['user']; //assigns user value
-?>
-
-<?php
 require 'connection.php';
 if(isset($_POST['b_login']))
 {    
 $username = ($_POST['username']);
 $password = ($_POST['password']);
-
+if($username!="admin"){
+  $password = md5($password);
+}
 
 $query = "SELECT * from b_admin WHERE username='$username'";
 $results = mysqli_query($con, $query); //Query the users table if there are matching rows equal to $username
@@ -39,23 +32,27 @@ header("location: B_profile.php"); // redirects the user to the authenticated ho
 else
 {
 Print '<script>alert("Incorrect Credential, Please try again!");</script>'; //Prompts the user
-Print '<script>window.location.assign("signin.php");</script>'; // redirects to login.php
+Print '<script>window.location.assign("B_login.php");</script>'; // redirects to login.php
 }
 }
 else
 {
 Print '<script>alert("Incorrect Credential, Please try again!");</script>'; //Prompts the user
-Print '<script>window.location.assign("signin.php");</script>'; // redirects to login.php
+Print '<script>window.location.assign("B_login.php");</script>'; // redirects to login.php
 }
 }
 ?>
 
 <?php
+session_start();
 require 'connection.php';
 if(isset($_POST['f_login']))
 { 
 $username = ($_POST['username']);
 $password = ($_POST['password']);
+if($username!="admin"){
+  $password = md5($password);
+}
 
 $query = "SELECT * from f_admin WHERE username='$username'";
 $results = mysqli_query($con, $query); //Query the users table if there are matching rows equal to $username
@@ -80,23 +77,27 @@ header("location: F_profile.php"); // redirects the user to the authenticated ho
 else
 {
 Print '<script>alert("Incorrect Credential, Please try again!");</script>'; //Prompts the user
-Print '<script>window.location.assign("signin.php");</script>'; // redirects to login.php
+Print '<script>window.location.assign("F_login.php");</script>'; // redirects to login.php
 }
 }
 else
 {
 Print '<script>alert("Incorrect Credential, Please try again!");</script>'; //Prompts the user
-Print '<script>window.location.assign("signin.php");</script>'; // redirects to login.php
+Print '<script>window.location.assign("F_login.php");</script>'; // redirects to login.php
 }
 }
 ?>
 
 <?php
+session_start();
 require 'connection.php';
 if(isset($_POST['p_login']))
 { 
 $username = ($_POST['username']);
 $password = ($_POST['password']);
+if($username!="admin"){
+  $password = md5($password);
+}
 
 $query = "SELECT * from p_admin WHERE username='$username'";
 $results = mysqli_query($con, $query); //Query the users table if there are matching rows equal to $username
@@ -121,13 +122,13 @@ header("location: P_profile.php"); // redirects the user to the authenticated ho
 else
 {
 Print '<script>alert("Incorrect Credential, Please try again!");</script>'; //Prompts the user
-Print '<script>window.location.assign("signin.php");</script>'; // redirects to login.php
+Print '<script>window.location.assign("P_login.php");</script>'; // redirects to login.php
 }
 }
 else
 {
 Print '<script>alert("Incorrect Credential, Please try again!");</script>'; //Prompts the user
-Print '<script>window.location.assign("signin.php");</script>'; // redirects to login.php
+Print '<script>window.location.assign("P_login.php");</script>'; // redirects to login.php
 }
 }
 ?>

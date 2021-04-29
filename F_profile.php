@@ -32,32 +32,42 @@ include_once('F_Userheader.html');
     <div class="profileBox">
         
         <h1>Bureau of Fire Protection (BFP)</h1>
-        
-        <div class="center">
-        <form action="F_profile.php" method="POST">
-            <div class="txt_field">
-                <label>Name: </label>
-                <span></span>
-                <input type="text" id="name" required="required" name="name" placeholder=""><br>
-            </div>    
-            <div class="txt_field">
-                <label>Username: </label>
-                <span></span>
-                <input type="text" id="username" required="required" name="username" placeholder=""><br>
-            </div>
-            <div class="txt_field">
-                <label>Password: </label>
-                <span></span>
-                <input type="password" id="password" required="required" name="password" placeholder=""><br>
-            </div>
-            <div class="txt_field">
-                <label>Position: </label>
-                <span></span>
-                <input type="text" id="position" required="required" name="position" placeholder=""><br>
-            </div>
-                <input type="submit" name="addF" value="Add Account +"></input><br><br>   
-        </form>
-    </div>
+        <h2>Hello <?php echo $user;?>!</h2>
+
+    <?php
+if($user=="admin"){
+
+    Print '<div class="center">';
+        Print '<form action="F_profile.php" method="POST">';
+                Print '<div class="txt_field">';
+                    Print '<label>Name: </label>';
+                    Print '<span></span>';
+                    Print '<input type="text" id="name" required="required" name="name" placeholder=""><br>';
+                Print '</div>';
+
+                Print'<div class="txt_field">';
+                    Print'<label>Username: </label>';
+                    Print'<span></span>';
+                    Print'<input type="text" id="username" required="required" name="username" placeholder=""><br>';
+                Print '</div>';
+
+                Print' <div class="txt_field">';
+                    Print'<label>Password: </label>';
+                    Print'<span></span>';
+                    Print'<input type="password" id="password" required="required" name="password" placeholder=""><br>';
+                Print '</div>';
+
+                Print'<div class="txt_field">';
+                    Print'<label>Position: </label>';
+                     Print'<span></span>';
+                     Print'<input type="text" id="position" required="required" name="position" placeholder=""><br>';
+                Print '</div>';
+                
+                    Print'<input type="submit" name="addF" value="Add Account +"></input><br><br>';
+        Print'</form>';
+    Print'</div>';
+}
+?>
     <br>
     <br>
     <br>
