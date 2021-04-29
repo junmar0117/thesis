@@ -31,13 +31,16 @@ include_once('B_Userheader.html');
     <section class="profileSection">
 
     <div class="profileBox">
+
     <h1>Local Barangay</h1>
+
     <div class="center">
-        <form action="" method="POST">
+        <form action="B_profile.php" method="POST">
             <div class="txt_field">
                 <label>Name: </label>
                 <span></span>
                 <input type="text" id="name" required="required" name="name" placeholder=""><br>
+
             </div>    
             <div class="txt_field">
                 <label>Username: </label>
@@ -54,7 +57,7 @@ include_once('B_Userheader.html');
                 <span></span>
                 <input type="text" id="position" required="required" name="position" placeholder=""><br>
             </div>
-                <input type="button" value="Add Account +"></input><br><br>   
+                <input type="submit" name="addB" value="Add Account +"></input><br><br>   
         </form>
     </div>
     <div class="w3-container">  
@@ -137,5 +140,51 @@ include_once('B_Userheader.html');
 </body>
 </html>
 
+<?php
+if(isset($_POST['addB']))
+{ 
+
+	$name = ($_POST['name']);
+	$username = ($_POST['username']);
+	$password = ($_POST['password']);
+    $password = md5($password);
+    $position = ($_POST['position']);
+    $bool = true;
+
+   
+	require 'connection.php';
+	$query = "SELECT * from b_admin";
+	$results = mysqli_query($con, $query); //Query the users table
+
+	while($row = mysqli_fetch_array($results)) //display all rows from query    
+	{
+		
+        $table_users = $row['name']; // the first username row is passed on to $table_users, and so on until the query is finished
+		if($name == $table_users) // checks if there are any matching fields
+		{
+			$bool = false; // sets bool to false
+			Print '<script>alert("This user already has an account!");</script>'; //Prompts the user
+			Print '<script>window.location.assign("B_profile.php");</script>'; // redirects to register.php
+		}
+
+        $table_users = $row['username']; // the first username row is passed on to $table_users, and so on until the query is finished
+		if($username == $table_users) // checks if there are any matching fields
+		{
+			$bool = false; // sets bool to false
+			Print '<script>alert("This username has already been taken!");</script>'; //Prompts the user
+			Print '<script>window.location.assign("B_profile.php");</script>'; // redirects to register.php
+		}
+    }
+    
+    
+        if ($bool) // checks if bool is true
+        {
+          mysqli_query($con, "INSERT INTO b_admin (name, username, password,position) VALUES ('$name','$username','$password', '$position')"); //Inserts the value to table users
+          print '<script>alert("Barangay User added!"); </script>'; // Prompts the user
+          print '<script>window.location.assign("B_profile.php");</script>'; // redirects to register.php
+        }
+      
+	}
+?>
 
 

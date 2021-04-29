@@ -32,7 +32,7 @@ include_once('P_Userheader.html');
     <div class="profileBox"> 
         <h1>Philippine National Police (PNP)</h1>
         <div class="center">
-        <form action="" method="POST">
+        <form action="P_profile.php" method="POST">
             <div class="txt_field">
                 <label>Name: </label>
                 <span></span>
@@ -53,7 +53,7 @@ include_once('P_Userheader.html');
                 <span></span>
                 <input type="text" id="position" required="required" name="position" placeholder=""><br>
             </div>
-                <input type="button" value="Add Account +"></input><br><br>   
+                <input type="submit" name="addP" value="Add Account +"></input><br><br>   
         </form>
     </div>
     <br>
@@ -105,5 +105,51 @@ include_once('P_Userheader.html');
 </body>
 </html>
 
+<?php
+if(isset($_POST['addP']))
+{ 
+
+	$name = ($_POST['name']);
+	$username = ($_POST['username']);
+	$password = ($_POST['password']);
+    $password = md5($password);
+    $position = ($_POST['position']);
+    $bool = true;
+
+   
+	require 'connection.php';
+	$query = "SELECT * from p_admin";
+	$results = mysqli_query($con, $query); //Query the users table
+
+	while($row = mysqli_fetch_array($results)) //display all rows from query    
+	{
+		
+        $table_users = $row['name']; // the first username row is passed on to $table_users, and so on until the query is finished
+		if($name == $table_users) // checks if there are any matching fields
+		{
+			$bool = false; // sets bool to false
+			Print '<script>alert("This user already has an account!");</script>'; //Prompts the user
+			Print '<script>window.location.assign("P_profile.php");</script>'; // redirects to register.php
+		}
+
+        $table_users = $row['username']; // the first username row is passed on to $table_users, and so on until the query is finished
+		if($username == $table_users) // checks if there are any matching fields
+		{
+			$bool = false; // sets bool to false
+			Print '<script>alert("This username has already been taken!");</script>'; //Prompts the user
+			Print '<script>window.location.assign("P_profile.php");</script>'; // redirects to register.php
+		}
+    }
+    
+    
+        if ($bool) // checks if bool is true
+        {
+          mysqli_query($con, "INSERT INTO p_admin (name, username, password,position) VALUES ('$name','$username','$password', '$position')"); //Inserts the value to table users
+          print '<script>alert("Police User added!"); </script>'; // Prompts the user
+          print '<script>window.location.assign("P_profile.php");</script>'; // redirects to register.php
+        }
+      
+	}
+?>
 
 
