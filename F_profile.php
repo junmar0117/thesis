@@ -38,32 +38,28 @@ include_once('F_Userheader.html');
 if($user=="admin"){
 
     Print '<div class="center">';
-        Print '<form action="F_profile.php" method="POST">';
+        Print '<form action="P_profile.php" method="POST">';
                 Print '<div class="txt_field">';
-                    Print '<label>Name: </label>';
                     Print '<span></span>';
-                    Print '<input type="text" id="name" required="required" name="name" placeholder=""><br>';
+                    Print '<input type="text" id="name" required="required" name="name" placeholder="Name: "><br>';
                 Print '</div>';
 
                 Print'<div class="txt_field">';
-                    Print'<label>Username: </label>';
                     Print'<span></span>';
-                    Print'<input type="text" id="username" required="required" name="username" placeholder=""><br>';
+                    Print'<input type="text" id="username" required="required" name="username" placeholder="Username: "><br>';
                 Print '</div>';
 
                 Print' <div class="txt_field">';
-                    Print'<label>Password: </label>';
                     Print'<span></span>';
-                    Print'<input type="password" id="password" required="required" name="password" placeholder=""><br>';
+                    Print'<input type="password" id="password" required="required" name="password" placeholder="Password: "><br>';
                 Print '</div>';
 
                 Print'<div class="txt_field">';
-                    Print'<label>Position: </label>';
                      Print'<span></span>';
-                     Print'<input type="text" id="position" required="required" name="position" placeholder=""><br>';
+                     Print'<input type="text" id="position" required="required" name="position" placeholder="Position: "><br>';
                 Print '</div>';
                 
-                    Print'<input type="submit" name="addF" value="Add Account +"></input><br><br>';
+                    Print'<input type="submit" name="addP" value="Add Account +"></input><br><br>';
         Print'</form>';
     Print'</div>';
 }

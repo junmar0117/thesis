@@ -36,40 +36,37 @@ include_once('B_Userheader.html');
     <h2>Hello <?php echo $user;?>!</h2>
     
 <?php
-if($user=="admin"){
+if($user=="admin")
+{
 
     Print '<div class="center">';
-        Print '<form action="B_profile.php" method="POST">';
+        Print '<form action="P_profile.php" method="POST">';
                 Print '<div class="txt_field">';
-                    Print '<label>Name: </label>';
                     Print '<span></span>';
-                    Print '<input type="text" id="name" required="required" name="name" placeholder=""><br>';
+                    Print '<input type="text" id="name" required="required" name="name" placeholder="Name: "><br>';
                 Print '</div>';
 
                 Print'<div class="txt_field">';
-                    Print'<label>Username: </label>';
                     Print'<span></span>';
-                    Print'<input type="text" id="username" required="required" name="username" placeholder=""><br>';
+                    Print'<input type="text" id="username" required="required" name="username" placeholder="Username: "><br>';
                 Print '</div>';
 
                 Print' <div class="txt_field">';
-                    Print'<label>Password: </label>';
                     Print'<span></span>';
-                    Print'<input type="password" id="password" required="required" name="password" placeholder=""><br>';
+                    Print'<input type="password" id="password" required="required" name="password" placeholder="Password: "><br>';
                 Print '</div>';
 
                 Print'<div class="txt_field">';
-                    Print'<label>Position: </label>';
                      Print'<span></span>';
-                     Print'<input type="text" id="position" required="required" name="position" placeholder=""><br>';
+                     Print'<input type="text" id="position" required="required" name="position" placeholder="Position: "><br>';
                 Print '</div>';
-
-                    Print'<input type="submit" name="addB" value="Add Account +"></input><br><br>';
+                
+                    Print'<input type="submit" name="addP" value="Add Account +"></input><br><br>';
         Print'</form>';
     Print'</div>';
 }
 ?>
-    <div class="w3-container">  
+  <div class="w3-container">  
   <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Add Schedule</button>
 
   <div id="id01" class="w3-modal">
@@ -99,16 +96,6 @@ if($user=="admin"){
     </div>
   </div>
 </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
     <br>
     <br>
     <br>
