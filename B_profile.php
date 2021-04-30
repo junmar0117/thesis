@@ -34,6 +34,7 @@ include_once('B_Userheader.html');
 
     <h1>Local Barangay</h1>
     <h2>Hello <?php echo $user;?>!</h2>
+    
 <?php
 if($user=="admin"){
 
@@ -124,24 +125,57 @@ if($user=="admin"){
     <br>
     <div>
         </div>
-        <table class="AdminProfileTable">
-            <tr>
-                <th>Account ID</th>
-                <th>Name</th>
-                <th>Username</th>
-                <th>Date Created</th>
-                <th>View Profile</th>
-                <th>Delete Profile</th>
-            </tr>
-            <tr>
-                <td>123456</td>
-                <td>Griffin</td>
-                <td>Peter</td>
-                <td>04/04/2021</td>
-                <td id="AdminViewProfile" href="">View</td>
-                <td id="AdminDelProfile" href="">Delete</td>
-            </tr>
-        </table>
+<?php
+if($user=="admin")
+{           Print'<a class="profileRepHisHeader" style="text-align:center;">ACCOUNTS CREATED</a>';
+            Print '<table class="AdminProfileTable">';
+            Print '<tr>';
+            Print '<th>Account ID</th>';
+            Print '<th>Name</th>';
+            Print '<th>Username</th>';
+            Print '<th>Position</th>';
+            Print '</tr>';
+            require 'connection.php';    
+            $query = mysqli_query($con, "SELECT * from b_admin where username != 'admin' "); // SQL Query
+            while($row = mysqli_fetch_array($query))
+            {
+            Print "<tr>";
+            Print '<td>'. $row['id'] . "</td>";
+            Print '<td>'. $row['name'] . "</td>";
+            Print '<td>'. $row['username'] . "</td>";
+            Print '<td>'. $row['position'] . "</td>";
+            Print "</tr>";
+            }
+            Print '</table>';
+}
+else {
+    Print'<a class="profileRepHisHeader" style="text-align:center;">REPORTS ASSIGNED</a>';
+    Print '<table class="AdminProfileTable">';
+    Print '<tr>';
+    Print '<th>Account ID</th>';
+    Print '<th>Name of Reporter</th>';
+    Print '<th>Date Reported</th>';
+    Print '<th>Concern</th>';
+    Print '<th>Status</th>';
+    Print '<th>Action</th>';
+    Print '</tr>';
+    require 'connection.php';    
+    $query = mysqli_query($con, "SELECT * from reports where incident = 'Barangay' "); // SQL Query
+    while($row = mysqli_fetch_array($query))
+    {
+    Print "<tr>";
+    Print '<td>'. $row['id'] . "</td>";
+    Print '<td>'. $row['name'] . "</td>";
+    Print '<td>'.$row['date'] ." - ".$row['time']. "</td>";
+    Print '<td>'. $row['incident'] . "</td>";
+    Print '<td>'. $row['status'] . "</td>";
+    Print '<td id="AdminViewProfile" href="">Change Status</td>';
+    Print "</tr>";
+    }
+    Print '</table>';
+
+}
+?>
         </div>
     </div>
     </section>

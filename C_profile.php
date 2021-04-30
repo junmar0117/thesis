@@ -94,9 +94,9 @@ include_once('Userheader.html');
             <tr>
                 <th>Report ID</th>
                 <th>Name</th>
-                <th>Username</th>
-                <th>Date Created</th>
+                <th>Date Reported</th>
                 <th>Concern</th>
+                <th>Status</th>
                 <th>View Report</th>
             </tr>
             <?php
@@ -107,9 +107,9 @@ include_once('Userheader.html');
             Print "<tr>";
             Print '<td>'. $row['id'] . "</td>";
             Print '<td>'. $row['name'] . "</td>";
-            Print '<td>'. $row['username'] . "</td>";
             Print '<td>'.$row['date'] ." - ".$row['time']. "</td>";
             Print '<td>'. $row['incident'] . "</td>";
+            Print '<td>'. $row['status'] . "</td>";
             Print '<td id="AdminViewProfile" href="">View</td>';
             Print "</tr>";
             }
