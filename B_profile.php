@@ -114,7 +114,29 @@ if($user=="admin")
         </div>
 <?php
 if($user=="admin")
-{           Print'<a class="profileRepHisHeader" style="text-align:center;">ACCOUNTS CREATED</a>';
+{
+            Print   '<br>';
+            Print   '<br>';
+            Print   '<br>';
+            Print   '<br>';
+            Print   '<br>';
+            Print   '<br>';
+            Print   '<br>';
+            Print   '<br>';
+            Print   '<br>';
+            Print   '<br>';
+            Print   '<br>';
+            Print   '<br>';
+            Print   '<br>';
+            Print   '<br>';
+            Print   '<br>';
+            Print   '<br>';
+            Print   '<br>';
+            Print   '<br>';
+            Print   '<br>';
+            Print   '<br>';
+            Print   '<br>';
+            Print'<a class="profileRepHisHeader" style="text-align:center;">ACCOUNTS CREATED</a>';
             Print '<table class="AdminProfileTable">';
             Print '<tr>';
             Print '<th>Account ID</th>';
@@ -164,11 +186,12 @@ else {
             </form>
         </td>
         </tr>
-    </table>
+    
     <?php
 }
 }
 ?>
+</table>
         </div>
     </div>
     </section>

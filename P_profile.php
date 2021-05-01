@@ -63,30 +63,31 @@ if($user=="admin")
     Print'</div>';
 }
 ?>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
     <?php
 if($user=="admin")
-{           Print'<a class="profileRepHisHeader" style="text-align:center;">ACCOUNTS CREATED</a>';
+{
+            Print   '<br>';
+            Print   '<br>';
+            Print   '<br>';
+            Print   '<br>';
+            Print   '<br>';
+            Print   '<br>';
+            Print   '<br>';
+            Print   '<br>';
+            Print   '<br>';
+            Print   '<br>';
+            Print   '<br>';
+            Print   '<br>';
+            Print   '<br>';
+            Print   '<br>';
+            Print   '<br>';
+            Print   '<br>';
+            Print   '<br>';
+            Print   '<br>';
+            Print   '<br>';
+            Print   '<br>';
+            Print   '<br>';
+            Print'<a class="profileRepHisHeader" style="text-align:center;">ACCOUNTS CREATED</a>';
             Print '<table class="AdminProfileTable">';
             Print '<tr>';
             Print '<th>Account ID</th>';
@@ -118,6 +119,8 @@ else {
     Print '<th>Status</th>';
     Print '<th>Action</th>';
     Print '</tr>';
+    ?>
+    <?php
     require 'connection.php';    
     $query = mysqli_query($con, "SELECT * from reports where incident = 'Police' "); // SQL Query
     while($row = mysqli_fetch_array($query))
@@ -136,11 +139,11 @@ else {
             </form>
         </td>
         </tr>
-    </table>
     <?php
 }
 }
 ?>
+</table>
         </div>
         </form>
     </div>
