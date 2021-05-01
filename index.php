@@ -37,7 +37,8 @@
                 <p>We support</p>
                 <p>We support</p>
                 <br>
-                <button class="hpLoginbtn" href ="C_login.php" style="vertical-align:middle"><span>REGISTER NOW </span></button>
+                <button class="hpLoginbtn" onclick="location.href='C_login.php';" style="vertical-align:middle"><span>LOGIN NOW </span></button>
+                <button class="hpLoginbtn" onclick="location.href='C_register.php';" style="vertical-align:middle"><span>REGISTER NOW </span></button>
             </div>
             
         </div>
@@ -141,9 +142,9 @@
                     </tr>
 
                     <tr>
-                        <td><button class="PBBvstbtn" href ="C_login.php" style="vertical-align:middle"><span>Visit Site</span></button></td>
-                        <td><button class="PBBvstbtn" href ="C_login.php" style="vertical-align:middle"><span>Visit Site</span></button></td>
-                        <td><button class="PBBvstbtn" href ="C_login.php" style="vertical-align:middle"><span>Visit Site</span></button></td>
+                        <td><button class="PBBvstbtn" onclick="window.location.href='http://www.pnp.gov.ph/';"  style="vertical-align:middle"><span>Visit Site</span></button></td>
+                        <td><button class="PBBvstbtn" onclick="window.location.href='https://bfp.gov.ph/';"  style="vertical-align:middle"><span>Visit Site</span></button></td>
+                        <td><button class="PBBvstbtn" onclick="window.location.href='https://www.facebook.com/groups/tagapandacanmanila/';" style="vertical-align:middle"><span>Visit Site</span></button></td>
                     </tr>
                 </table>
         </div>

@@ -15,7 +15,7 @@ $user = $_SESSION['user']; //assigns user value
 <html lang="en">
 <head>
     <meta charset = "utf-8">
-    <title> R & R | Barangay Report </title>
+    <title> R & R | Philippine National Police Incident Report </title>
     <meta name ="viewport" content="width=devoce-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/BFPreportstyles.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
@@ -32,7 +32,7 @@ $user = $_SESSION['user']; //assigns user value
     <br>
     <br>
     <br>
-    <h1 id="CreportHeader">Bureau of Fire Protection Incident Report</h1>
+    <h1 id="CreportHeader">Philippine National Police Incident Report</h1>
     <div class="CreportInci">
         
         <form action="sendReport.php" enctype="multipart/form-data" method="POST">

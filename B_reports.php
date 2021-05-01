@@ -15,7 +15,7 @@ $user = $_SESSION['user']; //assigns user value
 <html lang="en">
 <head>
     <meta charset = "utf-8">
-    <title> R & R | Barangay Report </title>
+    <title> R & R | Local Barangay Incident Report </title>
     <meta name ="viewport" content="width=devoce-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/BFPreportstyles.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
@@ -42,7 +42,7 @@ $user = $_SESSION['user']; //assigns user value
             <select name="type" id="type" required>
                 <option value="Child Abuse">Child Abuse</option>
                 <option value="Violence Against Women">Violence Against Women</option>
-                <option value="Sexual Harrassment">Sexual Harrassmen</option>
+                <option value="Sexual Harrassment">Sexual Harrassment</option>
                 <option value="Neighborhood Conflict">Neighborhood Conflict</option>
                 <option value="Fight">Fight</option>
                 <option value="Fight">Community Conflict</option>
