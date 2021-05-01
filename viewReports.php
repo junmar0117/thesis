@@ -71,7 +71,7 @@ include_once('Userheader.html');
              <td><?php echo "Incident Description: "; echo $row['description']?></td>
              </tr>
              <tr>
-             <td><?php echo "Proof: "; echo '<img src="data:image;base64,'.base64_encode($row['file']).'" style="width: 500px; height: 500px;">'?></td>
+             <td><?php echo "Proof: "?> <img src='<?php echo 'reportFIles/'.$row['file'];?>' style="height: 1080px; width: 1920px;"/></td>
              </tr>
              <tr>
              <td><?php echo "Status: "; echo $row['status'] ?></td>

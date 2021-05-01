@@ -43,7 +43,7 @@ if (in_array($fileActualExt, $allowed)){
         if($fileSize < 10000000){
             $fileNameNew = uniqid('', true).".". $fileActualExt;
 
-            $fileDestination = 'reports/'.$fileNameNew;
+            $fileDestination = 'reportFiles/'.$fileNameNew;
             move_uploaded_file($fileTmpName,$fileDestination);
             mysqli_query($con, "INSERT INTO reports (username,name, date, place, description, file, type, incident, time,status) VALUES ('$user','$fullName','$date','$place','$description','$fileNameNew','$type','$incident','$time', '$status')"); //SQL query
             Print '<script>alert("Report sucessfully sent!");</script>'; //Prompts the user
@@ -101,7 +101,7 @@ if (in_array($fileActualExt, $allowed)){
         if($fileSize < 10000000){
             $fileNameNew = uniqid('', true).".". $fileActualExt;
 
-            $fileDestination = 'reports/'.$fileNameNew;
+            $fileDestination = 'reportFiles/'.$fileNameNew;
             move_uploaded_file($fileTmpName,$fileDestination);
             mysqli_query($con, "INSERT INTO reports (username,name, date, place, description, file, type, incident, time,status) VALUES ('$user','$fullName','$date','$place','$description','$fileNameNew','$type','$incident','$time', '$status')"); //SQL query
             Print '<script>alert("Report sucessfully sent!");</script>'; //Prompts the user

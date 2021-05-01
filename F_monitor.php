@@ -39,8 +39,32 @@ $user = $_SESSION['user']; //assigns user value
                 <th>Username</th>
                 <th>Date Created</th>
                 <th>Concern</th>
+                <th>Status</th>
                 <th>View Report</th>
             </tr>
+            <?php
+            require 'connection.php';    
+            $query = mysqli_query($con, "SELECT * from reports where incident = 'Fire' "); // SQL Query
+            while($row = mysqli_fetch_array($query))
+            {
+            ?>
+                <tr>
+                <td><?php echo $row['id']  ?></td>
+                <td><?php echo $row['name']  ?></td>
+                <td><?php echo $row['username']  ?></td>
+                <td><?php echo $row['date']; echo " - "; echo $row['time']?></td>
+                <td><?php echo $row['incident']  ?></td>
+                <td><?php echo $row['status'] ?></td>
+                <td>
+                    <form action="viewReports.php" method="POST">
+                        <input type="hidden" name="id" value="<?php echo $row['id']?>">
+                        <button type="submit">View</button>
+                    </form>
+                </td>
+                </tr>
+            <?php
+        }
+        ?>
         </table>
     </section>
 </body>
