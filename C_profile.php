@@ -100,7 +100,7 @@ include_once('Userheader.html');
             </tr>
             <?php
             require 'connection.php';    
-            $query = mysqli_query($con, "SELECT * from reports where username = '$user' "); // SQL Query
+            $query = mysqli_query($con, "SELECT * from reports where username = '$user'"); // SQL Query
             while($row = mysqli_fetch_array($query))
             {
             ?>

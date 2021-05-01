@@ -122,17 +122,23 @@ else {
     $query = mysqli_query($con, "SELECT * from reports where incident = 'Police' "); // SQL Query
     while($row = mysqli_fetch_array($query))
     {
-    Print "<tr>";
-    Print '<td>'. $row['id'] . "</td>";
-    Print '<td>'. $row['name'] . "</td>";
-    Print '<td>'.$row['date'] ." - ".$row['time']. "</td>";
-    Print '<td>'. $row['incident'] . "</td>";
-    Print '<td>'. $row['status'] . "</td>";
-    Print '<td id="AdminViewProfile" href="">Change Status</td>';
-    Print "</tr>";
-    }
-    Print '</table>';
-
+    ?>
+        <tr>
+        <td><?php echo $row['id']  ?></td>
+        <td><?php echo $row['name']  ?></td>
+        <td><?php echo $row['date']; echo " - "; echo $row['time']?></td>
+        <td><?php echo $row['incident']  ?></td>
+        <td><?php echo $row['status'] ?></td>
+        <td>
+            <form action="viewReports.php" method="POST">
+                <input type="hidden" name="id" value="<?php echo $row['id']?>">
+                <button type="submit">View</button>
+            </form>
+        </td>
+        </tr>
+    </table>
+    <?php
+}
 }
 ?>
         </div>
