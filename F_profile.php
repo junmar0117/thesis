@@ -32,13 +32,13 @@ include_once('F_Userheader.html');
     <div class="profileBox">
         
         <h1>Bureau of Fire Protection (BFP)</h1>
-        <h2>Hello <?php echo $user;?>!</h2>
+        <h1>Hello <?php echo $user;?>!</h1>
 
     <?php
 if($user=="admin"){
 
     Print '<div class="center">';
-        Print '<form action="P_profile.php" method="POST">';
+        Print '<form action="F_profile.php" method="POST">';
                 Print '<div class="txt_field">';
                     Print '<span></span>';
                     Print '<input type="text" id="name" required="required" name="name" placeholder="Name: "><br>';
@@ -59,7 +59,7 @@ if($user=="admin"){
                      Print'<input type="text" id="position" required="required" name="position" placeholder="Position: "><br>';
                 Print '</div>';
                 
-                    Print'<input type="submit" name="addP" value="Add Account +"></input><br><br>';
+                    Print'<input type="submit" name="addF" value="Add Account +"></input><br><br>';
         Print'</form>';
     Print'</div>';
 }

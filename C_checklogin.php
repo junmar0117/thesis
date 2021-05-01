@@ -6,7 +6,6 @@ $password = md5($password);
 
 require 'connection.php';
 $query = "SELECT * from civilians WHERE username='$username'";
-
 $results = mysqli_query($con, $query); //Query the users table if there are matching rows equal to $username
 //$exists = mysqli_num_rows($con, $query); //Checks if username exists
 $table_users = "";

@@ -33,7 +33,7 @@ include_once('B_Userheader.html');
     <div class="profileBox">
 
     <h1>Local Barangay</h1>
-    <h2>Hello <?php echo $user;?>!</h2>
+    <h1>User: <?php echo $user;?></h1>
     
 <?php
 if($user=="admin")
@@ -96,18 +96,7 @@ if($user=="admin")
     </div>
   </div>
 </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+   
     <br>
     <br>
     <div>
