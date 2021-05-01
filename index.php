@@ -144,7 +144,7 @@
                     <tr>
                         <td><button class="PBBvstbtn" onclick="window.location.href='http://www.pnp.gov.ph/';"  style="vertical-align:middle"><span>Visit Site</span></button></td>
                         <td><button class="PBBvstbtn" onclick="window.location.href='https://bfp.gov.ph/';"  style="vertical-align:middle"><span>Visit Site</span></button></td>
-                        <td><button class="PBBvstbtn" onclick="window.location.href='https://www.facebook.com/groups/tagapandacanmanila/';" style="vertical-align:middle"><span>Visit Site</span></button></td>
+                        <td><button class="PBBvstbtn" onclick="window.location.href='https://psa.gov.ph/content/pandacan-ncr-city-manila';" style="vertical-align:middle"><span>Visit Site</span></button></td>
                     </tr>
                 </table>
         </div>
