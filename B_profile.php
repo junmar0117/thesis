@@ -115,27 +115,6 @@ if($user=="admin")
 <?php
 if($user=="admin")
 {
-            Print   '<br>';
-            Print   '<br>';
-            Print   '<br>';
-            Print   '<br>';
-            Print   '<br>';
-            Print   '<br>';
-            Print   '<br>';
-            Print   '<br>';
-            Print   '<br>';
-            Print   '<br>';
-            Print   '<br>';
-            Print   '<br>';
-            Print   '<br>';
-            Print   '<br>';
-            Print   '<br>';
-            Print   '<br>';
-            Print   '<br>';
-            Print   '<br>';
-            Print   '<br>';
-            Print   '<br>';
-            Print   '<br>';
             Print'<a class="profileRepHisHeader" style="text-align:center;">ACCOUNTS CREATED</a>';
             Print '<table class="AdminProfileTable">';
             Print '<tr>';

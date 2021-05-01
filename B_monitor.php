@@ -44,7 +44,7 @@ include_once('B_Userheader.html');
             </tr>
             <?php
             require 'connection.php';    
-            $query = mysqli_query($con, "SELECT * from reports where incident = 'Barangay' "); // SQL Query
+            $query = mysqli_query($con, "SELECT * from reports where incident = 'Barangay'"); // SQL Query
             while($row = mysqli_fetch_array($query))
             {
             ?>
@@ -54,7 +54,7 @@ include_once('B_Userheader.html');
                 <td><?php echo $row['username']  ?></td>
                 <td><?php echo $row['date']; echo " - "; echo $row['time']?></td>
                 <td><?php echo $row['incident']  ?></td>
-                <td><?php echo $row['status'] ?></td>
+                <td><?php echo $row['status']?></td>
                 <td>
                     <form action="viewReports.php" method="POST">
                         <input type="hidden" name="id" value="<?php echo $row['id']?>">

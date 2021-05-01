@@ -4,7 +4,6 @@ if($_SESSION['user']){ //checks if user is logged in
 }else{
   header("location:index.php "); // redirects if user is not logged in
 }
-
 $user = $_SESSION['user']; //assigns user value
 //$id = $_SESSION['id']; 
 ?>
@@ -44,7 +43,7 @@ include_once('P_Userheader.html');
             </tr>
             <?php
             require 'connection.php';    
-            $query = mysqli_query($con, "SELECT * from reports where incident = 'Police' "); // SQL Query
+            $query = mysqli_query($con, "SELECT * from reports where incident = 'Police'"); // SQL Query
             while($row = mysqli_fetch_array($query))
             {
             ?>

@@ -56,7 +56,7 @@ $user = $_SESSION['user']; //assigns user value
                 <td><?php echo $row['incident']  ?></td>
                 <td><?php echo $row['status'] ?></td>
                 <td>
-                    <form action="viewReports.php" method="POST">
+                    <form action="viewReportsAdmins.php" method="POST">
                         <input type="hidden" name="id" value="<?php echo $row['id']?>">
                         <button type="submit">View</button>
                     </form>
