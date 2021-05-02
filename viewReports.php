@@ -20,7 +20,7 @@ $user = $_SESSION['user']; //assigns user value
 </head>
 <body>
 <nav>
-
+<?php include_once('P_Userheader.html');?>
 </nav>
     <br>
     <br>
@@ -46,7 +46,6 @@ if(mysqli_num_rows($row_b) > 0)
 {       
 
         Print '<nav>';
-        include_once('BUserheader.html');
         Print '</nav>';
         Print '<table class="AllReportHistory1">';
         Print    '<tr>';
