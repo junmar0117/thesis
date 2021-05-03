@@ -6,11 +6,12 @@ body{
 
 .AdminProfileTable{
     width: 90%;
-    margin: auto; 
+    margin: auto;
 }
 
 h2{
     text-align: center;
+    font-family: 'Lexend', sans-serif;
 }
 
 .AdminProfileTable, th, td{
@@ -206,53 +207,80 @@ input[type=button]:hover{
     color: white;
 }
 
-.center{
-    position: absolute;
-    top: 37%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 400px;
-    background: white;
-    border-radius: 10px;
+.adminCreatedAccHead{
+    background-color: white;
+    text-align:center;
+    font-family: 'Lexend', sans-serif;
+    font-size: 15px;
+    padding: 5px 0 5px 0;
+    color:#ff0049;
+    width: 90%;
+    margin: auto;
 }
 
-.center form{
-    padding: 0 40px;
-    box-sizing: border-box;
+.adminAccAdd{
+    width: 90%;
+    margin-left:5%;
+    margin-right:5%;
+    background-color: #FFFFFF;
+    padding: 1%;
 }
 
-form .txt_field{
-    position: relative;
-    border-bottom: 2px solid #adadad;
-    margin: 30px 0;
-}
-
-.txt_field input{
+input[type=text], input[type=password]{
     width: 100%;
-    padding: 0 5px;
-    height: 40px;
-    font-size: 16px;
-    border: none;
-    background: none;
-    outline: none;
+    margin: 5px 0 5px 0;
+    padding: 5px;
+    font-family: 'Lexend', sans-serif;
+
 }
 
-.txt_field label{
-    position: absolute;
-    top: 50%;
-    left: 5px;
-    color: #000000;
-    transform: translateY(-50%);
+.adminAddAccbtn{
+    color: black;
+    float: right;
+    padding: 5px 10px;
+    border: 2px solid black;
+    background-color: white;
+    cursor: pointer;
+    font-family: 'Lexend', sans-serif;
     font-size: 16px;
-    pointer-events: none;
 }
 
-.txt_field span::before{
-    content: '';
-    position: absolute;
-    top: 40px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: #ff0049;
+.adminAddAccbtn:hover, .adminAddSchedbtn:hover{
+    border: 2px solid #ff0049;
+    color:#ff0049;
+}
+.adminAddSchedbtn{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left:5%;
+    float:left;
+    color: black;
+    padding: 5px 10px;
+    border: 2px solid black;
+    background-color: white;
+    cursor: pointer;
+    font-family: 'Lexend', sans-serif;
+    font-size: 16px;
+}
+
+a{
+    margin-left: 5%;
+    font-family: 'Lexend', sans-serif;
+    font-size: 20px;
+}
+
+.adminMonitorRep{
+    width: 90%;
+    margin: auto;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.viewReportbtn{
+    cursor:pointer;
+    border:none;
+    background-color:inherit;
+    font-family:inherit;
+    font-size:13px;
+    color:#ff0049;
 }

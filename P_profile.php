@@ -15,6 +15,7 @@ $user = $_SESSION['user']; //assigns user value
     <title>R & R | Philippine National Police Profile (A)</title>
     <meta name ="viewport" content="width=devoce-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/profilestyle.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -31,12 +32,15 @@ include_once('P_Userheader.html');
 
     <div class="profileBox"> 
         <h1>Philippine National Police (PNP)</h1>
-        <h2>Hello <?php echo $user;?>!</h2>
-        <?php
-if($user=="admin")
-{
+        <a>USER: <?php echo $user;?></a>
+    <br>
+    <br>
+    
+    <?php
+    if($user=="admin")
+    {
 
-    Print '<div class="center">';
+    Print '<div class="adminAccAdd">';
         Print '<form action="P_profile.php" method="POST">';
                 Print '<div class="txt_field">';
                     Print '<span></span>';
@@ -58,7 +62,7 @@ if($user=="admin")
                      Print'<input type="text" id="position" required="required" name="position" placeholder="Position: "><br>';
                 Print '</div>';
                 
-                    Print'<input type="submit" name="addP" value="Add Account +"></input><br><br>';
+                    Print'<input  class="adminAddAccbtn" type="submit" name="addP" value="Add Account +"></input><br><br>';
         Print'</form>';
     Print'</div>';
 }

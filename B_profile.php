@@ -33,64 +33,67 @@ include_once('B_Userheader.html');
     <div class="profileBox">
 
     <h1>Local Barangay</h1>
-    <h1>User: <?php echo $user;?></h1>
+    <a>USER: <?php echo $user;?></a>
+    <br>
+    <br>
     
 <?php
 if($user=="admin")
 {
 
-    Print '<div class="center">';
-        Print '<form action="P_profile.php" method="POST">';
+    Print '<div class="adminAccAdd">';
+        Print '<form action="B_profile.php" method="POST">';
                 Print '<div class="txt_field">';
                     Print '<span></span>';
-                    Print '<input type="text" id="name" required="required" name="name" placeholder="Name: "><br>';
+                    Print '<input type="text" id="name" required="required" name="name" placeholder="Name "><br>';
                 Print '</div>';
 
                 Print'<div class="txt_field">';
                     Print'<span></span>';
-                    Print'<input type="text" id="username" required="required" name="username" placeholder="Username: "><br>';
+                    Print'<input type="text" id="username" required="required" name="username" placeholder="Username "><br>';
                 Print '</div>';
 
                 Print' <div class="txt_field">';
                     Print'<span></span>';
-                    Print'<input type="password" id="password" required="required" name="password" placeholder="Password: "><br>';
+                    Print'<input type="password" id="password" required="required" name="password" placeholder="Password"><br>';
                 Print '</div>';
 
                 Print'<div class="txt_field">';
                      Print'<span></span>';
-                     Print'<input type="text" id="position" required="required" name="position" placeholder="Position: "><br>';
+                     Print'<input type="text" id="position" required="required" name="position" placeholder="Position "><br>';
                 Print '</div>';
                 
-                    Print'<input type="submit" name="addP" value="Add Account +"></input><br><br>';
+                    Print'<input class="adminAddAccbtn" type="submit" name="addP" value="Add Account +"></input><br><br>';
         Print'</form>';
     Print'</div>';
 }
 ?>
-  <div class="w3-container">  
-  <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Add Schedule</button>
+  <button onclick="document.getElementById('id01').style.display='block'" class="adminAddSchedbtn">Add Schedule</button>
 
   <div id="id01" class="w3-modal">
     <div class="w3-modal-content">
       <div class="w3-container">
         <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
         <form action="" method="POST">
+            <br>
+            <br>
             <div class="txt_field">
-                <span></span>
+                
                 <input type="text" id="name" required="required" name="name" placeholder="ID"><br>
             </div>    
             <div class="txt_field">
-                <span></span>
+                
                 <input type="text" id="username" required="required" name="username" placeholder="Name"><br>
             </div>
             <div class="txt_field">
-                <span></span>
+                
                 <input type="text" id="position" required="required" name="position" placeholder="Position"><br>
             </div>
             <div class="txt_field">
-                <span></span>
+                
                 <input type="datetime-local" id="birthdaytime" name="birthdaytime" placeholder="Date/Time">
             </div>     
-                <input type="button" value="Add"></input><br><br>   
+                <input class="adminAddAccbtn" type="submit" value="Add"></input><br><br>   
         </form>
       </div>
     </div>
@@ -104,7 +107,7 @@ if($user=="admin")
 <?php
 if($user=="admin")
 {
-            Print'<a class="profileRepHisHeader" style="text-align:center;">ACCOUNTS CREATED</a>';
+            Print '<h2 class="adminCreatedAccHead">ACCOUNTS CREATED</h2>';
             Print '<table class="AdminProfileTable">';
             Print '<tr>';
             Print '<th>Account ID</th>';
@@ -126,7 +129,7 @@ if($user=="admin")
             Print '</table>';
 }
 else {
-    Print'<a class="profileRepHisHeader" style="text-align:center;">REPORTS ASSIGNED</a>';
+    Print '<h2 class="adminCreatedAccHead">REPORTS ASSIGNED</h2>';
     Print '<table class="AdminProfileTable">';
     Print '<tr>';
     Print '<th>Account ID</th>';

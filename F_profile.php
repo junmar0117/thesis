@@ -15,6 +15,7 @@ $user = $_SESSION['user']; //assigns user value
     <title>R & R | Bureau of Fire Protection Profile (A)</title>
     <meta name ="viewport" content="width=devoce-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/profilestyle.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -32,12 +33,14 @@ include_once('F_Userheader.html');
     <div class="profileBox">
         
         <h1>Bureau of Fire Protection (BFP)</h1>
-        <h1>Hello <?php echo $user;?>!</h1>
+        <a>USER: <?php echo $user;?></a>
+    <br>
+    <br>
 
     <?php
-if($user=="admin"){
+    if($user=="admin"){
 
-    Print '<div class="center">';
+    Print '<div class="adminAccAdd">';
         Print '<form action="F_profile.php" method="POST">';
                 Print '<div class="txt_field">';
                     Print '<span></span>';
@@ -59,7 +62,7 @@ if($user=="admin"){
                      Print'<input type="text" id="position" required="required" name="position" placeholder="Position: "><br>';
                 Print '</div>';
                 
-                    Print'<input type="submit" name="addF" value="Add Account +"></input><br><br>';
+                    Print'<input  class="adminAddAccbtn" type="submit" name="addF" value="Add Account +"></input><br><br>';
         Print'</form>';
     Print'</div>';
 }
@@ -110,7 +113,7 @@ if($user=="admin")
             Print '</table>';
 }
 else {
-    Print'<a class="profileRepHisHeader" style="text-align:center;">REPORTS ASSIGNED</a>';
+    Print'<h2 class="adminCreatedAccHead">REPORTS ASSIGNED</h2>';
     Print '<table class="AdminProfileTable">';
     Print '<tr>';
     Print '<th>Account ID</th>';

@@ -11,7 +11,7 @@ if($username!="admin"){
 
 $query = "SELECT * from b_admin WHERE username='$username'";
 $results = mysqli_query($con, $query); //Query the users table if there are matching rows equal to $username
-$exists = mysqli_num_rows($con, $query); //Checks if username exists
+//$exists = mysqli_num_rows($con, $query); //Checks if username exists
 $table_users = "";
 $table_password = "";
 if($results != "") //IF there are no returning rows or no existing username

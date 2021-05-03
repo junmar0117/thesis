@@ -32,7 +32,8 @@ include_once('B_Userheader.html');
     <br>
     <br>
     <h2>BARANGAY MONITOR</h2>
-    <table class="MonitorReportHistory">
+    <div style="overflow-x:auto;">
+    <table class="adminMonitorRep">
             <tr>
                 <th>Report ID</th>
                 <th>Name</th>
@@ -58,7 +59,7 @@ include_once('B_Userheader.html');
                 <td>
                     <form action="viewReports.php" method="POST">
                         <input type="hidden" name="id" value="<?php echo $row['id']?>">
-                        <button type="submit">View</button>
+                        <button type="submit" class="viewReportbtn">View</button>
                     </form>
                 </td>
                 </tr>
@@ -66,6 +67,7 @@ include_once('B_Userheader.html');
         }
         ?>
         </table>
+    </div>
     </section>
 </body>
 </html>

@@ -31,7 +31,7 @@
             <label>Password</label>
         </div>
         
-        <input type="submit" name="b_login" value="login" class="C_loginbtn">
+        <input type="submit" name="b_login" value="Login" class="C_loginbtn">
         <a href="F_login.php" id="signupinstead">Firefighter Account Sign in</a>
         <a href="P_login.php" id="signupinstead">Police Account Sign in</a>
     </div>

@@ -12,9 +12,9 @@ $user = $_SESSION['user']; //assigns user value
 <html lang="en">
 <head>
     <meta charset = "utf-8">
-    <title> Home Page </title>
+    <title> View Reports | R & R </title>
     <meta name ="viewport" content="width=devoce-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/profilestyle.css">
+    <link rel="stylesheet" href="./css/viewReports.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
@@ -22,9 +22,6 @@ $user = $_SESSION['user']; //assigns user value
 <nav>
 <?php include_once('P_Userheader.html');?>
 </nav>
-    <br>
-    <br>
-    <br>
     <br>
     <br>
     <br>
@@ -44,15 +41,10 @@ $row_p = mysqli_query($con, $sql_p);
 
 if(mysqli_num_rows($row_b) > 0)    
 {       
-
         Print '<nav>';
         Print '</nav>';
-        Print '<table class="AllReportHistory1">';
-        Print    '<tr>';
-        Print        '<tr>';
-        Print        '<th>Report Details</th>';
-        Print        '</tr>';
-        Print   '</tr>';
+        Print '<div class="viewRepHead">Report Details</div>';
+        Print '<table class="viewReportsTable">';
             
             if($_SERVER['REQUEST_METHOD'] == "POST")
             {
@@ -65,38 +57,41 @@ if(mysqli_num_rows($row_b) > 0)
             ?>
              <tr>
              <td><?php echo "Name: "; echo $row['name']  ?></td>
-             </tr>
-             <tr>
              <td><?php echo "Username: "; echo $row['username']  ?></td>
              </tr>
              <tr>
              <td><?php echo "Date: "; echo $row['date']?></td>
-             </tr>
-             <tr>
              <td><?php echo "Time: "; echo $row['time']?></td>
              </tr>
              <tr>
              <td><?php echo "Place: "; echo $row['place']?></td>
-             </tr>
-             <tr>
              <td><?php echo "Incident: "; echo $row['incident']?></td>
-             </tr>
+            </table>
+            <table class="viewReportsTable">
              <tr>
              <td><?php echo "Incident Description: "; echo $row['description']?></td>
-             </tr>
-             <tr>
-             <td><?php echo "Proof: "?> <img src='<?php echo 'reportFIles/'.$row['file'];?>' style="height: 1080px; width: 1920px;"/></td>
-             </tr>
-             <tr>
-             <td>
-             <div class="w3-container">  
+            </tr>
+            </table>
+            <div class="reportProof"><?php echo "Proof of Incident"?></div>
+            <div class="VRimgContainer">
+            <img src='<?php echo 'reportFIles/'.$row['file'];?>' id="myImg" style="height: 300px; width: 300px;"/>
+            <div id="myModal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="img01">
+            <div id="caption"></div>
+            </div>
+            </div>
+            
+             <div class="viewReportStatusUpdate">  
              <?php echo "Status: "; echo $row['status'] ?>
-                <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Edit</button>
-                <div id="id01" class="w3-modal">
+                <button onclick="document.getElementById('id01').style.display='block'" class="viewRepEditbtn">UPDATE</button>
+                <div  id="id01" class="w3-modal">
                     <div class="w3-modal-content">
                     <div class="w3-container">
-                        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright" style="color:#252525;">&times;</span>
                         <form action="editStatus.php" method="POST">
+                            <br>
+                            <br>
                             <div class="txt_field">
                                 <select name="status" id="status">
                                     <option disabled selected>Select an Option: </option>
@@ -106,30 +101,24 @@ if(mysqli_num_rows($row_b) > 0)
                                 </select>     
                                 <input type="hidden" name="id" value="<?php echo $row['id']?>">  
                             </div>   
-                            <button type="submit">Submit</button>
+                            <br>
+                            <input class="viewRepStatusUpdtBtnModal" type="submit" value="Update"></input><br><br>
                         </form>
                     </div>
                     </div>
                 </div>
                 </div>
-             </td>
-             </tr>
             
-        </table>
+        
 
 <?php
 }}else if(mysqli_num_rows($row_f) > 0)
 {
     Print '<nav>';
-    include_once('F
-    _Userheader.html');
+    include_once('F_Userheader.html');
     Print '</nav>';
-    Print '<table class="AllReportHistory1">';
-    Print    '<tr>';
-    Print        '<tr>';
-    Print        '<th>Report Details</th>';
-    Print        '</tr>';
-    Print   '</tr>';
+    Print '<div class="viewRepHead">Report Details</div>';
+    Print '<table class="viewReportsTable">';
         
         if($_SERVER['REQUEST_METHOD'] == "POST")
         {
@@ -141,58 +130,58 @@ if(mysqli_num_rows($row_b) > 0)
         {
         ?>
          <tr>
-         <td><?php echo "Name: "; echo $row['name']  ?></td>
-         </tr>
-         <tr>
-         <td><?php echo "Username: "; echo $row['username']  ?></td>
-         </tr>
-         <tr>
-         <td><?php echo "Date: "; echo $row['date']?></td>
-         </tr>
-         <tr>
-         <td><?php echo "Time: "; echo $row['time']?></td>
-         </tr>
-         <tr>
-         <td><?php echo "Place: "; echo $row['place']?></td>
-         </tr>
-         <tr>
-         <td><?php echo "Incident: "; echo $row['incident']?></td>
-         </tr>
-         <tr>
-         <td><?php echo "Incident Description: "; echo $row['description']?></td>
-         </tr>
-         <tr>
-         <td><?php echo "Proof: "?> <img src='<?php echo 'reportFIles/'.$row['file'];?>' style="height: 1080px; width: 1920px;"/></td>
-         </tr>
-         <tr>
-         <td>
-         <div class="w3-container">  
-         <?php echo "Status: "; echo $row['status'] ?>
-            <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Edit</button>
-            <div id="id01" class="w3-modal">
-                <div class="w3-modal-content">
-                <div class="w3-container">
-                    <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-                    <form action="editStatus.php" method="POST">
-                        <div class="txt_field">
-                            <select name="status" id="status">
-                                <option disabled selected>Select an Option: </option>
-                                <option value="Needs Attention">Needs Attention</option>
-                                <option value="In Progress">In Progress</option>
-                                <option value="Completed">Completed</option>
-                            </select>     
-                            <input type="hidden" name="id" value="<?php echo $row['id']?>">  
-                        </div>   
-                        <button type="submit">Submit</button>
-                    </form>
-                </div>
-                </div>
+             <td><?php echo "Name: "; echo $row['name']  ?></td>
+             <td><?php echo "Username: "; echo $row['username']  ?></td>
+             </tr>
+             <tr>
+             <td><?php echo "Date: "; echo $row['date']?></td>
+             <td><?php echo "Time: "; echo $row['time']?></td>
+             </tr>
+             <tr>
+             <td><?php echo "Place: "; echo $row['place']?></td>
+             <td><?php echo "Incident: "; echo $row['incident']?></td>
+            </table>
+            <table class="viewReportsTable">
+             <tr>
+             <td><?php echo "Incident Description: "; echo $row['description']?></td>
+            </tr>
+            </table>
+            <div class="reportProof"><?php echo "Proof of Incident"?></div>
+            <div class="VRimgContainer">
+            <img src='<?php echo 'reportFIles/'.$row['file'];?>' id="myImg" style="height: 300px; width: 300px;"/>
+            <div id="myModal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="img01">
+            <div id="caption"></div>
             </div>
             </div>
-         </td>
-         </tr>
-        
-    </table>
+            
+             <div class="viewReportStatusUpdate">  
+             <?php echo "Status: "; echo $row['status'] ?>
+                <button onclick="document.getElementById('id01').style.display='block'" class="viewRepEditbtn">UPDATE</button>
+                <div  id="id01" class="w3-modal">
+                    <div class="w3-modal-content">
+                    <div class="w3-container">
+                        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright" style="color:#252525;">&times;</span>
+                        <form action="editStatus.php" method="POST">
+                            <br>
+                            <br>
+                            <div class="txt_field">
+                                <select name="status" id="status">
+                                    <option disabled selected>Select an Option: </option>
+                                    <option value="Needs Attention">Needs Attention</option>
+                                    <option value="In Progress">In Progress</option>
+                                    <option value="Completed">Completed</option>
+                                </select>     
+                                <input type="hidden" name="id" value="<?php echo $row['id']?>">  
+                            </div>   
+                            <br>
+                            <input class="viewRepStatusUpdtBtnModal" type="submit" value="Update"></input><br><br>
+                        </form>
+                    </div>
+                    </div>
+                </div>
+                </div>
 
 <?php
 
@@ -201,12 +190,8 @@ if(mysqli_num_rows($row_b) > 0)
     Print '<nav>';
     include_once('P_Userheader.html');
     Print '</nav>';
-    Print '<table class="AllReportHistory1">';
-    Print    '<tr>';
-    Print        '<tr>';
-    Print        '<th>Report Details</th>';
-    Print        '</tr>';
-    Print   '</tr>';
+    Print '<div class="viewRepHead">Report Details</div>';
+    Print '<table class="viewReportsTable">';
         
         if($_SERVER['REQUEST_METHOD'] == "POST")
         {
@@ -218,69 +203,65 @@ if(mysqli_num_rows($row_b) > 0)
         {
         ?>
          <tr>
-         <td><?php echo "Name: "; echo $row['name']  ?></td>
-         </tr>
-         <tr>
-         <td><?php echo "Username: "; echo $row['username']  ?></td>
-         </tr>
-         <tr>
-         <td><?php echo "Date: "; echo $row['date']?></td>
-         </tr>
-         <tr>
-         <td><?php echo "Time: "; echo $row['time']?></td>
-         </tr>
-         <tr>
-         <td><?php echo "Place: "; echo $row['place']?></td>
-         </tr>
-         <tr>
-         <td><?php echo "Incident: "; echo $row['incident']?></td>
-         </tr>
-         <tr>
-         <td><?php echo "Incident Description: "; echo $row['description']?></td>
-         </tr>
-         <tr>
-         <td><?php echo "Proof: "?> <img src='<?php echo 'reportFIles/'.$row['file'];?>' style="height: 1080px; width: 1920px;"/></td>
-         </tr>
-         <tr>
-         <td>
-         <div class="w3-container">  
-         <?php echo "Status: "; echo $row['status'] ?>
-            <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Edit</button>
-            <div id="id01" class="w3-modal">
-                <div class="w3-modal-content">
-                <div class="w3-container">
-                    <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-                    <form action="editStatus.php" method="POST">
-                        <div class="txt_field">
-                            <select name="status" id="status">
-                                <option disabled selected>Select an Option: </option>
-                                <option value="Needs Attention">Needs Attention</option>
-                                <option value="In Progress">In Progress</option>
-                                <option value="Completed">Completed</option>
-                            </select>     
-                            <input type="hidden" name="id" value="<?php echo $row['id']?>">  
-                        </div>   
-                        <button type="submit">Submit</button>
-                    </form>
-                </div>
-                </div>
+             <td><?php echo "Name: "; echo $row['name']  ?></td>
+             <td><?php echo "Username: "; echo $row['username']  ?></td>
+             </tr>
+             <tr>
+             <td><?php echo "Date: "; echo $row['date']?></td>
+             <td><?php echo "Time: "; echo $row['time']?></td>
+             </tr>
+             <tr>
+             <td><?php echo "Place: "; echo $row['place']?></td>
+             <td><?php echo "Incident: "; echo $row['incident']?></td>
+            </table>
+            <table class="viewReportsTable">
+             <tr>
+             <td><?php echo "Incident Description: "; echo $row['description']?></td>
+            </tr>
+            </table>
+            <div class="reportProof"><?php echo "Proof of Incident"?></div>
+            <div class="VRimgContainer">
+            <img src='<?php echo 'reportFIles/'.$row['file'];?>' id="myImg" style="height: 300px; width: 300px;"/>
+            <div id="myModal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="img01">
+            <div id="caption"></div>
             </div>
             </div>
-         </td>
-         </tr>
-        
-    </table>
+            
+             <div class="viewReportStatusUpdate">  
+             <?php echo "Status: "; echo $row['status'] ?>
+                <button onclick="document.getElementById('id01').style.display='block'" class="viewRepEditbtn">UPDATE</button>
+                <div  id="id01" class="w3-modal">
+                    <div class="w3-modal-content">
+                    <div class="w3-container">
+                        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright" style="color:#252525;">&times;</span>
+                        <form action="editStatus.php" method="POST">
+                            <br>
+                            <br>
+                            <div class="txt_field">
+                                <select name="status" id="status">
+                                    <option disabled selected>Select an Option: </option>
+                                    <option value="Needs Attention">Needs Attention</option>
+                                    <option value="In Progress">In Progress</option>
+                                    <option value="Completed">Completed</option>
+                                </select>     
+                                <input type="hidden" name="id" value="<?php echo $row['id']?>">  
+                            </div>   
+                            <br>
+                            <input class="viewRepStatusUpdtBtnModal" type="submit" value="Update"></input><br><br>
+                        </form>
+                    </div>
+                    </div>
+                </div>
+                </div>
 
 <?php
 
 }}else{
         include_once('Userheader.html');
+        Print '<div class="viewRepHead">Report Details</div>';
         Print '<table class="AllReportHistory1">';
-        Print    '<tr>';
-        Print        '<tr>';
-        Print        '<th>Report Details</th>';
-        Print        '</tr>';
-        Print   '</tr>';
             
             if($_SERVER['REQUEST_METHOD'] == "POST")
             {
@@ -326,4 +307,26 @@ if(mysqli_num_rows($row_b) > 0)
         </table>
     </section>
 </body>
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById("myImg");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+  modal.style.display = "none";
+}
+</script>
 </html>
