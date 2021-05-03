@@ -1,13 +1,3 @@
-<?php
-session_start();
-if($_SESSION['user']){ //checks if user is logged in
-}else{
-  header("location:index.php "); // redirects if user is not logged in
-}
-
-$user = $_SESSION['user']; //assigns user value
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +10,9 @@ $user = $_SESSION['user']; //assigns user value
 </head>
 <body>
 <nav>
-
+<?php
+include_once('Userheader.html');
+?>
 </nav>
     <br>
     <br>
