@@ -1,3 +1,4 @@
+<html>
 <?php
 
 require "connection.php"; // Using database connection file here
@@ -23,3 +24,4 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
   <input type="text" name="password" value="<?php echo $row['password'] ?>" placeholder="Enter New Password" Required>
   <input type="submit" name="submit" value="Change Password">
 </form>
+</html>
