@@ -37,7 +37,7 @@ include_once('P_Userheader.html');
     <br>
     
     <?php
-    if($user=="admin")
+    if($user=="p_admin")
     {
 
     Print '<div class="adminAccAdd">';
@@ -68,30 +68,11 @@ include_once('P_Userheader.html');
 }
 ?>
     <?php
-if($user=="admin")
+if($user=="p_admin")
 {
-            Print   '<br>';
-            Print   '<br>';
-            Print   '<br>';
-            Print   '<br>';
-            Print   '<br>';
-            Print   '<br>';
-            Print   '<br>';
-            Print   '<br>';
-            Print   '<br>';
-            Print   '<br>';
-            Print   '<br>';
-            Print   '<br>';
-            Print   '<br>';
-            Print   '<br>';
-            Print   '<br>';
-            Print   '<br>';
-            Print   '<br>';
-            Print   '<br>';
-            Print   '<br>';
-            Print   '<br>';
-            Print   '<br>';
-            Print'<a class="profileRepHisHeader" style="text-align:center;">ACCOUNTS CREATED</a>';
+            //Accounts Created by Administrator        
+            Print  '<br>';
+            Print '<h2 class="adminCreatedAccHead">ACCOUNTS CREATED</h2>';
             Print '<table class="AdminProfileTable">';
             Print '<tr>';
             Print '<th>Account ID</th>';
@@ -100,7 +81,7 @@ if($user=="admin")
             Print '<th>Position</th>';
             Print '</tr>';
             require 'connection.php';    
-            $query = mysqli_query($con, "SELECT * from p_admin where username != 'admin' "); // SQL Query
+            $query = mysqli_query($con, "SELECT * from p_admin where username != 'p_admin' "); // SQL Query
             while($row = mysqli_fetch_array($query))
             {
             Print "<tr>";

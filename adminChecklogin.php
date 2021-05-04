@@ -5,7 +5,7 @@ if(isset($_POST['b_login']))
 {    
 $username = ($_POST['username']);
 $password = ($_POST['password']);
-if($username!="admin"){
+if($username!="b_admin"){
   $password = md5($password);
 }
 
@@ -50,7 +50,7 @@ if(isset($_POST['f_login']))
 { 
 $username = ($_POST['username']);
 $password = ($_POST['password']);
-if($username!="admin"){
+if($username!="f_admin"){
   $password = md5($password);
 }
 
@@ -95,7 +95,7 @@ if(isset($_POST['p_login']))
 { 
 $username = ($_POST['username']);
 $password = ($_POST['password']);
-if($username!="admin"){
+if($username!="p_admin"){
   $password = md5($password);
 }
 

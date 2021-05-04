@@ -38,7 +38,7 @@ include_once('B_Userheader.html');
     <br>
     
 <?php
-if($user=="admin")
+if($user=="b_admin")
 {
 
     Print '<div class="adminAccAdd">';
@@ -105,8 +105,9 @@ if($user=="admin")
     <div>
         </div>
 <?php
-if($user=="admin")
-{
+if($user=="b_admin")
+{   
+            //Accounts Created by Administrator
             Print '<h2 class="adminCreatedAccHead">ACCOUNTS CREATED</h2>';
             Print '<table class="AdminProfileTable">';
             Print '<tr>';
@@ -116,7 +117,7 @@ if($user=="admin")
             Print '<th>Position</th>';
             Print '</tr>';
             require 'connection.php';    
-            $query = mysqli_query($con, "SELECT * from b_admin where username != 'admin' "); // SQL Query
+            $query = mysqli_query($con, "SELECT * from b_admin where username != 'b_admin' "); // SQL Query
             while($row = mysqli_fetch_array($query))
             {
             Print "<tr>";

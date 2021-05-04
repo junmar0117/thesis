@@ -19,9 +19,6 @@ $user = $_SESSION['user']; //assigns user value
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <body>
-<nav>
-<?php include_once('P_Userheader.html');?>
-</nav>
     <br>
     <br>
     <br>
@@ -42,6 +39,7 @@ $row_p = mysqli_query($con, $sql_p);
 if(mysqli_num_rows($row_b) > 0)    
 {       
         Print '<nav>';
+        include_once('B_Userheader.html');
         Print '</nav>';
         Print '<div class="viewRepHead">Report Details</div>';
         Print '<table class="viewReportsTable">';
