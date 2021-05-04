@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <?php
 
 require "connection.php"; // Using database connection file here
@@ -18,10 +19,24 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 }
 ?>
 
-<h3>Update Data</h3>
+<head>
+    <meta charset = "utf-8">
+    <title> Change Password | R & R</title>
+    <meta name ="viewport" content="width=devoce-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/changePW.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+<div class="changePWContainer">
+<h3>CHANGE PASSWORD</h3>
 
 <form method="POST">
-  <input type="text" name="password" value="<?php echo $row['password'] ?>" placeholder="Enter New Password" Required>
-  <input type="submit" name="submit" value="Change Password">
+  <input type="text" name="password" value="<?php echo $row['password'] ?>" placeholder="Enter New Password" Required></input>
+  <br>
+  <input type="submit" name="submit" value="Update"></input>
 </form>
+
+</div>
+</body>
 </html>
