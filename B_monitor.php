@@ -31,7 +31,7 @@ include_once('B_Userheader.html');
     <br>
     <br>
     <br>
-    <h2>BARANGAY MONITOR</h2>
+    <h2>BARANGAY MONITORING</h2>
     <div style="overflow-x:auto;">
     <table class="adminMonitorRep">
             <tr>

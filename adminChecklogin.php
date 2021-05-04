@@ -44,7 +44,7 @@ Print '<script>window.location.assign("B_login.php");</script>'; // redirects to
 ?>
 
 <?php
-session_start();
+//session_start();
 require 'connection.php';
 if(isset($_POST['f_login']))
 { 
@@ -56,7 +56,7 @@ if($username!="f_admin"){
 
 $query = "SELECT * from f_admin WHERE username='$username'";
 $results = mysqli_query($con, $query); //Query the users table if there are matching rows equal to $username
-$exists = mysqli_num_rows($con, $query); //Checks if username exists
+//$exists = mysqli_num_rows($con, $query); //Checks if username exists
 $table_users = "";
 $table_password = "";
 if($results != "") //IF there are no returning rows or no existing username
@@ -89,7 +89,7 @@ Print '<script>window.location.assign("F_login.php");</script>'; // redirects to
 ?>
 
 <?php
-session_start();
+//session_start();
 require 'connection.php';
 if(isset($_POST['p_login']))
 { 
@@ -101,7 +101,7 @@ if($username!="p_admin"){
 
 $query = "SELECT * from p_admin WHERE username='$username'";
 $results = mysqli_query($con, $query); //Query the users table if there are matching rows equal to $username
-$exists = mysqli_num_rows($con, $query); //Checks if username exists
+//$exists = mysqli_num_rows($con, $query); //Checks if username exists
 $table_users = "";
 $table_password = "";
 if($results != "") //IF there are no returning rows or no existing username

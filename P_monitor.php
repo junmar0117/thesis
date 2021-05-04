@@ -4,6 +4,7 @@ if($_SESSION['user']){ //checks if user is logged in
 }else{
   header("location:index.php "); // redirects if user is not logged in
 }
+
 $user = $_SESSION['user']; //assigns user value
 //$id = $_SESSION['id']; 
 ?>
@@ -30,8 +31,9 @@ include_once('P_Userheader.html');
     <br>
     <br>
     <br>
-    <h2>POLICE MONITOR</h2>
-    <table class="MonitorReportHistory">
+    <h2>PHILIPPINE NATIONAL POLICE REPORT MONITORING</h2>
+    <div style="overflow-x:auto;">
+    <table class="adminMonitorRep">
             <tr>
                 <th>Report ID</th>
                 <th>Name</th>
@@ -57,7 +59,7 @@ include_once('P_Userheader.html');
                 <td>
                     <form action="viewReports.php" method="POST">
                         <input type="hidden" name="id" value="<?php echo $row['id']?>">
-                        <button type="submit">View</button>
+                        <button type="submit" class="viewReportbtn">View</button>
                     </form>
                 </td>
                 </tr>
@@ -65,6 +67,7 @@ include_once('P_Userheader.html');
         }
         ?>
         </table>
+        </div>
     </section>
 </body>
 </html>

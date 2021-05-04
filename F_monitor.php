@@ -31,8 +31,9 @@ $user = $_SESSION['user']; //assigns user value
     <br>
     <br>
     <br>
-    <h2>FIRE MONITOR</h2>
-    <table class="MonitorReportHistory">
+    <h2>BUREAU OF FIRE PROTECTION REPORT MONITORING</h2>
+    <div style="overflow-x:auto;">
+    <table class="adminMonitorRep">
             <tr>
                 <th>Report ID</th>
                 <th>Name</th>
@@ -54,11 +55,11 @@ $user = $_SESSION['user']; //assigns user value
                 <td><?php echo $row['username']  ?></td>
                 <td><?php echo $row['date']; echo " - "; echo $row['time']?></td>
                 <td><?php echo $row['incident']  ?></td>
-                <td><?php echo $row['status'] ?></td>
+                <td><?php echo $row['status']?></td>
                 <td>
-                <form action="viewReports.php" method="POST">
+                    <form action="viewReports.php" method="POST">
                         <input type="hidden" name="id" value="<?php echo $row['id']?>">
-                        <button type="submit">View</button>
+                        <button type="submit" class="viewReportbtn">View</button>
                     </form>
                 </td>
                 </tr>
@@ -66,6 +67,7 @@ $user = $_SESSION['user']; //assigns user value
         }
         ?>
         </table>
+        </div>
     </section>
 </body>
 </html>
