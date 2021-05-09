@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset = "utf-8">
-    <title>R & R</title>
+    <title>R & R | Incident Reporting</title>
     <meta name ="viewport" content="width=devoce-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/homepage.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -22,7 +22,6 @@
     <br>
     <br>
     <br>
-    <br>
 
     <div class="hpFirstSection">
         <div class="hpFirst">
@@ -31,13 +30,12 @@
             <br>
             <br>
             <div class="hpFirstleftborder">
-                <p style="font-weight:bold;">We support</p>
-                <p style="font-weight:bold;">We support</p>
-                <p style="font-weight:bold;">We support</p>
-                <p>We support</p>
-                <p>We support</p>
+                <p style="font-weight:bold;">Assistance to incident reporting with the support from</p>
+                <p style="font-weight:bold;">Major response organizations from your local barangay to the</p>
+                <p style="font-weight:bold;">Philippine National Police, and Bureau of Fire Protection.</p><br>
+                <p>R & R seeks to provide a variety of response to</p>
+                <p>Pandacan, Manila</p>
                 <br>
-                <button class="hpLoginbtn" onclick="location.href='C_login.php';" style="vertical-align:middle"><span>LOGIN NOW </span></button>
                 <button class="hpLoginbtn" onclick="location.href='C_register.php';" style="vertical-align:middle"><span>REGISTER NOW </span></button>
             </div>
             
@@ -51,7 +49,7 @@
             <table class="iGp">
                 <tr>
                     <th><i class='far fa-hand-pointer' style="color:#EC7063;"></i></th>
-                    <td><a class="SelConH">Select Organization</a><br><br>
+                    <td><a class="SelConH">Select Organization</a><br>
                         <a class="guideSubhead">Select concerned organization among the following:</a><br>
                         <ul class="guideSubhead2">
                             <li>Philippine National Police</li>
@@ -62,18 +60,17 @@
                 </tr>
                 <tr>
                     <th><i class='far fa-edit' style="color:#F4D03F;"></i></th>
-                    <td><a class="inputInfoH" >Input Information</a><br><br>
+                    <td><a class="inputInfoH" >Input Information</a><br>
                         <a class="guideSubhead2">Input the information required for the incident report.</a><br>
                         <a class="guideSubhead">Necessary information includes name, age, address, email.</a>
                     </td>
                 </tr>
                 <tr>
                     <th><i class='far fa-check-circle' style="color:#58D68D;"></i></th>
-                    <td><a class="subInciH">Submit Incident Report</a><br><br>
+                    <td><a class="subInciH">Submit Incident Report</a><br>
                         <a class="guideSubhead">Click the submit button to submit the incident report.</a>
                     </td>
                 </tr>
-
             </table>
         </div>
     </div>
@@ -83,37 +80,17 @@
             <tr>
                 <th class="hpSecHeader2">R & R</th>
                 <td style="border-left: 1px solid black; float:left;">
-                <a class="hpAboutHeader">ABOUT</a>
-                <br>
-                <br>
-                <a class="AboutSubhead">Report to Respond</a>
-                <br>
-                <br>
-                <p style="font-weight:lighter;">R & R assists with incident reporting to connect response organizations with civilians.</p></td>
+                    <a class="hpAboutHeader">ABOUT</a>
+                    <br><br>
+                    <a class="AboutSubhead">Report to Respond</a>
+                    <br><br>
+                    <p style="font-weight:lighter;">R & R assists with incident reporting to connect response organizations with civilians.</p></td>
                 <td style="border-left: 1px solid black; float:left;">
-                <a class="hpAboutHeader">+ US</a>
-                <br>
-                <br>
-                <a class="AboutSubhead">The developers</a>
-                <br>
-                <br>
-                <p style="font-weight:lighter;">R & R assists with incident reporting to connect response organizations with civilians.</p></td>
-                <td style="border-left: 1px solid black; float:left;">
-                <a class="hpAboutHeader">MISSION</a>
-                <br>
-                <br>
-                <a class="AboutSubhead">Assistance via Internet</a>
-                <br>
-                <br>
-                <p style="font-weight:lighter;">R & R assists with incident reporting to connect response organizations with civilians.</p></td>
-                <td style="border-left: 1px solid black; float:left;">
-                <a class="hpAboutHeader">VISION</a>
-                <br>
-                <br>
-                <a class="AboutSubhead">Variety of Response</a>
-                <br>
-                <br>
-                <p style="font-weight:lighter;">R & R assists with incident reporting to connect response organizations with civilians.</p></td>
+                    <a class="hpAboutHeader">+ US</a>
+                    <br><br>
+                    <a class="AboutSubhead">In Development</a>
+                    <br><br>
+                    <p style="font-weight:lighter;">R & R is currently in its development phase to test the intended features for the public before release.</p></td>
             </tr>
         </table>
     </div>

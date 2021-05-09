@@ -6,74 +6,95 @@ body{
 }
 
 .reportmainwrapper{
-    padding: 5px;
-    max-width: 1300px;
-    width: 95%;
-    margin: 30px auto;
+    background-color: #FFFFFF;
+    width: 80%;
+    margin: 4% 10% 0 10%;
+    padding: 0;
+    border-top: 2px solid #252525;
+    border-bottom: 2px solid #252525;
+    border-right: 2px solid #252525;
+    border-left: 2px solid #FF0049;
+    border-radius: 10px;
 }
 
-.reportmaincolumns{
-    display: flex;
-    flex-flow: row wrap;
-    
-}
-
-.reportmaincolumn{
-    flex: 1;
-    border: 1px solid #000000;
-    margin: 20px;
-    background: white;
-    cursor:pointer;
-    display:block;
-    transition: border 0.1s;
-}
-
-.reportmaincolumn:hover{
-    border: 2px solid #FF0049;
-}
-
-.reportmaincontainer {
-    justify-content: space-between;
-    flex-direction: column;
-    height: 46px;
-    display: flex;
-    border-top: 1px solid #000000;
-  }
-.reportmaincontainer .reportmainbtn-holder {
-    justify-content: flex-end;
-    display: flex;
-}
-
-#reportmainbtn{
-    border: 0;
-    margin: 1px;
-    height: 45px;
-    background-color: white;
-    cursor:pointer;
+h1{
     font-family: 'Dela Gothic One', cursive;
-    padding-left: 79.5%;
-    transition: all 0.3s;
+    margin: 3% 50% 2% 0;
+    padding: 1% 1% 1% 5%;
+    background-color: #FF0049;
+    color: #FFFFFF;
+    border-radius: 0px 35px 35px 0px;
 }
 
-#reportmainbtn:hover{
-    color: #ff0049;
+h2{
+    font-family: 'Lexend', sans-serif;
+    color: #252525;
+    margin: 0 5% 2% 5%;
 }
 
-#reportmainbtn:hover:after{
-    width: 100%;
-}
+.RPbutton {
+    display: inline-block;
+    border-radius: 4px;
+    background-color:#FFFFFF;
+    border: 2px solid #252525;
+    color: #252525;
+    text-align: center;
+    font-size: 28px;
+    padding: 20px;
+    width: 90%;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 0 5% 3% 5%;
+    font-family: 'Lexend', sans-serif;
+    text-transform: uppercase;
 
-.reportmaincolumn > p{
-    color:black;
-    font-size: 15px;
-}
+  }
+  .RPbutton:hover{
+    color:#FF0049;
+    border: 2px solid #FF0049;
+  }
 
-.imgreportmain{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
+  .RPbutton span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.3s;
+  }
+  
+  .RPbutton span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.3s;
+  }
 
-.reportmainheader{
-    font-size:30px;
+  .RPbutton:hover span {
+    padding-right: 25px;
+    color:#FF0049;
+  }
+  
+  .RPbutton:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+
+
+  @media only screen and (max-width: 600px) {
+    .RPbutton{
+        font-size: 14px;
+    }
+
+    h1,h2{
+        font-size: 15px;
+    }
+
+    h1{
+        margin: 3% 35% 2% 0;
+    }
+
+    .reportmainwrapper{
+      margin: 10% 10% 0 10%;
+    }
 }

@@ -217,6 +217,7 @@ if(mysqli_num_rows($row_b) > 0)
              <td><?php echo "Incident Description: "; echo $row['description']?></td>
             </tr>
             </table>
+
             <div class="reportProof"><?php echo "Proof of Incident"?></div>
             <div class="VRimgContainer">
             <img src='<?php echo 'reportFIles/'.$row['file'];?>' id="myImg" style="height: 300px; width: 300px;"/>
@@ -259,7 +260,7 @@ if(mysqli_num_rows($row_b) > 0)
 }}else{
         include_once('Userheader.html');
         Print '<div class="viewRepHead">Report Details</div>';
-        Print '<table class="AllReportHistory1">';
+        Print '<table class="viewReportsTable">';
             
             if($_SERVER['REQUEST_METHOD'] == "POST")
             {
@@ -272,37 +273,43 @@ if(mysqli_num_rows($row_b) > 0)
             ?>
              <tr>
              <td><?php echo "Name: "; echo $row['name']  ?></td>
-             </tr>
-             <tr>
              <td><?php echo "Username: "; echo $row['username']  ?></td>
              </tr>
              <tr>
              <td><?php echo "Date: "; echo $row['date']?></td>
-             </tr>
-             <tr>
              <td><?php echo "Time: "; echo $row['time']?></td>
              </tr>
              <tr>
              <td><?php echo "Place: "; echo $row['place']?></td>
-             </tr>
-             <tr>
              <td><?php echo "Incident: "; echo $row['incident']?></td>
              </tr>
+            </table>
+             <table class="viewReportsTable">
              <tr>
              <td><?php echo "Incident Description: "; echo $row['description']?></td>
              </tr>
-             <tr>
-             <td><?php echo "Proof: "?> <img src='<?php echo 'reportFIles/'.$row['file'];?>' style="height: 1080px; width: 1920px;"/></td>
-             </tr>
-             <tr>
-             <td><?php echo "Status: "; echo $row['status'] ?>
-             </td>
-             </tr>
+            </table>
+             
+            <div class="reportProof"><?php echo "Proof of Incident"?></div>
+            <div class="VRimgContainer">
+            <img src='<?php echo 'reportFIles/'.$row['file'];?>' id="myImg" style="height: 300px; width: 300px;"/>
+            <div id="myModal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="img01">
+            <div id="caption"></div>
+            </div>
+            </div>
+            
+            <div class="viewReportStatusUpdate">  
+            <?php echo "Status: "; echo $row['status'] ?>
+            </div>
+            
             <?php
             }
         }
             ?>
         </table>
+        <br>
     </section>
 </body>
 <script>

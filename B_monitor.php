@@ -14,7 +14,7 @@ $user = $_SESSION['user']; //assigns user value
     <meta charset = "utf-8">
     <title> R & R | </title>
     <meta name ="viewport" content="width=devoce-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/profilestyle.css">
+    <link rel="stylesheet" href="./css/BFP_profilestyle.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 
@@ -24,7 +24,6 @@ $user = $_SESSION['user']; //assigns user value
 include_once('B_Userheader.html');
     ?>
     </nav>
-    <section>
     <br>
     <br>
     <br>
@@ -68,7 +67,6 @@ include_once('B_Userheader.html');
         ?>
         </table>
     </div>
-    </section>
 </body>
 </html>
 

@@ -14,7 +14,7 @@ $user = $_SESSION['user']; //assigns user value
     <meta charset = "utf-8">
     <title>R & R | Bureau of Fire Protection Profile (A)</title>
     <meta name ="viewport" content="width=devoce-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/profilestyle.css">
+    <link rel="stylesheet" href="./css/BFP_profilestyle.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
@@ -31,7 +31,6 @@ include_once('F_Userheader.html');
     <section class="profileSection">
 
     <div class="profileBox">
-        
         <h1>Bureau of Fire Protection (BFP)</h1>
         <a>USER: <?php echo $user;?></a>
     <br>
@@ -74,6 +73,7 @@ if($user=="f_admin")
             //Accounts Created by Administrator        
             Print  '<br>';
             Print '<h2 class="adminCreatedAccHead">ACCOUNTS CREATED</h2>';
+            Print '<div style="overflow-x:auto;">';
             Print '<table class="AdminProfileTable">';
             Print '<tr>';
             Print '<th>Account ID</th>';
@@ -93,6 +93,8 @@ if($user=="f_admin")
             Print "</tr>";
             }
             Print '</table>';
+            Print '</div>';
+
 }
 else {
     Print'<h2 class="adminCreatedAccHead">REPORTS ASSIGNED</h2>';

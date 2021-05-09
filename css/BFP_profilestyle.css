@@ -1,0 +1,295 @@
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Lexend:wght@500&display=swap');
+body{
+    margin:0;
+    background-color: #f1f1f1;
+}
+
+.AdminProfileTable{
+    width: 90%;
+    margin: auto;
+}
+
+h2{
+    text-align: center;
+    font-family: 'Lexend', sans-serif;
+}
+
+.AdminProfileTable, th, td{
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align:center;
+    font-family: 'Lexend', sans-serif;
+    font-size: 13px;
+}
+
+th, td{
+    padding: 10px;
+}
+
+td{
+    background-color: white;
+}
+
+th{
+    background-color: #252525;
+    color: white;
+    text-transform:uppercase;
+}
+
+.profileBox > h1{
+    margin-left: 5%;
+    font-family: 'Dela Gothic One', cursive;
+}
+
+
+input[type=button]{
+    color: #ff0049;
+    margin:0 0 1% 5%;
+    padding: 5px;
+    cursor:pointer;
+    border: 1px solid #ff0049;
+    background-color: white;
+    font-size: 15px;
+    font-family: 'Lexend', sans-serif;
+}
+
+input[type=button]:hover{
+    color: white;
+    background-color: #ff0049;
+}
+
+#AdminViewProfile, #AdminDelProfile{
+    color: #ff0049;
+}
+
+#AdminViewProfile:hover, #AdminDelProfile:hover{
+    cursor:pointer;
+    color: #ff0049;
+    text-decoration: underline;
+    background-color: rgb(245, 245, 245);
+}
+
+.profileInfo{
+    float:right;
+    margin-right: 7%;
+    padding: 20px;
+    width: 65%;
+    background-color: white;
+}
+
+.profileInfoHeader, .profileInfoContent{
+    color: black;
+    background-color: white;
+    text-align:left;
+    border: none;
+    font-size: 15px;
+    padding: 5px;
+}
+
+.profileInfoHeader{
+    width: 25%;
+}
+
+.profileInfoContent{
+    width: 25%;
+}
+
+.profilePicDiv{
+    margin-left: 7%;
+    float: left;
+}
+
+.profilePicTable{
+    background-color: white;
+    width: 300px;
+    padding: 20px;
+}
+
+.userdetailsheader{
+    float:left;
+    background-color: white;
+    width: 300px;
+    text-align:center;
+    font-family: 'Lexend', sans-serif;
+    font-size: 18px;
+    padding: 15px 0 15px 0;
+    font-weight:bold;
+    border-bottom: 1px solid #d4d4d4;
+    
+}
+
+.aboutdetailsheader{
+    float:right;
+    background-color: white;
+    width: 65%;
+    text-align:center;
+    font-family: 'Lexend', sans-serif;
+    font-size: 18px;
+    padding: 15px 0 15px 0;
+    margin-right: 7%;
+    border-bottom: 1px solid #d4d4d4;
+    font-weight:bold;
+}
+
+.profileReportBtn{
+    float:right;
+    margin-right: 7%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 5px;
+    cursor:pointer;
+    border: 1px solid #ff0049;
+    background-color: white;
+    font-size: 15px;
+    font-family: 'Lexend', sans-serif;
+    text-decoration: none;
+    color:#ff0049;
+    transition: 0.3s;
+}
+
+.profileReportBtn:hover{
+    background-color: #ff0049;
+    color: white;
+}
+
+.ProfileReportHistory{
+    float:right;
+    width: 65%;
+    margin-right: 7%;
+    border-collapse: collapse;
+}
+
+.MonitorReportHistory{
+    float:right;
+    width: 65%;
+    margin-right: 18%;
+    border-collapse: collapse;
+}
+
+.AllReportHistory1{
+    float:right;
+    width: 99%;
+    margin-right: .5%;
+    border-collapse: collapse;
+}
+
+ /*HISTORY header*/
+ .profileRepHisHeader{
+    float:right;
+    background-color: white;
+    width: 65%;
+    text-align:center;
+    font-family: 'Lexend', sans-serif;
+    font-size: 15px;
+    margin-right: 7%;
+    font-weight:bold;
+    padding: 5px 0 5px 0;
+    color:#ff0049;
+    }
+
+/*civilian edit account button*/
+.editAccountCivilian{
+    float:left;
+    background-color: white;
+    width: 300px;
+    text-align:center;
+    font-family: 'Lexend', sans-serif;
+    font-size: 17px;
+    padding: 15px 0 15px 0;
+    border-top: 1px solid #d4d4d4;
+    text-decoration: none;
+    color: #ff0049;
+    transition: 0.3s;
+}
+
+.editAccountCivilian:hover{
+    background-color: #ff0049;
+    color: white;
+}
+
+.adminCreatedAccHead{
+    background-color: white;
+    text-align:center;
+    font-family: 'Lexend', sans-serif;
+    font-size: 15px;
+    padding: 5px 0 5px 0;
+    color:#ff0049;
+    width: 90%;
+    margin: auto;
+}
+
+.adminAccAdd{
+    width: 90%;
+    margin-left:5%;
+    margin-right:5%;
+    background-color: #FFFFFF;
+    padding: 1%;
+}
+
+input[type=text], input[type=password]{
+    width: 100%;
+    margin: 5px 0 5px 0;
+    padding: 5px;
+    font-family: 'Lexend', sans-serif;
+
+}
+
+.adminAddAccbtn{
+    color: black;
+    float: right;
+    padding: 5px 10px;
+    border: 2px solid black;
+    background-color: white;
+    cursor: pointer;
+    font-family: 'Lexend', sans-serif;
+    font-size: 16px;
+}
+
+.adminAddAccbtn:hover, .adminAddSchedbtn:hover{
+    border: 2px solid #ff0049;
+    color:#ff0049;
+}
+.adminAddSchedbtn{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left:5%;
+    float:left;
+    color: black;
+    padding: 5px 10px;
+    border: 2px solid black;
+    background-color: white;
+    cursor: pointer;
+    font-family: 'Lexend', sans-serif;
+    font-size: 16px;
+}
+
+a{
+    margin-left: 5%;
+    font-family: 'Lexend', sans-serif;
+    font-size: 20px;
+}
+
+.adminMonitorRep{
+    width: 90%;
+    margin: auto;
+    border-collapse: collapse;
+}
+
+.viewReportbtn{
+    cursor:pointer;
+    border:none;
+    background-color:inherit;
+    font-family:inherit;
+    font-size:13px;
+    color:#ff0049;
+}
+
+@media only screen and (max-width: 600px) {
+    .w3-container{
+        margin-top: 10%;
+    }
+
+    .profileBox > h1{
+        font-size: 20px;
+    }
+}

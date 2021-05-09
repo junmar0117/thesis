@@ -7,7 +7,7 @@ body{
 /*---------------register----------*/
 .register-box{
     position: absolute;
-    top: 50%;
+    top: 55%;
     left: 50%;
     width: 700px;
     padding: 40px;
@@ -190,4 +190,15 @@ body{
     background-color: rgb(255, 235, 239);
     border-radius: 10px;
     
+}
+
+
+@media only screen and (max-width: 600px) {
+    .register-box, .login-box{
+        width:100%;
+    }
+    
+    .login-box > h1{
+        font-size: 25px;
+    }
 }

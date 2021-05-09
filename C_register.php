@@ -14,7 +14,6 @@
         include_once('header.html');
     ?>
     </nav>
-    
     <div class="register-box">
         <h2>Create your Account</h2>
         

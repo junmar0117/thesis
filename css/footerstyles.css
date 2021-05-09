@@ -53,10 +53,6 @@ body {
     -moz-transition: .2s;
     margin-top: 10px;
   }
-  .social ul li {
-    display: inline-block;
-    padding-right: 5px !important;
-  }
   
   .footer .col ul li:hover {
     color: #FF0049;

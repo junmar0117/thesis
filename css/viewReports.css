@@ -183,3 +183,10 @@ select{
     padding: 5px;
     font-family: 'Lexend', sans-serif;
 }
+
+
+@media only screen and (max-width: 600px) {
+  .w3-container{
+    margin-top:10%;
+  }
+}

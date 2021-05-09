@@ -17,7 +17,7 @@
     </nav>
 
     <div class="login-box">
-        <h1>Login</h1>
+        <h1>Civilian Login</h1>
         <h2>Input username and password</h2>
         <form action="C_checklogin.php" method="POST">
 

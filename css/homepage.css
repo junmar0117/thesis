@@ -133,7 +133,7 @@ p{
 }
 
 .iGp td{
-  width: 70%;
+  width: 100%;
   float:left;
   font-size: 20px;
   padding: 20px;
@@ -326,4 +326,47 @@ table .indexAbout{
 .PBBvstbtn:hover span:after {
   opacity: 1;
   right: 0;
+}
+
+@media only screen and (max-width: 600px) {
+  .hpFirstHeader{
+    font-size:35px;
+  }
+
+  p{
+    font-size: 14px;
+  }
+
+  .hpLoginbtn{
+    font-size: 18px;
+    width: 100%;
+  }
+
+  .iGp, .indexAbout{
+    width:100%;
+  }
+  
+  .hpSecHeader, .hpSecHeader3{
+    font-size: 35px;
+  }
+
+  .iGp i{
+    font-size: 30px;
+  }
+
+  .SelConH, .inputInfoH, .subInciH, .guideSubhead, .guideSubhead2, .hpAboutHeader, .AboutSubhead, .ipbbthead, .PBBvstbtn{
+    font-size: 15px;
+  }
+
+  .indexPBB{
+    padding:0 0 5% 0;
+  }
+
+  img{
+    height: 250px;
+  }
+
+  .iGp th, .iGp td{
+    padding: 10px;
+  }
 }

@@ -18,7 +18,7 @@ body{
 
 .CreportInci{
     background-color: white;
-    padding: 2% 5% 5% 5%;
+    padding: 2% 5% 10% 5%;
     margin: 0% 5% 5% 5%;
 }
 
@@ -92,4 +92,11 @@ input[type=submit]:hover{
       margin-bottom: 10%;
     }
 
+    #CreportHeader{
+      font-size: 20px;
+    }
+
+    label{
+      font-size: 15px;
+    }
   }
