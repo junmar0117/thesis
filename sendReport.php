@@ -12,7 +12,7 @@ $user = $_SESSION['user']; //assigns user value
 require 'connection.php';
 if(isset($_POST['b_upload']))
 {    
-$query = mysqli_query($con, "SELECT * from civilians where username = '$user' "); // SQL Query
+$query = mysqli_query($con, "SELECT * from civilians where username = '$user'"); // SQL Query
 while($row = mysqli_fetch_array($query))
     {
         $name= $row['name'];

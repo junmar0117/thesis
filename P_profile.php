@@ -110,7 +110,7 @@ else {
     ?>
     <?php
     require 'connection.php';    
-    $query = mysqli_query($con, "SELECT * from reports where incident = 'Police' "); // SQL Query
+    $query = mysqli_query($con, "SELECT * from reports where incident = 'Police' ORDER BY id DESC"); // SQL Query
     while($row = mysqli_fetch_array($query))
     {
     ?>

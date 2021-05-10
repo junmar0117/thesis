@@ -86,7 +86,7 @@ $user = $_SESSION['user']; //assigns user value
         <input type="hidden" id="email" value="<?php echo $email?>">
         <input type="hidden" id="subject" value="Reports from R | R!">
         <input type="hidden" id="body" value="<?php echo $name?> sent a report concerning the Local Barangay! ">
-        <input type="submit" name="p_upload" value="S U B M I T" onclick="sendEmail()"><br>
+        <input type="submit" name="b_upload" value="S U B M I T" onclick="sendEmail()"><br>
         </form>
     </div>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

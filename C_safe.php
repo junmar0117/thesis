@@ -40,6 +40,8 @@ include_once('Userheader.html');
                     $query = mysqli_query($con, "SELECT * from civilians where username = '$user' "); // SQL Query
                     while($row = mysqli_fetch_array($query))
                         {
+                            $user_id = $row['id'];
+                            $name = $row['name'];
                             Print "<tr>";
                             Print '<th class="profileInfoHeader">NAME</th>';
                             Print '<td class="profileInfoContent">'. $row['name'] . "</td>";
@@ -82,10 +84,11 @@ include_once('Userheader.html');
                 <th>Concern</th>
                 <th>Status</th>
                 <th>View Report</th>
+                <th>Safe?</th>
             </tr>
             <?php
             require 'connection.php';    
-            $query = mysqli_query($con, "SELECT * from reports where username = '$user' ORDER BY id DESC"); // SQL Query
+            $query = mysqli_query($con, "SELECT * from reports ORDER BY id DESC"); // SQL Query
             while($row = mysqli_fetch_array($query))
             {
             ?>
@@ -100,6 +103,18 @@ include_once('Userheader.html');
                      <input type="hidden" name="id" value="<?php echo $row['id']?>">
                      <button class="viewReportbtn" type="submit">View</button>
                 </form>
+            </td>
+            <td>
+            <form action="safeAction.php" method="POST">
+                     <input type="hidden" name="report_id" value="<?php echo $row['id']?>">
+                     <input type="hidden" name="c_id" value="<?php echo $user_id?>">
+                     <input type="hidden" name="name" value="<?php echo $name?>">
+                     <input type="radio" id="Yes" name="safe" value="Yes">
+                     <label for="male">Yes</label>
+                     <input type="radio" id="No" name="safe" value="No">
+                     <label for="female">No</label>
+                     <button class="viewReportbtn" type="submit">Submit</button>
+            </form>
             </td>
             </tr>
             <?php

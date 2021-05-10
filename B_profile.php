@@ -143,7 +143,7 @@ else {
     Print '<th>Action</th>';
     Print '</tr>';
     require 'connection.php';    
-    $query = mysqli_query($con, "SELECT * from reports where incident = 'Barangay' "); // SQL Query
+    $query = mysqli_query($con, "SELECT * from reports where incident = 'Barangay' ORDER BY id DESC"); // SQL Query
     while($row = mysqli_fetch_array($query))
     {
     ?>

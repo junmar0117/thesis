@@ -45,7 +45,7 @@ $user = $_SESSION['user']; //assigns user value
             </tr>
             <?php
             require 'connection.php';    
-            $query = mysqli_query($con, "SELECT * from reports where incident = 'Fire' "); // SQL Query
+            $query = mysqli_query($con, "SELECT * from reports where incident = 'Fire' ORDER BY id DESC"); // SQL Query
             while($row = mysqli_fetch_array($query))
             {
             ?>
