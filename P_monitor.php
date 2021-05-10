@@ -1,8 +1,19 @@
 <?php
 session_start();
-if($_SESSION['user']){ //checks if user is logged in
+if($_SESSION['user'] && $_SESSION['type']=='police')
+{ //checks if user is logged in   
 }else{
   header("location:index.php "); // redirects if user is not logged in
+}
+
+if($_SESSION['type']=='barangay'){ 
+    header("location:B_profile.php ");//checks if user is barangay account
+}
+if($_SESSION['type']=='fire'){ 
+    header("location:F_profile.php ");//checks if user is fire account
+}
+if($_SESSION['type']=='civilian'){ 
+    header("location:C_profile.php "); //checks if user is civilian account
 }
 
 $user = $_SESSION['user']; //assigns user value

@@ -61,9 +61,56 @@ $user = $_SESSION['user']; //assigns user value
         ?>
         
         <div class="CreportInputBox">
-            <label for="placeOfInci">Place of Incident</label>
+            <label for="placeOfInci">Place or Landmark of Incident</label>
             <br>
             <input type="text" id="placeOfIncident" name="place" placeholder="Place of Incident" required>
+        </div>
+
+        <div class="CreportInputBox">
+            <label for="typeOfInci">Barangay:</label>
+            <br>
+            <select name="barangay" id="barangay" required>
+                <option value="833">833</option>
+                <option value="834">834</option>
+                <option value="835">835</option>
+                <option value="836">836</option>
+                <option value="837">837</option>
+                <option value="838">838</option>
+                <option value="839">839</option>
+                <option value="840">840</option>
+                <option value="841">841</option>
+                <option value="842">842</option>
+                <option value="843">843</option>
+                <option value="844">844</option>
+                <option value="845">845</option>
+                <option value="846">846</option>
+                <option value="847">847</option>
+                <option value="848">848</option>
+                <option value="849">849</option>
+                <option value="850">850</option>
+                <option value="851">851</option>
+                <option value="852">852</option>
+                <option value="853">853</option>
+                <option value="854">854</option>
+                <option value="855">855</option>
+                <option value="856">856</option>
+                <option value="857">857</option>
+                <option value="858">858</option>
+                <option value="859">859</option>
+                <option value="860">860</option>
+                <option value="861">861</option>
+                <option value="862">862</option>
+                <option value="863">863</option>
+                <option value="864">864</option>
+                <option value="865">865</option>
+                <option value="866">866</option>
+                <option value="867">867</option>
+                <option value="868">868</option>
+                <option value="869">869</option>
+                <option value="870">870</option>
+                <option value="871">871</option>
+                <option value="872">872</option>
+            </select>
         </div>
 
         <div class="CreportInputBox">

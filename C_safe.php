@@ -29,57 +29,14 @@ include_once('Userheader.html');
     <br>
     <br>
     <div class="profileBox">
-        <h1 style="margin-left: 5%;">PROFILE</h1>
-            <div class="profilePicDiv">
-                <div class="userdetailsheader">
-                    <a>USER DETAILS</a>           
-                </div>
-                <table class="profileInfo">
-                    <?php
-                    require 'connection.php';    
-                    $query = mysqli_query($con, "SELECT * from civilians where username = '$user' "); // SQL Query
-                    while($row = mysqli_fetch_array($query))
-                        {
-                            $user_id = $row['id'];
-                            $name = $row['name'];
-                            Print "<tr>";
-                            Print '<th class="profileInfoHeader">NAME</th>';
-                            Print '<td class="profileInfoContent">'. $row['name'] . "</td>";
-                            Print '<th class="profileInfoHeader">USERNAME</th>';
-                            Print '<td class="profileInfoContent">'. $row['username'] . "</td>";
-                            Print "</tr>";
-                            Print "<tr>";
-                            Print '<th class="profileInfoHeader">EMAIL</th>';
-                            Print '<td class="profileInfoContent">'. $row['email'] . "</td>";
-                            Print '<th class="profileInfoHeader">AGE</th>';
-                            Print '<td class="profileInfoContent">'. $row['age'] . "</td>";
-                            Print "</tr>";
-                            Print "<tr>";
-                            Print '<th class="profileInfoHeader">ACCOUNT</th>';
-                            Print '<td class="profileInfoContent">'."CIVILIAN" . "</td>";
-                            Print "</tr>";
-                            Print "<tr>";
-                            Print '<th class="profileInfoHeader">ADDRESS</th>';
-                            Print '<td class="profileInfoContent">'. $row['address'] . "</td>";
-                            Print "</tr>";
-                            Print "</table>";
-                            Print '<div class="changePWContainer"><a class="editAccountCivilian" href="changePassword.php?id='. $row['id'] .'">Change Password</a></div>';
-                        }
-		            ?>
-            </div>
-            <br>
-            <div>
-                <a href="C_reportIncident.php" class="profileReportBtn">REPORT INCIDENT</a>
-            </div>
-                <br>
-            <div class="profileRepHisHeader" style="text-align:center;">
-                <a>INCIDENT REPORT HISTORY</a>
-            </div>
+        <h1 style="margin-left: 5%;">ARE YOU SAFE?</h1>
+
         <div style="overflow=x:auto;">
         <table class="ProfileReportHistory">
             <tr>
-                <th>Report ID</th>
-                <th>Name</th>
+                <th>Incident</th>
+                <th>Barangay</th>
+                <th>Name of Reporter</th>
                 <th>Date Reported</th>
                 <th>Concern</th>
                 <th>Status</th>
@@ -93,7 +50,8 @@ include_once('Userheader.html');
             {
             ?>
              <tr>
-             <td><?php echo $row['id']  ?></td>
+             <td><?php echo $row['type']  ?></td>
+             <td><?php echo $row['barangay']  ?></td>
              <td><?php echo $row['name']  ?></td>
              <td><?php echo $row['date']; echo " - "; echo $row['time']?></td>
              <td><?php echo $row['incident']  ?></td>

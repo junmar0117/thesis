@@ -26,6 +26,7 @@ if(($username == $table_users) && ($password == $table_password)) // checks if t
 if($password == $table_password)
 {
 $_SESSION['user'] = $username; //set the username in a session. This serves as a global variable
+$_SESSION['type'] = 'barangay';//set the type in a session. This serves as a global variable
 header("location: B_profile.php"); // redirects the user to the authenticated home page
 }
 }
@@ -71,6 +72,7 @@ if(($username == $table_users) && ($password == $table_password)) // checks if t
 if($password == $table_password)
 {
 $_SESSION['user'] = $username; //set the username in a session. This serves as a global variable
+$_SESSION['type'] = 'fire';//set the type in a session. This serves as a global variable
 header("location: F_profile.php"); // redirects the user to the authenticated home page
 }
 }
@@ -115,7 +117,8 @@ if(($username == $table_users) && ($password == $table_password)) // checks if t
 {
 if($password == $table_password)
 {
-$_SESSION['user'] = $username; //set the username in a session. This serves as a global variable
+  $_SESSION['user'] = $username; //set the username in a session. This serves as a global variable
+  $_SESSION['type'] = 'police';//set the type in a session. This serves as a global variable
 header("location: P_profile.php"); // redirects the user to the authenticated home page
 }
 }

@@ -22,6 +22,7 @@ if($results != "") //IF there are no returning rows or no existing username
 		if($password == $table_password)
 		{
 			$_SESSION['user'] = $username; //set the username in a session. This serves as a global variable
+			$_SESSION['type'] = 'civilian';//set the type in a session. This serves as a global variable
 			Print '<script>alert("Logged in successfully!");</script>'; //Prompts the user
 			header("location:C_profile.php"); // redirects the user to the authenticated home page
 		}
