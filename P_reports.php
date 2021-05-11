@@ -91,7 +91,6 @@ $user = $_SESSION['user']; //assigns user value
                 <option value="851">851</option>
                 <option value="852">852</option>
                 <option value="853">853</option>
-                <option value="854">854</option>
                 <option value="855">855</option>
                 <option value="856">856</option>
                 <option value="857">857</option>
