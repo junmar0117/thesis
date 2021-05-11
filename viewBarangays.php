@@ -246,7 +246,7 @@ include_once('Userheader.html');
 
     <div id="Barangay 857" class="tabcontent">
         <h3>Barangay 857</h3>
-        <p>Address: Barangay 857, Pandacan, Manila, 1000, Metro Manila</p>
+        <p>Address: 1445 Labores Extension, Barangay 857, Pandacan, Manila, 1000, Metro Manila</p>
         <p>Contact Number: No Data Available</p>
         <p>Number of Reported Incidents:</p>
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.2040621393076!2d121.00049361492304!3d14.587444989810846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c9934917b677%3A0x3323b5862ad9ddb3!2sBrgy.%20857%2C%20Pandacan%2C%20Manila%2C%201011%20Metro%20Manila!5e0!3m2!1sen!2sph!4v1620707191458!5m2!1sen!2sph" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
