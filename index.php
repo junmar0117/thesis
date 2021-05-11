@@ -39,8 +39,6 @@ if($_SESSION['type']=='police'){
     </nav>
     <br>
     <br>
-    <br>
-
     <div class="hpFirstSection">
         <div class="hpFirst">
             <a class="hpFirstHeader">Take Action,</a><br>

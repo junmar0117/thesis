@@ -76,7 +76,7 @@ body {
 }
 
 .verticalTabView{
-  padding: 3%;
+  padding: 4%;
 }
 
 .tabcontent > h3, p {
@@ -92,6 +92,31 @@ p{
   font-size: 17px;
 }
 
-h3{
+.tabcontent h3{
   color:#ff0049;
+  font-size: 30px;
+}
+
+@media only screen and (max-width: 600px) {
+  .tab button{
+    width: 100%;
+    font-size: 15px;
+  }
+
+  iframe{
+    width:100%;
+    height: auto;
+  }
+
+  .tabcontent h3{
+    font-size: 20px;
+  }
+
+  p{
+    font-size: 14px;
+  }
+
+  .vBHeader{
+    font-size: 25px;
+  }
 }

@@ -58,13 +58,13 @@ include_once('Userheader.html');
                             Print '<td class="profileInfoContent">'. $row['username'] . "</td>";
                             Print "</tr>";
                             Print "<tr>";
-                            Print '<th class="profileInfoHeader">EMAIL</th>';
-                            Print '<td class="profileInfoContent">'. $row['email'] . "</td>";
                             Print '<th class="profileInfoHeader">AGE</th>';
                             Print '<td class="profileInfoContent">'. $row['age'] . "</td>";
+                            Print '<th class="profileInfoHeader">EMAIL</th>';
+                            Print '<td class="profileInfoContent">'. $row['email'] . "</td>";
                             Print "</tr>";
                             Print "<tr>";
-                            Print '<th class="profileInfoHeader">ACCOUNT</th>';
+                            Print '<th class="profileInfoHeader">ACCOUNT TYPE</th>';
                             Print '<td class="profileInfoContent">'."CIVILIAN" . "</td>";
                             Print "</tr>";
                             Print "<tr>";
@@ -84,7 +84,7 @@ include_once('Userheader.html');
             <div class="profileRepHisHeader" style="text-align:center;">
                 <a>INCIDENT REPORT HISTORY</a>
             </div>
-        <div style="overflow=x:auto;">
+        <div style="overflow-x:auto;">
         <table class="ProfileReportHistory">
             <tr>
                 <th>Report ID</th>
