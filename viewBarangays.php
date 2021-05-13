@@ -1,3 +1,12 @@
+<?php
+session_start();
+if($_SESSION['user']){ //checks if user is logged in
+}else{
+  header("location:index.php "); // redirects if user is not logged in
+}
+
+$user = $_SESSION['user']; //assigns user value
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,8 +19,35 @@
 </head>
 <body style="background-color: #FFFFFF;">
 <nav>
-<?php
-include_once('Userheader.html');
+<?php 
+require 'connection.php'; 
+$sql_b = "SELECT * FROM b_admin where username = '$user' ";
+$row_b = mysqli_query($con, $sql_b);
+
+$sql_f = "SELECT * FROM f_admin where username = '$user' ";
+$row_f = mysqli_query($con, $sql_f);
+
+$sql_p = "SELECT * FROM p_admin where username = '$user' ";
+$row_p = mysqli_query($con, $sql_p);
+
+if(mysqli_num_rows($row_b) > 0)    
+{       
+        Print '<nav>';
+        include_once('B_Userheader.html');
+        Print '</nav>';
+}else if(mysqli_num_rows($row_f) > 0)
+{
+    Print '<nav>';
+    include_once('F_Userheader.html');
+    Print '</nav>';
+}else if(mysqli_num_rows($row_p) > 0)
+{
+    Print '<nav>';
+    include_once('P_Userheader.html');
+    Print '</nav>';
+}else{
+    include_once('Userheader.html');
+}
 ?>
 </nav>
     <br>
