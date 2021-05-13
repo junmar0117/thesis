@@ -44,7 +44,15 @@ include_once('Userheader.html');
                 <th>Safe?</th>
             </tr>
             <?php
-            require 'connection.php';    
+            require 'connection.php';   
+
+            $query1 = mysqli_query($con, "SELECT * from civilians where username = '$user'"); // SQL Query
+            while($row = mysqli_fetch_array($query1))
+            {
+                $user_id = $row['id'];   
+                $name = $row['name'];
+            }
+
             $query = mysqli_query($con, "SELECT * from reports ORDER BY id DESC"); // SQL Query
             while($row = mysqli_fetch_array($query))
             {
