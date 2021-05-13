@@ -1,20 +1,6 @@
 <?php
 session_start();
-if($_SESSION['user']){ //checks if user is logged in
 
-if($_SESSION['type']=='civilian'){ 
-    header("location:C_profile.php ");//checks if user is civilian account
-}
-if($_SESSION['type']=='barangay'){ 
-    header("location:B_profile.php ");//checks if user is barangay account
-}
-if($_SESSION['type']=='fire'){ 
-    header("location:F_profile.php ");//checks if user is fire account
-}
-if($_SESSION['type']=='police'){ 
-    header("location:P_profile.php "); //checks if user is police account
-}
-}
 
 ?>
 <!DOCTYPE html>
