@@ -76,9 +76,10 @@ if($user=="b_admin")
                     Print'<input class="adminAddAccbtn" type="submit" name="addP" value="Add Account +"></input><br><br>';
         Print'</form>';
     Print'</div>';
+    //Print'<button onclick="document.getElementById("id01").style.display="block" class="adminAddSchedbtn">Add Schedule</button>';
 }
 ?>
-  <button onclick="document.getElementById('id01').style.display='block'" class="adminAddSchedbtn">Add Schedule</button>
+  
 
   <div id="id01" class="w3-modal">
     <div class="w3-modal-content">
