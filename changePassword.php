@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-
+session_start();
 require "connection.php"; // Using database connection file here
 
 $id = $_GET['id']; // get id through query string
