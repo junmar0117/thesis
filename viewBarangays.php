@@ -439,7 +439,7 @@ if(mysqli_num_rows($row_b) > 0)
     <?php
     require 'connection.php';  
     $result007=mysqli_query($con,"SELECT count(*) as total007 from reports WHERE barangay='860'");
-    $data007=mysqli_fetch_assoc($result3);
+    $data007=mysqli_fetch_assoc($result007);
     ?>
     <div id="Barangay 860" class="tabcontent">
         <h3>Barangay 860</h3>
