@@ -59,12 +59,20 @@ include_once('Userheader.html');
         <button class="tablinks" onclick="openCity(event, 'Barangay 871')">Barangay 871</button>
         <button class="tablinks" onclick="openCity(event, 'Barangay 872')">Barangay 872</button>
     </div>
-
+    <?php
+    require 'connection.php';  
+    //$result=mysqli_query($con,"SELECT COUNT(*) from reports WHERE barangay='833'");
+    $result=mysqli_query($con,"SELECT count(*) as total from reports WHERE barangay='833'");
+    $data=mysqli_fetch_assoc($result);
+    
+ 
+    
+    ?>
     <div id="Barangay 833" class="tabcontent">
         <h3>Barangay 833</h3>
         <p>Address: Mabini Bridge, Barangay 833, Zone 91, Pandacan, Manila, 1000 Metro Manila</p>
         <p>Contact Number: (02) 8986 3178</p>
-        <p>Number of Reported Incidents:</p>
+        <p>Number of Reported Incidents:<?php echo $data['total'] ?></p>
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.0636574800806!2d121.0021949148402!3d14.595448489805724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c9ef365fbebf%3A0x73c7675a319dbdb6!2sBrgy.%20833%2C%20Pandacan%2C%20Manila%2C%20Metro%20Manila!5e0!3m2!1sen!2sph!4v1620705563113!5m2!1sen!2sph" width="400" height="290" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     </div>
 

@@ -11,7 +11,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 
     if($results)
     {
-    Print '<script>alert("Data Updated!");</script>'; //Prompts the user
+    Print '<script>alert("Status Updated!");</script>'; //Prompts the user
     Print '<script>window.location.assign("B_monitor.php");</script>'; // redirects to login.php
     }
     else
