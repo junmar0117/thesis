@@ -73,7 +73,7 @@ if($user=="b_admin")
                      Print'<input type="text" id="position" required="required" name="position" placeholder="Position "><br>';
                 Print '</div>';
                 
-                    Print'<input class="adminAddAccbtn" type="submit" name="addP" value="Add Account +"></input><br><br>';
+                    Print'<input class="adminAddAccbtn" type="submit" name="addB" value="Add Account +"></input><br><br>';
         Print'</form>';
     Print'</div>';
     //Print'<button onclick="document.getElementById("id01").style.display="block" class="adminAddSchedbtn">Add Schedule</button>';
