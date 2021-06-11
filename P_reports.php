@@ -12,7 +12,7 @@ $user = $_SESSION['user']; //assigns user value
     <meta charset = "utf-8">
     <title> R & R | Philippine National Police Incident Report </title>
     <meta name ="viewport" content="width=devoce-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/BFPreportstyles.css">
+    <link rel="stylesheet" href="./css/BFPreportstyle.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -123,6 +123,41 @@ $user = $_SESSION['user']; //assigns user value
             <br>
             <input type="file" name="file" id="fileAttachment" required>
         </div>
+
+        <div class="progress">          
+            <label>Status</label>
+            <ul>
+                <li>
+                    <img src="./assets/status/fillup.png"><br>
+                    <i class="fa fa-circle"></i>
+                    <p>Fill Up Report Form</p>
+                </li>
+
+                <li>
+                    <img src="./assets/status/reportsubmitted.png"><br>
+                    <i class="fa fa-circle"></i>
+                    <p>Report Submitted</p>
+                </li>
+
+                <li>
+                    <img src="./assets/status/processed.png"><br>
+                    <i class="fa fa-circle"></i>
+                    <p>Report Processed</p>
+                </li>
+
+                <li>
+                    <img src="./assets/status/otw.png"><br>
+                    <i class="fa fa-circle"></i>
+                    <p>Response On The Way</p>
+                </li>
+
+                <li>
+                    <img src="./assets/status/finished.png"><br>
+                    <i class="fa fa-circle"></i>
+                    <p>Finished</p>
+                </li>
+            </ul>
+            </div>
 
         <input type="hidden" id="name" value="<?php echo $name?>">
         <input type="hidden" id="email" value="<?php echo $email?>">
