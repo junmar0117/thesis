@@ -157,7 +157,7 @@ if(isset($_POST['addP']))
 	$name = ($_POST['name']);
 	$username = ($_POST['username']);
 	$password = ($_POST['password']);
-    $password = md5($password);
+    $password = password_hash($password, PASSWORD_DEFAULT);
     $position = ($_POST['position']);
     $bool = true;
 
