@@ -1,0 +1,246 @@
+@import url("https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Lexend:wght@500&display=swap");
+body {
+  margin: 0;
+}
+
+.viewReportsTable {
+  width: 90%;
+  background-color: #FFFFFF;
+  margin: 0 5% 0 5%;
+}
+
+.viewRepHead {
+  Width: 90%;
+  margin: 0 5% 0 5%;
+  background-color: #252525;
+  text-align: center;
+  padding: 10px 0 10px 0;
+  color: #FFFFFF;
+  font-family: 'Lexend', sans-serif;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+td {
+  width: 45%;
+  background-color: #FFFFFF;
+  padding: 10px;
+  border-bottom: 1px solid #F1F1F1;
+  color: #000000;
+  font-family: 'Lexend', sans-serif;
+  font-size: 17px;
+}
+
+.reportProof {
+  width: 90%;
+  margin: 0 5% 0 5%;
+  background-color: #FFFFFF;
+  text-align: center;
+  padding: 10px 0 10px 0;
+  color: #252525;
+  font-family: 'Lexend', sans-serif;
+  text-transform: uppercase;
+  font-size: 18px;
+  border-bottom: 1px solid #F1F1F1;
+}
+
+#myImg {
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+#myImg:hover {
+  opacity: 0.7;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  padding-top: 100px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: black;
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.9);
+  /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* Add Animation */
+.modal-content, #caption {
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {
+    -webkit-transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes zoom {
+  from {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  right: 15px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  text-align: center;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px) {
+  .modal-content {
+    width: 100%;
+  }
+}
+
+/*updt btn*/
+.viewRepEditbtn {
+  color: black;
+  padding: 5px 10px;
+  border: 2px solid black;
+  background-color: white;
+  cursor: pointer;
+  font-family: 'Lexend', sans-serif;
+  font-size: 16px;
+}
+
+.viewRepEditbtn:hover {
+  color: #FF0049;
+  border-color: #FF0049;
+}
+
+.viewReportStatusUpdate {
+  width: 90%;
+  margin: 0 5% 0 5%;
+  background-color: #252525;
+  text-align: center;
+  padding: 10px 0 10px 0;
+  color: #FFFFFF;
+  font-family: 'Lexend', sans-serif;
+  text-transform: uppercase;
+  font-size: 18px;
+  border-bottom: 1px solid #F1F1F1;
+}
+
+.VRimgContainer {
+  width: 90%;
+  margin: 0 5% 0 5%;
+  background-color: #FFFFFF;
+  text-align: center;
+  padding: 10px 0 10px 0;
+  color: #252525;
+  font-family: 'Lexend', sans-serif;
+  text-transform: uppercase;
+  font-size: 18px;
+  border-bottom: 1px solid #F1F1F1;
+}
+
+.viewRepStatusUpdtBtnModal {
+  color: black;
+  float: right;
+  padding: 5px 10px;
+  border: 2px solid black;
+  background-color: white;
+  cursor: pointer;
+  font-family: 'Lexend', sans-serif;
+  font-size: 16px;
+}
+
+.viewRepStatusUpdtBtnModal:hover {
+  border: 2px solid #ff0049;
+  color: #ff0049;
+}
+
+select {
+  width: 100%;
+  margin: 5px 0 5px 0;
+  padding: 5px;
+  font-family: 'Lexend', sans-serif;
+}
+
+@media only screen and (max-width: 600px) {
+  .w3-container {
+    margin-top: 10%;
+  }
+}
+
+.progress {
+  margin-top: 5em;
+  margin-bottom: 5em;
+  text-align: center;
+}
+
+.progress .progress--attention {
+  width: 100%;
+}
+
+.progress .progress--attention .inlineimage {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.progress .progress--attention .inlineimage h1 {
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.progress .progress--attention .inlinetext {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.progress .progress--attention .inlinetext label {
+  font-size: 112px;
+  font-weight: 600;
+}
+/*# sourceMappingURL=viewR.css.map */

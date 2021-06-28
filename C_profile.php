@@ -51,6 +51,7 @@ include_once('Userheader.html');
                     $query = mysqli_query($con, "SELECT * from civilians where username = '$user' "); // SQL Query
                     while($row = mysqli_fetch_array($query))
                         {
+                            $civID = $row['id'];
                             Print "<tr>";
                             Print '<th class="profileInfoHeader">NAME</th>';
                             Print '<td class="profileInfoContent">'. $row['name'] . "</td>";
@@ -72,9 +73,15 @@ include_once('Userheader.html');
                             Print '<td class="profileInfoContent">'. $row['address'] . "</td>";
                             Print "</tr>";
                             Print "</table>";
-                            Print '<div class="changePWContainer"><a class="editAccountCivilian" href="changePassword.php?id='. $row['id'] .'">Change Password</a></div>';
+                        
                         }
 		            ?>
+                    <div class="changePWContainer">
+                    <form action="changePassword.php" method="GET">
+                        <input type="hidden" name="id" value="<?php echo $civID?>">
+                        <button class="viewReportbtn" type="submit">Change Password</button>
+                    </form>
+                    </div>
             </div>
             <br>
             <div>

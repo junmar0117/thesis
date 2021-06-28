@@ -4,18 +4,60 @@
 session_start();
 require "connection.php"; // Using database connection file here
 
-$id = $_GET['id']; // get id through query string
 
-$query = mysqli_query($con,"SELECT * from civilians where id='$id'"); // select query
-$row = mysqli_fetch_array($query); // fetch data
 
 if($_SERVER['REQUEST_METHOD'] == "POST")
 {
     require "connection.php";
-    $password = ($_POST['password']);
-    $password = md5($password);
-    mysqli_query($con,"UPDATE civilians SET username='$password' where id='$id");
-    header("location: C_profile.php");
+    $id = $_GET['id']; // get id through query string
+
+    if(isset($_POST['old_password']) && isset($_POST['new_password']) && isset($_POST['confirm_newpassword']))
+    {
+        $op = $_POST['old_password'];
+        $np = $_POST['new_password'];
+        $cnp = $_POST['confirm_newpassword'];
+
+        if(empty($op))
+        {
+            header("Location: changePassword.php?error=Old Password is required");
+            exit();
+        }
+        else if(empty($np))
+        {
+            header("Location: changePassword.php?error=New Password is required");
+            exit();
+        }
+        else if($np !== $cnp)
+        {
+            header("Location: changePassword.php?error=Confirmation Password doesn't match");
+            exit();
+        }
+        else
+        {
+            $np = password_hash($np, PASSWORD_DEFAULT);
+            
+            $query = "SELECT `password` FROM civilians WHERE id = $id";
+            $results = mysqli_query($con, $query);
+            if(mysqli_num_rows($results) === 1)
+            {
+                while($row = mysqli_fetch_assoc($results)) //display all rows from query
+                {  
+                    if(password_verify($op, $row['password'])) // checks if there are any matching fields
+                    {
+                        $query1 = "UPDATE civilians SET password = '$np' WHERE id = '$id'";
+                        $results1 = mysqli_query($con, $query1);
+                        header("Location: changePassword.php?success=Password successfully updated");
+                        exit();
+                    }
+                }
+            }
+            else
+            {
+                header("Location: changePassword.php?error=Incorrect Password");
+                exit();
+            }
+        }
+    }
 }
 ?>
 
@@ -32,7 +74,26 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 <h3>CHANGE PASSWORD</h3>
 
 <form method="POST">
-  <input type="text" name="password" value="<?php echo $row['password'] ?>" placeholder="Enter New Password" Required></input>
+          <?php 
+						if(isset($_GET['error']))
+						{
+					?>
+					<h3><?php echo $_GET['error']; ?></h1>
+					<?php
+						}
+					?>
+
+					<?php 
+						if(isset($_GET['success']))
+						{
+					?>
+					<h4><?php echo $_GET['success']; ?></h1>
+					<?php
+						}
+					?>
+  <input type="password" name="old_password" placeholder="Old Password"></input>
+  <input type="password" name="new_password" placeholder="New Password"></input>
+  <input type="password" name="confirm_newpassword" placeholder="Confirm New Password"></input>
   <br>
   <input type="submit" name="submit" value="Update"></input>
 </form>

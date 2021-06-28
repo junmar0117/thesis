@@ -7,16 +7,109 @@ if($_SESSION['user']){ //checks if user is logged in
 
 $user = $_SESSION['user']; //assigns user value
 ?>
-
+<?php
+if($_SERVER['REQUEST_METHOD'] == "POST")
+{
+    $id = ($_POST['id']);
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset = "utf-8">
     <title> View Reports | R & R </title>
     <meta name ="viewport" content="width=devoce-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/viewReports.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="./css/viewR.css">
+    <link rel="stylesheet" href="./css/popup.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script>
+            <?php 
+            require 'connection.php';
+            $query = mysqli_query($con, "SELECT * from reports where id = '$id' "); // SQL Query
+            while($row = mysqli_fetch_array($query))
+            {
+                if($row['status'] == "Needs Attention")
+                {
+                ?>    
+                $(document).ready(function() {
+                $("div.desc-progress").hide();
+                $("div.desc-otw").hide();
+                $("div.desc-complete").hide();
+                $("input[name$='status']").click(function(){
+                    var test = $(this).val();
+                    $("div.desc").hide();
+                    $("#" + test).show();
+                    });
+                });
+            <?php
+                }
+                else if($row['status'] == "In Progress")
+                {
+                ?>    
+                $(document).ready(function() {
+                $("div.desc-submitted").hide();
+                $("div.desc-otw").hide();
+                $("div.desc-complete").hide();
+                $("input[name$='status']").click(function(){
+                    var test = $(this).val();
+                    $("div.desc").hide();
+                    $("#" + test).show();
+                    });
+                });
+            <?php
+                }
+                else if($row['status'] == "On The Way")
+                {
+                ?>  
+                $(document).ready(function() {
+                $("div.desc-progress").hide();
+                $("div.desc-submitted").hide();
+                $("div.desc-complete").hide();
+                $("input[name$='status']").click(function(){
+                    var test = $(this).val();
+                    $("div.desc").hide();
+                    $("#" + test).show();
+                    });
+                }); 
+            <?php
+                }
+                else if($row['status'] == "Complete")
+                {
+            ?>  
+                $(document).ready(function() {
+                $("div.desc-progress").hide();
+                $("div.desc-submitted").hide();
+                $("div.desc-otw").hide();
+                $("input[name$='status']").click(function(){
+                    var test = $(this).val();
+                    $("div.desc").hide();
+                    $("#" + test).show();
+                    });
+                }); 
+            <?php
+                }
+            }
+            ?>
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript">
+	function status_update(val, id)
+	{
+		$.ajax({
+			type:'post',
+			url:'changeBlog.php',
+			data:{val:val,id:id},
+			success: function(result){
+				if(result == 1){
+					$('#str'+id).html('Status Updated');
+				}else{
+					$('#str'+id).html('Status Update Failed');
+				}
+			}
+		});
+	}
+	</script>
 </head>
 <body>
     <br>
@@ -44,14 +137,14 @@ if(mysqli_num_rows($row_b) > 0)
         Print '<div class="viewRepHead">Report Details</div>';
         Print '<table class="viewReportsTable">';
             
-            if($_SERVER['REQUEST_METHOD'] == "POST")
-            {
-                $id = ($_POST['id']);
-            }
             require 'connection.php';    
             $query = mysqli_query($con, "SELECT * from reports where id = '$id' "); // SQL Query
             while($row = mysqli_fetch_array($query))
             {
+                $featured = "";
+				$notFeatured = "";
+                $otw = "";
+				$completed = "";
             ?>
              <tr>
              <td><?php echo "Name: "; echo $row['name']  ?></td>
@@ -81,8 +174,10 @@ if(mysqli_num_rows($row_b) > 0)
             </div>
             
              <div class="viewReportStatusUpdate">  
-             <?php echo "Status: "; echo $row['status'] ?>
-                <button onclick="document.getElementById('id01').style.display='block'" class="viewRepEditbtn">UPDATE</button>
+             <?php echo "Status: "; echo $row['status'] ?>      
+             <button onclick="document.getElementById('id01').style.display='block'" class="viewRepEditbtn">UPDATE</button>      
+            </div>
+                
                 <div  id="id01" class="w3-modal">
                     <div class="w3-modal-content">
                     <div class="w3-container">
@@ -91,24 +186,115 @@ if(mysqli_num_rows($row_b) > 0)
                             <br>
                             <br>
                             <div class="txt_field">
-                                <select name="status" id="status">
-                                    <option disabled selected>Select an Option: </option>
-                                    <option value="Needs Attention">Needs Attention</option>
-                                    <option value="In Progress">In Progress</option>
-                                    <option value="Completed">Completed</option>
-                                </select>     
-                                <input type="hidden" name="id" value="<?php echo $row['id']?>">  
+                                <?php
+								if($row['status'] == "Submitted")
+								{
+									$featured = "Checked";
+								}
+								else if($row['status'] == "In Progress")
+								{
+									$notFeatured = "Checked";
+								}
+                                else if($row['status'] == "On The Way")
+                                {
+                                    $otw = "Checked";
+                                }
+                                else 
+                                {
+                                    $completed = "Checked";
+                                }
+								?>   
+                                <form>
+                                <input type="radio"  name="status" value="Needs Attention" onchange="status_update(this.value,<?php echo $row['id'];?>)" <?php echo $featured ?>>
+                                <label for="submitted" style="color: black;">Needs Attention</label><br>
+                                <input type="radio"  name="status" value="In Progress" onchange="status_update(this.value,<?php echo $row['id'];?>)" <?php echo $notFeatured ?>>
+                                <label for="progress" style="color: black;">In Progress</label><br>
+                                <input type="radio"  name="status" value="On The Way" onchange="status_update(this.value,<?php echo $row['id'];?>)" <?php echo $otw ?>>
+                                <label for="otw" style="color: black;">On the way</label><br>
+                                <input type="radio"  name="status" value="Completed" onchange="status_update(this.value,<?php echo $row['id'];?>)" <?php echo $completed ?>>
+                                <label for="complete" style="color: black;">Completed</label><br> 
+                                </form>
                             </div>   
                             <br>
-                            <input class="viewRepStatusUpdtBtnModal" type="submit" value="Update"></input><br><br>
-                        </form>
                     </div>
                     </div>
                 </div>
-                </div>
-            
-        
 
+                                
+
+                <div id="attention" class="progress desc-attention">          
+                <label>Status</label>
+                <div class="progress--attention">
+                        <div class="inlineimage">
+                                <img src="./assets/status/fillup.png" style="width: 100px;">
+                                <img src="./assets/status/reportsubmitted.png" style="width: 100px; margin-left: 4em;">
+                                <img src="./assets/status/processed.png" style="width: 100px; margin-left: 4em;">
+                                <img src="./assets/status/otw.png" style="width: 100px; margin-left: 4em;">
+                                <img src="./assets/status/finished.png" style="width: 100px; margin-left: 4em;">
+                                <h1 style="border-bottom: 2px solid black;"></h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="submitted" class="desc desc-submitted">
+                <div class="progress--attention" style="text-align:center;">
+                
+                        <div class="inlineimage">
+                                <h1 style="font-size:48px; margin-bottom: 1px black">Current status</h1>
+                                <img src="./assets/status/reportsubmitted.png" style="width: 200px; margin-left: 2em;">
+                                
+                        </div>
+
+                        <div class="inlinetext">
+                            <label style="font-size:32px;">Submitted</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="progress" class="desc desc-progress">
+                <div class="progress--attention" style="text-align:center;">
+                
+                        <div class="inlineimage">
+                                <h1 style="font-size:48px; margin-bottom: 1px black">Current status</h1>
+                                <img src="./assets/status/processed.png" style="width: 200px; margin-left: 2em;">
+                                
+                        </div>
+
+                        <div class="inlinetext">
+                            <label style="font-size:32px;">In progress</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="otw" class="desc desc-otw">
+                <div class="progress--attention" style="text-align:center;">
+                
+                        <div class="inlineimage">
+                                <h1 style="font-size:48px; margin-bottom: 1px black">Current status</h1>
+                                <img src="./assets/status/otw.png" style="width: 200px; margin-left: 2em;">
+                                
+                        </div>
+
+                        <div class="inlinetext">
+                            <label style="font-size:32px;">On the way</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="complete" class="desc desc-complete">
+                <div class="progress--attention" style="text-align:center;">
+                
+                        <div class="inlineimage">
+                                <h1 style="font-size:48px; margin-bottom: 1px black">Current status</h1>
+                                <img src="./assets/status/finished.png" style="width: 200px; margin-left: 2em;">
+                                
+                        </div>
+
+                        <div class="inlinetext">
+                            <label style="font-size:32px;">Finish</label>
+                        </div>
+                    </div>
+                </div>
 <?php
 }}else if(mysqli_num_rows($row_f) > 0)
 {
@@ -165,20 +351,113 @@ if(mysqli_num_rows($row_b) > 0)
                             <br>
                             <br>
                             <div class="txt_field">
-                                <select name="status" id="status">
-                                    <option disabled selected>Select an Option: </option>
-                                    <option value="Needs Attention">Needs Attention</option>
-                                    <option value="In Progress">In Progress</option>
-                                    <option value="Completed">Completed</option>
-                                </select>     
-                                <input type="hidden" name="id" value="<?php echo $row['id']?>">  
-                            </div>   
-                            <br>
-                            <input class="viewRepStatusUpdtBtnModal" type="submit" value="Update"></input><br><br>
-                        </form>
+                                <?php
+								if($row['status'] == "Submitted")
+								{
+									$featured = "Checked";
+								}
+								else if($row['status'] == "In Progress")
+								{
+									$notFeatured = "Checked";
+								}
+                                else if($row['status'] == "On The Way")
+                                {
+                                    $otw = "Checked";
+                                }
+                                else 
+                                {
+                                    $completed = "Checked";
+                                }
+								?>   
+                                <form>
+                                <input type="radio"  name="status" value="Needs Attention" onchange="status_update(this.value,<?php echo $row['id'];?>)" <?php echo $featured ?>>
+                                <label for="submitted" style="color: black;">Needs Attention</label><br>
+                                <input type="radio"  name="status" value="In Progress" onchange="status_update(this.value,<?php echo $row['id'];?>)" <?php echo $notFeatured ?>>
+                                <label for="progress" style="color: black;">In Progress</label><br>
+                                <input type="radio"  name="status" value="On The Way" onchange="status_update(this.value,<?php echo $row['id'];?>)" <?php echo $otw ?>>
+                                <label for="otw" style="color: black;">On the way</label><br>
+                                <input type="radio"  name="status" value="Completed" onchange="status_update(this.value,<?php echo $row['id'];?>)" <?php echo $completed ?>>
+                                <label for="complete" style="color: black;">Completed</label><br> 
+                                </form>
+                            </div> 
+                            <br>  
                     </div>
                     </div>
                 </div>
+                </div>
+
+                <div id="attention" class="progress desc-attention">          
+                <label>Status</label>
+                <div class="progress--attention">
+                        <div class="inlineimage">
+                                <img src="./assets/status/fillup.png" style="width: 100px;">
+                                <img src="./assets/status/reportsubmitted.png" style="width: 100px; margin-left: 4em;">
+                                <img src="./assets/status/processed.png" style="width: 100px; margin-left: 4em;">
+                                <img src="./assets/status/otw.png" style="width: 100px; margin-left: 4em;">
+                                <img src="./assets/status/finished.png" style="width: 100px; margin-left: 4em;">
+                                <h1 style="border-bottom: 2px solid black;"></h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="submitted" class="desc desc-submitted">
+                <div class="progress--attention" style="text-align:center;">
+                
+                        <div class="inlineimage">
+                                <h1 style="font-size:48px; margin-bottom: 1px black">Current status</h1>
+                                <img src="./assets/status/reportsubmitted.png" style="width: 200px; margin-left: 2em;">
+                                
+                        </div>
+
+                        <div class="inlinetext">
+                            <label style="font-size:32px;">Submitted</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="progress" class="desc desc-progress">
+                <div class="progress--attention" style="text-align:center;">
+                
+                        <div class="inlineimage">
+                                <h1 style="font-size:48px; margin-bottom: 1px black">Current status</h1>
+                                <img src="./assets/status/processed.png" style="width: 200px; margin-left: 2em;">
+                                
+                        </div>
+
+                        <div class="inlinetext">
+                            <label style="font-size:32px;">In progress</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="otw" class="desc desc-otw">
+                <div class="progress--attention" style="text-align:center;">
+                
+                        <div class="inlineimage">
+                                <h1 style="font-size:48px; margin-bottom: 1px black">Current status</h1>
+                                <img src="./assets/status/otw.png" style="width: 200px; margin-left: 2em;">
+                                
+                        </div>
+
+                        <div class="inlinetext">
+                            <label style="font-size:32px;">On the way</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="complete" class="desc desc-complete">
+                <div class="progress--attention" style="text-align:center;">
+                
+                        <div class="inlineimage">
+                                <h1 style="font-size:48px; margin-bottom: 1px black">Current status</h1>
+                                <img src="./assets/status/finished.png" style="width: 200px; margin-left: 2em;">
+                                
+                        </div>
+
+                        <div class="inlinetext">
+                            <label style="font-size:32px;">Finish</label>
+                        </div>
+                    </div>
                 </div>
 
 <?php
@@ -239,20 +518,111 @@ if(mysqli_num_rows($row_b) > 0)
                             <br>
                             <br>
                             <div class="txt_field">
-                                <select name="status" id="status">
-                                    <option disabled selected>Select an Option: </option>
-                                    <option value="Needs Attention">Needs Attention</option>
-                                    <option value="In Progress">In Progress</option>
-                                    <option value="Completed">Completed</option>
-                                </select>     
-                                <input type="hidden" name="id" value="<?php echo $row['id']?>">  
-                            </div>   
-                            <br>
-                            <input class="viewRepStatusUpdtBtnModal" type="submit" value="Update"></input><br><br>
-                        </form>
-                    </div>
+                                <?php
+								if($row['status'] == "Submitted")
+								{
+									$featured = "Checked";
+								}
+								else if($row['status'] == "In Progress")
+								{
+									$notFeatured = "Checked";
+								}
+                                else if($row['status'] == "On The Way")
+                                {
+                                    $otw = "Checked";
+                                }
+                                else 
+                                {
+                                    $completed = "Checked";
+                                }
+								?>   
+                                <form>
+                                <input type="radio"  name="status" value="Needs Attention" onchange="status_update(this.value,<?php echo $row['id'];?>)" <?php echo $featured ?>>
+                                <label for="submitted" style="color: black;">Needs Attention</label><br>
+                                <input type="radio"  name="status" value="In Progress" onchange="status_update(this.value,<?php echo $row['id'];?>)" <?php echo $notFeatured ?>>
+                                <label for="progress" style="color: black;">In Progress</label><br>
+                                <input type="radio"  name="status" value="On The Way" onchange="status_update(this.value,<?php echo $row['id'];?>)" <?php echo $otw ?>>
+                                <label for="otw" style="color: black;">On the way</label><br>
+                                <input type="radio"  name="status" value="Completed" onchange="status_update(this.value,<?php echo $row['id'];?>)" <?php echo $completed ?>>
+                                <label for="complete" style="color: black;">Completed</label><br> 
+                                </form>
+                            </div> 
+                            <br>  
+                </div>
+                </div>
+
+                <div id="attention" class="progress desc-attention">          
+                <label>Status</label>
+                <div class="progress--attention">
+                        <div class="inlineimage">
+                                <img src="./assets/status/fillup.png" style="width: 100px;">
+                                <img src="./assets/status/reportsubmitted.png" style="width: 100px; margin-left: 4em;">
+                                <img src="./assets/status/processed.png" style="width: 100px; margin-left: 4em;">
+                                <img src="./assets/status/otw.png" style="width: 100px; margin-left: 4em;">
+                                <img src="./assets/status/finished.png" style="width: 100px; margin-left: 4em;">
+                                <h1 style="border-bottom: 2px solid black;"></h1>
+                        </div>
                     </div>
                 </div>
+
+                <div id="submitted" class="desc desc-submitted">
+                <div class="progress--attention" style="text-align:center;">
+                
+                        <div class="inlineimage">
+                                <h1 style="font-size:48px; margin-bottom: 1px black">Current status</h1>
+                                <img src="./assets/status/reportsubmitted.png" style="width: 200px; margin-left: 2em;">
+                                
+                        </div>
+
+                        <div class="inlinetext">
+                            <label style="font-size:32px;">Submitted</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="progress" class="desc desc-progress">
+                <div class="progress--attention" style="text-align:center;">
+                
+                        <div class="inlineimage">
+                                <h1 style="font-size:48px; margin-bottom: 1px black">Current status</h1>
+                                <img src="./assets/status/processed.png" style="width: 200px; margin-left: 2em;">
+                                
+                        </div>
+
+                        <div class="inlinetext">
+                            <label style="font-size:32px;">In progress</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="otw" class="desc desc-otw">
+                <div class="progress--attention" style="text-align:center;">
+                
+                        <div class="inlineimage">
+                                <h1 style="font-size:48px; margin-bottom: 1px black">Current status</h1>
+                                <img src="./assets/status/otw.png" style="width: 200px; margin-left: 2em;">
+                                
+                        </div>
+
+                        <div class="inlinetext">
+                            <label style="font-size:32px;">On the way</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="complete" class="desc desc-complete">
+                <div class="progress--attention" style="text-align:center;">
+                
+                        <div class="inlineimage">
+                                <h1 style="font-size:48px; margin-bottom: 1px black">Current status</h1>
+                                <img src="./assets/status/finished.png" style="width: 200px; margin-left: 2em;">
+                                
+                        </div>
+
+                        <div class="inlinetext">
+                            <label style="font-size:32px;">Finish</label>
+                        </div>
+                    </div>
                 </div>
 
 <?php
@@ -304,10 +674,86 @@ if(mysqli_num_rows($row_b) > 0)
             <?php echo "Status: "; echo $row['status'] ?>
             </div>
             
+            <div id="attention" class="progress desc-attention">          
+                <label>Status</label>
+                <div class="progress--attention">
+                        <div class="inlineimage">
+                                <img src="./assets/status/fillup.png" style="width: 100px;">
+                                <img src="./assets/status/reportsubmitted.png" style="width: 100px; margin-left: 4em;">
+                                <img src="./assets/status/processed.png" style="width: 100px; margin-left: 4em;">
+                                <img src="./assets/status/otw.png" style="width: 100px; margin-left: 4em;">
+                                <img src="./assets/status/finished.png" style="width: 100px; margin-left: 4em;">
+                                <h1 style="border-bottom: 2px solid black;"></h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="submitted" class="desc desc-submitted">
+                <div class="progress--attention" style="text-align:center;">
+                
+                        <div class="inlineimage">
+                                <h1 style="font-size:48px; margin-bottom: 1px black">Current status</h1>
+                                <img src="./assets/status/reportsubmitted.png" style="width: 200px; margin-left: 2em;">
+                                
+                        </div>
+
+                        <div class="inlinetext">
+                            <label style="font-size:32px;">Submitted</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="progress" class="desc desc-progress">
+                <div class="progress--attention" style="text-align:center;">
+                
+                        <div class="inlineimage">
+                                <h1 style="font-size:48px; margin-bottom: 1px black">Current status</h1>
+                                <img src="./assets/status/processed.png" style="width: 200px; margin-left: 2em;">
+                                
+                        </div>
+
+                        <div class="inlinetext">
+                            <label style="font-size:32px;">In progress</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="otw" class="desc desc-otw">
+                <div class="progress--attention" style="text-align:center;">
+                
+                        <div class="inlineimage">
+                                <h1 style="font-size:48px; margin-bottom: 1px black">Current status</h1>
+                                <img src="./assets/status/otw.png" style="width: 200px; margin-left: 2em;">
+                                
+                        </div>
+
+                        <div class="inlinetext">
+                            <label style="font-size:32px;">On the way</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="complete" class="desc desc-complete">
+                <div class="progress--attention" style="text-align:center;">
+                
+                        <div class="inlineimage">
+                                <h1 style="font-size:48px; margin-bottom: 1px black">Current status</h1>
+                                <img src="./assets/status/finished.png" style="width: 200px; margin-left: 2em;">
+                                
+                        </div>
+
+                        <div class="inlinetext">
+                            <label style="font-size:32px;">Finish</label>
+                        </div>
+                    </div>
+                </div>
+
             <?php
             }
         }
             ?>
+
+            
         </table>
         <br>
     </section>
