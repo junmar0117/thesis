@@ -4,8 +4,6 @@
 session_start();
 require "connection.php"; // Using database connection file here
 
-
-
 if($_SERVER['REQUEST_METHOD'] == "POST")
 {
     require "connection.php";
@@ -19,24 +17,24 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 
         if(empty($op))
         {
-            header("Location: changePassword.php?error=Old Password is required");
+            header("Location: P_changePassword.php?error=Old Password is required");
             exit();
         }
         else if(empty($np))
         {
-            header("Location: changePassword.php?error=New Password is required");
+            header("Location: P_changePassword.php?error=New Password is required");
             exit();
         }
         else if($np !== $cnp)
         {
-            header("Location: changePassword.php?error=Confirmation Password doesn't match");
+            header("Location: P_changePassword.php?error=Confirmation Password doesn't match");
             exit();
         }
         else
         {
             $np = password_hash($np, PASSWORD_DEFAULT);
             
-            $query = "SELECT `password` FROM civilians WHERE id = $id";
+            $query = "SELECT `password` FROM p_admin WHERE id = $id";
             $results = mysqli_query($con, $query);
             if(mysqli_num_rows($results) === 1)
             {
@@ -44,16 +42,16 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
                 {  
                     if(password_verify($op, $row['password'])) // checks if there are any matching fields
                     {
-                        $query1 = "UPDATE civilians SET password = '$np' WHERE id = '$id'";
+                        $query1 = "UPDATE p_admin SET `password` = '$np' WHERE id = '$id'";
                         $results1 = mysqli_query($con, $query1);
-                        header("Location: changePassword.php?success=Password successfully updated");
+                        header("Location: P_changePassword.php?success=Password successfully updated");
                         exit();
                     }
                 }
             }
             else
             {
-                header("Location: changePassword.php?error=Incorrect Password");
+                header("Location: P_changePassword.php?error=Incorrect Password");
                 exit();
             }
         }
@@ -71,7 +69,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 
 <body>
 <div class="changePWContainer">
-<h3>CHANGE PASSWORD</h3>
+<h3>POLICE CHANGE PASSWORD</h3>
 
 <form method="POST">
           <?php 

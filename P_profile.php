@@ -19,6 +19,14 @@ if($_SESSION['type']=='civilian'){
 $user = $_SESSION['user']; //assigns user value
 //$id = $_SESSION['id']; 
 ?>
+<?php
+    require 'connection.php';    
+    $query = mysqli_query($con, "SELECT * from p_admin where username = '".$_SESSION['user']."'"); // SQL Query
+    while($row = mysqli_fetch_array($query))
+    {
+        $p_id = $row['id'];
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,7 +54,10 @@ include_once('P_Userheader.html');
         <a>USER: <?php echo $user;?></a>
     <br>
     <br>
-    
+    <form action="P_changePassword.php" method="GET">
+        <input type="hidden" name="id" value="<?php echo $p_id;?>">
+        <button class="viewReportbtn" type="submit">Change Password</button>
+    </form>
     <?php
     if($user=="p_admin")
     {
@@ -149,7 +160,6 @@ else {
     </section>
 </body>
 </html>
-
 <?php
 if(isset($_POST['addP']))
 { 

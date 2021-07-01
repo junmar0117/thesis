@@ -77,7 +77,7 @@ include_once('Userheader.html');
                         }
 		            ?>
                     <div class="changePWContainer">
-                    <form action="changePassword.php" method="GET">
+                    <form action="C_changePassword.php" method="GET">
                         <input type="hidden" name="id" value="<?php echo $civID?>">
                         <button class="viewReportbtn" type="submit">Change Password</button>
                     </form>

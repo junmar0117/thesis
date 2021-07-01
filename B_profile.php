@@ -19,6 +19,14 @@ if($_SESSION['type']=='police'){
 $user = $_SESSION['user']; //assigns user value
 //$id = $_SESSION['id']; 
 ?>
+<?php
+    require 'connection.php';    
+    $query = mysqli_query($con, "SELECT * from b_admin where username = '".$_SESSION['user']."'"); // SQL Query
+    while($row = mysqli_fetch_array($query))
+    {
+        $b_id = $row['id'];
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -114,6 +122,10 @@ if($user=="b_admin")
     <br>
     <br>
     <div>
+    <form action="B_changePassword.php" method="GET">
+                        <input type="hidden" name="id" value="<?php echo $b_id;?>">
+                        <button class="viewReportbtn" type="submit">Change Password</button>
+                    </form>
         </div>
 <?php
 if($user=="b_admin")
@@ -172,7 +184,6 @@ else {
             </form>
         </td>
         </tr>
-    
     <?php
 }
 }

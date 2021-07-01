@@ -19,6 +19,14 @@ if($_SESSION['type']=='police'){
 $user = $_SESSION['user']; //assigns user value
 //$id = $_SESSION['id']; 
 ?>
+<?php
+    require 'connection.php';    
+    $query = mysqli_query($con, "SELECT * from f_admin where username = '".$_SESSION['user']."'"); // SQL Query
+    while($row = mysqli_fetch_array($query))
+    {
+        $f_id = $row['id'];
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,7 +54,10 @@ include_once('F_Userheader.html');
         <a>USER: <?php echo $user;?></a>
     <br>
     <br>
-
+    <form action="F_changePassword.php" method="GET">
+        <input type="hidden" name="id" value="<?php echo $f_id;?>">
+        <button class="viewReportbtn" type="submit">Change Password</button>
+    </form>
     <?php
     //Admin - Add Account
     if($user=="f_admin"){
