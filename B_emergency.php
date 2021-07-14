@@ -4,22 +4,24 @@ if($_SESSION['user']){ //checks if user is logged in
 }else{
   header("location:index.php "); // redirects if user is not logged in
 }
+
 $user = $_SESSION['user']; //assigns user value
 ?>
 <?php
 if($_SERVER["REQUEST_METHOD"] == "POST")
 {
     $crime = $_POST['crime'];
-    $emergency = $_POST['emergency'];
+    $emergency = "Yes";
 }
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset = "utf-8">
-    <title> R & R | Philippine National Police Incident Report </title>
+    <title> R & R | Local Barangay Incident Report </title>
     <meta name ="viewport" content="width=devoce-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/BFPreportstyle.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -34,24 +36,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     <br>
     <br>
     <br>
-    <h1 id="CreportHeader">Philippine National Police Incident Report</h1>
+    <h1 id="CreportHeader">Local Barangay Incident Report</h1>
     <div class="CreportInci">
         
-        <form action="sendReport.php" enctype="multipart/form-data" method="POST" id="myEmail">
+        <form action="sendReportEmergency.php" enctype="multipart/form-data" method="POST" id="myEmail">
         <input type="hidden" name="crime" value="<?php echo $crime;?>">
         <input type="hidden" name="emergency" value="<?php echo $emergency;?>">
-        <div class="CreportInputBox">
-            <label for="descOfInci">Who are involved? / WHO?</label>
-            <br>
-            <input type="text" id="descOfIncident" name="who" placeholder="Who are involved?" required>
-        </div>
-
-        <div class="CreportInputBox">
-            <label for="descOfInci">When did it take place? / WHEN?</label>
-            <br>
-            <input type="datetime-local" id="descOfIncident" name="when" placeholder="When did it take place?" required>
-        </div>
-
         <div class="CreportInputBox">
             <label for="typeOfInci">Barangay: / WHERE?</label>
             <br>
@@ -108,21 +98,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
             <label for="typeOfInci">Type of Incident: / WHAT?</label>
             <br>
             <select name="type" id="type" required>
-                <option value="Drugs">Drugs</option>
-                <option value="Theft and Robbery">Theft and Robbery</option>
-                <option value="Murder">Murder</option>
-                <option value="Physical Violence">Physical Violence</option>
-                <option value="Illegal Gambling">Illegal Gambling</option>
-                <option value="Missing and Found Persons ">Missing and Found Persons </option>
-                <option value="Quarantine Violators">Quarantine Violators</option>
+                <option value="Child Abuse">Child Abuse</option>
+                <option value="Violence Against Women">Violence Against Women</option>
+                <option value="Sexual Harrassment">Sexual Harrassment</option>
+                <option value="Neighborhood Conflict">Neighborhood Conflict</option>
+                <option value="Fight">Fight</option>
+                <option value="Fight">Community Conflict</option>
                 <option value="Others">Others</option>
             </select>
-        </div>
-        
-        <div class="CreportInputBox">
-            <label for="descOfInci">Possible Motive, Why did it happen? / WHY?</label>
-            <br>
-            <input type="text" id="descOfIncident" name="who" placeholder="Who are involved?" required>
         </div>
 
         <?php
@@ -139,12 +122,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
           $email = $row['email'];
         }
         ?>
-        
-        <div class="CreportInputBox">
-            <label for="descOfInci">Description of Incident / HOW?</label>
-            <br>
-            <input type="text" id="descOfIncident" name="description" placeholder="Description of Incident" required>
-        </div>
 
         <div class="CreportInputBox">
             <label for="file">Proof of Incident</label>
@@ -152,7 +129,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
             <input type="file" name="file" id="fileAttachment" required>
         </div>
 
-        <div class="progress">          
+            
+            <div class="progress">          
             <label>Status</label>
             <ul>
                 <li>
@@ -190,8 +168,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         <input type="hidden" id="name" value="<?php echo $name?>">
         <input type="hidden" id="email" value="<?php echo $email?>">
         <input type="hidden" id="subject" value="Reports from R | R!">
-        <input type="hidden" id="body" value="<?php echo $name?> sent a report concerning the police! ">
-        <input type="submit" name="p_upload" value="S U B M I T" onclick="sendEmail()"><br>
+        <input type="hidden" id="body" value="<?php echo $name?> sent a report concerning the Local Barangay! ">
+        <input type="submit" name="b_upload" value="S U B M I T" onclick="sendEmail()"><br>
         </form>
     </div>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -231,7 +209,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         }
     }
     </script>
-
 </body>
 </html>
 

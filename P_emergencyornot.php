@@ -18,7 +18,22 @@ if($_SESSION['type']=='police'){
 $user = $_SESSION['user']; //assigns user value
 //$id = $_SESSION['id']; 
 ?>
+<?php
+if($_SERVER["REQUEST_METHOD"] == "POST")
+{
+    $crime = $_POST['crime'];
+}
+?>
+<?php
+$url = "";
+$url != 'P_emergencyornot.php';
 
+if ($_SERVER['HTTP_REFERER'] == $url) 
+{
+  header('Location: index.php'); //redirect to some other page
+  exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,12 +53,18 @@ include_once('Userheader.html');
 <br>
 <br>
     <div class="reportmainwrapper">
-        <h1>Concerned Organization</h1>
-        <h2>Please select the organization you're reporting to.</h2>
-        <button class="RPbutton" onclick="location.href='B_crimeornot.php';" style="vertical-align:middle"><span>Local Barangay</span></button><br>
-        <button class="RPbutton" onclick="location.href='F_reports.php';" style="vertical-align:middle"><span>Bureau of Fire Protection</span></button><br>
-        <button class="RPbutton" onclick="location.href='P_crimeornot.php';" style="vertical-align:middle"><span>Philippine National Police</span></button><br>
-
+        <h1>Philippine National Police</h1>
+        <h2>Is the Incident Emergency or Not?</h2>
+        <form action="P_emergency.php" method="POST">
+        <input type="hidden" name="crime" value="<?php echo $crime?>"></input>
+        <input type="hidden" name="emergency" value="Yes"></input>
+        <button class="RPbutton" style="vertical-align:middle"><span>Yes</span></button><br>
+        </form>
+        <form action="P_reports.php" method="POST">
+        <input type="hidden" name="crime" value="<?php echo $crime?>"></input>
+        <input type="hidden" name="emergency" value="No"></input>
+        <button class="RPbutton" style="vertical-align:middle"><span>No</span></button><br>
+        </form>
     </div>   
 </body>
 </html>
