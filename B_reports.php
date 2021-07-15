@@ -7,10 +7,13 @@ if($_SESSION['user']){ //checks if user is logged in
 
 $user = $_SESSION['user']; //assigns user value
 ?>
-
-
-
-
+<?php
+if($_SERVER["REQUEST_METHOD"] == "POST")
+{
+    $crime = $_POST['crime'];
+    $emergency = $_POST['emergency'];
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,44 +40,22 @@ $user = $_SESSION['user']; //assigns user value
     <div class="CreportInci">
         
         <form action="sendReport.php" enctype="multipart/form-data" method="POST" id="myEmail">
+        <input type="hidden" name="crime" value="<?php echo $crime;?>">
+        <input type="hidden" name="emergency" value="<?php echo $emergency;?>">
         <div class="CreportInputBox">
-            <label for="typeOfInci">Type of Incident:</label>
+            <label for="descOfInci">Who are involved? / WHO?</label>
             <br>
-            <select name="type" id="type" required>
-                <option value="Child Abuse">Child Abuse</option>
-                <option value="Violence Against Women">Violence Against Women</option>
-                <option value="Sexual Harrassment">Sexual Harrassment</option>
-                <option value="Neighborhood Conflict">Neighborhood Conflict</option>
-                <option value="Fight">Fight</option>
-                <option value="Fight">Community Conflict</option>
-                <option value="Others">Others</option>
-            </select>
-        </div>
-        <?php
-        require 'connection.php';  
-        $queryID = mysqli_query($con, "SELECT * from civilians WHERE civilians.username = '".$_SESSION['user']."' LIMIT 1");
-        while($row = mysqli_fetch_array($queryID))
-          {
-            $id = $row['id'];
-          }
-        $query = mysqli_query($con, "SELECT * from civilians WHERE civilians.id = $id LIMIT 1"); // SQL Query
-        while($row = mysqli_fetch_array($query))
-        {
-          $name = $row['name'];
-          $email = $row['email'];
-        }
-        ?>
-
-       
-        
-        <div class="CreportInputBox">
-            <label for="placeOfInci">Place or Landmark of Incident</label>
-            <br>
-            <input type="text" id="placeOfIncident" name="place" placeholder="Place of Incident" required>
+            <input type="text" id="descOfIncident" name="who" placeholder="Who are involved?" required>
         </div>
 
         <div class="CreportInputBox">
-            <label for="typeOfInci">Barangay:</label>
+            <label for="descOfInci">When did it take place? / WHEN?</label>
+            <br>
+            <input type="datetime-local" id="descOfIncident" name="when" placeholder="When did it take place?" required>
+        </div>
+
+        <div class="CreportInputBox">
+            <label for="typeOfInci">Barangay: / WHERE?</label>
             <br>
             <select name="barangay" id="barangay" required>
                 <option value="833">833</option>
@@ -120,7 +101,48 @@ $user = $_SESSION['user']; //assigns user value
         </div>
 
         <div class="CreportInputBox">
-            <label for="descOfInci">Description of Incident</label>
+            <label for="placeOfInci">Place or Landmark of Incident / WHERE?</label>
+            <br>
+            <input type="text" id="placeOfIncident" name="place" placeholder="Place of Incident" required>
+        </div>
+
+        <div class="CreportInputBox">
+            <label for="typeOfInci">Type of Incident: / WHAT?</label>
+            <br>
+            <select name="type" id="type" required>
+                <option value="Child Abuse">Child Abuse</option>
+                <option value="Violence Against Women">Violence Against Women</option>
+                <option value="Sexual Harrassment">Sexual Harrassment</option>
+                <option value="Neighborhood Conflict">Neighborhood Conflict</option>
+                <option value="Fight">Fight</option>
+                <option value="Fight">Community Conflict</option>
+                <option value="Others">Others</option>
+            </select>
+        </div>
+        
+        <div class="CreportInputBox">
+            <label for="descOfInci">Possible Motive, Why did it happen? / WHY?</label>
+            <br>
+            <input type="text" id="descOfIncident" name="who" placeholder="Who are involved?" required>
+        </div>
+
+        <?php
+        require 'connection.php';  
+        $queryID = mysqli_query($con, "SELECT * from civilians WHERE civilians.username = '".$_SESSION['user']."' LIMIT 1");
+        while($row = mysqli_fetch_array($queryID))
+          {
+            $id = $row['id'];
+          }
+        $query = mysqli_query($con, "SELECT * from civilians WHERE civilians.id = $id LIMIT 1"); // SQL Query
+        while($row = mysqli_fetch_array($query))
+        {
+          $name = $row['name'];
+          $email = $row['email'];
+        }
+        ?>
+
+        <div class="CreportInputBox">
+            <label for="descOfInci">Description of Incident / HOW?</label>
             <br>
             <input type="text" id="descOfIncident" name="description" placeholder="Description of Incident" required>
         </div>
