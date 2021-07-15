@@ -42,19 +42,32 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         <form action="sendReport.php" enctype="multipart/form-data" method="POST" id="myEmail">
         <input type="hidden" name="crime" value="<?php echo $crime;?>">
         <input type="hidden" name="emergency" value="<?php echo $emergency;?>">
-        <div class="CreportInputBox">
+
+        <div class="tab">
+  <button class="tablinks" onclick="openTabForm(event, 'who')">WHO?</button>
+  <button class="tablinks" onclick="openTabForm(event, 'when')">WHEN?</button>
+  <button class="tablinks" onclick="openTabForm(event, 'where')">WHERE?</button>
+  <button class="tablinks" onclick="openTabForm(event, 'what')">WHAT?</button>
+  <button class="tablinks" onclick="openTabForm(event, 'why')">WHY?</button>
+  <button class="tablinks" onclick="openTabForm(event, 'how')">HOW?</button>
+</div>
+
+        <div id="who" class="CreportInputBox">
+            <br>
             <label for="descOfInci">Who are involved? / WHO?</label>
             <br>
             <input type="text" id="descOfIncident" name="who" placeholder="Who are involved?" required>
         </div>
 
-        <div class="CreportInputBox">
+        <div id="when" class="CreportInputBox">
+        <br>
             <label for="descOfInci">When did it take place? / WHEN?</label>
             <br>
             <input type="datetime-local" id="descOfIncident" name="when" placeholder="When did it take place?" required>
         </div>
 
-        <div class="CreportInputBox">
+        <div id="where" class="CreportInputBox">
+        <br>
             <label for="typeOfInci">Barangay: / WHERE?</label>
             <br>
             <select name="barangay" id="barangay" required>
@@ -98,15 +111,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
                 <option value="871">871</option>
                 <option value="872">872</option>
             </select>
-        </div>
-
-        <div class="CreportInputBox">
+            <br>
             <label for="placeOfInci">Place or Landmark of Incident / WHERE?</label>
             <br>
             <input type="text" id="placeOfIncident" name="place" placeholder="Place of Incident" required>
         </div>
 
-        <div class="CreportInputBox">
+        <div id="what" class="CreportInputBox">
+        <br>
             <label for="typeOfInci">Type of Incident: / WHAT?</label>
             <br>
             <select name="type" id="type" required>
@@ -120,7 +132,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
             </select>
         </div>
         
-        <div class="CreportInputBox">
+        <div id="why" class="CreportInputBox">
+        <br>
             <label for="descOfInci">Possible Motive, Why did it happen? / WHY?</label>
             <br>
             <input type="text" id="descOfIncident" name="who" placeholder="Who are involved?" required>
@@ -141,21 +154,34 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         }
         ?>
 
-        <div class="CreportInputBox">
+        <div id="how" class="CreportInputBox">
+            <br>
             <label for="descOfInci">Description of Incident / HOW?</label>
             <br>
             <input type="text" id="descOfIncident" name="description" placeholder="Description of Incident" required>
-        </div>
 
-        <div class="CreportInputBox">
             <label for="file">Proof of Incident</label>
             <br>
             <input type="file" name="file" id="fileAttachment" required>
         </div>
-
+        <script>
+function openTabForm(evt, tabFormName) {
+  var i, CreportInputBox, tablinks;
+  CreportInputBox = document.getElementsByClassName("CreportInputBox");
+  for (i = 0; i < CreportInputBox.length; i++) {
+    CreportInputBox[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(tabFormName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
             
             <div class="progress">          
-            <label>Status</label>
+            <label class="statuslabel">Status</label>
             <ul>
                 <li>
                     <img src="./assets/status/fillup.png"><br>

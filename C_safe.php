@@ -67,7 +67,7 @@ include_once('Userheader.html');
              <td>
                 <form action="viewReports.php" method="POST">
                      <input type="hidden" name="id" value="<?php echo $row['id']?>">
-                     <button class="viewReportbtn" type="submit">View</button>
+                     <button class="viewReportbtn2" type="submit">View</button>
                 </form>
             </td>
             <td>

@@ -2,40 +2,13 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Heatmaps</title>
-    <style>
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-      #map {
-        height: 50%;
-      }
-#floating-panel {
-  position: absolute;
-  top: 10px;
-  left: 25%;
-  z-index: 5;
-  background-color: #fff;
-  padding: 5px;
-  border: 1px solid #999;
-  text-align: center;
-  font-family: 'Roboto','sans-serif';
-  line-height: 30px;
-  padding-left: 10px;
-}
-
-      #floating-panel {
-        background-color: #fff;
-        border: 1px solid #999;
-        left: 25%;
-        padding: 5px;
-        position: absolute;
-        top: 10px;
-        z-index: 5;
-      }
-    </style>
+    <title>R & R | Heatmap</title>
+    <meta name ="viewport" content="width=devoce-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/heatmap.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
   </head>
 
   <body>
@@ -45,10 +18,12 @@
       ?>
   </nav>
     <div id="floating-panel">
-      <button onclick="toggleHeatmap()">Toggle Heatmap</button>
-      <button onclick="changeGradient()">Change gradient</button>
-      <button onclick="changeRadius()">Change radius</button>
-      <button onclick="changeOpacity()">Change opacity</button>
+      <ul>
+        <li><button onclick="toggleHeatmap()">Toggle Heatmap</button></li><br>
+        <li><button onclick="changeGradient()">Change Gradient</button></li><br>
+        <li><button onclick="changeRadius()">Change Radius</button></li><br>
+        <li><button onclick="changeOpacity()">Change Opacity</button></li>
+      </ul>
     </div>
     <div id="map"></div>
     <script>

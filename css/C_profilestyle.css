@@ -183,11 +183,34 @@ input[type=button]:hover{
 .viewReportbtn{
     cursor:pointer;
     border:none;
-    background-color:inherit;
-    font-family:inherit;
-    font-size:13px;
+    background-color:#FFFFFF;
+    font-family: 'Lexend', sans-serif;
+    font-size:15px;
     color:#ff0049;
+    float:right;
+    margin-right:5%;
 }
+
+.viewReportbtn:hover{
+    background-color: #ff0049;
+    color:#FFFFFF;
+}
+
+.viewReportbtn2{
+    cursor:pointer;
+    border:none;
+    background-color:#FFFFFF;
+    font-family: 'Lexend', sans-serif;
+    font-size:15px;
+    color:#ff0049;
+    margin-right:5%;
+}
+
+.viewReportbtn2:hover{
+    background-color: #ff0049;
+    color:#FFFFFF;
+}
+
 
 @media only screen and (max-width: 600px) {
     .profilePicTable, .userdetailsheader, .aboutdetailsheader, .profileInfo, .profileReportBtn, .profileRepHisHeader, .ProfileReportHistory{

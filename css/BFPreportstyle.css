@@ -75,7 +75,7 @@ input[type=submit]{
     margin-bottom: 5%;
     padding: 10px;
     background-color: white; 
-    color:black;
+    color:#ff0049;
 	font-size: 15px;
     font-family: 'Lexend', sans-serif;
     border: 2px solid #ff0049;
@@ -104,7 +104,7 @@ input[type=submit]:hover{
   }
 
 .progress{
-    margin: 300px auto;
+    margin: 5% auto;
 }
 
 .progress img{
@@ -172,3 +172,59 @@ ul li:first-child .fa::after{
 ul li:last-child .fa::after{
     width: 105px;
 }
+
+p{
+    font-family: 'Lexend', sans-serif;
+
+}
+
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    border: 1px solid #f1f1f1;
+    border-left: 2px solid #ff0049;
+    background-color: #FFFFFF;
+  }
+  
+  /* Style the buttons inside the tab */
+  .tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+    font-family: 'Lexend', sans-serif;
+  }
+  
+  /* Change background color of buttons on hover */
+  .tab button:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* Create an active/current tablink class */
+  .tab button.active {
+    color: #FF0049;
+  }
+  
+  /* Style the tab content */
+  .CreportInputBox {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #f1f1f1;
+    border-left: 2px solid #ff0049;
+    border-top: none;
+    font-family: 'Lexend', sans-serif;
+    background-color: #FFFFFF;
+  }
+  
+  .formstabscontainer{
+      margin: 0 1% 0 1%;
+  }
+  
+  .statuslabel{
+      color:#ff0049;
+      text-transform: uppercase;
+  }
