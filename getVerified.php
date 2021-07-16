@@ -19,14 +19,12 @@ $user = $_SESSION['user']; //assigns user value
 //$id = $_SESSION['id']; 
 ?>
 <?php
-$url = "";
-$url != 'C_reportIncident.php';
-
-if ($_SERVER['HTTP_REFERER'] == $url) 
-{
-  header('Location: C_profile.php'); //redirect to some other page
-  exit();
-}
+	require 'connection.php';    
+	$queryID = mysqli_query($con, "SELECT * from civilians WHERE civilians.username = '".$_SESSION['user']."' LIMIT 1");
+	while($row = mysqli_fetch_array($queryID))
+	{
+        $id = $row['id'];
+	}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -47,12 +45,21 @@ include_once('Userheader.html');
 <br>
 <br>
     <div class="reportmainwrapper">
-        <h1>Concerned Organization</h1>
-        <h2>Please select the organization you're reporting to.</h2>
-        <button class="RPbutton" onclick="location.href='B_crimeornot.php';" style="vertical-align:middle"><span>Local Barangay</span></button><br>
-        <button class="RPbutton" onclick="location.href='F_reports.php';" style="vertical-align:middle"><span>Bureau of Fire Protection</span></button><br>
-        <button class="RPbutton" onclick="location.href='P_crimeornot.php';" style="vertical-align:middle"><span>Philippine National Police</span></button><br>
-
+        <h1>Get Verified</h1>
+        <h2>Please send a copy of your valid ID.</h2>
+        <h2>Accepted Valid IDs: </h2>
+        <form action="getVerifiedAction.php" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="id" value="<?php echo $id;?>">
+            <select name="validID" id="validID">
+                <option value="Drivers License">Drivers License</option>
+                <option value="School ID">School ID</option>
+                <option value="National ID">Mercedes</option>
+            </select>
+            <br>
+            <input type="file" name="file" id="file">
+            <br>
+            <button type="submit">Submit</button>
+        </form>
     </div>   
 </body>
 </html>

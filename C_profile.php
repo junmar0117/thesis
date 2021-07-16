@@ -67,6 +67,15 @@ include_once('Userheader.html');
                             Print "<tr>";
                             Print '<th class="profileInfoHeader">ACCOUNT TYPE</th>';
                             Print '<td class="profileInfoContent">'."CIVILIAN" . "</td>";
+                            Print '<th class="profileInfoHeader">VERIFIED</th>';
+                            if($row['verified'] == 1)
+                            {
+                                echo '<th class="profileInfoHeader">You are already Verified</th>';
+                            }
+                            else
+                            {
+                                echo '<th class="profileInfoHeader"><a href="getVerified.php"><button class="btn-subscribe">Get Verified</button></a></th>';
+                            }
                             Print "</tr>";
                             Print "<tr>";
                             Print '<th class="profileInfoHeader">ADDRESS</th>';
@@ -85,7 +94,21 @@ include_once('Userheader.html');
             </div>
             <br>
             <div>
-                <a href="C_reportIncident.php" class="profileReportBtn">REPORT INCIDENT</a>
+                <?php
+                $query = mysqli_query($con, "SELECT * from civilians where username = '$user' "); // SQL Query
+                while($row = mysqli_fetch_array($query))
+                {
+                    if($row['verified'] == 1)
+                    {
+                        echo '<a href="C_reportIncident.php" class="profileReportBtn">REPORT INCIDENT</a>';
+                    }
+                    else
+                    {
+                        echo '<a href="C_reportIncident.php" class="profileReportBtn"><button disabled>REPORT INCIDENT</button></a>';
+                    }
+                }
+                ?>
+                
             </div>
                 <br>
             <div class="profileRepHisHeader" style="text-align:center;">
