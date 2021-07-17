@@ -103,40 +103,86 @@ session_start();
             <br>
             <br>
 
-                <table class="indexPBBTable">
-                    <tr>
-                        <th><img src="./assets/pnpfinallogo.jpg" width="100%" height="300px" ></th>
-                        <th><img src="./assets/bfpfinallogo.jpg"  width="100%" height="300px" ></th>
-                        <th><img src="./assets/barangay2.jpg" width="100%" height="300px" ></th>
-                    </tr>
+<div class="rowCard">
+  <div class="columnCard">
+    <div class="card">
+    <img src="./assets/pnpfinallogo.jpg" width="100%" height="300px" >
+      <h3 class="ipbbthead">I</h3>
+      <p class="ipbbthead2">i</p>
+      <p class="ipbbthead3"> i </p>
+      <a class="PBBvstbtn2">MORE <i class="far fa-arrow-alt-circle-right"></i></a>
+      <br>
+      <br>
+    </div>
+  </div>
 
-                    <tr>
-                        <td class="ipbbthead" style="border-top:1px solid #252525;">Report 1</td>
-                        <td class="ipbbthead" style="border-top:1px solid #252525;">Report 2</td>
-                        <td class="ipbbthead" style="border-top:1px solid #252525;">Report 3</td>
-                    </tr>
+  <div class="columnCard">
+    <div class="card">
+    <img src="./assets/bfpfinallogo.jpg"  width="100%" height="300px" >
+      <h3 class="ipbbthead">I</h3>
+      <p class="ipbbthead2">i</p>
+      <p class="ipbbthead3"> i </p>
+      <a class="PBBvstbtn2">MORE <i class="far fa-arrow-alt-circle-right"></i></a>
+      <br>
+      <br>
+    </div>
+  </div>
+  
+  <div class="columnCard">
+    <div class="card">
+    <img src="./assets/barangay2.jpg" width="100%" height="300px" >
+      <h3 class="ipbbthead">I</h3>
+      <p class="ipbbthead2">i</p>
+      <p class="ipbbthead3"> i </p>
+      <a class="PBBvstbtn2">MORE <i class="far fa-arrow-alt-circle-right"></i></a>
+      <br>
+      <br>
+    </div>
+  </div>
+</div>
 
-                    <tr>
-                        <td class="ipbbthead2" style="padding-bottom: 10%;">asd</td>
-                        <td class="ipbbthead2" style="padding-bottom: 10%;">asd</td>
-                        <td class="ipbbthead2" style="padding-bottom: 10%;">asd</td>
-                    </tr>
-
-                    <tr>
-                        <td class="ipbbthead3">Posted on:</td>
-                        <td class="ipbbthead3">Posted on:</td>
-                        <td class="ipbbthead3">Posted on:</td>
-                    </tr>
-
-                    <tr>
-                        <td><button class="PBBvstbtn" style="vertical-align:middle"><span>View More</span></button></td>
-                        <td><button class="PBBvstbtn" style="vertical-align:middle"><span>View More</span></button></td>
-                        <td><button class="PBBvstbtn" style="vertical-align:middle"><span>View More</span></button></td>
-                    </tr>
-                </table>
         </div>
     </div>
 
+    <div class="indexContent4">
+        <div class="indexPBB2">
+            <div class="hpSecHeader3">Featured <a id="reportsColor">Reports</a></div>
+            <br>
+            <br>
+            <div class="rowCard">
+  <div class="columnCard">
+  <img src="./assets/pnpfinallogo.jpg" width="100%" height="300px" >
+    <div class="card">
+      <h3 class="ipbbthead">I</h3>
+      <p class="ipbbthead2">i</p>
+      <p class="ipbbthead3"> i </p>
+      <button class="PBBvstbtn" style="vertical-align:middle"><span>View More</span></button>
+    </div>
+  </div>
+
+  <div class="columnCard">
+  <img src="./assets/bfpfinallogo.jpg"  width="100%" height="300px" >
+    <div class="card">
+      <h3 class="ipbbthead">I</h3>
+      <p class="ipbbthead2">i</p>
+      <p class="ipbbthead3"> i </p>
+      <button class="PBBvstbtn" style="vertical-align:middle"><span>View More</span></button>
+    </div>
+  </div>
+  
+  <div class="columnCard">
+  <img src="./assets/barangay2.jpg" width="100%" height="300px" >
+  <div class="card">
+      <h3 class="ipbbthead">I</h3>
+      <p class="ipbbthead2">i</p>
+      <p class="ipbbthead3"> i </p>
+      <button class="PBBvstbtn" style="vertical-align:middle"><span>View More</span></button>
+    </div>
+  </div>
+
+</div>
+        </div>
+    </div>
     
 
 </body>
