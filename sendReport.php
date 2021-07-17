@@ -93,6 +93,8 @@ $description = ($_POST['description']);
 $type = ($_POST['type']);
 $incident = "Fire";
 $status = "Needs Attention";
+$lat = $_POST['lat'];
+$long = $_POST['long'];
  
 $file = $_FILES['file'];
 $fileName = $file['name'];
@@ -111,8 +113,8 @@ if (in_array($fileActualExt, $allowed)){
 
             $fileDestination = 'reportFiles/'.$fileNameNew;
             move_uploaded_file($fileTmpName,$fileDestination);
-            mysqli_query($con, "INSERT INTO reports (username,name, date, place, barangay, description, file, type, incident, time,status) VALUES ('$user','$fullName','$date','$involve','$when','$place','$barangay','$description','$fileNameNew','$type','$incident','$time', '$status','$emergency','$crime')"); //SQL query
-            Print '<script>alert("Report sucessfully sent!");</script>'; //Prompts the user
+            mysqli_query($con, "INSERT INTO reports (username,name, date, involve, incident_time, place, barangay, description, file, type, incident, time,status,emergency,crime,latitude,longitude) VALUES ('$user','$fullName','$date','$involve','$when','$place','$barangay','$description','$fileNameNew','$type','$incident','$time', '$status','$emergency','$crime','$lat','$long')"); //SQL query
+           Print '<script>alert("Report sucessfully sent!");</script>'; //Prompts the user
             Print '<script>window.location.assign("C_reportIncident.php");</script>'; // redirects to login.php
             //header("location:allreports.php ");
 
@@ -156,6 +158,8 @@ $incident = "Police";
 $status = "Needs Attention";
 $emergency = $_POST['emergency'];
 $crime = $_POST['crime'];
+$lat = $_POST['lat'];
+$long = $_POST['long'];
  
 $file = $_FILES['file'];
 $fileName = $file['name'];
@@ -174,7 +178,7 @@ if (in_array($fileActualExt, $allowed)){
 
             $fileDestination = 'reportFiles/'.$fileNameNew;
             move_uploaded_file($fileTmpName,$fileDestination);
-            mysqli_query($con, "INSERT INTO reports (username,name, date, involve, incident_time, place, barangay, description, file, type, incident, time,status,emergency,crime) VALUES ('$user','$fullName','$date','$involve','$when','$place','$barangay','$description','$fileNameNew','$type','$incident','$time', '$status','$emergency','$crime')"); //SQL query
+            mysqli_query($con, "INSERT INTO reports (username,name, date, involve, incident_time, place, barangay, description, file, type, incident, time,status,emergency,crime,latitude,longitude) VALUES ('$user','$fullName','$date','$involve','$when','$place','$barangay','$description','$fileNameNew','$type','$incident','$time', '$status','$emergency','$crime','$lat','$long')"); //SQL query
             Print '<script>alert("Report sucessfully sent!");</script>'; //Prompts the user
             Print '<script>window.location.assign("C_reportIncident.php");</script>'; // redirects to login.php
             //header("location:allreports.php ");

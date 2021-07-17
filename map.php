@@ -67,6 +67,7 @@ function SwitchMap() {
 function getPoints() {
   return [
     new google.maps.LatLng(14.595320894829557, 121.00361595826206),
+  
     new google.maps.LatLng(14.593172782622228, 121.00357235471445),
     new google.maps.LatLng(14.591769498095898, 121.00978043343358),
     new google.maps.LatLng(14.594498679792771, 121.01046473917921),

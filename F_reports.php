@@ -19,6 +19,12 @@ $user = $_SESSION['user']; //assigns user value
     <meta name ="viewport" content="width=devoce-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/BFPreportstyle.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFimWZwIvDnYDZS0pKqz25yCBY10DTzm4&signed_in=true&libraries=visualization&callback=initMap">></script>
+    <style> html, body, #map_canvas {
+    margin: 0;
+    padding: 0;
+    height: 100%}
+</style>
 </head>
 <body>
 
@@ -61,9 +67,20 @@ $user = $_SESSION['user']; //assigns user value
         ?>
         
         <div class="CreportInputBox">
-            <label for="placeOfInci">Place or Landmark of Incident</label>
+        <label for="placeOfInci">Place or Landmark of Incident / WHERE?</label>
             <br>
             <input type="text" id="placeOfIncident" name="place" placeholder="Place of Incident" required>
+            <label for="placeOfInci">Latitude / WHERE?</label>
+            <br>
+            <input id="lat" name="lat" />
+            <br>
+            <label for="placeOfInci">Langtitude / WHERE?</label>
+            <br>
+            <input id="long" name="long" />
+            <br>
+            <label for="placeOfInci">Marker on Google Maps / WHERE?</label><br>
+            <label for="placeOfInci" style="color:red;font-size:15px">Instructions: Drag the Marker to where the incident happened.</label>
+            <div id="map_canvas" style="width: 500px; height: 500px;"></div>
         </div>
 
         <div class="CreportInputBox">
@@ -166,6 +183,38 @@ $user = $_SESSION['user']; //assigns user value
         <input type="submit" name="p_upload" value="S U B M I T" onclick="sendEmail()"><br>
         </form>
     </div>
+    <script>
+var map;
+
+function initialize() {
+var myLatlng = new google.maps.LatLng(14.591540,121.005699);
+
+var myOptions = {
+    zoom: 15,
+    center: myLatlng,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+
+map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+
+var marker = new google.maps.Marker({
+    draggable: true,
+    position: myLatlng,
+    map: map,
+    title: "Your location"
+    });
+
+    google.maps.event.addListener(marker, 'click', function (event) {
+    document.getElementById("latbox").value = event.latLng.lat();
+    document.getElementById("lngbox").value = event.latLng.lng();
+    });
+    google.maps.event.addListener(marker, 'dragend', function (event) {
+        document.getElementById("lat").value = event.latLng.lat();
+        document.getElementById("long").value = event.latLng.lng();
+    });
+}
+google.maps.event.addDomListener(window, "load", initialize());
+</script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script type="text/javascript">
     function sendEmail()
