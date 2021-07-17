@@ -99,7 +99,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
                 <option value="871">871</option>
                 <option value="872">872</option>
             </select>
-        <br>
+            <br>
             <label for="placeOfInci">Place or Landmark of Incident / WHERE?</label>
             <br>
             <input type="text" id="placeOfIncident" name="place" placeholder="Place of Incident" required>
@@ -210,6 +210,38 @@ function openTabForm(evt, tabFormName) {
         <input type="submit" name="b_upload" value="S U B M I T" onclick="sendEmail()"><br>
         </form>
     </div>
+    <script>
+var map;
+
+function initialize() {
+var myLatlng = new google.maps.LatLng(14.591540,121.005699);
+
+var myOptions = {
+    zoom: 15,
+    center: myLatlng,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+
+map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+
+var marker = new google.maps.Marker({
+    draggable: true,
+    position: myLatlng,
+    map: map,
+    title: "Your location"
+    });
+
+    google.maps.event.addListener(marker, 'click', function (event) {
+    document.getElementById("latbox").value = event.latLng.lat();
+    document.getElementById("lngbox").value = event.latLng.lng();
+    });
+    google.maps.event.addListener(marker, 'dragend', function (event) {
+        document.getElementById("lat").value = event.latLng.lat();
+        document.getElementById("long").value = event.latLng.lng();
+    });
+}
+google.maps.event.addDomListener(window, "load", initialize());
+</script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script type="text/javascript">
     function sendEmail()
