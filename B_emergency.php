@@ -23,6 +23,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     <link rel="stylesheet" href="./css/BFPreportstyle.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFimWZwIvDnYDZS0pKqz25yCBY10DTzm4&signed_in=true&libraries=visualization&callback=initMap">></script>
+    <style> html, body, #map_canvas {
+    margin: 0;
+    padding: 0;
+    height: 100%}
+</style>
 </head>
 <body>
 
@@ -97,6 +103,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
             <label for="placeOfInci">Place or Landmark of Incident / WHERE?</label>
             <br>
             <input type="text" id="placeOfIncident" name="place" placeholder="Place of Incident" required>
+            <label for="placeOfInci">Latitude / WHERE?</label>
+            <br>
+            <input id="lat" name="lat" />
+            <br>
+            <label for="placeOfInci">Langtitude / WHERE?</label>
+            <br>
+            <input id="long" name="long" />
+            <br>
+            <label for="placeOfInci">Marker on Google Maps / WHERE?</label><br>
+            <label for="placeOfInci" style="color:red;font-size:15px">Instructions: Drag the Marker to where the incident happened.</label>
+            <div id="map_canvas" style="width: 500px; height: 500px;"></div>
         </div>
 
         <div id="what" class="CreportInputBox">

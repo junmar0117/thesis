@@ -19,7 +19,7 @@
   </nav>
     <div id="floating-panel">
       <ul>
-        <li><button onclick="toggleHeatmap()">Toggle Heatmap</button></li><br>
+      <li><button onclick="SwitchMap()">Switch Heatmap/Marker</button></li><br>
         <li><button onclick="changeGradient()">Change Gradient</button></li><br>
         <li><button onclick="changeRadius()">Change Radius</button></li><br>
         <li><button onclick="changeOpacity()">Change Opacity</button></li>
@@ -28,51 +28,40 @@
     <div id="map"></div>
     <script>
 
-var map, heatmap;
+var map, heatmap, options;
 
 function initMap() {
-  map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 13,
-    center: { lat: 14.591540,lng: 121.005699},
-  });
-
+  //Map Options
+  options = {
+    zoom: 14,
+    center: { lat: 14.591540,lng: 121.005699}
+  }
+  
+  //Map
+  map = new google.maps.Map(document.getElementById('map'),options); 
+  
+  //Heatmap
   heatmap = new google.maps.visualization.HeatmapLayer({
     data: getPoints(),
+    //position:{lat: 14.591540,lng: 121.005699},
     map: map
   });
+
+
+
 }
 
-function toggleHeatmap() {
-  heatmap.setMap(heatmap.getMap() ? null : map);
+function SwitchMap() {
+  if(heatmap.setMap(null)){
+    heatmap.setMap(map);
+    map.data.setMap(null);
+  }else{
+    heatmap.setMap(null);
+    map.data.setMap(map);
+  }
 }
 
-function changeGradient() {
-  var gradient = [
-    'rgba(0, 255, 255, 0)',
-    'rgba(0, 255, 255, 1)',
-    'rgba(0, 191, 255, 1)',
-    'rgba(0, 127, 255, 1)',
-    'rgba(0, 63, 255, 1)',
-    'rgba(0, 0, 255, 1)',
-    'rgba(0, 0, 223, 1)',
-    'rgba(0, 0, 191, 1)',
-    'rgba(0, 0, 159, 1)',
-    'rgba(0, 0, 127, 1)',
-    'rgba(63, 0, 91, 1)',
-    'rgba(127, 0, 63, 1)',
-    'rgba(191, 0, 31, 1)',
-    'rgba(255, 0, 0, 1)'
-  ]
-  heatmap.set('gradient', heatmap.get('gradient') ? null : gradient);
-}
 
-function changeRadius() {
-  heatmap.set('radius', heatmap.get('radius') ? null : 20);
-}
-
-function changeOpacity() {
-  heatmap.set('opacity', heatmap.get('opacity') ? null : 0.2);
-}
 
 // Heatmap data: Barangay Halls
 function getPoints() {
