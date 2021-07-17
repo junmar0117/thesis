@@ -23,7 +23,7 @@ $user = $_SESSION['user']; //assigns user value
 <html lang="en">
 <head>
     <meta charset = "utf-8">
-    <title> R & R | </title>
+    <title> R & R | Report Monitoring</title>
     <meta name ="viewport" content="width=devoce-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/BFP_profilestyle.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
@@ -35,15 +35,20 @@ $user = $_SESSION['user']; //assigns user value
 include_once('P_Userheader.html');
     ?>
     </nav>
-    <section>
-    <br>
+    <div class="monitorHeaderContainer">
     <br>
     <br>
     <br>
     <br>
     <br>
     <h2>PHILIPPINE NATIONAL POLICE REPORT MONITORING</h2>
-    <div style="overflow-x:auto;">
+    <div class="tab">
+        <button class="tablinks" onclick="openTabForm(event, 'all')">All</button>
+        <button class="tablinks" onclick="openTabForm(event, 'em')">Emergency</button>
+        <button class="tablinks" onclick="openTabForm(event, 'nonem')">Non-Emergency</button>
+    </div>  
+</div>
+    <div id="all" class="tabcontent" style="overflow-x:auto;">
     <table class="adminMonitorRep">
             <tr>
                 <th>Report ID</th>
@@ -102,7 +107,29 @@ include_once('P_Userheader.html');
         ?>
         </table>
         </div>
-    </section>
+
+        <div id="em" class="tabcontent" style="overflow-x:auto;">
+    </div>
+
+    <div id="nonem" class="tabcontent" style="overflow-x:auto;">
+    </div>
+
+    <script>
+function openTabForm(evt, tabFormName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(tabFormName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
+
 </body>
 </html>
 

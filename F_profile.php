@@ -43,21 +43,23 @@ $user = $_SESSION['user']; //assigns user value
 include_once('F_Userheader.html');
 ?>
     </nav>
-    <br>
-    <br>
-    <br>
-    <br>
     <section class="profileSection">
 
     <div class="profileBox">
+    <br>
+    <br>
+    <br>
+    <br>
         <h1>Bureau of Fire Protection (BFP)</h1>
         <a>USER: <?php echo $user;?></a>
-    <br>
-    <br>
+        <br><br>
     <form action="F_changePassword.php" method="GET">
         <input type="hidden" name="id" value="<?php echo $f_id;?>">
         <button class="viewReportbtn" type="submit">Change Password</button>
     </form>
+    <br>
+</div>
+<br>
     <?php
     //Admin - Add Account
     if($user=="f_admin"){

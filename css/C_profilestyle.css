@@ -31,12 +31,6 @@ th{
     text-transform:uppercase;
 }
 
-.profileBox > h1{
-   
-    font-family: 'Dela Gothic One', cursive;
-}
-
-
 input[type=button]{
     color: #ff0049;
     padding: 5px;
@@ -99,6 +93,7 @@ input[type=button]:hover{
     padding: 15px 0 15px 0;
     font-weight:bold;
     border-bottom: 1px solid #d4d4d4;
+    border-top: 1px solid #ff0049;
     
 }
 
@@ -129,6 +124,31 @@ input[type=button]:hover{
 .profileReportBtn:hover{
     background-color: #ff0049;
     color: white;
+}
+
+.profileReportBtnDisabled{
+    margin: 1% 5% 1% 5%;
+    padding: 10px;
+    cursor:pointer;
+    border: 1px solid #575757;
+    background-color: white;
+    font-size: 15px;
+    font-family: 'Lexend', sans-serif;
+    text-decoration: line-through;
+    color:#7c7c7c;
+}
+
+button:disabled{
+   
+    padding:10px;
+    cursor:pointer;
+    border: 1px solid #494949;
+    background-color: white;
+    font-size: 15px;
+    font-family: 'Lexend', sans-serif;
+    text-decoration: none;
+    color:#838383;
+    transition: 0.3s;
 }
 
 .ProfileReportHistory{
@@ -211,6 +231,31 @@ input[type=button]:hover{
     color:#FFFFFF;
 }
 
+.btn-subscribe{
+    cursor:pointer;
+    border: 1px solid #ff0049;
+    background-color:#FFFFFF;
+    font-family: 'Lexend', sans-serif;
+    font-size:15px;
+    color:#ff0049;
+}
+
+.btn-subscribe:hover{
+    background-color: #ff0049;
+    color:#FFFFFF;
+}
+
+.profileTagcontainer{
+    background-color: #FFFFFF;
+    margin: 0 5% 0 5%;
+    font-family: 'Dela Gothic One', cursive;
+}
+
+h1{
+    margin: 0 2% 0 2%;
+    font-family: 'Dela Gothic One', cursive;
+
+}
 
 @media only screen and (max-width: 600px) {
     .profilePicTable, .userdetailsheader, .aboutdetailsheader, .profileInfo, .profileReportBtn, .profileRepHisHeader, .ProfileReportHistory{

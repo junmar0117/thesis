@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Lexend:wght@600&display=swap');
+
+body{
+    margin:0;
+    background-color: #FFFFFF;
+}
+
+.getVerifwrapper{
+    background-color: #FFFFFF;
+    width: 80%;
+    margin: 4% 10% 0 10%;
+    padding: 0;
+    border-top: 2px solid #252525;
+    border-bottom: 2px solid #252525;
+    border-right: 2px solid #252525;
+    border-left: 2px solid #FF0049;
+    border-radius: 10px;
+}
+
+h1{
+    font-family: 'Dela Gothic One', cursive;
+    margin: 3% 50% 2% 0;
+    padding: 1% 1% 1% 5%;
+    background-color: #FF0049;
+    color: #FFFFFF;
+    border-radius: 0px 35px 35px 0px;
+}
+
+h2{
+    font-family: 'Lexend', sans-serif;
+    color: #252525;
+    margin: 0 5% 2% 5%;
+}
+
+input[type=file]{
+    cursor: pointer;
+    margin: 0 5% 2% 5%;
+    padding: 10px;
+    background-color: #FFFFFF; 
+	font-size: 15px;
+    font-family: 'Lexend', sans-serif;
+    border: 1px solid #252525;
+    border-radius: 35px;
+}
+
+select{
+    cursor: pointer;
+    margin: 0 5% 2% 5%;
+    padding: 10px;
+    background-color: #FFFFFF; 
+	font-size: 15px;
+    font-family: 'Lexend', sans-serif;
+    border: 1px solid #252525;
+    border-radius: 35px;
+}
+
+input[type=submit]{
+    cursor: pointer;
+    margin: 0 1% 2% 5%;
+    padding: 10px 20px 10px 20px;
+    background-color: #FFFFFF; 
+	font-size: 15px;
+    font-family: 'Lexend', sans-serif;
+    border: 2px solid #252525;
+    border-top: none;
+    color: #252525;
+    text-transform: uppercase;
+    float:right;
+    border-radius: 0px 0px 10px 10px;
+}
+
+input[type=submit]:hover{
+    background-color: #FF0049;
+    color: white;
+}
+
+  @media only screen and (max-width: 600px) {
+    .RPbutton{
+        font-size: 14px;
+    }
+
+    h1,h2{
+        font-size: 15px;
+    }
+
+    h1{
+        margin: 3% 35% 2% 0;
+    }
+
+    .reportmainwrapper{
+      margin: 10% 10% 0 10%;
+    }
+}

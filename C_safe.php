@@ -29,8 +29,11 @@ include_once('Userheader.html');
     <br>
     <br>
     <div class="profileBox">
-        <h1 style="margin-left: 5%;">ARE YOU SAFE?</h1>
-
+        <div class="profileTagcontainer">
+            <br>
+            <h1>ARE YOU SAFE?</h1>
+            <br>
+        </div>
         <div style="overflow-x:auto;">
         <table class="ProfileReportHistory">
             <tr>

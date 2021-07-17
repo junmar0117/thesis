@@ -43,18 +43,25 @@ $user = $_SESSION['user']; //assigns user value
 include_once('B_Userheader.html');
 ?>
     </nav>
-    <br>
-    <br>
-    <br>
-    <br>
+    
     <section class="profileSection">
 
     <div class="profileBox">
+    <br>
+    <br>
+    <br>
+    <br>
         <h1>Local Barangay</h1>
         <a>USER: <?php echo $user;?></a>
     <br>
     <br>
-    
+    <form action="B_changePassword.php" method="GET">
+                        <input type="hidden" name="id" value="<?php echo $b_id;?>">
+                        <button class="viewReportbtn" type="submit">Change Password</button>
+                    </form>
+                    <br>
+    </div>
+        <br>
 <?php
 if($user=="b_admin")
 {
@@ -120,13 +127,8 @@ if($user=="b_admin")
 </div>
    
     <br>
-    <br>
     <div>
-    <form action="B_changePassword.php" method="GET">
-                        <input type="hidden" name="id" value="<?php echo $b_id;?>">
-                        <button class="viewReportbtn" type="submit">Change Password</button>
-                    </form>
-        </div>
+    
 <?php
 if($user=="b_admin")
 {   

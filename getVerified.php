@@ -32,7 +32,7 @@ $user = $_SESSION['user']; //assigns user value
     <meta charset = "utf-8">
     <title> R & R | Report </title>
     <meta name ="viewport" content="width=devoce-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/reportmainstyles.css">
+    <link rel="stylesheet" href="./css/getVerif.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -44,21 +44,21 @@ include_once('Userheader.html');
 <br>
 <br>
 <br>
-    <div class="reportmainwrapper">
-        <h1>Get Verified</h1>
+    <div class="getVerifwrapper">
+        <h1>User Verification</h1>
         <h2>Please send a copy of your valid ID.</h2>
         <h2>Accepted Valid IDs: </h2>
         <form action="getVerifiedAction.php" method="POST" enctype="multipart/form-data">
             <input type="hidden" name="id" value="<?php echo $id;?>">
             <select name="validID" id="validID">
-                <option value="Drivers License">Drivers License</option>
+                <option value="Drivers License">Driver's License</option>
                 <option value="School ID">School ID</option>
-                <option value="National ID">Mercedes</option>
+                <option value="National ID">National ID</option>
             </select>
             <br>
             <input type="file" name="file" id="file">
             <br>
-            <button type="submit">Submit</button>
+            <input type="submit" name="submit"></input>
         </form>
     </div>   
 </body>

@@ -35,13 +35,16 @@ $user = $_SESSION['user']; //assigns user value
 include_once('Userheader.html');
 ?>
 </nav>
-    <br>
-    <br>
-    <br>
-    <br>
+    
     <div class="profileBox">
-        <h1 style="margin-left: 5%;">PROFILE</h1>
-            <div class="profilePicDiv">
+        <div class="profileTagcontainer">
+            <br>
+            <br>
+            <br>
+            <br>
+            <h1>PROFILE</h1>
+            <br>
+        </div>    
                 <div class="userdetailsheader">
                     <a>USER DETAILS</a>           
                 </div>
@@ -67,14 +70,14 @@ include_once('Userheader.html');
                             Print "<tr>";
                             Print '<th class="profileInfoHeader">ACCOUNT TYPE</th>';
                             Print '<td class="profileInfoContent">'."CIVILIAN" . "</td>";
-                            Print '<th class="profileInfoHeader">VERIFIED</th>';
+                            Print '<th class="profileInfoHeader">VERIFICATION</th>';
                             if($row['verified'] == 1)
                             {
-                                echo '<th class="profileInfoHeader">You are already Verified</th>';
+                                echo '<td class="profileInfoContent">VERIFIED</td>';
                             }
                             else
                             {
-                                echo '<th class="profileInfoHeader"><a href="getVerified.php"><button class="btn-subscribe">Get Verified</button></a></th>';
+                                echo '<td class="profileInfoContent"><a href="getVerified.php"><button class="btn-subscribe">Get Verified</button></a></td>';
                             }
                             Print "</tr>";
                             Print "<tr>";
@@ -91,7 +94,7 @@ include_once('Userheader.html');
                         <button class="viewReportbtn" type="submit">Change Password</button>
                     </form>
                     </div>
-            </div>
+            
             <br>
             <div>
                 <?php
@@ -104,7 +107,7 @@ include_once('Userheader.html');
                     }
                     else
                     {
-                        echo '<a href="C_reportIncident.php" class="profileReportBtn"><button disabled>REPORT INCIDENT</button></a>';
+                        echo '<a class="profileReportBtnDisabled">REPORT INCIDENT</a>';
                     }
                 }
                 ?>

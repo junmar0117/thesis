@@ -52,7 +52,6 @@ if(mysqli_num_rows($row_b) > 0)
 </nav>
     <br>
     <br>
-    <br>
 <div class="verticalTabView">
     <h2 class="vBHeader">View Barangays</h2>
     <div class="tab">

@@ -99,7 +99,9 @@ session_start();
 
     <div class="indexContent3">
         <div class="indexPBB">
-            <a class="hpSecHeader3">SUPPORT</a>
+            <div class="hpSecHeader3">Featured <a id="reportsColor">Reports</a></div>
+            <br>
+            <br>
 
                 <table class="indexPBBTable">
                     <tr>
@@ -109,21 +111,27 @@ session_start();
                     </tr>
 
                     <tr>
-                        <td class="ipbbthead" style="border-top:1px solid #252525;">Philippine National Police</td>
-                        <td class="ipbbthead" style="border-top:1px solid #252525;"style="border-top:1px solid #252525;">Bureau of Fire Protection</td>
-                        <td class="ipbbthead" style="border-top:1px solid #252525;">Local Barangay</td>
+                        <td class="ipbbthead" style="border-top:1px solid #252525;">Report 1</td>
+                        <td class="ipbbthead" style="border-top:1px solid #252525;">Report 2</td>
+                        <td class="ipbbthead" style="border-top:1px solid #252525;">Report 3</td>
                     </tr>
 
                     <tr>
-                        <td class="ipbbthead" style="padding-bottom: 10%;"></td>
-                        <td class="ipbbthead" style="padding-bottom: 10%;"></td>
-                        <td class="ipbbthead" style="padding-bottom: 10%;"></td>
+                        <td class="ipbbthead2" style="padding-bottom: 10%;">asd</td>
+                        <td class="ipbbthead2" style="padding-bottom: 10%;">asd</td>
+                        <td class="ipbbthead2" style="padding-bottom: 10%;">asd</td>
                     </tr>
 
                     <tr>
-                        <td><button class="PBBvstbtn" onclick="window.location.href='http://www.pnp.gov.ph/';"  style="vertical-align:middle"><span>Visit Site</span></button></td>
-                        <td><button class="PBBvstbtn" onclick="window.location.href='https://bfp.gov.ph/';"  style="vertical-align:middle"><span>Visit Site</span></button></td>
-                        <td><button class="PBBvstbtn" onclick="window.location.href='https://psa.gov.ph/content/pandacan-ncr-city-manila';" style="vertical-align:middle"><span>Visit Site</span></button></td>
+                        <td class="ipbbthead3">Posted on:</td>
+                        <td class="ipbbthead3">Posted on:</td>
+                        <td class="ipbbthead3">Posted on:</td>
+                    </tr>
+
+                    <tr>
+                        <td><button class="PBBvstbtn" style="vertical-align:middle"><span>View More</span></button></td>
+                        <td><button class="PBBvstbtn" style="vertical-align:middle"><span>View More</span></button></td>
+                        <td><button class="PBBvstbtn" style="vertical-align:middle"><span>View More</span></button></td>
                     </tr>
                 </table>
         </div>

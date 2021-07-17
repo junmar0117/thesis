@@ -23,7 +23,7 @@ $user = $_SESSION['user']; //assigns user value
 <html lang="en">
 <head>
     <meta charset = "utf-8">
-    <title> R & R | </title>
+    <title> R & R | Report Monitoring</title>
     <meta name ="viewport" content="width=devoce-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/BFP_profilestyle.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
@@ -36,13 +36,13 @@ $user = $_SESSION['user']; //assigns user value
     ?>
     </nav>
     <section>
+    <div class="profileBox">
     <br>
     <br>
     <br>
     <br>
-    <br>
-    <br>
-    <h2>BUREAU OF FIRE PROTECTION REPORT MONITORING</h2>
+    <h2>BUREAU OF FIRE PROTECTION REPORT MONITORING</h2><br>
+</div>
     <div style="overflow-x:auto;">
     <table class="adminMonitorRep">
             <tr>

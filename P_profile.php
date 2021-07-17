@@ -43,13 +43,12 @@ $user = $_SESSION['user']; //assigns user value
 include_once('P_Userheader.html');
 ?>
     </nav>
-    <br>
-    <br>
-    <br>
-    <br>
     <section class="profileSection">
-
-    <div class="profileBox"> 
+    <div class="profileBox">
+    <br>
+    <br>
+    <br>
+    <br>
         <h1>Philippine National Police (PNP)</h1>
         <a>USER: <?php echo $user;?></a>
     <br>
@@ -57,7 +56,9 @@ include_once('P_Userheader.html');
     <form action="P_changePassword.php" method="GET">
         <input type="hidden" name="id" value="<?php echo $p_id;?>">
         <button class="viewReportbtn" type="submit">Change Password</button>
-    </form>
+    </form><br>
+</div>
+<br>
     <?php
     if($user=="p_admin")
     {

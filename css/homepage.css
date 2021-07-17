@@ -201,13 +201,12 @@ table .indexAbout{
   height:max-content;
   padding: 30px;
   border:1px solid #252525;
-  transition: 0.4s;
+  background-color: #ffffff;
 }
 
 .indexAbout td:hover{
   padding: 30px;
   border:1px solid #252525;
-  background-color: #FFFFFF;
 }
 
 .hpSecHeader2{
@@ -251,18 +250,25 @@ table .indexAbout{
   padding: 6% 9% 5% 9%;
 }
 
-.hpSecHeader3{
+div.hpSecHeader3{
   font-family: 'Dela Gothic One', cursive;
   font-size: 40px;
   color: #252525;
-  margin-bottom: 30px;
-  border-bottom: 2px solid #ff0049;
-  float:right;
+  font-weight: bold;
+  text-align: center;
 }
 
 .hpSecHeader3:hover{
   text-decoration: none;
   color: black;
+}
+
+#reportsColor{
+  color: #FF0049;
+}
+
+#reportsColor:hover{
+  text-decoration: none;
 }
 
 .indexPBBTable{
@@ -279,13 +285,35 @@ table .indexAbout{
 .ipbbthead{
   font-size: 25px;
   color:#252525;
-  font-family: 'Dela Gothic One', cursive;
+  font-family: 'Lexend', sans-serif;
   border-left: 1px solid #252525;
   border-right: 1px solid #252525;
   border-bottom: 1px solid #252525;
   text-align:left;
   padding: 5px;
-  
+  font-weight: bold;
+}
+
+.ipbbthead2{
+  font-size: 20px;
+  color:#252525;
+  font-family: 'Lexend', sans-serif;
+  border-left: 1px solid #252525;
+  border-right: 1px solid #252525;
+  border-bottom: 1px solid #252525;
+  text-align:left;
+  padding: 5px;
+}
+
+.ipbbthead3{
+  font-size: 15px;
+  color:#252525;
+  font-family: 'Lexend', sans-serif;
+  border-left: 1px solid #252525;
+  border-right: 1px solid #252525;
+  border-bottom: 1px solid #252525;
+  text-align:left;
+  padding: 5px;
 }
 
 .PBBvstbtn{
@@ -346,7 +374,7 @@ table .indexAbout{
     width:100%;
   }
   
-  .hpSecHeader, .hpSecHeader3{
+  .hpSecHeader{
     font-size: 35px;
   }
 
