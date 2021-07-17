@@ -240,8 +240,14 @@ table .indexAbout{
 }
 /*PNP BARANGAY BFP*/
 
-.indexContent3{
+.indexContent3, .indexContent4{
   padding: 0;
+}
+
+.indexPBB2{
+  width: 100%;
+  background-color: #f1f1f1;
+  padding: 6% 9% 5% 9%;
 }
 
 .indexPBB{
@@ -271,26 +277,11 @@ div.hpSecHeader3{
   text-decoration: none;
 }
 
-.indexPBBTable{
-  width:100%;
-  border-collapse: separate;
-  border-spacing: 15px 0px;
-}
-
-.indexPBBTable th{
-  width: 33.33%;
-  font-size: 20px;
-}
-
 .ipbbthead{
   font-size: 25px;
   color:#252525;
   font-family: 'Lexend', sans-serif;
-  border-left: 1px solid #252525;
-  border-right: 1px solid #252525;
-  border-bottom: 1px solid #252525;
   text-align:left;
-  padding: 5px;
   font-weight: bold;
 }
 
@@ -298,22 +289,14 @@ div.hpSecHeader3{
   font-size: 20px;
   color:#252525;
   font-family: 'Lexend', sans-serif;
-  border-left: 1px solid #252525;
-  border-right: 1px solid #252525;
-  border-bottom: 1px solid #252525;
   text-align:left;
-  padding: 5px;
 }
 
 .ipbbthead3{
   font-size: 15px;
   color:#252525;
   font-family: 'Lexend', sans-serif;
-  border-left: 1px solid #252525;
-  border-right: 1px solid #252525;
-  border-bottom: 1px solid #252525;
   text-align:left;
-  padding: 5px;
 }
 
 .PBBvstbtn{
@@ -329,6 +312,7 @@ div.hpSecHeader3{
   transition: all 0.5s;
   cursor: pointer;
   text-transform: uppercase;
+  border-radius: 10px;
 }
 
 .PBBvstbtn span {
@@ -355,6 +339,50 @@ div.hpSecHeader3{
   opacity: 1;
   right: 0;
 }
+
+.PBBvstbtn2{
+  float: right;
+  color: #ff0049;
+  font-size: 20px;
+  transition: all 0.3s;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.PBBvstbtn2:hover{
+  text-decoration:none;
+  color: #FFFFFF;
+  background-color: #ff0049;
+  cursor: pointer;
+}
+
+/* Float four columns side by side */
+.columnCard {
+  float: left;
+  width: 33.33%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.rowCard {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.rowCard:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: left;
+  background-color: #FFFFFF;
+  font-family: 'Lexend', sans-serif;
+}
+
+
 
 @media only screen and (max-width: 600px) {
   .hpFirstHeader{
@@ -396,5 +424,11 @@ div.hpSecHeader3{
 
   .iGp th, .iGp td{
     padding: 10px;
+  }
+
+  .columnCard {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
   }
 }

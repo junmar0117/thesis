@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Lexend:wght@500&display=swap');
+
+/* Float four columns side by side */
+.columnCard {
+    float: left;
+    width: 50%;
+    padding: 0 10px;
+  }
+  
+  /* Remove extra left and right margins, due to padding */
+  .rowCard {
+      margin: 0 -5px;   
+    }
+  
+  /* Clear floats after the columns */
+  .rowCard:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  .vccc{
+    background-color: #ffffff;
+    margin: 0 5% 0 5%;
+  }
+
+  .vccch{
+    font-family: 'Lexend', sans-serif;
+    text-align:center;
+    border-bottom: 1px solid #696969;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+  }
+
+  /* Responsive columns */
+  @media screen and (max-width: 600px) {
+    .columnCard {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+    }
+  }
+  
+  /* Style the counter cards */
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    background-color: #FFFFFF;
+  }
+
+  .ipbbthead{
+    font-size: 25px;
+    color:#252525;
+    font-family: 'Lexend', sans-serif;
+    text-align:left;
+    font-weight: bold;
+  }
+  
+  .ipbbthead2{
+    font-size: 20px;
+    color:#252525;
+    font-family: 'Lexend', sans-serif;
+    text-align:left;
+  }
+  
+  .ipbbthead3{
+    font-size: 15px;
+    color:#252525;
+    font-family: 'Lexend', sans-serif;
+    text-align:left;
+  }
