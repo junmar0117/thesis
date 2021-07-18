@@ -86,6 +86,7 @@ body {
 .vBHeader{
   font-size: 30px;
   font-family: 'Lexend', sans-serif;
+  font-weight: bold;
 }
 
 p{

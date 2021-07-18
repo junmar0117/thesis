@@ -258,7 +258,7 @@ h1{
 }
 
 @media only screen and (max-width: 600px) {
-    .profilePicTable, .userdetailsheader, .aboutdetailsheader, .profileInfo, .profileReportBtn, .profileRepHisHeader, .ProfileReportHistory{
+    .profilePicTable, .userdetailsheader, .aboutdetailsheader, .profileInfo, .profileReportBtn, .profileRepHisHeader, .ProfileReportHistory, .profileTagcontainer{
         width: 100%;
         margin:0;
     }
