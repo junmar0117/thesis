@@ -118,12 +118,11 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 	</script>
 </head>
 <body>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+    
     <section>
+    <div class="blankWhite">
+    <br>
+</div>
 <?php 
 require 'connection.php'; 
 $sql_b = "SELECT * FROM b_admin where username = '$user' ";
@@ -171,7 +170,8 @@ if(mysqli_num_rows($row_b) > 0)
             </table>
             <table class="viewReportsTable">
              <tr>
-            <td><div class="reportProof"><div id="map_canvas" style="width: 500px; height: 500px;"></div></div></td>
+             <div class="reportProof"><?php echo "location of incident"?></div>
+            <td><div class="reportProof"><div id="map_canvas" style="width: 100%; height: 400px;"></div></div></td>
              </tr>
             </table>
             

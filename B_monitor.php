@@ -104,8 +104,11 @@ include_once('B_Userheader.html');
 								}
 							?>
 							<form>
+                            <label class="CBcontainer">
 							<input type="checkbox" value="<?php if($row['featured'] == 1){echo 2;}else{echo 1;}?>" name="featured" onchange="featured_reports(this.value,<?php echo $row['id'];?>)" <?php echo $featured ?>></input><br>
-							</form>
+                            <span class="checkmark"></span>    
+                        </label>
+                        </form>
                 </td>
                 </tr>
             <?php
