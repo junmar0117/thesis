@@ -19,6 +19,12 @@ $user = $_SESSION['user']; //assigns user value
     <meta name ="viewport" content="width=devoce-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/BFPreportstyle.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFimWZwIvDnYDZS0pKqz25yCBY10DTzm4&signed_in=true&libraries=visualization&callback=initMap">></script>
+    <style> html, body, #map_canvas {
+    margin: 0;
+    padding: 0;
+    height: 100%}
+</style>
 </head>
 <body>
 
@@ -33,18 +39,26 @@ $user = $_SESSION['user']; //assigns user value
     <br>
     <br>
     <h1 id="CreportHeader">Bureau of Fire Protection Incident Report</h1>
+
     <div class="CreportInci">
         
         <form action="sendReport.php" enctype="multipart/form-data" method="POST" id="myEmail">
-        <div class="CreportInputBox">
-            <label for="typeOfInci">Type of Incident:</label>
+
+        <div class="tab">
+        <button class="tablinks" onclick="openTabForm(event, 'what')">WHAT?</button>
+        <button class="tablinks" onclick="openTabForm(event, 'where')">WHERE?</button>
+        </div>
+
+        <div id="what" class="CreportInputBox">
+            <br>
+            <label for="typeOfInci">Type of Incident: / WHAT?</label>
             <br>
             <select name="type" id="type" required>
                 <option value="House Fire">House Fire</option>
                 <option value="Establishment Fire">Establishment Fire</option>
                 <option value="Others">Others</option>
             </select>
-        </div>
+        
         <?php
         require 'connection.php';  
         $queryID = mysqli_query($con, "SELECT * from civilians WHERE civilians.username = '".$_SESSION['user']."' LIMIT 1");
@@ -59,15 +73,35 @@ $user = $_SESSION['user']; //assigns user value
           $email = $row['email'];
         }
         ?>
-        
-        <div class="CreportInputBox">
-            <label for="placeOfInci">Place or Landmark of Incident</label>
+        <br>
+            <label for="descOfInci">Description of Incident / WHAT?</label>
             <br>
-            <input type="text" id="placeOfIncident" name="place" placeholder="Place of Incident" required>
+            <input type="text" id="descOfIncident" name="description" placeholder="Description of Incident" required>
+        <br>
+            <label for="file">Proof of Incident</label>
+            <br>
+            <input type="file" name="file" id="fileAttachment" required>
         </div>
+        
+        <script>
+function openTabForm(evt, tabFormName) {
+  var i, CreportInputBox, tablinks;
+  CreportInputBox = document.getElementsByClassName("CreportInputBox");
+  for (i = 0; i < CreportInputBox.length; i++) {
+    CreportInputBox[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(tabFormName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
 
-        <div class="CreportInputBox">
-            <label for="typeOfInci">Barangay:</label>
+        <div id="where" class="CreportInputBox">
+            <br>
+            <label for="typeOfInci">Barangay: / WHERE?</label>
             <br>
             <select name="barangay" id="barangay" required>
                 <option value="833">833</option>
@@ -110,19 +144,24 @@ $user = $_SESSION['user']; //assigns user value
                 <option value="871">871</option>
                 <option value="872">872</option>
             </select>
+            <br>
+            <label for="placeOfInci">Place or Landmark of Incident / WHERE?</label>
+            <br>
+            <input type="text" id="placeOfIncident" name="place" placeholder="Place of Incident" required>
+            <label for="placeOfInci">Latitude / WHERE?</label>
+            <br>
+            <input id="lat" name="lat" />
+            <br>
+            <label for="placeOfInci">Langtitude / WHERE?</label>
+            <br>
+            <input id="long" name="long" />
+            <br>
+            <label for="placeOfInci">Marker on Google Maps / WHERE?</label><br>
+            <label for="placeOfInci" style="color:red;font-size:15px">Instructions: Drag the Marker to where the incident happened.</label>
+            <div id="map_canvas" style="width: 500px; height: 500px;"></div>               
         </div>
 
-        <div class="CreportInputBox">
-            <label for="descOfInci">Description of Incident</label>
-            <br>
-            <input type="text" id="descOfIncident" name="description" placeholder="Description of Incident" required>
-        </div>
-
-        <div class="CreportInputBox">
-            <label for="file">Proof of Incident</label>
-            <br>
-            <input type="file" name="file" id="fileAttachment" required>
-        </div>
+        
 
         <div class="progress">          
             <label>Status</label>
@@ -166,6 +205,39 @@ $user = $_SESSION['user']; //assigns user value
         <input type="submit" name="p_upload" value="S U B M I T" onclick="sendEmail()"><br>
         </form>
     </div>
+    <script>
+var map;
+
+function initialize() {
+var myLatlng = new google.maps.LatLng(14.591540,121.005699);
+
+var myOptions = {
+    zoom: 15,
+    center: myLatlng,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+
+map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+
+var marker = new google.maps.Marker({
+    draggable: true,
+    position: myLatlng,
+    map: map,
+    title: "Your location"
+    });
+
+    google.maps.event.addListener(marker, 'click', function (event) {
+    document.getElementById("latbox").value = event.latLng.lat();
+    document.getElementById("lngbox").value = event.latLng.lng();
+    });
+    google.maps.event.addListener(marker, 'dragend', function (event) {
+        document.getElementById("lat").value = event.latLng.lat();
+        document.getElementById("long").value = event.latLng.lng();
+    });
+}
+google.maps.event.addDomListener(window, "load", initialize());
+</script>
+
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script type="text/javascript">
     function sendEmail()
