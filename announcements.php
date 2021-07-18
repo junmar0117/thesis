@@ -50,7 +50,6 @@ if ($_SERVER['HTTP_REFERER'] == $url)
     </nav>
     <br>
     <br>
-    <hr>
     <div class="indexContent3">
         <div class="indexPBB">
             <div class="hpSecHeader3"><a id="reportsColor">Announcements</a></div>
@@ -69,9 +68,13 @@ if ($_SERVER['HTTP_REFERER'] == $url)
   <div class="columnCard">
     <div class="card">
     <img src="<?php echo './assets/announcements/'.$row['image']?>" width="100%" height="300px" >
+    <div class="minorCC">
       <h3 class="ipbbthead"><?php echo $row['title']; ?></h3>
       <p class="ipbbthead2"><?php echo mb_strimwidth($row['contents'], 0, 150, "..."); ?></p>
+    </div>
+      <hr>
       <p class="ipbbthead3"> <?php echo $row['name']; echo " / "; echo date('F jS, Y',strtotime($row['date_created'])) ?> </p>
+      <hr>
       <form method="POST" action="viewCardContent.php">
 					<input type="hidden" name="id" value="<?php echo $row['a_id'];?>">
 					<button class="PBBvstbtn2" style="vertical-align:middle"><span>View More <i class="far fa-arrow-alt-circle-right"></i></span></button>
@@ -79,6 +82,7 @@ if ($_SERVER['HTTP_REFERER'] == $url)
       <br>
       <br>
     </div>
+    <br>
   </div>
 
   <?php

@@ -346,7 +346,9 @@ div.hpSecHeader3{
   font-size: 20px;
   transition: all 0.3s;
   padding: 5px;
+  border: 1px solid #252525;
   border-radius: 10px;
+  background-color: #FFFFFF;
 }
 
 .PBBvstbtn2:hover{
@@ -380,9 +382,15 @@ div.hpSecHeader3{
   text-align: left;
   background-color: #FFFFFF;
   font-family: 'Lexend', sans-serif;
+  }
+
+.minorCC{
+  height:150px;
 }
 
-
+.minorCC2{
+  height: 170px;
+}
 
 @media only screen and (max-width: 600px) {
   .hpFirstHeader{

@@ -69,32 +69,25 @@ if ($_SERVER['HTTP_REFERER'] == $url)
         <div class="columnCard">
         <img src="<?php echo './assets/announcements/'.$row['image']?>" width="100%" height="350px" >
           <div class="card">
-            <h3 class="ipbbthead"><?php echo $row['title']; ?></h3>
-            <p class="ipbbthead2"><?php echo $row['contents']; ?></p>
+          <div class="ccontentc">
+          <h3 class="ipbbthead"><?php echo $row['title']; ?></h3><hr>
             <p class="ipbbthead3"><?php echo $row['name']; echo " / "; echo date('F jS, Y',strtotime($row['date_created'])) ?></p>
           </div>
+      </div>
         </div>
-      <?php 
-      }
-      ?>
+      
 
   <div class="columnCard">
+    
     <div class="card">
-      <h3 class="ipbbthead">Card 2</h3>
-      <p class="ipbbthead2">Some text</p>
-      <p class="ipbbthead3">Some text</p>
-      <h3 class="ipbbthead">Card 2</h3>
-      <p class="ipbbthead2">Some text</p>
-      <p class="ipbbthead3">Some text</p>
-      <h3 class="ipbbthead">Card 2</h3>
-      <p class="ipbbthead2">Some text</p>
-      <p class="ipbbthead3">Some text</p>
-      <h3 class="ipbbthead">Card 2</h3>
-      <p class="ipbbthead2">Some text</p>
-      <p class="ipbbthead3">Some text</p>
+    <div class="ccontentc2">
+            <p class="ipbbthead2"><?php echo $row['contents']; ?></p><hr>
     </div>
+      </div>
   </div>
-  
+  <?php 
+      }
+      ?>
 </div>
 <br>
   <br>
