@@ -33,18 +33,26 @@ $user = $_SESSION['user']; //assigns user value
     <br>
     <br>
     <h1 id="CreportHeader">Bureau of Fire Protection Incident Report</h1>
+
     <div class="CreportInci">
         
         <form action="sendReport.php" enctype="multipart/form-data" method="POST" id="myEmail">
-        <div class="CreportInputBox">
-            <label for="typeOfInci">Type of Incident:</label>
+
+        <div class="tab">
+        <button class="tablinks" onclick="openTabForm(event, 'what')">WHAT?</button>
+        <button class="tablinks" onclick="openTabForm(event, 'where')">WHERE?</button>
+        </div>
+
+        <div id="what" class="CreportInputBox">
+            <br>
+            <label for="typeOfInci">Type of Incident: / WHAT?</label>
             <br>
             <select name="type" id="type" required>
                 <option value="House Fire">House Fire</option>
                 <option value="Establishment Fire">Establishment Fire</option>
                 <option value="Others">Others</option>
             </select>
-        </div>
+        
         <?php
         require 'connection.php';  
         $queryID = mysqli_query($con, "SELECT * from civilians WHERE civilians.username = '".$_SESSION['user']."' LIMIT 1");
@@ -59,15 +67,40 @@ $user = $_SESSION['user']; //assigns user value
           $email = $row['email'];
         }
         ?>
+        <br>
+            <label for="descOfInci">Description of Incident / WHAT?</label>
+            <br>
+            <input type="text" id="descOfIncident" name="description" placeholder="Description of Incident" required>
+        <br>
+            <label for="file">Proof of Incident</label>
+            <br>
+            <input type="file" name="file" id="fileAttachment" required>
+        </div>
         
-        <div class="CreportInputBox">
-            <label for="placeOfInci">Place or Landmark of Incident</label>
+        <script>
+function openTabForm(evt, tabFormName) {
+  var i, CreportInputBox, tablinks;
+  CreportInputBox = document.getElementsByClassName("CreportInputBox");
+  for (i = 0; i < CreportInputBox.length; i++) {
+    CreportInputBox[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(tabFormName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
+
+        <div id="where" class="CreportInputBox">
+            <br>
+            <label for="placeOfInci">Place or Landmark of Incident / WHERE?</label>
             <br>
             <input type="text" id="placeOfIncident" name="place" placeholder="Place of Incident" required>
-        </div>
 
-        <div class="CreportInputBox">
-            <label for="typeOfInci">Barangay:</label>
+        <br>
+            <label for="typeOfInci">Barangay: / WHERE?</label>
             <br>
             <select name="barangay" id="barangay" required>
                 <option value="833">833</option>
@@ -112,17 +145,7 @@ $user = $_SESSION['user']; //assigns user value
             </select>
         </div>
 
-        <div class="CreportInputBox">
-            <label for="descOfInci">Description of Incident</label>
-            <br>
-            <input type="text" id="descOfIncident" name="description" placeholder="Description of Incident" required>
-        </div>
-
-        <div class="CreportInputBox">
-            <label for="file">Proof of Incident</label>
-            <br>
-            <input type="file" name="file" id="fileAttachment" required>
-        </div>
+        
 
         <div class="progress">          
             <label>Status</label>
