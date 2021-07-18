@@ -48,6 +48,11 @@
             <label>Enter Password</label>
         </div>
 
+        <div class="register-box2">
+            <input type="password" id="cpassword" required="required" name="cpassword" placeholder="">
+            <label>Confirm Password</label>
+        </div>
+
             <input type="submit" value="Register" class="C_registerbtn">
             <a href="C_login.php" id="signininstead">Already have an account? Log in here.</a>
         </form>
