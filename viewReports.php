@@ -23,6 +23,12 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
     <link rel="stylesheet" href="./css/popup.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFimWZwIvDnYDZS0pKqz25yCBY10DTzm4&signed_in=true&libraries=visualization&callback=initMap">></script>
+    <style> html, body, #map_canvas {
+    margin: 0;
+    padding: 0;
+    height: 100%}
+</style>
     <script>
             <?php 
             require 'connection.php';
@@ -163,6 +169,36 @@ if(mysqli_num_rows($row_b) > 0)
              <td><?php echo "Incident Description: "; echo $row['description']?></td>
             </tr>
             </table>
+            <table class="viewReportsTable">
+             <tr>
+            <td><div class="reportProof"><div id="map_canvas" style="width: 500px; height: 500px;"></div></div></td>
+             </tr>
+            </table>
+            
+            <script>
+            var map;
+
+            function initialize() {
+            var myLatlng = new google.maps.LatLng(<?php echo $row['latitude']?>,<?php echo $row['longitude']?>);
+
+            var myOptions = {
+                zoom: 15,
+                center: myLatlng,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+                };
+
+            map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+
+            var marker = new google.maps.Marker({
+                draggable: true,
+                position: myLatlng,
+                map: map,
+                title: "Your location"
+                });
+            }
+            google.maps.event.addDomListener(window, "load", initialize());
+            </script>
+
             <div class="reportProof"><?php echo "Proof of Incident"?></div>
             <div class="VRimgContainer">
             <img src='<?php echo 'reportFIles/'.$row['file'];?>' id="myImg" style="height: 300px; width: 300px;"/>
@@ -330,6 +366,38 @@ if(mysqli_num_rows($row_b) > 0)
              <td><?php echo "Incident Description: "; echo $row['description']?></td>
             </tr>
             </table>
+            <table class="viewReportsTable">
+             <tr>
+            <td><div class="reportProof"><div id="map_canvas" style="width: 500px; height: 500px;"></div></div></td>
+             </tr>
+            </table>
+            
+            <script>
+            var map;
+
+            function initialize() {
+            var myLatlng = new google.maps.LatLng(<?php echo $row['latitude']?>,<?php echo $row['longitude']?>);
+
+            var myOptions = {
+                zoom: 15,
+                center: myLatlng,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+                };
+
+            map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+
+            var marker = new google.maps.Marker({
+                draggable: true,
+                position: myLatlng,
+                map: map,
+                title: "Your location"
+                });
+            }
+            google.maps.event.addDomListener(window, "load", initialize());
+            </script> 
+
+
+
             <div class="reportProof"><?php echo "Proof of Incident"?></div>
             <div class="VRimgContainer">
             <img src='<?php echo 'reportFIles/'.$row['file'];?>' id="myImg" style="height: 300px; width: 300px;"/>
@@ -496,7 +564,44 @@ if(mysqli_num_rows($row_b) > 0)
              <td><?php echo "Incident Description: "; echo $row['description']?></td>
             </tr>
             </table>
+            <table class="viewReportsTable">
+             <tr>
+             <td><?php echo "Incident Description: "; echo $row['description']?></td>
+            </tr>
+            </table>
+            
 
+
+            <table class="viewReportsTable">
+             <tr>
+            <td><div class="reportProof"><div id="map_canvas" style="width: 500px; height: 500px;"></div></div></td>
+             </tr>
+            </table>
+            
+            <script>
+            var map;
+
+            function initialize() {
+            var myLatlng = new google.maps.LatLng(<?php echo $row['latitude']?>,<?php echo $row['longitude']?>);
+
+            var myOptions = {
+                zoom: 15,
+                center: myLatlng,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+                };
+
+            map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+
+            var marker = new google.maps.Marker({
+                draggable: true,
+                position: myLatlng,
+                map: map,
+                title: "Your location"
+                });
+            }
+            google.maps.event.addDomListener(window, "load", initialize());
+            </script>
+                
             <div class="reportProof"><?php echo "Proof of Incident"?></div>
             <div class="VRimgContainer">
             <img src='<?php echo 'reportFIles/'.$row['file'];?>' id="myImg" style="height: 300px; width: 300px;"/>
@@ -659,6 +764,35 @@ if(mysqli_num_rows($row_b) > 0)
              <td><?php echo "Incident Description: "; echo $row['description']?></td>
              </tr>
             </table>
+            <table class="viewReportsTable">
+             <tr>
+            <td><div class="reportProof"><div id="map_canvas" style="width: 500px; height: 500px;"></div></div></td>
+             </tr>
+            </table>
+            
+            <script>
+            var map;
+
+            function initialize() {
+            var myLatlng = new google.maps.LatLng(<?php echo $row['latitude']?>,<?php echo $row['longitude']?>);
+
+            var myOptions = {
+                zoom: 15,
+                center: myLatlng,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+                };
+
+            map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+
+            var marker = new google.maps.Marker({
+                draggable: true,
+                position: myLatlng,
+                map: map,
+                title: "Your location"
+                });
+            }
+            google.maps.event.addDomListener(window, "load", initialize());
+            </script>          
              
             <div class="reportProof"><?php echo "Proof of Incident"?></div>
             <div class="VRimgContainer">
@@ -758,6 +892,8 @@ if(mysqli_num_rows($row_b) > 0)
         <br>
     </section>
 </body>
+
+
 <script>
 // Get the modal
 var modal = document.getElementById("myModal");
