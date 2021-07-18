@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset = "utf-8">
-    <title> Login Page </title>
+    <title>R & R | Civilian Login</title>
     <meta name ="viewport" content="width=devoce-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/C_register_login.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
