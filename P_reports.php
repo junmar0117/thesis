@@ -239,6 +239,7 @@ function openTabForm(evt, tabFormName) {
         <input type="submit" name="p_upload" value="S U B M I T" onclick="sendEmail()"><br>
         </form>
     </div>
+    
     <script>
 var map;
 
@@ -271,6 +272,7 @@ var marker = new google.maps.Marker({
 }
 google.maps.event.addDomListener(window, "load", initialize());
 </script>
+
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script type="text/javascript">
     function sendEmail()
