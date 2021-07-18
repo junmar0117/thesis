@@ -1,5 +1,17 @@
 <?php
 session_start();
+$user = $_SESSION['user']; //assigns user value
+//$id = $_SESSION['id']; 
+?>
+<?php
+$url = "";
+$url != 'announcements.php';
+
+if ($_SERVER['HTTP_REFERER'] == $url) 
+{
+  header('Location: index.php'); //redirect to some other page
+  exit();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,7 +30,22 @@ session_start();
 
     <nav>
         <?php
-            include_once('header.html');
+          if($_SESSION['user'] && $_SESSION['type']=='civilian')
+          {
+            include_once('Userheader.html');
+          }
+          else if($_SESSION['user'] && $_SESSION['type']=='barangay')
+          {
+            include_once('B_Userheader.html');
+          }
+          else if($_SESSION['user'] && $_SESSION['type']=='police')
+          {
+            include_once('P_Userheader.html');
+          }
+          else if($_SESSION['user'] && $_SESSION['type']=='fire')
+          {
+            include_once('F_Userheader.html');
+          }
         ?>
     </nav>
     <br>
@@ -26,93 +53,41 @@ session_start();
     <hr>
     <div class="indexContent3">
         <div class="indexPBB">
-            <div class="hpSecHeader3">Featured <a id="reportsColor">Reports</a></div>
+            <div class="hpSecHeader3"><a id="reportsColor">Announcements</a></div>
             <br>
             <br>
 
-<div class="rowCard">
+  <div class="rowCard">
+  <?php
+		require 'connection.php';
+
+		$postQuery = "SELECT * FROM announcements LEFT JOIN b_admin ON announcements.b_admin_id = b_admin.id WHERE date_created < now()";
+		$runPQ = mysqli_query($con, $postQuery);
+		while($row = mysqli_fetch_assoc($runPQ))
+		{
+		?>
   <div class="columnCard">
     <div class="card">
-    <img src="./assets/pnpfinallogo.jpg" width="100%" height="300px" >
-      <h3 class="ipbbthead">I</h3>
-      <p class="ipbbthead2">i</p>
-      <p class="ipbbthead3"> i </p>
-      <a class="PBBvstbtn2">MORE <i class="far fa-arrow-alt-circle-right"></i></a>
+    <img src="<?php echo './assets/announcements/'.$row['image']?>" width="100%" height="300px" >
+      <h3 class="ipbbthead"><?php echo $row['title']; ?></h3>
+      <p class="ipbbthead2"><?php echo mb_strimwidth($row['contents'], 0, 150, "..."); ?></p>
+      <p class="ipbbthead3"> <?php echo $row['name']; echo " / "; echo date('F jS, Y',strtotime($row['date_created'])) ?> </p>
+      <form method="POST" action="viewCardContent.php">
+					<input type="hidden" name="id" value="<?php echo $row['a_id'];?>">
+					<button class="PBBvstbtn2" style="vertical-align:middle"><span>View More <i class="far fa-arrow-alt-circle-right"></i></span></button>
+			</form>   
       <br>
       <br>
     </div>
   </div>
 
-  <div class="columnCard">
-    <div class="card">
-    <img src="./assets/bfpfinallogo.jpg"  width="100%" height="300px" >
-      <h3 class="ipbbthead">I</h3>
-      <p class="ipbbthead2">i</p>
-      <p class="ipbbthead3"> i </p>
-      <a class="PBBvstbtn2">MORE <i class="far fa-arrow-alt-circle-right"></i></a>
-      <br>
-      <br>
-    </div>
-  </div>
-  
-  <div class="columnCard">
-    <div class="card">
-    <img src="./assets/barangay2.jpg" width="100%" height="300px" >
-      <h3 class="ipbbthead">I</h3>
-      <p class="ipbbthead2">i</p>
-      <p class="ipbbthead3"> i </p>
-      <a class="PBBvstbtn2">MORE <i class="far fa-arrow-alt-circle-right"></i></a>
-      <br>
-      <br>
-    </div>
-  </div>
+  <?php
+    }
+  ?>
 </div>
 
         </div>
     </div>
-
-    <div class="indexContent4">
-        <div class="indexPBB2">
-            <div class="hpSecHeader3">Featured <a id="reportsColor">Reports</a></div>
-            <br>
-            <br>
-
-            <div class="rowCard">
-  <div class="columnCard">
-  <img src="./assets/pnpfinallogo.jpg" width="100%" height="300px" >
-    <div class="card">
-      <h3 class="ipbbthead">I</h3>
-      <p class="ipbbthead2">i</p>
-      <p class="ipbbthead3"> i </p>
-      <button class="PBBvstbtn" style="vertical-align:middle"><span>View More</span></button>
-    </div>
-  </div>
-
-  <div class="columnCard">
-  <img src="./assets/bfpfinallogo.jpg"  width="100%" height="300px" >
-    <div class="card">
-      <h3 class="ipbbthead">I</h3>
-      <p class="ipbbthead2">i</p>
-      <p class="ipbbthead3"> i </p>
-      <button class="PBBvstbtn" style="vertical-align:middle"><span>View More</span></button>
-    </div>
-  </div>
-  
-  <div class="columnCard">
-  <img src="./assets/barangay2.jpg" width="100%" height="300px" >
-  <div class="card">
-      <h3 class="ipbbthead">I</h3>
-      <p class="ipbbthead2">i</p>
-      <p class="ipbbthead3"> i </p>
-      <button class="PBBvstbtn" style="vertical-align:middle"><span>View More</span></button>
-    </div>
-  </div>
-
-</div>
-        </div>
-    </div>
-    
-
 </body>
 <footer>
         <?php

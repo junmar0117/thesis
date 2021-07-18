@@ -43,11 +43,77 @@ include_once('B_Userheader.html');
     <br>
     <h2>BARANGAY MONITORING</h2>
     <div class="tab">
-        <button class="tablinks" onclick="openTabForm(event, 'all')">All</button>
+        <button class="tablinks" onclick="openTabForm(event, 'alls')">All</button>
+        <button class="tablinks" onclick="openTabForm(event, 'all')">All Barangay</button>
         <button class="tablinks" onclick="openTabForm(event, 'em')">Emergency</button>
         <button class="tablinks" onclick="openTabForm(event, 'nonem')">Non-Emergency</button>
     </div>    
     </div>
+
+    <div id="alls" class="tabcontent" style="overflow-x:auto;">
+    <table class="adminMonitorRep">
+            <tr>
+                <th>Report ID</th>
+                <th>Name</th>
+                <th>Username</th>
+                <th>Date Created</th>
+                <th>Concern</th>
+                <th>Status</th>
+                <th>View Report</th>
+                <th>View Record</th>
+                <th>Feature</th>
+            </tr>
+            <?php
+            require 'connection.php';         
+
+            $query = mysqli_query($con, "SELECT * from reports ORDER BY id DESC"); // SQL Query
+            while($row = mysqli_fetch_array($query))
+            {          
+                $featured = "";
+								$notFeatured = "";         
+            ?>
+            
+                <tr>
+                <td><?php echo $row['id']  ?></td>
+                <td><?php echo $row['name']  ?></td>
+                <td><?php echo $row['username']  ?></td>
+                <td><?php echo $row['date']; echo " - "; echo $row['time']?></td>
+                <td><?php echo $row['incident']  ?></td>
+                <td><?php echo $row['status']?></td>
+                <td>
+                    <form action="viewReports.php" method="POST">
+                        <input type="hidden" name="id" value="<?php echo $row['id']?>">
+                        <button type="submit" class="viewReportbtn">View</button>
+                    </form>
+                </td>
+                <td>
+                    <form action="viewRecords.php" method="POST">
+                        <input type="hidden" name="report_id" value="<?php echo $row['id']?>">
+                        <button type="submit" class="viewReportbtn">View</button>
+                    </form>
+                </td>
+                <td>
+                <?php
+								if($row['featured'] == 1)
+								{
+									$featured = "Checked";
+								}
+								else
+								{
+									$notFeatured = "Checked";
+								}
+							?>
+							<form>
+							<input type="checkbox" value="<?php if($row['featured'] == 1){echo 2;}else{echo 1;}?>" name="featured" onchange="featured_reports(this.value,<?php echo $row['id'];?>)" <?php echo $featured ?>></input><br>
+							</form>
+                </td>
+                </tr>
+            <?php
+        }
+        ?>
+        </table>
+    </div>
+
     <div id="all" class="tabcontent" style="overflow-x:auto;">
     <table class="adminMonitorRep">
             <tr>
@@ -246,6 +312,24 @@ function openTabForm(evt, tabFormName) {
   evt.currentTarget.className += " active";
 }
 </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+	function featured_reports(val, id)
+	{
+		$.ajax({
+			type:'post',
+			url:'changes.php',
+			data:{val:val,id:id},
+			success: function(result){
+				if(result == 1){
+					$('#str'+id).html('Featured');
+				}else{
+					$('#str'+id).html('Not Featured');
+				}
+			}
+		});
+	}
+	</script>
 </body>
 </html>
 
