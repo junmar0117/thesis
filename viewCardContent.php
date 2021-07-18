@@ -1,6 +1,22 @@
 <?php
 session_start();
 ?>
+<?php
+			if($_SERVER["REQUEST_METHOD"] == "POST")
+			{
+			$id = $_POST['id'];   
+			}
+?>
+<?php
+$url = "";
+$url != 'viewCardContent.php';
+
+if ($_SERVER['HTTP_REFERER'] == $url) 
+{
+  header('Location: index.php'); //redirect to some other page
+  exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +34,22 @@ session_start();
 
     <nav>
         <?php
-            include_once('header.html');
+            if($_SESSION['type']=='civilian')
+            {
+              include_once('Userheader.html');
+            }
+            else if($_SESSION['type']=='barangay')
+            {
+              include_once('B_Userheader.html');
+            }
+            else if($_SESSION['type']=='police')
+            {
+              include_once('P_Userheader.html');
+            }
+            else
+            {
+              include_once('F_Userheader.html');
+            }
         ?>
     </nav>
     <div class="vccc">
@@ -28,14 +59,24 @@ session_start();
     <br>
     <h1 class="vccch">View</h1><br>
     <div class="rowCard">
-  <div class="columnCard">
-  <img src="./assets/pnpfinallogo.jpg" width="100%" height="350px" >
-    <div class="card">
-      <h3 class="ipbbthead">Card 1</h3>
-      <p class="ipbbthead2">Some text</p>
-      <p class="ipbbthead3">Some text</p>
-    </div>
-  </div>
+      <?php
+      require 'connection.php';	
+			$query = mysqli_query($con, "SELECT * FROM announcements LEFT JOIN b_admin ON announcements.b_admin_id = b_admin.id WHERE a_id = $id"); // SQL Query
+						
+			while($row = mysqli_fetch_array($query))
+			{
+			?>
+        <div class="columnCard">
+        <img src="<?php echo './assets/announcements/'.$row['image']?>" width="100%" height="350px" >
+          <div class="card">
+            <h3 class="ipbbthead"><?php echo $row['title']; ?></h3>
+            <p class="ipbbthead2"><?php echo $row['contents']; ?></p>
+            <p class="ipbbthead3"><?php echo $row['name']; echo " / "; echo date('F jS, Y',strtotime($row['date_created'])) ?></p>
+          </div>
+        </div>
+      <?php 
+      }
+      ?>
 
   <div class="columnCard">
     <div class="card">
