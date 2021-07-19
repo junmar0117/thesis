@@ -70,7 +70,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 	$email = ($_POST['email']);
 	$username = ($_POST['username']);
 	$password = ($_POST['password']);
-    $password = password_hash($password, PASSWORD_DEFAULT);
+    $cpassword = ($_POST['cpassword']);
+    
     $bool = true;
 
    
@@ -93,9 +94,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     
         if ($bool) // checks if bool is true
         {
+          if($password === $cpassword)
+          {
+          $password = password_hash($password, PASSWORD_DEFAULT);
           mysqli_query($con, "INSERT INTO civilians (name, age, address,email,username, password) VALUES ('$name','$age','$address','$email','$username','$password')"); //Inserts the value to table users
           print '<script>alert("Successfully Registered!"); </script>'; // Prompts the user
           print '<script>window.location.assign("C_login.php");</script>'; // redirects to register.php
+          }
+          else
+          {
+            print '<script>alert("Password did not match! Please Try Again!"); </script>'; // Prompts the user
+            print '<script>window.location.assign("C_login.php");</script>'; // redirects to register.php
+          }
         }
       
 	}

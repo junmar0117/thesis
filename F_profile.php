@@ -81,6 +81,11 @@ include_once('F_Userheader.html');
                     Print'<input type="password" id="password" required="required" name="password" placeholder="Password: "><br>';
                 Print '</div>';
 
+                Print' <div class="txt_field">';
+                    Print'<span></span>';
+                    Print'<input type="password" id="password" required="required" name="cpassword" placeholder="Confirm Password: "><br>';
+                Print '</div>';
+
                 Print'<div class="txt_field">';
                      Print'<span></span>';
                      Print'<input type="text" id="position" required="required" name="position" placeholder="Position: "><br>';
@@ -168,7 +173,7 @@ if(isset($_POST['addF']))
 	$name = ($_POST['name']);
 	$username = ($_POST['username']);
 	$password = ($_POST['password']);
-    $password = password_hash($password, PASSWORD_DEFAULT);
+    $cpassword = ($_POST['cpassword']);
     $position = ($_POST['position']);
     $bool = true;
 
@@ -200,9 +205,18 @@ if(isset($_POST['addF']))
     
         if ($bool) // checks if bool is true
         {
-          mysqli_query($con, "INSERT INTO f_admin (name, username, password,position) VALUES ('$name','$username','$password', '$position')"); //Inserts the value to table users
-          print '<script>alert("Firefighter User added!"); </script>'; // Prompts the user
-          print '<script>window.location.assign("F_profile.php");</script>'; // redirects to register.php
+          if($password === $cpassword)
+          {
+            $password = password_hash($password, PASSWORD_DEFAULT);
+            mysqli_query($con, "INSERT INTO f_admin (name, username, password,position) VALUES ('$name','$username','$password', '$position')"); //Inserts the value to table users
+            print '<script>alert("Firefighter User added!"); </script>'; // Prompts the user
+            print '<script>window.location.assign("F_profile.php");</script>'; // redirects to register.php
+          }
+          else
+          {
+            print '<script>alert("Password did not match! Please Try Again!"); </script>'; // Prompts the user
+            print '<script>window.location.assign("F_profile.php");</script>'; // redirects to register.php
+          }
         }
       
 	}
