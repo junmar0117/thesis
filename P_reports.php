@@ -198,36 +198,11 @@ function openTabForm(evt, tabFormName) {
 </script>
 
         <div class="progress">          
-            <label class="statuslabel">Status</label>
+            <label class="statuslabel"><center>Status</center></label>
             <ul>
                 <li>
                     <img src="./assets/status/fillup.png"><br>
-                    <i class="fa fa-circle"></i>
                     <p>Fill Up Report Form</p>
-                </li>
-
-                <li>
-                    <img src="./assets/status/reportsubmitted.png"><br>
-                    <i class="fa fa-circle"></i>
-                    <p>Report Submitted</p>
-                </li>
-
-                <li>
-                    <img src="./assets/status/processed.png"><br>
-                    <i class="fa fa-circle"></i>
-                    <p>Report Processed</p>
-                </li>
-
-                <li>
-                    <img src="./assets/status/otw.png"><br>
-                    <i class="fa fa-circle"></i>
-                    <p>Response On The Way</p>
-                </li>
-
-                <li>
-                    <img src="./assets/status/finished.png"><br>
-                    <i class="fa fa-circle"></i>
-                    <p>Finished</p>
                 </li>
             </ul>
             </div>

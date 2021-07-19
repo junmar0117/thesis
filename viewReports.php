@@ -80,7 +80,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
                 }); 
             <?php
                 }
-                else if($row['status'] == "Complete")
+                else if($row['status'] == "Completed")
                 {
             ?>  
                 $(document).ready(function() {
@@ -210,67 +210,40 @@ if(mysqli_num_rows($row_b) > 0)
             </div>
             
              <div class="viewReportStatusUpdate">  
-             <?php echo "Status: "; echo $row['status'] ?>      
-             <button onclick="document.getElementById('id01').style.display='block'" class="viewRepEditbtn">UPDATE</button>      
+                <?php
+                $query = mysqli_query($con, "SELECT * from reports where id = '$id' "); // SQL Query
+                while($row = mysqli_fetch_array($query))
+                {
+                    if($row['status'] == "Needs Attention")
+                    {
+                    ?>
+                        <form action="acceptReport.php" method="POST">
+                        <input type="hidden" name="id" value="<?php echo $id;?>">
+                        <input type="submit" value="Accept Report">
+                        </form>
+                    <?php
+                    }
+                    else if($row['status'] == "In Progress")
+                    {
+                    ?>
+                        <form action="acceptReport.php" method="POST">
+                        <input type="hidden" name="id" value="<?php echo $id;?>">
+                        <input type="submit" value="Assign/Dispatch">
+                        </form>
+                    <?php
+                    }
+                    else if($row['status'] == "On The Way")
+                    {           
+                    ?>
+                        <form action="acceptReport.php" method="POST">
+                        <input type="hidden" name="id" value="<?php echo $id;?>">
+                        <input type="submit" value="Complete/Finish">
+                        </form>
+                    <?php
+                    }
+                }
+                ?>                   
             </div>
-                
-                <div  id="id01" class="w3-modal">
-                    <div class="w3-modal-content">
-                    <div class="w3-container">
-                        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright" style="color:#252525;">&times;</span>
-                        <form action="editStatus.php" method="POST">
-                            <br>
-                            <br>
-                            <div class="txt_field">
-                                <?php
-								if($row['status'] == "Submitted")
-								{
-									$featured = "Checked";
-								}
-								else if($row['status'] == "In Progress")
-								{
-									$notFeatured = "Checked";
-								}
-                                else if($row['status'] == "On The Way")
-                                {
-                                    $otw = "Checked";
-                                }
-                                else 
-                                {
-                                    $completed = "Checked";
-                                }
-								?>   
-                                <form>
-                                <input type="radio"  name="status" value="Needs Attention" onchange="status_update(this.value,<?php echo $row['id'];?>)" <?php echo $featured ?>>
-                                <label for="submitted" style="color: black;">Needs Attention</label><br>
-                                <input type="radio"  name="status" value="In Progress" onchange="status_update(this.value,<?php echo $row['id'];?>)" <?php echo $notFeatured ?>>
-                                <label for="progress" style="color: black;">In Progress</label><br>
-                                <input type="radio"  name="status" value="On The Way" onchange="status_update(this.value,<?php echo $row['id'];?>)" <?php echo $otw ?>>
-                                <label for="otw" style="color: black;">On the way</label><br>
-                                <input type="radio"  name="status" value="Completed" onchange="status_update(this.value,<?php echo $row['id'];?>)" <?php echo $completed ?>>
-                                <label for="complete" style="color: black;">Completed</label><br> 
-                                </form>
-                            </div>   
-                            <br>
-                    </div>
-                    </div>
-                </div>
-
-                                
-
-                <div id="attention" class="progress desc-attention">          
-                <label>Status</label>
-                <div class="progress--attention">
-                        <div class="inlineimage">
-                                <img src="./assets/status/fillup.png" style="width: 100px;">
-                                <img src="./assets/status/reportsubmitted.png" style="width: 100px; margin-left: 4em;">
-                                <img src="./assets/status/processed.png" style="width: 100px; margin-left: 4em;">
-                                <img src="./assets/status/otw.png" style="width: 100px; margin-left: 4em;">
-                                <img src="./assets/status/finished.png" style="width: 100px; margin-left: 4em;">
-                                <h1 style="border-bottom: 2px solid black;"></h1>
-                        </div>
-                    </div>
-                </div>
 
                 <div id="submitted" class="desc desc-submitted">
                 <div class="progress--attention" style="text-align:center;">
@@ -409,63 +382,39 @@ if(mysqli_num_rows($row_b) > 0)
             </div>
             
              <div class="viewReportStatusUpdate">  
-             <?php echo "Status: "; echo $row['status'] ?>
-                <button onclick="document.getElementById('id01').style.display='block'" class="viewRepEditbtn">UPDATE</button>
-                <div  id="id01" class="w3-modal">
-                    <div class="w3-modal-content">
-                    <div class="w3-container">
-                        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright" style="color:#252525;">&times;</span>
-                        <form action="editStatus.php" method="POST">
-                            <br>
-                            <br>
-                            <div class="txt_field">
-                                <?php
-								if($row['status'] == "Submitted")
-								{
-									$featured = "Checked";
-								}
-								else if($row['status'] == "In Progress")
-								{
-									$notFeatured = "Checked";
-								}
-                                else if($row['status'] == "On The Way")
-                                {
-                                    $otw = "Checked";
-                                }
-                                else 
-                                {
-                                    $completed = "Checked";
-                                }
-								?>   
-                                <form>
-                                <input type="radio"  name="status" value="Needs Attention" onchange="status_update(this.value,<?php echo $row['id'];?>)" <?php echo $featured ?>>
-                                <label for="submitted" style="color: black;">Needs Attention</label><br>
-                                <input type="radio"  name="status" value="In Progress" onchange="status_update(this.value,<?php echo $row['id'];?>)" <?php echo $notFeatured ?>>
-                                <label for="progress" style="color: black;">In Progress</label><br>
-                                <input type="radio"  name="status" value="On The Way" onchange="status_update(this.value,<?php echo $row['id'];?>)" <?php echo $otw ?>>
-                                <label for="otw" style="color: black;">On the way</label><br>
-                                <input type="radio"  name="status" value="Completed" onchange="status_update(this.value,<?php echo $row['id'];?>)" <?php echo $completed ?>>
-                                <label for="complete" style="color: black;">Completed</label><br> 
-                                </form>
-                            </div> 
-                            <br>  
-                    </div>
-                    </div>
-                </div>
-                </div>
-
-                <div id="attention" class="progress desc-attention">          
-                <label>Status</label>
-                <div class="progress--attention">
-                        <div class="inlineimage">
-                                <img src="./assets/status/fillup.png" style="width: 100px;">
-                                <img src="./assets/status/reportsubmitted.png" style="width: 100px; margin-left: 4em;">
-                                <img src="./assets/status/processed.png" style="width: 100px; margin-left: 4em;">
-                                <img src="./assets/status/otw.png" style="width: 100px; margin-left: 4em;">
-                                <img src="./assets/status/finished.png" style="width: 100px; margin-left: 4em;">
-                                <h1 style="border-bottom: 2px solid black;"></h1>
-                        </div>
-                    </div>
+             <?php
+                $query = mysqli_query($con, "SELECT * from reports where id = '$id' "); // SQL Query
+                while($row = mysqli_fetch_array($query))
+                {
+                    if($row['status'] == "Needs Attention")
+                    {
+                    ?>
+                        <form action="acceptReport.php" method="POST">
+                        <input type="hidden" name="id" value="<?php echo $id;?>">
+                        <input type="submit" value="Accept Report">
+                        </form>
+                    <?php
+                    }
+                    else if($row['status'] == "In Progress")
+                    {
+                    ?>
+                        <form action="acceptReport.php" method="POST">
+                        <input type="hidden" name="id" value="<?php echo $id;?>">
+                        <input type="submit" value="Assign/Dispatch">
+                        </form>
+                    <?php
+                    }
+                    else if($row['status'] == "On The Way")
+                    {           
+                    ?>
+                        <form action="acceptReport.php" method="POST">
+                        <input type="hidden" name="id" value="<?php echo $id;?>">
+                        <input type="submit" value="Complete/Finish">
+                        </form>
+                    <?php
+                    }
+                }
+                ?>
                 </div>
 
                 <div id="submitted" class="desc desc-submitted">
@@ -602,7 +551,7 @@ if(mysqli_num_rows($row_b) > 0)
             google.maps.event.addDomListener(window, "load", initialize());
             </script>
                 
-            <div class="reportProof"><?php echo "Proof of Incident"?></div>
+            <div class="reportProof"><?php echo "Proof of Incidents"?></div>
             <div class="VRimgContainer">
             <img src='<?php echo 'reportFIles/'.$row['file'];?>' id="myImg" style="height: 300px; width: 300px;"/>
             <div id="myModal" class="modal">
@@ -612,62 +561,40 @@ if(mysqli_num_rows($row_b) > 0)
             </div>
             </div>
             
-             <div class="viewReportStatusUpdate">  
-             <?php echo "Status: "; echo $row['status'] ?>
-                <button onclick="document.getElementById('id01').style.display='block'" class="viewRepEditbtn">UPDATE</button>
-                <div  id="id01" class="w3-modal">
-                    <div class="w3-modal-content">
-                    <div class="w3-container">
-                        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright" style="color:#252525;">&times;</span>
-                        <form action="editStatus.php" method="POST">
-                            <br>
-                            <br>
-                            <div class="txt_field">
-                                <?php
-								if($row['status'] == "Submitted")
-								{
-									$featured = "Checked";
-								}
-								else if($row['status'] == "In Progress")
-								{
-									$notFeatured = "Checked";
-								}
-                                else if($row['status'] == "On The Way")
-                                {
-                                    $otw = "Checked";
-                                }
-                                else 
-                                {
-                                    $completed = "Checked";
-                                }
-								?>   
-                                <form>
-                                <input type="radio"  name="status" value="Needs Attention" onchange="status_update(this.value,<?php echo $row['id'];?>)" <?php echo $featured ?>>
-                                <label for="submitted" style="color: black;">Needs Attention</label><br>
-                                <input type="radio"  name="status" value="In Progress" onchange="status_update(this.value,<?php echo $row['id'];?>)" <?php echo $notFeatured ?>>
-                                <label for="progress" style="color: black;">In Progress</label><br>
-                                <input type="radio"  name="status" value="On The Way" onchange="status_update(this.value,<?php echo $row['id'];?>)" <?php echo $otw ?>>
-                                <label for="otw" style="color: black;">On the way</label><br>
-                                <input type="radio"  name="status" value="Completed" onchange="status_update(this.value,<?php echo $row['id'];?>)" <?php echo $completed ?>>
-                                <label for="complete" style="color: black;">Completed</label><br> 
-                                </form>
-                            </div> 
-                            <br>  
-                </div>
-                </div>
-
-                <div id="attention" class="progress desc-attention">          
-                <label>Status</label>
-                <div class="progress--attention">
-                        <div class="inlineimage">
-                                <img src="./assets/status/fillup.png" style="width: 100px;">
-                                <img src="./assets/status/reportsubmitted.png" style="width: 100px; margin-left: 4em;">
-                                <img src="./assets/status/processed.png" style="width: 100px; margin-left: 4em;">
-                                <img src="./assets/status/otw.png" style="width: 100px; margin-left: 4em;">
-                                <img src="./assets/status/finished.png" style="width: 100px; margin-left: 4em;">
-                                <h1 style="border-bottom: 2px solid black;"></h1>
-                        </div>
-                    </div>
+            <div class="viewReportStatusUpdate">  
+            <?php
+                $query = mysqli_query($con, "SELECT * from reports where id = '$id' "); // SQL Query
+                while($row = mysqli_fetch_array($query))
+                {
+                    if($row['status'] == "Needs Attention")
+                    {
+                    ?>
+                        <form action="acceptReport.php" method="POST">
+                        <input type="hidden" name="id" value="<?php echo $id;?>">
+                        <input type="submit" value="Accept Report">
+                        </form>
+                    <?php
+                    }
+                    else if($row['status'] == "In Progress")
+                    {
+                    ?>
+                        <form action="acceptReport.php" method="POST">
+                        <input type="hidden" name="id" value="<?php echo $id;?>">
+                        <input type="submit" value="Assign/Dispatch">
+                        </form>
+                    <?php
+                    }
+                    else if($row['status'] == "On The Way")
+                    {           
+                    ?>
+                        <form action="acceptReport.php" method="POST">
+                        <input type="hidden" name="id" value="<?php echo $id;?>">
+                        <input type="submit" value="Complete/Finish">
+                        </form>
+                    <?php
+                    }
+                }
+                ?>
                 </div>
 
                 <div id="submitted" class="desc desc-submitted">
@@ -805,22 +732,7 @@ if(mysqli_num_rows($row_b) > 0)
             </div>
             
             <div class="viewReportStatusUpdate">  
-            <?php echo "Status: "; echo $row['status'] ?>
             </div>
-            
-            <div id="attention" class="progress desc-attention">          
-                <label>Status</label>
-                <div class="progress--attention">
-                        <div class="inlineimage">
-                                <img src="./assets/status/fillup.png" style="width: 100px;">
-                                <img src="./assets/status/reportsubmitted.png" style="width: 100px; margin-left: 4em;">
-                                <img src="./assets/status/processed.png" style="width: 100px; margin-left: 4em;">
-                                <img src="./assets/status/otw.png" style="width: 100px; margin-left: 4em;">
-                                <img src="./assets/status/finished.png" style="width: 100px; margin-left: 4em;">
-                                <h1 style="border-bottom: 2px solid black;"></h1>
-                        </div>
-                    </div>
-                </div>
 
                 <div id="submitted" class="desc desc-submitted">
                 <div class="progress--attention" style="text-align:center;">
