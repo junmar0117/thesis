@@ -48,26 +48,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         <input type="hidden" name="emergency" value="<?php echo $emergency;?>">
 
         <div class="tab">
-  <button class="tablinks" onclick="openTabForm(event, 'who')">WHO?</button>
-  <button class="tablinks" onclick="openTabForm(event, 'when')">WHEN?</button>
-  <button class="tablinks" onclick="openTabForm(event, 'where')">WHERE?</button>
-  <button class="tablinks" onclick="openTabForm(event, 'what')">WHAT?</button>
-  <button class="tablinks" onclick="openTabForm(event, 'why')">WHY?</button>
-  <button class="tablinks" onclick="openTabForm(event, 'how')">HOW?</button>
-</div>
-
-        <div id="who" class="CreportInputBox">
-        <br>
-            <label for="descOfInci">Who are involved? / WHO?</label>
-            <br>
-            <input type="text" id="descOfIncident" name="who" placeholder="Who are involved?" required>
-        </div>
-
-        <div id="when" class="CreportInputBox">
-        <br>
-            <label for="descOfInci">When did it take place? / WHEN?</label>
-            <br>
-            <input type="datetime-local" id="descOfIncident" name="when" placeholder="When did it take place?" required>
+        <button class="tablinks" onclick="openTabForm(event, 'what')">WHAT?</button>
+        <button class="tablinks" onclick="openTabForm(event, 'where')">WHERE?</button>  
         </div>
 
         <div id="where" class="CreportInputBox">
@@ -146,13 +128,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
                 <option value="Quarantine Violators">Quarantine Violators</option>
                 <option value="Others">Others</option>
             </select>
-        </div>
-        
-        <div id="why" class="CreportInputBox">
-        <br>
-            <label for="descOfInci">Possible Motive, Why did it happen? / WHY?</label>
+
+            <label for="file">Proof of Incident</label>
             <br>
-            <input type="text" id="descOfIncident" name="who" placeholder="Who are involved?" required>
+            <input type="file" name="file" id="fileAttachment" required>
         </div>
 
         <?php
@@ -169,17 +148,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
           $email = $row['email'];
         }
         ?>
-        
-        <div id="how" class="CreportInputBox">
-            <br>
-            <label for="descOfInci">Description of Incident / HOW?</label>
-            <br>
-            <input type="text" id="descOfIncident" name="description" placeholder="Description of Incident" required>
-
-            <label for="file">Proof of Incident</label>
-            <br>
-            <input type="file" name="file" id="fileAttachment" required>
-        </div>
 
         <script>
 function openTabForm(evt, tabFormName) {

@@ -44,9 +44,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         <input type="hidden" name="emergency" value="<?php echo $emergency;?>">
 
         <div class="tab">
-  <button class="tablinks" onclick="openTabForm(event, 'where')">WHERE?</button>
-  <button class="tablinks" onclick="openTabForm(event, 'what')">WHAT?</button>
-</div>
+            <button class="tablinks" onclick="openTabForm(event, 'what')">WHAT?</button>
+            <button class="tablinks" onclick="openTabForm(event, 'where')">WHERE?</button> 
+        </div>
 
         <div id="where" class="CreportInputBox">
             <br>

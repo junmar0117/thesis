@@ -50,28 +50,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         <input type="hidden" name="emergency" value="<?php echo $emergency;?>">
 
         <div class="tab">
-  <button class="tablinks" onclick="openTabForm(event, 'who')">WHO?</button>
-  <button class="tablinks" onclick="openTabForm(event, 'when')">WHEN?</button>
-  <button class="tablinks" onclick="openTabForm(event, 'where')">WHERE?</button>
-  <button class="tablinks" onclick="openTabForm(event, 'what')">WHAT?</button>
-  <button class="tablinks" onclick="openTabForm(event, 'why')">WHY?</button>
-  <button class="tablinks" onclick="openTabForm(event, 'how')">HOW?</button>
-</div>
-
-        <div id="who" class="CreportInputBox">
-            <br>
-            <label for="descOfInci">Who are involved? / WHO?</label>
-            <br>
-            <input type="text" id="descOfIncident" name="who" placeholder="Who are involved?" required>
+            <button class="tablinks" onclick="openTabForm(event, 'what')">WHAT?</button>
+            <button class="tablinks" onclick="openTabForm(event, 'where')">WHERE?</button>   
         </div>
-
-        <div id="when" class="CreportInputBox">
-        <br>
-            <label for="descOfInci">When did it take place? / WHEN?</label>
-            <br>
-            <input type="datetime-local" id="descOfIncident" name="when" placeholder="When did it take place?" required>
-        </div>
-
+        
         <div id="where" class="CreportInputBox">
         <br>
             <label for="typeOfInci">Barangay: / WHERE?</label>
@@ -147,15 +129,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
                 <option value="Fight">Community Conflict</option>
                 <option value="Others">Others</option>
             </select>
+            <label for="file">Proof of Incident</label>
+            <br>
+            <input type="file" name="file" id="fileAttachment" required>
         </div>
         
-        <div id="why" class="CreportInputBox">
-        <br>
-            <label for="descOfInci">Possible Motive, Why did it happen? / WHY?</label>
-            <br>
-            <input type="text" id="descOfIncident" name="who" placeholder="Who are involved?" required>
-        </div>
-
         <?php
         require 'connection.php';  
         $queryID = mysqli_query($con, "SELECT * from civilians WHERE civilians.username = '".$_SESSION['user']."' LIMIT 1");
@@ -170,17 +148,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
           $email = $row['email'];
         }
         ?>
-
-        <div id="how" class="CreportInputBox">
-            <br>
-            <label for="descOfInci">Description of Incident / HOW?</label>
-            <br>
-            <input type="text" id="descOfIncident" name="description" placeholder="Description of Incident" required>
-
-            <label for="file">Proof of Incident</label>
-            <br>
-            <input type="file" name="file" id="fileAttachment" required>
-        </div>
         <script>
 function openTabForm(evt, tabFormName) {
   var i, CreportInputBox, tablinks;
