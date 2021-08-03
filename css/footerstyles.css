@@ -1,6 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Lexend:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@400;600&display=swap');
 
-/* REMOVE THIS, USE YOUR OWN  */
 body {
     margin: 0;
   }
@@ -8,12 +7,17 @@ body {
   /* STYLES SPECIFIC TO FOOTER  */
   .footer {
     width: 100%;
-    padding:20px 0 10px 0;
+    padding:0;
     position: relative;
     height: auto;
     background-color: #FFFFFF;
-    border-top:  1px solid #CCCCCC;
-    border-bottom:  1px solid #CCCCCC;
+    border:  1px solid #d3d3d3;
+    
+  }
+
+  .contain{
+    border-left: 1px solid #d3d3d3;
+    border-right: 1px solid #d3d3d3;
   }
   .footer .col {
     width: 25%;
@@ -27,13 +31,12 @@ body {
   .footer .col h1 {
     margin: 0;
     padding: 0;
-    font-family: 'Lexend', sans-serif;
+    font-family: 'Raleway', sans-serif;
     font-size: 20px;
     line-height: 17px;
     padding: 20px 0px 5px 0px;
-    color: #252525;
-    font-weight: normal;
-    
+    color: #000;
+    font-weight: 600;
     letter-spacing: 0.250em;
   }
   .footer .col ul {
@@ -41,47 +44,41 @@ body {
     margin: 0;
     padding: 0;
   }
-  .footer .col ul li {
-    color: #252525;
+  .footer .col ul a {
+    color: #000;
     font-size: 18px;
-    font-family: 'Lexend', sans-serif;
-    font-weight: bold;
+    font-family: 'Raleway', sans-serif;
     padding: 5px 0px 5px 0px;
     cursor: pointer;
-    transition: .2s;
-    -webkit-transition: .2s;
-    -moz-transition: .2s;
     margin-top: 10px;
+    text-decoration: none;
   }
   
-  .footer .col ul li:hover {
-    color: #FF0049;
-    transition: .1s;
-    -webkit-transition: .1s;
-    -moz-transition: .1s;
+  .footer .col ul a:after{
+    content: '';
+    display: block;
+    width: 0;
+    height: 1px;
+    background: #000;
+    transition: width .3s;
+    
+  }
+
+  .footer .col ul a:hover:after {
+    color: #000;
+    text-decoration: none;
+    width:100%
   }
   .clearfix {
     clear: both;
   }
 
-  .footersignlink{
-    border: 2px solid #FF0049;
-    color: #252525;
-    padding: 10px;
-    margin: 30 0 20 0;
-    text-decoration: none;
-    font-family: 'Dela Gothic One', cursive;
-  }
-
-  .footersignlink:hover{
-    color:#FF0049;
-  }
   /* footer 2 styling*/
   .footer2{
     width: 100%;
     background-color: #FFFFFF;
     padding-top: 20px;
-    border-bottom: 1px solid #CCCCCC;
+    border-bottom: 1px solid #d3d3d3;
   }
   
   @media only screen and (min-width: 1280px) {

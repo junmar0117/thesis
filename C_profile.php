@@ -27,7 +27,10 @@ $user = $_SESSION['user']; //assigns user value
     <title> R & R | Civilian Profile </title>
     <meta name ="viewport" content="width=devoce-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/C_profilestyle.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 </head>
 <body>
 <nav>
@@ -38,16 +41,15 @@ include_once('Userheader.html');
     
     <div class="profileBox">
         <div class="profileTagcontainer">
-            <br>
-            <br>
-            <br>
-            <br>
-            <h1>PROFILE</h1>
-            <br>
-        </div>    
-                <div class="userdetailsheader">
-                    <a>USER DETAILS</a>           
-                </div>
+            <h1>username</h1>
+                
+                    <form action="C_changePassword.php" method="GET">
+                        <input type="hidden" name="id" value="<?php echo $civID?>">
+                        <button class="viewReportbtn" type="submit">Change Password </button><i class="fas fa-caret-down" style="padding-left: 5px;"></i>
+                    </form>
+                    <hr>
+                    <a class="userdetailsheader">User Details</a>       
+                    <br><br>
                 <table class="profileInfo">
                     <?php
                     require 'connection.php';    
@@ -56,21 +58,21 @@ include_once('Userheader.html');
                         {
                             $civID = $row['id'];
                             Print "<tr>";
-                            Print '<th class="profileInfoHeader">NAME</th>';
+                            Print '<th class="profileInfoHeader">Name</th>';
                             Print '<td class="profileInfoContent">'. $row['name'] . "</td>";
-                            Print '<th class="profileInfoHeader">USERNAME</th>';
+                            Print '<th class="profileInfoHeader">Username</th>';
                             Print '<td class="profileInfoContent">'. $row['username'] . "</td>";
                             Print "</tr>";
                             Print "<tr>";
-                            Print '<th class="profileInfoHeader">AGE</th>';
+                            Print '<th class="profileInfoHeader">Age</th>';
                             Print '<td class="profileInfoContent">'. $row['age'] . "</td>";
-                            Print '<th class="profileInfoHeader">EMAIL</th>';
+                            Print '<th class="profileInfoHeader">Email</th>';
                             Print '<td class="profileInfoContent">'. $row['email'] . "</td>";
                             Print "</tr>";
                             Print "<tr>";
-                            Print '<th class="profileInfoHeader">ACCOUNT TYPE</th>';
-                            Print '<td class="profileInfoContent">'."CIVILIAN" . "</td>";
-                            Print '<th class="profileInfoHeader">VERIFICATION</th>';
+                            Print '<th class="profileInfoHeader">Account Type</th>';
+                            Print '<td class="profileInfoContent">'."Civilian" . "</td>";
+                            Print '<th class="profileInfoHeader">Verification</th>';
                             if($row['verified'] == 1)
                             {
                                 echo '<td class="profileInfoContent">VERIFIED</td>';
@@ -81,20 +83,16 @@ include_once('Userheader.html');
                             }
                             Print "</tr>";
                             Print "<tr>";
-                            Print '<th class="profileInfoHeader">ADDRESS</th>';
+                            Print '<th class="profileInfoHeader">Address</th>';
                             Print '<td class="profileInfoContent">'. $row['address'] . "</td>";
                             Print "</tr>";
                             Print "</table>";
                         
                         }
 		            ?>
-                    <div class="changePWContainer">
-                    <form action="C_changePassword.php" method="GET">
-                        <input type="hidden" name="id" value="<?php echo $civID?>">
-                        <button class="viewReportbtn" type="submit">Change Password</button>
-                    </form>
+                    <br>
+                    
                     </div>
-            
             <br>
             <div>
                 <?php
@@ -103,20 +101,23 @@ include_once('Userheader.html');
                 {
                     if($row['verified'] == 1)
                     {
-                        echo '<a href="C_reportIncident.php" class="profileReportBtn">REPORT INCIDENT</a>';
+                        echo '<a href="C_reportIncident.php" class="profileReportBtn">REPORT INCIDENT <i class="fas fa-plus-circle"></i></a>';
                     }
                     else
                     {
-                        echo '<a class="profileReportBtnDisabled">REPORT INCIDENT</a>';
+                        echo '<a class="profileReportBtnDisabled">REPORT INCIDENT <i class="fas fa-exclamation-circle"></i></a>';
+                        
                     }
                 }
                 ?>
-                
             </div>
                 <br>
-            <div class="profileRepHisHeader" style="text-align:center;">
-                <a>INCIDENT REPORT HISTORY</a>
+            <div class="profileRepHisHeader" style="text-align:right;">
+                <a> Report History</a>
+                <br>
+                <br>
             </div>
+            
         <div style="overflow-x:auto;">
         <table class="ProfileReportHistory">
             <tr>

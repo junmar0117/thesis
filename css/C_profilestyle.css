@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Lexend:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@400;600&display=swap');
+
 body{
     margin:0;
     background-color: #f1f1f1;
@@ -6,14 +7,14 @@ body{
 
 h2{
     text-align: center;
-    font-family: 'Lexend', sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .AdminProfileTable, th, td{
     border: 1px solid black;
     border-collapse: collapse;
     text-align:center;
-    font-family: 'Lexend', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 13px;
 }
 
@@ -38,7 +39,7 @@ input[type=button]{
     border: 1px solid #ff0049;
     background-color: white;
     font-size: 15px;
-    font-family: 'Lexend', sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 input[type=button]:hover{
@@ -58,53 +59,61 @@ input[type=button]:hover{
 }
 
 .profileInfo{
-    margin:0 5% 0 5%;
-    padding: 20px;
-    width: 90%;
-    background-color: white;
+    width: 100%;
+    background-color: #fafafa;
+    margin:0;
 }
 
-.profileInfoHeader, .profileInfoContent{
-    color: black;
-    background-color: white;
+.profileInfoContent{
+    color: #555;
+    background-color: #fafafa;
     text-align:left;
     border: none;
-    font-size: 15px;
-    padding: 5px;
-}
-
-.profileInfoHeader, .profileInfoContent{
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
     width: 25%;
+    border-left: 0.5px solid #d3d3d3;
+    padding-left: 10px;
 }
 
-.profilePicTable{
-    background-color: white;
-    width: 100%;
-    padding: 20px;
+.profileInfoHeader{
+    color: #555;
+    background-color: #fafafa;
+    text-align:left;
+    border: none;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    width: 25%;
+    padding: 2px 0px 2px 0px;
+    text-transform: capitalize;
+    
 }
 
 .userdetailsheader{
-    background-color: white;
-    width: 90%;
-    margin: 0 5% 0 5%;
+    background-color: #fafafa;
+    width: 100%;
     text-align:center;
-    font-family: 'Lexend', sans-serif;
-    font-size: 18px;
-    padding: 15px 0 15px 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
     font-weight:bold;
-    border-bottom: 1px solid #d4d4d4;
-    border-top: 1px solid #ff0049;
-    
+    color: #555;   
+}
+
+.userdetailsheader:hover{
+    text-decoration:none;
+    color: #555;
 }
 
 .aboutdetailsheader{
     background-color: white;
     width: 100%;
     text-align:center;
-    font-family: 'Lexend', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 18px;
     padding: 15px 0 15px 0;
-    border-bottom: 1px solid #d4d4d4;
+    border-bottom: 1px solid #d3d3d3;
     font-weight:bold;
 }
 
@@ -112,49 +121,52 @@ input[type=button]:hover{
     margin: 1% 5% 1% 5%;
     padding: 10px;
     cursor:pointer;
-    border: 1px solid #ff0049;
+    border: 1px solid #000;
     background-color: white;
     font-size: 15px;
-    font-family: 'Lexend', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     text-decoration: none;
-    color:#ff0049;
+    color:#000;
     transition: 0.3s;
 }
 
 .profileReportBtn:hover{
-    background-color: #ff0049;
-    color: white;
+    background-color: #fff;
+    color: 000;
 }
 
 .profileReportBtnDisabled{
-    margin: 1% 5% 1% 5%;
+    margin: 1% 10% 1% 10%;
     padding: 10px;
     cursor:pointer;
-    border: 1px solid #575757;
+    border: 1px solid #d3d3d3;
     background-color: white;
     font-size: 15px;
-    font-family: 'Lexend', sans-serif;
-    text-decoration: line-through;
-    color:#7c7c7c;
+    font-family: 'Open Sans', sans-serif;
+    font-weight:600;
+    color:#555;
 }
 
-button:disabled{
-   
-    padding:10px;
-    cursor:pointer;
-    border: 1px solid #494949;
-    background-color: white;
-    font-size: 15px;
-    font-family: 'Lexend', sans-serif;
+.profileReportBtnDisabled:hover{
+    color:#555;
     text-decoration: none;
-    color:#838383;
-    transition: 0.3s;
 }
 
 .ProfileReportHistory{
-    width: 90%;
-    margin: 0 5% 0 5%;
+    width: 80%;
+    margin: 0 10% 0 10%;
     border-collapse: collapse;
+    border-radius: 20px;
+}
+
+.ProfileReportHistory th{
+    text-align: center;
+    padding: 5px 0 5px 0;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    text-transform: capitalize;
+    background-color: #000;
+    border: 1px solid #000;
 }
 
 .MonitorReportHistory{
@@ -168,17 +180,21 @@ button:disabled{
 }
 
  /*HISTORY header*/
- .profileRepHisHeader{
+ .profileRepHisHeader a{
     background-color: white;
-    width: 90%;
-    font-family: 'Lexend', sans-serif;
-    font-size: 15px;
-    margin:0 5% 0 5%;
-    font-weight:bold;
-    padding: 8px 0 8px 0;
-    color:#ff0049;
+    width: 80%;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    font-size: 30px;
+    margin:0 10% 3% 10%;
+    font-weight:600;
+    color:#000;
     }
 
+    .profileRepHisHeader a:hover{
+        color: #000;
+        text-decoration: none;
+    }
 /*civilian edit account button*/
 .editAccountCivilian{
     padding: 10px;
@@ -186,16 +202,16 @@ button:disabled{
     border: none;
     background-color: white;
     font-size: 15px;
-    font-family: 'Lexend', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     text-decoration: none;
-    color:#ff0049;
+    color:#000;
     transition: 0.3s;
     float:right;
     margin: 0 5% 0 5%;
 }
 
 .editAccountCivilian:hover{
-    background-color: #ff0049;
+    background-color: #000;
     color: white;
     cursor:pointer;
 }
@@ -203,24 +219,25 @@ button:disabled{
 .viewReportbtn{
     cursor:pointer;
     border:none;
-    background-color:#FFFFFF;
-    font-family: 'Lexend', sans-serif;
-    font-size:15px;
-    color:#ff0049;
-    float:right;
-    margin-right:5%;
+    background-color:#fafafa;
+    font-family: 'Open Sans', sans-serif;
+    font-size:16px;
+    color:#555;
+    border: 1px solid #d3d3d3;
+    border-radius: 25px;
+    padding: 5px;
 }
 
 .viewReportbtn:hover{
-    background-color: #ff0049;
-    color:#FFFFFF;
+    background-color: #fff;
+    color:#000;
 }
 
 .viewReportbtn2{
     cursor:pointer;
     border:none;
     background-color:#FFFFFF;
-    font-family: 'Lexend', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size:15px;
     color:#ff0049;
     margin-right:5%;
@@ -233,32 +250,33 @@ button:disabled{
 
 .btn-subscribe{
     cursor:pointer;
-    border: 1px solid #ff0049;
+    border: 1px solid #555;
     background-color:#FFFFFF;
-    font-family: 'Lexend', sans-serif;
-    font-size:15px;
-    color:#ff0049;
+    font-family: 'Open Sans', sans-serif;
+    font-size:16px;
+    color:#555;
 }
 
 .btn-subscribe:hover{
-    background-color: #ff0049;
-    color:#FFFFFF;
+    background-color: #fff;
+    color:#000;
 }
 
 .profileTagcontainer{
-    background-color: #FFFFFF;
-    margin: 0 5% 0 5%;
-    font-family: 'Dela Gothic One', cursive;
+    background-color: #fafafa;
+    padding: 5% 10% 0% 10%;
+    font-family: 'Raleway', sans-serif;
 }
 
-h1{
-    margin: 0 2% 0 2%;
-    font-family: 'Dela Gothic One', cursive;
-
+.profileTagcontainer h1{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    font-size: 35px;
+    
 }
 
 @media only screen and (max-width: 600px) {
-    .profilePicTable, .userdetailsheader, .aboutdetailsheader, .profileInfo, .profileReportBtn, .profileRepHisHeader, .ProfileReportHistory, .profileTagcontainer{
+    .profilePicTable, .aboutdetailsheader, .profileInfo, .profileReportBtn, .profileRepHisHeader, .ProfileReportHistory, .profileTagcontainer{
         width: 100%;
         margin:0;
     }

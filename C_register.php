@@ -3,9 +3,12 @@
 <head>
     <meta charset = "utf-8">
     <title> R & R | Civilian Register </title>
-    <meta name ="viewport" content="width=devoce-width, initial-scale=1.0">
+    <meta name ="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/C_register_login.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 </head>
 <body>
     
@@ -14,50 +17,67 @@
         include_once('header.html');
     ?>
     </nav>
-    <div class="register-box">
-        <h2>Create your Account</h2>
-        
+    <table class="rlcontain">
+        <tr>
+            <th class="rlinfo">
+                <h1 class="rlch1">Hello, Citizen!</h1>
+                <h2 class="rlch2">Create your Account to Report and Access R&R.</h2>
+            </th>
+                <td class="register-box">
+    <div >
+        <h2 class="rlch1">Create Account</h2>
+        <br>
         <form action="C_register.php" method="POST">
+            
         <div class="register-box2">
+        <label>Enter Name</label>
             <input type="text" id="name" required="required" name="name" placeholder="">
-            <label>Enter Name</label>
+            
         </div>
 
         <div class="register-box2">
+        <label>Enter Age</label>
             <input type="int" id="age" required="required" name="age" placeholder="">
-            <label>Enter Age</label>
+           
         </div>
 
         <div class="register-box2">
+        <label>Enter Home Address</label>
             <input type="text" id="address" required="required" name="address" placeholder="">
-            <label>Enter Home Address</label>
+            
         </div>
 
         <div class="register-box2">
+        <label>Enter Email</label>
             <input type="text" id="email" required="required" name="email" placeholder="">
-            <label>Enter Email</label>
+            
         </div>
 
         <div class="register-box2">
+        <label>Enter Username</label>
             <input type="text" id="username" required="required" name="username" placeholder="">
-            <label>Enter Username</label>
+            
         </div>
 
         <div class="register-box2">
+        <label>Enter Password</label>
             <input type="password" id="password" required="required" name="password" placeholder="">
-            <label>Enter Password</label>
+            
         </div>
 
         <div class="register-box2">
+        <label>Confirm Password</label>
             <input type="password" id="cpassword" required="required" name="cpassword" placeholder="">
-            <label>Confirm Password</label>
+            
         </div>
-
+<br>
             <input type="submit" value="Register" class="C_registerbtn">
             <a href="C_login.php" id="signininstead">Already have an account? Log in here.</a>
         </form>
-        </div>
     </div>
+</td>
+</tr>
+</table>
 </body>
 </html>
 

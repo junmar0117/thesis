@@ -4,40 +4,30 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="./css/indexHeaderStyles.css">
+
 </head>
 <body>
 
-<div class="topnav" id="myTopnav" style="box-shadow:0px 1px 5px #CCCCCC;">
-  <a href="index.php" class= "actives" style=" color: #FF0049; border-left: 1px solid #FF0049;"> R & R </a>
-  
+<div class="topnav" id="myTopnav">
+  <a href="index.php" class= "actives"> R & R </a>
+  <div class="FRC">
+    <a href="C_register.php" class="signuphovercolor">Sign up</a>
+
   <div class="dropdown">
-    <button href="#" onclick="myFunction()" class="dropbtn">SIGN IN<i class="fas fa-caret-down" style="padding-left: 5px;"></i></button>
+    <button href="#" onclick="myFunction()" class="dropbtn">Sign in<i class="fas fa-caret-down" style="padding-left: 5px;"></i></button>
     <div id="myDropdown" class="dropdown-content">
-      <a href="C_login.php">CIVILIAN</a>
-      <a href="B_login.php">BARANGAY</a>
-      <a href="F_login.php">FIREFIGHTER</a>
-      <a href="P_login.php">POLICE</a>
+      <a href="C_login.php">Civilian</a>
+      <a href="B_login.php">Barangay</a>
+      <a href="F_login.php">Firefighter</a>
+      <a href="P_login.php">Police</a>
     </div>
   </div>
   
-  <a href="C_register.php" class="signuphovercolor">SIGN UP</a>
+  
+  </div>
 </div>
 
 <script>
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-  if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-    document.getElementById("myTopnav").style.padding = "0px 0px";
-    document.getElementById("myTopnav").style.backgroundColor = "white";
-    document.getElementById("myTopnav").style.boxShadow = "0px 1px 8px #CCCCCC";
-  } else {
-    document.getElementById("myTopnav").style.padding = "5px 5px";
-    document.getElementById("myTopnav").style.backgroundColor = "white";
-  }
-}
-
-
 
 /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
