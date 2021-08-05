@@ -34,8 +34,10 @@ $user = $_SESSION['user']; //assigns user value
     <title>R & R | Bureau of Fire Protection Profile (A)</title>
     <meta name ="viewport" content="width=devoce-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/BFP_profilestyle.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 </head>
 <body>
     <nav>
@@ -46,25 +48,30 @@ include_once('F_Userheader.html');
     <section class="profileSection">
 
     <div class="profileBox">
-    <br>
-    <br>
-    <br>
-    <br>
-        <h1>Bureau of Fire Protection (BFP)</h1>
-        <a>USER: <?php echo $user;?></a>
-        <br><br>
+    <div class="profileTagcontainer">
+    <h1><?php echo $user;?></h1>
+        <h2>Bureau of Fire Protection (BFP) Administrator Account</h2>
+
     <form action="F_changePassword.php" method="GET">
         <input type="hidden" name="id" value="<?php echo $f_id;?>">
-        <button class="viewReportbtn" type="submit">Change Password</button>
+        <button class="viewReportbtn" type="submit">Change Password</button><i class="fas fa-caret-down" style="padding-left: 5px;"></i>
     </form>
     <br>
+</div>
 </div>
 <br>
     <?php
     //Admin - Add Account
     if($user=="f_admin"){
 
-    Print '<div class="adminAccAdd">';
+        Print '<div class="adminAccAdd">';
+        print '<table class="addAccTable">';
+        print '<tr>';
+        print '<td class="aaaHead">';
+        Print '<h1>Add Account </h1>';
+        Print '<h2>subhead</h2>';
+        print '</td>';
+        print '<td class="aaaHead2">';
         Print '<form action="F_profile.php" method="POST">';
                 Print '<div class="txt_field">';
                     Print '<span></span>';
@@ -90,18 +97,23 @@ include_once('F_Userheader.html');
                      Print'<span></span>';
                      Print'<input type="text" id="position" required="required" name="position" placeholder="Position: "><br>';
                 Print '</div>';
-                
+                print '<hr>';
                     Print'<input  class="adminAddAccbtn" type="submit" name="addF" value="Add Account +"></input><br><br>';
-        Print'</form>';
-    Print'</div>';
+                    Print'</form>';
+                    Print'</td>';
+                    Print'</tr>';
+                    Print'</table>';
+                Print'</div>';
+                Print'</div>';
+                print '<hr>';
 }
 ?>
     <?php
 if($user=="f_admin")
 {           
             //Accounts Created by Administrator        
-            Print  '<br>';
-            Print '<h2 class="adminCreatedAccHead">ACCOUNTS CREATED</h2>';
+            
+            Print '<h2 class="adminCreatedAccHead">Accounts</h2>';
             Print '<div style="overflow-x:auto;">';
             Print '<table class="AdminProfileTable">';
             Print '<tr>';
@@ -160,9 +172,9 @@ else {
 ?>
   </table>
         </div>
-        </form>
     </div>
     </section>
+    <br>
 </body>
 </html>
 

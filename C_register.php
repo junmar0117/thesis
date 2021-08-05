@@ -21,12 +21,12 @@
         <tr>
             <th class="rlinfo">
                 <h1 class="rlch1">Hello, Citizen!</h1>
-                <h2 class="rlch2">Create your Account to Report and Access R&R.</h2>
+                <h2 class="rlch2">Create your account to access and report with R&R.</h2>
             </th>
                 <td class="register-box">
     <div >
         <h2 class="rlch1">Create Account</h2>
-        <br>
+        
         <form action="C_register.php" method="POST">
             
         <div class="register-box2">
@@ -78,6 +78,8 @@
 </td>
 </tr>
 </table>
+<div class="footer3">
+          </div>
 </body>
 </html>
 

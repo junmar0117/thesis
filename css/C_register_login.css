@@ -13,16 +13,13 @@ body{
 }
 
 .rlinfo{
-    font-family: 'Raleway', sans-serif;
-    font-weight: 600;
-    color: #000;
     width: 30%;
     text-align: center;
 }
 
 .rlch1{
     font-size: 30px;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Raleway', sans-serif;
     color: #000;
     font-weight:600;
 }
@@ -30,7 +27,7 @@ body{
 .rlch2{
     font-size: 18px;
     font-family: 'Open Sans', sans-serif;
-    color: #000;
+    color: #555;
 }
 /*---------------register----------*/
 .register-box{
@@ -58,7 +55,7 @@ body{
     padding: 5px 0;
     font-size: 16px;
     color: #000000;
-    margin-bottom: 10px
+    margin-bottom: 2px;
     border: 1px solid #000;
 }
 
@@ -68,13 +65,6 @@ body{
     font-size: 16px;
     color: #000;
     font-family: 'Open Sans', sans-serif;
-}
-
-.register-box .register-box2 input:focus ~ label, .register-box .register-box2 input:valid ~ label{
-    top: -25px;
-    left: 0;
-    color: #000;
-    font-size: 15px;
 }
 
 .C_registerbtn{
@@ -91,7 +81,8 @@ body{
 
 .C_registerbtn:hover{
     border: 2px solid #000;
-    color:#fff;
+    color:#000;
+    background-color: #fff;
 }
 
 #signininstead{
@@ -111,6 +102,13 @@ body{
     width: 100%;
     background-color: #FFFFFF;
     padding-top: 20px;
+    border-top: 1px solid #d3d3d3;
+  }
+
+  .footer3{
+    width: 100%;
+    background-color: #FFFFFF;
+    padding-top: 5px;
     border-top: 1px solid #d3d3d3;
   }
 
@@ -150,12 +148,6 @@ body{
     font-family: 'Open Sans', sans-serif;
 }
 
-.login-box .login-box2 input:focus ~ label, .login-box .login-box2 input:valid ~ label{
-    top: -25px;
-    left: 0;
-    color: #000;
-    font-size: 15px;
-}
 
 .C_loginbtn{
     color: #fff;
@@ -171,7 +163,8 @@ body{
 
 .C_loginbtn:hover{
     border: 2px solid #000;
-    color:#fff;
+    color:#000;
+    background-color: #fff;
 }
 
 #signupinstead{

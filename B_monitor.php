@@ -26,7 +26,10 @@ $user = $_SESSION['user']; //assigns user value
     <title> R & R | Report Monitoring</title>
     <meta name ="viewport" content="width=devoce-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/BFP_profilestyle.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 </head>
 
 <body>
@@ -35,20 +38,19 @@ $user = $_SESSION['user']; //assigns user value
 include_once('B_Userheader.html');
     ?>
     </nav>
+
     <div class="monitorHeaderContainer">
+    <h1>Barangay Report Monitoring</h1>
+    <h2>Subhead</h2>
     <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <h2>BARANGAY MONITORING</h2>
+</div>
+<br>
     <div class="tab">
-        <button class="tablinks" onclick="openTabForm(event, 'alls')">All</button>
+        <button class="tablinks" onclick="openTabForm(event, 'alls')"  id="defaultOpen">All</button>
         <button class="tablinks" onclick="openTabForm(event, 'all')">All Barangay</button>
         <button class="tablinks" onclick="openTabForm(event, 'em')">Emergency</button>
         <button class="tablinks" onclick="openTabForm(event, 'nonem')">Non-Emergency</button>
     </div>    
-    </div>
 
     <div id="alls" class="tabcontent" style="overflow-x:auto;">
     <table class="adminMonitorRep">
@@ -61,7 +63,7 @@ include_once('B_Userheader.html');
                 <th>Status</th>
                 <th>View Report</th>
                 <th>View Record</th>
-                <th>Feature</th>
+                <th>Show</th>
             </tr>
             <?php
             require 'connection.php';         
@@ -83,13 +85,13 @@ include_once('B_Userheader.html');
                 <td>
                     <form action="viewReports.php" method="POST">
                         <input type="hidden" name="id" value="<?php echo $row['id']?>">
-                        <button type="submit" class="viewReportbtn">View</button>
+                        <button type="submit" class="viewReportbtn2">View</button>
                     </form>
                 </td>
                 <td>
                     <form action="viewRecords.php" method="POST">
                         <input type="hidden" name="report_id" value="<?php echo $row['id']?>">
-                        <button type="submit" class="viewReportbtn">View</button>
+                        <button type="submit" class="viewReportbtn2">View</button>
                     </form>
                 </td>
                 <td>
@@ -314,6 +316,9 @@ function openTabForm(evt, tabFormName) {
   document.getElementById(tabFormName).style.display = "block";
   evt.currentTarget.className += " active";
 }
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript">

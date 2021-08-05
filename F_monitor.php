@@ -26,7 +26,10 @@ $user = $_SESSION['user']; //assigns user value
     <title> R & R | Report Monitoring</title>
     <meta name ="viewport" content="width=devoce-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/BFP_profilestyle.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 </head>
 
 <body>
@@ -35,14 +38,13 @@ $user = $_SESSION['user']; //assigns user value
     include_once('F_Userheader.html');
     ?>
     </nav>
-    <section>
-    <div class="profileBox">
+
+    <div class="monitorHeaderContainer">
+    <h1>Bureau of Fire Protection Report Monitoring</h1>
+    <h2>Subhead</h2>
     <br>
-    <br>
-    <br>
-    <br>
-    <h2>BUREAU OF FIRE PROTECTION REPORT MONITORING</h2><br>
 </div>
+<br>
     <div style="overflow-x:auto;">
     <table class="adminMonitorRep">
             <tr>
@@ -89,13 +91,13 @@ $user = $_SESSION['user']; //assigns user value
                 <td>
                     <form action="viewReports.php" method="POST">
                         <input type="hidden" name="id" value="<?php echo $row['id']?>">
-                        <button type="submit" class="viewReportbtn">View</button>
+                        <button type="submit" class="viewReportbtn2">View</button>
                     </form>
                 </td>
                 <td>
                     <form action="viewRecords.php" method="POST">
                         <input type="hidden" name="report_id" value="<?php echo $row['id']?>">
-                        <button type="submit" class="viewReportbtn">View</button>
+                        <button type="submit" class="viewReportbtn2">View</button>
                     </form>
                 </td>
                 </tr>

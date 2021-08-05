@@ -1,79 +1,183 @@
-@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Lexend:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@400;600&display=swap');
 
 body{
     margin:0;
     background-color: #FFFFFF;
 }
 
+.rlinfo{
+    width: 40%;
+    text-align: center;
+}
+
+.rlch1{
+    font-size: 30px;
+    font-family: 'Raleway', sans-serif;
+    color: #000;
+    font-weight:600;
+}
+
+.rlch2{
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+    color: #555;
+    
+}
+
 .getVerifwrapper{
     background-color: #FFFFFF;
     width: 80%;
-    margin: 4% 10% 0 10%;
-    padding: 0;
-    border-top: 2px solid #252525;
-    border-bottom: 2px solid #252525;
-    border-right: 2px solid #252525;
-    border-left: 2px solid #FF0049;
-    border-radius: 10px;
+    margin: 0% 10% 0 10%;
+    border-right: 1px solid #d3d3d3;
+    border-left: 1px solid #d3d3d3;
 }
 
-h1{
-    font-family: 'Dela Gothic One', cursive;
-    margin: 3% 50% 2% 0;
-    padding: 1% 1% 1% 5%;
-    background-color: #FF0049;
-    color: #FFFFFF;
-    border-radius: 0px 35px 35px 0px;
+.getVerifwrapper2{
+    border-left: 1px solid #d3d3d3;
+    padding: 4% 2% 2% 2%;
+    width: 60%;
 }
 
-h2{
-    font-family: 'Lexend', sans-serif;
-    color: #252525;
-    margin: 0 5% 2% 5%;
+.getVerifwrapper2 h1{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    color: #000;
+    font-size: 35px;
+}
+
+.getVerifwrapper2 h2{
+    font-family: 'Open Sans', sans-serif;
+    color: #555;
+    font-size: 20px;
+}
+
+.getVerifwrapper2 h3{
+    font-family: 'Open Sans', sans-serif;
+    color: #555;
+    font-size: 16px;
 }
 
 input[type=file]{
     cursor: pointer;
-    margin: 0 5% 2% 5%;
     padding: 10px;
-    background-color: #FFFFFF; 
-	font-size: 15px;
-    font-family: 'Lexend', sans-serif;
-    border: 1px solid #252525;
-    border-radius: 35px;
+    background-color: #fafafa; 
+	font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    border: 1px solid #fafafa;
+    
 }
 
 select{
     cursor: pointer;
-    margin: 0 5% 2% 5%;
     padding: 10px;
-    background-color: #FFFFFF; 
-	font-size: 15px;
-    font-family: 'Lexend', sans-serif;
-    border: 1px solid #252525;
-    border-radius: 35px;
+    background-color: #fafafa; 
+	font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    border: 1px solid #fafafa;
 }
 
 input[type=submit]{
     cursor: pointer;
-    margin: 0 1% 2% 5%;
-    padding: 10px 20px 10px 20px;
-    background-color: #FFFFFF; 
-	font-size: 15px;
-    font-family: 'Lexend', sans-serif;
-    border: 2px solid #252525;
-    border-top: none;
-    color: #252525;
-    text-transform: uppercase;
-    float:right;
-    border-radius: 0px 0px 10px 10px;
+    padding: 5px 10px;
+    background-color: #000; 
+	font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    border: 1px solid #000;
+    color: #fff;
+    text-transform: capitalize;
 }
 
 input[type=submit]:hover{
-    background-color: #FF0049;
-    color: white;
+    background-color: #fff;
+    color: #000;
 }
 
+.footer2{
+    width: 100%;
+    background-color: #FFFFFF;
+    padding-top: 20px;
+    border-top: 1px solid #d3d3d3;
+  }
+
+  /*add announcements*/
+
+  .getVerifwrapper{
+    padding-top: 10%;
+  }
+
+  .getVerifwrapper h1{
+    font-size: 30px;
+  }
+
+  
+  .baddtd{
+    width: 40%;
+    text-align: center;
+
+}
+
+  .baddtd2{
+      width: 60%;
+      padding: 2%;
+      border: 1px solid #d3d3d3;
+      border-bottom:none;
+  }
+
+
+.baddtd2 h1, .baddtd h1{
+  font-size: 30px;
+    font-family: 'Raleway', sans-serif;
+    color: #000;
+    font-weight:600;
+}
+
+.baddtd2 input[type=text], input[type=datetime-local] {
+    width: 100%;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    background-color: #fafafa;
+    color: #555;
+    padding: 1%;
+    border: 1px solid #fafafa;
+    margin-bottom: 2%;
+}
+
+textarea{
+    width: 100%;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    background-color: #fafafa;
+    color: #555;
+    padding: 1%;
+    border: 1px solid #fafafa;
+    margin-bottom: 2%;
+    height:100px;
+}
+
+.baddtd2 label {
+    padding: 5px 0;
+    font-size: 16px;
+    color: #000;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.subAddAnn{
+    color: #fff;
+    float: right;
+    padding: 5px 10px;
+    border: 2px solid black;
+    background-color: #000;
+    cursor: pointer;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.baddtd h2{
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+    color: #555;
+}
   @media only screen and (max-width: 600px) {
     .RPbutton{
         font-size: 14px;

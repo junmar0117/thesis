@@ -44,7 +44,7 @@
         </div>
         <br>
         <input type="submit" value="Login" class="C_loginbtn">
-        <a href="F_login.php" id="signupinstead">Forgot Password</a>
+        <a href="F_login.php" id="signupinstead">Forgot Password<i class="far fa-question-circle" style="padding-left: 5px;"></i></a>
         <br>
 
         <table class="supitab">

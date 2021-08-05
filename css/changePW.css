@@ -1,52 +1,90 @@
-@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Lexend:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@400;600&display=swap');
 
 body{
     margin:0;
     background-color: #F1F1F1;
 }
 
-.changePWContainer{
-    background-color: #FFFFFF;
-    width: 50%;
-    font-family: 'Lexend', sans-serif;
-    margin-left: 25%;
-    margin-right: 25%;
+.rlinfo{
+    width: 40%;
+    text-align: center;
 }
 
-h3{
-    font-family: 'Lexend', sans-serif;
+.rlch1{
+    font-size: 30px;
+    font-family: 'Raleway', sans-serif;
+    color: #000;
+    font-weight:600;
+}
+
+.rlch2{
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+    color: #555;
+    
+}
+
+.changePWContainer{
+    background-color: #FFFFFF;
+    width: 80%;
+    margin: 0% 10% 0 10%;
+    border-right: 1px solid #d3d3d3;
+    border-left: 1px solid #d3d3d3;
+}
+
+.changePWContainer2{
+    border-left: 1px solid #d3d3d3;
+    padding: 7% 2% 2% 2%;
+    width: 60%;
+}
+
+.changePWContainer2 h3{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    color: #000;
+    font-size: 35px;
+}
+
+.changePWContainer2 h4{
+    font-family: 'Raleway', sans-serif;
+    color: #555;
     font-size: 20px;
-    color: #252525;
-    padding: 10px 10px;
-    border-left: 2px solid #ff0049;
 }
 
 input[type=password]{
-    width: 90%;
-    font-family: 'Lexend', sans-serif;
-    color: #969696;
-    margin: 0 4% 4% 4%;
+    width: 100%;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    background-color: #fafafa;
+    color: #555;
     padding: 1%;
-    border: 1px solid #f1f1f1;
+    border: 1px solid #fafafa;
+    margin-bottom: 2%;
 }
 
 input[type=submit]{
-    width: 90%;
-    background-color: #FFFFFF;
-    font-family: 'Lexend', sans-serif;
-    font-size: 20px;
-    border: 1px solid #FF0049;
-    color: #FF0049;
-    padding: 1% 0;
-    margin: 0 5% 2% 5%;
+    background-color: #000;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    border: 1px solid #000;
+    color: #fff;
+    padding: 5px 10px;
+    float: right;
 }
 
 input[type=submit]:hover{
     cursor: pointer;
-    color: #FFFFFF;
-    background-color: #FF0049;
+    color: #000;
+    background-color: #fff;
 
 }
+
+.footer2{
+    width: 100%;
+    background-color: #FFFFFF;
+    padding-top: 20px;
+    border-top: 1px solid #d3d3d3;
+  }
 
 @media only screen and (max-width: 900px) {
     .changePWContainer{

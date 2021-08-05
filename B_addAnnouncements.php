@@ -33,7 +33,10 @@ $user = $_SESSION['user']; //assigns user value
     <title> R & R | Report </title>
     <meta name ="viewport" content="width=devoce-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/getVerif.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 </head>
 <body>
 <nav>
@@ -44,32 +47,44 @@ include_once('B_Userheader.html');
 <br>
 <br>
 <br>
-    <div class="getVerifwrapper">
-        <h1>Add Announcements</h1>
+    <table class="getVerifwrapper">
+        <tr>
+            <td class="baddtd">
+        <h1>Broadcast now?</h1>
+        <h2>Input info for announcements</h2>
+</td>
+<td class="baddtd2">
         <form action="addAnnouncementsAction.php" method="POST" enctype="multipart/form-data">
+        <h1>Announcement</h1>
+        <hr>
             <input type="hidden" name="id" value="<?php echo $id;?>">
-            <br>
-            <label for="typeOfInci">Title: </label>
-            <br>
-            <input type="text" name="title" placeholder="Title" required>
+            
+            <label for="typeOfInci">Title </label>
+            
+            <input type="text" name="title" placeholder="" required>
 
-            <br>
-            <label for="placeOfInci">Content: </label>
-            <br>
-            <input type="text" name="content" placeholder="Content" required>
+            
+            <label for="placeOfInci">Content</label>
+            
+            <textarea required></textarea>
 
-            <br>
-            <label for="placeOfInci">Time of Post: </label>
-            <br>
-            <input name="time" placeholder="Time" onfocus="(this.type='datetime-local')" onblur="(this.type='text')" required>
+            
+            <label for="placeOfInci">Date</label>
+            
+            <input type="datetime-local" name="time" placeholder="" required>
 
-            <br>
-            <label for="image">Insert Image </label>
-            <br>
+            
+            <label for="image">Select Image </label>
             <input type="file" name="file">
-            <input type="submit" name="submit"></input>
+            <hr>
+            <input type="submit" value="Submit" class="subAddAnn"></input>
         </form>
-    </div>   
+</td>
+    </tr>
+</table> 
+    <div class="footer2">
+              <br>
+          </div>    
 </body>
 </html>
 

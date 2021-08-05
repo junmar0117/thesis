@@ -2,12 +2,7 @@
 
 body{
     margin:0;
-    background-color: #f1f1f1;
-}
-
-h2{
-    text-align: center;
-    font-family: 'Open Sans', sans-serif;
+    background-color: #fff;
 }
 
 .AdminProfileTable, th, td{
@@ -15,7 +10,7 @@ h2{
     border-collapse: collapse;
     text-align:center;
     font-family: 'Open Sans', sans-serif;
-    font-size: 13px;
+    font-size: 15px;
 }
 
 th, td{
@@ -38,7 +33,7 @@ input[type=button]{
     cursor:pointer;
     border: 1px solid #ff0049;
     background-color: white;
-    font-size: 15px;
+    font-size: 16px;
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -118,21 +113,22 @@ input[type=button]:hover{
 }
 
 .profileReportBtn{
-    margin: 1% 5% 1% 5%;
+    margin: 1% 10% 1% 10%;
     padding: 10px;
     cursor:pointer;
     border: 1px solid #000;
     background-color: white;
-    font-size: 15px;
+    font-size: 16px;
     font-family: 'Open Sans', sans-serif;
     text-decoration: none;
     color:#000;
-    transition: 0.3s;
+    font-weight:600;
 }
 
 .profileReportBtn:hover{
-    background-color: #fff;
-    color: 000;
+    background-color: #000;
+    color: #fff;
+    text-decoration:none ;
 }
 
 .profileReportBtnDisabled{
@@ -141,7 +137,7 @@ input[type=button]:hover{
     cursor:pointer;
     border: 1px solid #d3d3d3;
     background-color: white;
-    font-size: 15px;
+    font-size: 16px;
     font-family: 'Open Sans', sans-serif;
     font-weight:600;
     color:#555;
@@ -154,19 +150,30 @@ input[type=button]:hover{
 
 .ProfileReportHistory{
     width: 80%;
-    margin: 0 10% 0 10%;
+    margin: 0 10% 5% 10%;
     border-collapse: collapse;
-    border-radius: 20px;
+}
+
+.ProfileReportHistory tr:nth-child(even) td {
+    background-color: #fafafa;
 }
 
 .ProfileReportHistory th{
     text-align: center;
-    padding: 5px 0 5px 0;
+    padding: 7px 0px;
     font-size: 16px;
     font-family: 'Open Sans', sans-serif;
     text-transform: capitalize;
     background-color: #000;
     border: 1px solid #000;
+    color: #fff;
+}
+
+.ProfileReportHistory td{
+    padding: 5px 0px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    border-color: #555;
 }
 
 .MonitorReportHistory{
@@ -187,7 +194,6 @@ input[type=button]:hover{
     font-weight: 600;
     font-size: 30px;
     margin:0 10% 3% 10%;
-    font-weight:600;
     color:#000;
     }
 
@@ -236,16 +242,33 @@ input[type=button]:hover{
 .viewReportbtn2{
     cursor:pointer;
     border:none;
-    background-color:#FFFFFF;
     font-family: 'Open Sans', sans-serif;
     font-size:15px;
-    color:#ff0049;
-    margin-right:5%;
+    color:#555;
 }
 
 .viewReportbtn2:hover{
-    background-color: #ff0049;
-    color:#FFFFFF;
+    background-color: #fff;
+    color:#000;
+}
+
+.viewReportbtn3{
+    cursor:pointer;
+    border:none;
+    font-family: 'Open Sans', sans-serif;
+    font-size:15px;
+    color:#555;
+}
+
+.viewReportbtn3:hover{
+    background-color: #fff;
+    color:#000;
+}
+
+label{
+    font-family: 'Open Sans', sans-serif;
+    font-size:15px;
+    color:#555;
 }
 
 .btn-subscribe{
@@ -273,6 +296,26 @@ input[type=button]:hover{
     font-weight: 600;
     font-size: 35px;
     
+}
+
+.profileTagcontainer2{
+    background-color: #fafafa;
+    padding: 5% 10% 2% 10%;
+    font-family: 'Raleway', sans-serif;
+    margin-bottom: 2%;
+}
+
+.profileTagcontainer2 h1{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    font-size: 35px;  
+}
+
+.profileTagcontainer2 h2{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: #555;  
 }
 
 @media only screen and (max-width: 600px) {

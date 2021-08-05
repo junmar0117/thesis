@@ -4,47 +4,54 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="./css/CBFP_headerstyles.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 </head>
 <body>
 
-<div class="topnav" id="myTopnav" style="box-shadow:0px 1px 8px #CCCCCC;">
-  <a href="B_profile.php" class= "active" style=" color: #FF0049; border-left: 1px solid #FF0049;"> R & R </a>
-  <a href="B_profile.php">PROFILE</a>
-  <a href="B_addAnnouncements.php">ADD ANNOUNCEMENTS</a>
-  <a href="announcements.php">ANNOUNCEMENTS</a>
-  <a href="B_monitor.php">CHECK REPORTS</a>
-  <a href="viewBarangays.php">BARANGAYS</a>
-  <a href="B_pendingVerification.php">PENDING VERIFICATION</a>
-  <a href="logout.php" class="signuphovercolor">SIGN OUT</a>
-  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-    <i class="fa fa-bars"></i>
-  </a></div>
+<div class="topnav" id="myTopnav">
+  <a href="B_profile.php" class= "logactive">RИR</a>
+  <div class="FRC">
+    <div class="dropdown">
+      <button href="#" onclick="myFunction()" class="dropbtn">menu<i class="fas fa-caret-down" style="padding-left: 5px;"></i></button>
+      <div id="myDropdown" class="dropdown-content">
+  <a href="B_profile.php">Profile</a>
+  <a href="B_addAnnouncements.php">Broadcast</a>
+  <a href="announcements.php">Announcements</a>
+  <a href="B_monitor.php">Monitor</a>
+  <a href="viewBarangays.php">Barangays</a>
+  <a href="B_pendingVerification.php">Verification</a>
+  <a href="logout.php">Sign Out</a>
+</div>
+</div>
+</div>
+</div>
 
-<script>
-window.onscroll = function() {scrollFunction()};
+  <script>
 
-function scrollFunction() {
-  if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-    document.getElementById("myTopnav").style.padding = "0px 0px";
-    document.getElementById("myTopnav").style.backgroundColor = "white";
-    document.getElementById("myTopnav").style.boxShadow = "0px 1px 8px #CCCCCC";
-  } else {
-    document.getElementById("myTopnav").style.padding = "5px 5px";
-    document.getElementById("myTopnav").style.backgroundColor = "white";
-  }
-}
-
-function myFunction() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
-  } else {
-    x.className = "topnav";
-  }
-}
-
-
-</script>
+    /* When the user clicks on the button,
+    toggle between hiding and showing the dropdown content */
+    function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+    
+    // Close the dropdown menu if the user clicks outside of it
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+    
+    </script>
 
 </body>
 </html>

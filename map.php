@@ -17,13 +17,39 @@
           include_once('Userheader.html');
       ?>
   </nav>
+
     <div id="floating-panel">
-      <ul>
-      <li><button onclick="SwitchMap()">Switch Heatmap/Marker</button></li><br>
-        <li><button onclick="changeGradient()">Change Gradient</button></li><br>
-        <li><button onclick="changeRadius()">Change Radius</button></li><br>
-        <li><button onclick="changeOpacity()">Change Opacity</button></li>
-      </ul>
+      <h1>Heatmap Panel<i class="fas fa-cog" style="padding-left:5px;"></i></h1>
+      <hr>
+      <h2>Menu</h2>
+
+      <table class="hmaptab">
+        <tr>
+          <td>
+          
+          <button class="hmbut" onclick="SwitchMap()"> On/Off<i class="fas fa-power-off" style="padding-left:5px;"></i></button>
+</td>
+
+        
+        <td>
+        
+          <button class="hmbut" onclick="changeGradient()">Gradient<i class="fas fa-brush" style="padding-left:5px;"></i></button>
+</td>
+</tr>
+        <tr>
+        <td>
+        
+          <button class="hmbut" onclick="changeRadius()">Radius<i class="fas fa-dot-circle" style="padding-left:5px;"></i></button>
+</td>
+        
+        <td>
+        
+          <button class="hmbut" onclick="changeOpacity()">Opacity<i class="fas fa-circle" style="padding-left:5px;"></i></button>
+</td>
+</tr>
+</table>
+
+      <hr>
     </div>
     <div id="map"></div>
     <script>
@@ -119,6 +145,7 @@ function getPoints() {
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFimWZwIvDnYDZS0pKqz25yCBY10DTzm4&signed_in=true&libraries=visualization&callback=initMap">
     </script>
+    <br>
   </body>
 </html>
 

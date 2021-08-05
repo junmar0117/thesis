@@ -1,49 +1,63 @@
-@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Lexend:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@400;600&display=swap');
 body{
     margin:0;
-    background-color: #f1f1f1;
+    background-color: #fff;
 }
 
 .AdminProfileTable{
-    width: 90%;
+    width: 80%;
     margin: auto;
-}
-
-h2{
-    text-align: center;
-    font-family: 'Lexend', sans-serif;
 }
 
 .AdminProfileTable, th, td{
     border: 1px solid black;
     border-collapse: collapse;
     text-align:center;
-    font-family: 'Lexend', sans-serif;
-    font-size: 13px;
 }
 
 th, td{
     padding: 10px;
 }
 
-td{
-    background-color: white;
+.AdminProfileTable td{
+    padding: 5px 0px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    border-color: #555;
 }
 
-th{
-    background-color: #252525;
-    color: white;
-    text-transform:uppercase;
+.AdminProfileTable th{
+    text-align: center;
+    padding: 7px 0px;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    text-transform: capitalize;
+    background-color: #000;
+    border: 1px solid #000;
+    color: #fff;
 }
 
-.profileBox > h1{
-    margin-left: 2%;
-    font-family: 'Dela Gothic One', cursive;
+.AdminProfileTable tr:nth-child(even) td {
+    background-color: #fafafa;
 }
 
-.profileBox{
-    background-color: #FFFFFF;
-    margin: 0 5% 0 5%;
+.profileTagcontainer{
+    background-color: #fafafa;
+    padding: 5% 10% 0% 10%;
+    font-family: 'Raleway', sans-serif;
+}
+
+.profileTagcontainer > h1{
+    font-family: 'Raleway', sans-serif;
+    font-size: 35px;
+    color:#000;
+    font-weight: 600;
+}
+
+.profileTagcontainer > h2{
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+    color:#555;
 }
 
 input[type=button]{
@@ -54,7 +68,7 @@ input[type=button]{
     border: 1px solid #ff0049;
     background-color: white;
     font-size: 15px;
-    font-family: 'Lexend', sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 input[type=button]:hover{
@@ -114,7 +128,7 @@ input[type=button]:hover{
     background-color: white;
     width: 300px;
     text-align:center;
-    font-family: 'Lexend', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 18px;
     padding: 15px 0 15px 0;
     font-weight:bold;
@@ -127,7 +141,7 @@ input[type=button]:hover{
     background-color: white;
     width: 65%;
     text-align:center;
-    font-family: 'Lexend', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 18px;
     padding: 15px 0 15px 0;
     margin-right: 7%;
@@ -145,7 +159,7 @@ input[type=button]:hover{
     border: 1px solid #ff0049;
     background-color: white;
     font-size: 15px;
-    font-family: 'Lexend', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     text-decoration: none;
     color:#ff0049;
     transition: 0.3s;
@@ -183,7 +197,7 @@ input[type=button]:hover{
     background-color: white;
     width: 65%;
     text-align:center;
-    font-family: 'Lexend', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 15px;
     margin-right: 7%;
     font-weight:bold;
@@ -197,7 +211,7 @@ input[type=button]:hover{
     background-color: white;
     width: 300px;
     text-align:center;
-    font-family: 'Lexend', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 17px;
     padding: 15px 0 15px 0;
     border-top: 1px solid #d4d4d4;
@@ -213,99 +227,179 @@ input[type=button]:hover{
 
 .adminCreatedAccHead{
     background-color: white;
-    text-align:center;
-    font-family: 'Lexend', sans-serif;
-    font-size: 15px;
-    padding: 5px 0 5px 0;
-    color:#ff0049;
-    width: 90%;
-    margin: auto;
+    text-align:right;
+    font-family: 'Raleway', sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    color:#000;
+    margin: 3% 10%;
 }
 
 .adminAccAdd{
-    width: 90%;
-    margin-left:5%;
-    margin-right:5%;
+    width: 80%;
+    margin: 0% 10% 0% 10%;
     background-color: #FFFFFF;
-    padding: 1%;
-    border: 1px solid #252525;
+}
+
+.tab{
+    width: 80%;
+    margin: 0 10% 0 10%;
+}
+
+.addAccTable{
+    width: 100%;
+    margin:0;
+    background-color: #FFFFFF;
+}
+
+.aaaHead{
+    background-color: white;
+    width: 40%;
+    border: none;
+}
+
+.aaaHead h1{
+    font-size: 25px;
+    color:#000;
+    text-align:center;
+    font-family: 'Raleway', sans-serif;
+}
+
+.aaaHead h2{
+    font-size: 20px;
+    color:#555;
+    text-align:center;
+    font-family: 'Raleway', sans-serif;
+}
+
+.aaaHead2{
+    background-color: #fff;
+    width: 60%;
+    border: none;
+    padding-top: 10px;
 }
 
 input[type=text], input[type=password]{
     width: 100%;
-    margin: 5px 0 5px 0;
+    margin: 5px 0;
     padding: 5px;
-    font-family: 'Lexend', sans-serif;
-
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    background-color: #fafafa;
+    color:#555;
+    border:none;
 }
 
 .adminAddAccbtn{
-    color: black;
+    color: #555;
     float: right;
     padding: 5px 10px;
-    border: 2px solid black;
+    border: 1px solid #555;
     background-color: white;
     cursor: pointer;
-    font-family: 'Lexend', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 16px;
 }
 
 .adminAddAccbtn:hover, .adminAddSchedbtn:hover{
-    border: 2px solid #ff0049;
-    color:#ff0049;
+    border: 1px solid #000;
+    color:#000;
 }
 .adminAddSchedbtn{
-    margin-top: 5px;
-    margin-bottom: 5px;
-    margin-left:5%;
-    float:left;
     color: black;
     padding: 5px 10px;
-    border: 2px solid black;
+    border: 1px solid black;
     background-color: white;
     cursor: pointer;
-    font-family: 'Lexend', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 16px;
 }
 
 a{
     margin-left: 2%;
-    font-family: 'Lexend', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 20px;
 }
 
 .adminMonitorRep{
-    width: 90%;
-    margin: auto;
+    width: 80%;
+    margin: 0 10% 5% 10%;
     border-collapse: collapse;
+}
+
+.adminMonitorRep tr:nth-child(even) td {
+    background-color: #fafafa;
+}
+
+.adminMonitorRep th{
+    text-align: center;
+    padding: 7px 0px;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    text-transform: capitalize;
+    background-color: #000;
+    border: 1px solid #000;
+    color: #fff;
+}
+
+.adminMonitorRep td{
+    padding: 5px 0px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    border-color: #555;
 }
 
 .viewReportbtn{
     cursor:pointer;
     border:none;
-    background-color:#FFFFFF;
-    font-family: 'Lexend', sans-serif;
-    font-size:15px;
-    color:#ff0049;
-    margin: 0 2% 0 2%;
-    border: 1px solid #ff0049;
+    background-color:#fafafa;
+    font-family: 'Open Sans', sans-serif;
+    font-size:16px;
+    color:#555;
+    border: 1px solid #d3d3d3;
+    border-radius: 25px;
+    padding: 5px;
 }
 
 .viewReportbtn:hover{
-    background-color: #ff0049;
-    color: #ffffff;
+    background-color: #fff;
+    color:#000;
+}
+
+.viewReportbtn2{
+    cursor:pointer;
+    border:none;
+    font-family: 'Open Sans', sans-serif;
+    font-size:15px;
+    color:#555;
+}
+
+.viewReportbtn2:hover{
+    background-color: #fff;
+    color:#000;
 }
 
 .monitorHeaderContainer{
-    background-color: #ffffff;
-    margin: 0 5% 0 5%;
+    background-color: #fafafa;
+    padding: 5% 10% 0% 10%;
 }
 
+.monitorHeaderContainer h1{
+    font-family: 'Raleway', sans-serif;
+    font-size: 35px;
+    color:#000;
+    font-weight: 600;
+}
+
+.monitorHeaderContainer h2{
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+    color:#555;
+}
 /* Style the tab */
 .tab {
     overflow: hidden;
-    border: 1px solid #f1f1f1;
-    border-left: 2px solid #ff0049;
+    border: 1px solid #d3d3d3;
     background-color: #FFFFFF;
   }
   
@@ -319,17 +413,17 @@ a{
     padding: 14px 16px;
     transition: 0.3s;
     font-size: 17px;
-    font-family: 'Lexend', sans-serif;
+    font-family: 'Open Sans', sans-serif;
   }
   
   /* Change background color of buttons on hover */
   .tab button:hover {
-    background-color: #f1f1f1;
+    background-color: #fafafa;
   }
   
   /* Create an active/current tablink class */
   .tab button.active {
-    color: #FF0049;
+    color: #000;
   }
 
   .tabcontent {

@@ -14,8 +14,10 @@ $user = $_SESSION['user']; //assigns user value
     <title> Barangays in Pandacan </title>
     <meta name ="viewport" content="width=devoce-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/viewB.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 </head>
 <body style="background-color: #FFFFFF;">
 <nav>
@@ -50,10 +52,11 @@ if(mysqli_num_rows($row_b) > 0)
 }
 ?>
 </nav>
-    <br>
-    <br>
+<br>
 <div class="verticalTabView">
     <h2 class="vBHeader">View Barangays</h2>
+    <h3 class="vBHeader2">Locate Barangay Addresses</h3>
+    <br>
     <div class="tab">
         <button class="tablinks" onclick="openCity(event, 'Barangay 833')" id="defaultOpen">Barangay 833</button>
         <button class="tablinks" onclick="openCity(event, 'Barangay 834')">Barangay 834</button>
@@ -605,6 +608,9 @@ if(mysqli_num_rows($row_b) > 0)
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1930.6410998367096!2d121.00144385805964!3d14.582989047453426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c993b7ce58bf%3A0x32d5ccfe4b774f6d!2sBrgy.%20872%2C%20Pandacan%2C%20Manila%2C%201011%20Metro%20Manila!5e0!3m2!1sen!2sph!4v1620707601849!5m2!1sen!2sph" width="400" height="290" style="border:0;" allowfullscreen="" loading="lazy"></iframe> 
     </div>
 </div>
+<div class="footer2">
+              <br>
+          </div>
 </body>
 <script>
 function openCity(evt, cityName) {

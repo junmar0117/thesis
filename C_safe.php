@@ -16,7 +16,10 @@ $user = $_SESSION['user']; //assigns user value
     <title> R & R | Safety </title>
     <meta name ="viewport" content="width=devoce-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/C_profilestyle.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 </head>
 <body>
 <nav>
@@ -24,15 +27,12 @@ $user = $_SESSION['user']; //assigns user value
 include_once('Userheader.html');
 ?>
 </nav>
-    <br>
-    <br>
-    <br>
-    <br>
     <div class="profileBox">
-        <div class="profileTagcontainer">
+        <div class="profileTagcontainer2">
             <br>
             <h1>ARE YOU SAFE?</h1>
-            <br>
+            <h2>Update your status with incidents around you.</h2>
+            
         </div>
         <div style="overflow-x:auto;">
         <table class="ProfileReportHistory">
@@ -82,10 +82,11 @@ include_once('Userheader.html');
                      <label for="male">Yes</label>
                      <input type="radio" id="No" name="safe" value="No">
                      <label for="female">No</label>
-                     <button class="viewReportbtn" type="submit">Submit</button>
+                     <button class="viewReportbtn3" type="submit">Submit</button>
             </form>
             </td>
             </tr>
+
             <?php
             }
             ?>

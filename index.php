@@ -133,21 +133,24 @@ session_start();
     
     <div class="indexContent2">
         <table class="indexAbout">
-        <th class="hpSecHeader2">R & R</th>    
-        <tr>
-                
-                <td style="border-left: 1px solid #d3d3d3; float:left;">
+            <tr>
+                <th class="hpSecHeader2">R & R</th> 
+            </tr>   
+            <tr>
+                <td>
                     <a class="hpAboutHeader">ABOUT</a>
-                    <br><br>
+                        <br><br>
                     <a class="AboutSubhead">Report to Respond</a>
-                    <br><br>
-                    <p style="font-weight:lighter;">R & R assists with incident reporting to connect response organizations with civilians.</p></td>
-                <td style="border-left: 1px solid #d3d3d3; float:left;">
+                        <br><br>
+                    <p style="font-size: 18px;">R & R assists with incident reporting to connect response organizations with civilians.</p>
+                </td>
+                <td>
                     <a class="hpAboutHeader">+ US</a>
-                    <br><br>
+                        <br><br>
                     <a class="AboutSubhead">In Development</a>
-                    <br><br>
-                    <p style="font-weight:lighter;">R & R is currently in its development phase to test the intended features for the public before release.</p></td>
+                        <br><br>
+                    <p style="font-size: 18px;">R & R is currently in its development phase to test the intended features for the public before release.</p>
+                </td>
             </tr>
         </table>
     </div>

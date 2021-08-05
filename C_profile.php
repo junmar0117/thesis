@@ -101,11 +101,11 @@ include_once('Userheader.html');
                 {
                     if($row['verified'] == 1)
                     {
-                        echo '<a href="C_reportIncident.php" class="profileReportBtn">REPORT INCIDENT <i class="fas fa-plus-circle"></i></a>';
+                        echo '<a href="C_reportIncident.php" class="profileReportBtn">REPORT INCIDENT <i class="fas fa-unlock-alt" style="padding-left: 5px;"></i></a>';
                     }
                     else
                     {
-                        echo '<a class="profileReportBtnDisabled">REPORT INCIDENT <i class="fas fa-exclamation-circle"></i></a>';
+                        echo '<a class="profileReportBtnDisabled">REPORT INCIDENT <i class="fas fa-user-lock" style="padding-left: 5px;"></i></a>';
                         
                     }
                 }

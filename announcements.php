@@ -26,7 +26,7 @@ if ($_SERVER['HTTP_REFERER'] == $url)
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 
 </head>
-<body style="background-color: #f1f1f1;">
+<body>
 
     <nav>
         <?php
@@ -48,8 +48,6 @@ if ($_SERVER['HTTP_REFERER'] == $url)
           }
         ?>
     </nav>
-    <br>
-    <br>
     <div class="indexContent3">
         <div class="indexPBB">
             <div class="hpSecHeader3"><a id="reportsColor">Announcements</a></div>
@@ -77,7 +75,7 @@ if ($_SERVER['HTTP_REFERER'] == $url)
       <hr>
       <form method="POST" action="viewCardContent.php">
 					<input type="hidden" name="id" value="<?php echo $row['a_id'];?>">
-					<button class="PBBvstbtn2" style="vertical-align:middle"><span>View More <i class="far fa-arrow-alt-circle-right"></i></span></button>
+					<button class="PBBvstbtn2" style="vertical-align:middle"><span>View</span></button>
 			</form>   
       <br>
       <br>
@@ -92,12 +90,10 @@ if ($_SERVER['HTTP_REFERER'] == $url)
 
         </div>
     </div>
+    <div class="footer2">
+              <br>
+          </div>  
 </body>
-<footer>
-        <?php
-            include_once('footer.html');
-        ?>
-</footer>
 </html>
 
 

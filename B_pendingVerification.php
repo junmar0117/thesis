@@ -26,7 +26,10 @@ $user = $_SESSION['user']; //assigns user value
     <title> R & R | </title>
     <meta name ="viewport" content="width=devoce-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/BFP_profilestyle.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 </head>
 
 <body>
@@ -36,13 +39,11 @@ include_once('B_Userheader.html');
     ?>
     </nav>
     <div class="monitorHeaderContainer">
+    <h1 id="pendingV">Verification</h1>
+    <h2> View pending civilian user's verification</h2>
     <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <h2 id="pendingV">PENDING VERIFICATION</h2><br>
 </div>
+<br>
     <div style="overflow-x:auto;">
     <table class="adminMonitorRep">
             <tr>

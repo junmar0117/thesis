@@ -63,18 +63,34 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 
 <head>
     <meta charset = "utf-8">
-    <title> Change Password | R & R</title>
+    <title> R & R | Change Password</title>
     <meta name ="viewport" content="width=devoce-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/changePW.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 
 </head>
 
 <body>
-<div class="changePWContainer">
-<h3>CIVILIAN CHANGE PASSWORD</h3>
+<nav>
+<?php
+include_once('Userheader.html');
+?>
+</nav>
 
+<table class="changePWContainer">
+        <tr>
+            <th class="rlinfo">
+                <h1 class="rlch1">Change password?</h1>
+                <h2 class="rlch2">Create a unique and strong password.</h2>
+            </th>
+
+        <td class="changePWContainer2">
+<h3>Civilian Change Password</h3>
+<h4>Include numbers, symbols, uppercase and lowercase letters</h4>
+<hr>
 <form method="POST">
           <?php 
 						if(isset($_GET['error']))
@@ -96,9 +112,16 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
   <input type="password" name="old_password" placeholder="Old Password"></input>
   <input type="password" name="new_password" placeholder="New Password" id="newPW"></input>
   <input type="password" name="confirm_newpassword" placeholder="Confirm New Password"></input>
-  <br>
+
+  <hr>
   <input type="submit" name="submit" value="Update"></input>
 </form>
-</div>
+                    </td>
+                    </tr>
+                    </table>
+                    <div class="footer2">
+              <br>
+          </div>  
+
 </body>
 </html>

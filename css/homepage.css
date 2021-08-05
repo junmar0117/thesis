@@ -91,28 +91,25 @@ p{
   background-color: #fff;
 }
 
-table .indexAbout{
+.indexAbout{
   width:100%;
 }
 
 .indexAbout th{
-  width:100%;
+  width:50%;
   padding: 30px;
   background-color:#fff;
   color:#000;
+  border: none;
 }
 
 .indexAbout td{
+  text-align:left;
   width:50%;
-  height:300px;
-  padding: 30px;
   background-color: #ffffff;
-  transition: 0.5s;
-}
-
-.indexAbout td:hover{
-  padding: 30px;
-  border:1px solid #d3d3d3;
+  font-family: 'Open Sans', sans-serif;
+  padding-left: 30px;
+  transition: 1s linear;
 }
 
 .hpSecHeader2{
@@ -137,7 +134,7 @@ table .indexAbout{
   color:#000;
   text-transform:uppercase;
   font-family: 'Open Sans', sans-serif;
-  font-weight:bolder;
+  font-weight:600;
 }
 
 .AboutSubhead:hover{
@@ -162,7 +159,7 @@ table .indexAbout{
 .indexPBB{
   width: 100%;
   background-color: white;
-  padding: 6% 9% 5% 9%;
+  padding: 6% 10% 5% 10%;
 }
 
 div.hpSecHeader3{
@@ -268,7 +265,7 @@ div.hpSecHeader4{
 }
 
 /* Remove extra left and right margins, due to padding */
-.rowCard {margin: 0 -5px;}
+
 
 /* Clear floats after the columns */
 .rowCard:after {
@@ -318,6 +315,26 @@ div.hpSecHeader4{
 
 .minorCC2{
   height: 170px;
+}
+
+.PBBvstbtn2{
+  font-family: 'Open Sans', sans-serif;
+  background-color: #fff;
+  border: 1px solid #d3d3d3;
+  color: #555555;
+  text-align: center;
+  font-size: 18px;
+  padding: 5px 10px;
+  width: 50%;
+  cursor: pointer;
+  text-transform: capitalize;
+  border-radius: 25px;
+  float:right;
+}
+
+.PBBvstbtn2:hover{
+  color: #000;
+  border-color: #000;
 }
 
 @media only screen and (max-width: 600px) {
