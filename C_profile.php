@@ -49,7 +49,7 @@ include_once('Userheader.html');
                     </form>
                     <hr>
                     <a class="userdetailsheader">User Details</a>       
-                    <br><br>
+                    <hr>
                 <table class="profileInfo">
                     <?php
                     require 'connection.php';    

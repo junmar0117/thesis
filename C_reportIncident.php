@@ -35,7 +35,10 @@ if ($_SERVER['HTTP_REFERER'] == $url)
     <title> R & R | Report </title>
     <meta name ="viewport" content="width=devoce-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/reportmainstyles.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 </head>
 <body>
 <nav>
@@ -43,17 +46,48 @@ if ($_SERVER['HTTP_REFERER'] == $url)
 include_once('Userheader.html');
 ?>
 </nav>
-<br>
-<br>
-<br>
-    <div class="reportmainwrapper">
-        <h1>Concerned Organization</h1>
+    <table class="reportmainwrapper">
+        <tr>
+        <th class="reportmainwrapper2">
+        <h1>Want to report?</h1>
         <h2>Please select the organization you're reporting to.</h2>
-        <button class="RPbutton" onclick="location.href='B_crimeornot.php';" style="vertical-align:middle"><span>Local Barangay</span></button><br>
-        <button class="RPbutton" onclick="location.href='F_reports.php';" style="vertical-align:middle"><span>Bureau of Fire Protection</span></button><br>
-        <button class="RPbutton" onclick="location.href='P_crimeornot.php';" style="vertical-align:middle"><span>Philippine National Police</span></button><br>
+        </th>
+        <td class="reportmainwrapper3">
+        <h1>Select Concerned Organization</h1>
+        <hr>
+        <button class="RPbutton" onclick="location.href='B_crimeornot.php';">Local Barangay</button><hr>
+        <button class="RPbutton" onclick="location.href='F_reports.php';">Bureau of Fire Protection</button><hr>
+        <button class="RPbutton" onclick="location.href='P_crimeornot.php';">Philippine National Police</button>
+</td>
+</tr>
+</table>
+<div class="footer2">
+          </div> 
 
-    </div>   
+
+<div class="CreportdashbCon">
+<h1>Reports Today</h1>
+          <table class="Creportdashb">
+<tr>
+              <td id="numberOfsR1">Local Barangay</td>
+              <td id="numberOfsR1">Bureau of Fire Protection</td>
+              <td id="numberOfsR1">Philippine National Police</td>
+</tr>
+
+<tr>
+              <td id="numberOfsR2">20</td>
+              <td id="numberOfsR2">8</td>
+              <td id="numberOfsR2">11</td>
+</tr>
+
+<tr>
+              <td id="numberOfsR3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
+              <td id="numberOfsR3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
+              <td id="numberOfsR3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
+</tr>
+</table>
+<hr>
+</div>
 </body>
 </html>
 

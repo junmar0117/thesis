@@ -1,86 +1,129 @@
-@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Lexend:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@400;600&display=swap');
 
 body{
     margin:0;
-    background-color: #f1f1f1;
+    background-color: #fff;
 }
 
 .reportmainwrapper{
-    background-color: #FFFFFF;
-    width: 80%;
-    margin: 4% 10% 0 10%;
-    padding: 0;
-    border-top: 2px solid #252525;
-    border-bottom: 2px solid #252525;
-    border-right: 2px solid #252525;
-    border-left: 2px solid #FF0049;
-    border-radius: 10px;
+  background-color: #FFFFFF;
+  width: 80%;
+  margin: 0% 10% 0 10%;
+  border: 1px solid #d3d3d3;
+  border-top:none;
+  border-bottom: none;
 }
 
-h1{
-    font-family: 'Dela Gothic One', cursive;
-    margin: 3% 50% 2% 0;
-    padding: 1% 1% 1% 5%;
-    background-color: #FF0049;
-    color: #FFFFFF;
-    border-radius: 0px 35px 35px 0px;
+.reportmainwrapper2{
+  border-left: 1px solid #d3d3d3;
+    padding: 7% 2% 2% 2%;
+    width: 50%;
 }
 
-h2{
-    font-family: 'Lexend', sans-serif;
-    color: #252525;
-    margin: 0 5% 2% 5%;
+.reportmainwrapper3{
+  border-left: 1px solid #d3d3d3;
+    padding: 7% 2% 2% 2%;
+    width: 50%;
+}
+
+.reportmainwrapper3 h1{
+  font-family: 'Raleway', sans-serif;
+    color: #000;
+    font-size: 25px;
+    font-weight: 600;
+    text-align: left;
+}
+
+.reportmainwrapper2 h1{
+  font-family: 'Raleway', sans-serif;
+    color: #000;
+    font-size: 25px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.reportmainwrapper2 h2{
+  font-family: 'Raleway', sans-serif;
+  color: #000;
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center;
 }
 
 .RPbutton {
-    display: inline-block;
-    border-radius: 4px;
-    background-color:#FFFFFF;
-    border: 2px solid #252525;
-    color: #252525;
-    text-align: center;
-    font-size: 28px;
-    padding: 20px;
-    width: 90%;
-    transition: all 0.5s;
+    color: #000;
+    font-size: 20px;
     cursor: pointer;
-    margin: 0 5% 3% 5%;
-    font-family: 'Lexend', sans-serif;
-    text-transform: uppercase;
-
+    font-family: 'Open Sans', sans-serif;
+    background-color: #fff;
+    border: 1px solid #d3d3d3;
+    width: 100%;
+    padding: 5px 10px;
   }
   .RPbutton:hover{
-    color:#FF0049;
-    border: 2px solid #FF0049;
+    color:#000;
+    background-color: #fafafa;
   }
 
-  .RPbutton span {
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    transition: 0.3s;
-  }
-  
-  .RPbutton span:after {
-    content: '\00bb';
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    right: -20px;
-    transition: 0.3s;
+  .footer2{
+    width: 100%;
+    background-color: #fff;
+    border-top: 1px solid #d3d3d3;
+    margin:0;
   }
 
-  .RPbutton:hover span {
-    padding-right: 25px;
-    color:#FF0049;
-  }
-  
-  .RPbutton:hover span:after {
-    opacity: 1;
-    right: 0;
+  .CreportdashbCon{
+background-color: #fff;
+width: 100%;
+padding: 0% 10%;
   }
 
+  .CreportdashbCon h1{
+    font-size: 25px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    padding: 10px;
+    background-color: #fff;
+    color: #000;
+  }
 
+  .Creportdashb{
+    background-color: #FFFFFF;
+  width: 100%;
+  margin: 0;
+  }
+
+  .Creportdashb td{
+    width: 33.33%;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 10px;
+    background-color: #fff;
+    color: #555;
+  }
+
+  #numberOfsR1{
+    font-size: 20px;
+    color: #555;
+    font-weight: 600;
+    font-family: 'Open Sans', sans-serif;
+
+  }
+
+  #numberOfsR2{
+    font-size: 35px;
+    color: #000;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+  }
+
+  #numberOfsR3{
+    font-size: 16px;
+    color: #555;
+    font-weight: 400;
+    font-family: 'Open Sans', sans-serif;
+
+  }
   @media only screen and (max-width: 600px) {
     .RPbutton{
         font-size: 14px;

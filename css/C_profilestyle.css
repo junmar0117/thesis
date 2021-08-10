@@ -40,10 +40,10 @@ th{
     border: none;
     font-size: 16px;
     font-family: 'Open Sans', sans-serif;
-    font-weight: 600;
+    font-weight: 400;
     width: 25%;
-    border-left: 0.5px solid #d3d3d3;
-    padding-left: 10px;
+    padding: 5px;
+    border: 3px solid #fafafa;
 }
 
 .profileInfoHeader{
@@ -55,7 +55,8 @@ th{
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
     width: 25%;
-    padding: 2px 0px 2px 0px;
+    padding: 5px;
+    border: 3px solid #fafafa;
     text-transform: capitalize;
     
 }

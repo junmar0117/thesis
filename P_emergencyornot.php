@@ -41,7 +41,10 @@ if ($_SERVER['HTTP_REFERER'] == $url)
     <title> R & R | Report </title>
     <meta name ="viewport" content="width=devoce-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/reportmainstyles.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 </head>
 <body>
 <nav>
@@ -49,23 +52,54 @@ if ($_SERVER['HTTP_REFERER'] == $url)
 include_once('Userheader.html');
 ?>
 </nav>
-<br>
-<br>
-<br>
-    <div class="reportmainwrapper">
-        <h1>Philippine National Police</h1>
-        <h2>Is the Incident Emergency or Not?</h2>
+<table class="reportmainwrapper">
+        <tr>
+        <th class="reportmainwrapper2">
+        <h1>Is it urgent?</h1>
+        <h2>lorem ipsum</h2>
+        </th>
+        <td class="reportmainwrapper3">
+        <h1>Emergency or Not?</h1>
+        <hr>
         <form action="P_emergency.php" method="POST">
         <input type="hidden" name="crime" value="<?php echo $crime?>"></input>
         <input type="hidden" name="emergency" value="Yes"></input>
-        <button class="RPbutton" style="vertical-align:middle"><span>Yes</span></button><br>
+        <button class="RPbutton" style="vertical-align:middle">Yes</button><hr>
         </form>
         <form action="P_reports.php" method="POST">
         <input type="hidden" name="crime" value="<?php echo $crime?>"></input>
         <input type="hidden" name="emergency" value="No"></input>
-        <button class="RPbutton" style="vertical-align:middle"><span>No</span></button><br>
+        <button class="RPbutton" style="vertical-align:middle">No</button>
         </form>
-    </div>   
+        </td>
+</tr>
+</table>
+<div class="footer2">
+          </div> 
+          
+          <div class="CreportdashbCon">
+<h1>Reports Today</h1>
+          <table class="Creportdashb">
+<tr>
+              <td id="numberOfsR1">Emergency</td>
+              <td id="numberOfsR1">Non-emergency</td>
+              <td id="numberOfsR1"></td>
+</tr>
+
+<tr>
+              <td id="numberOfsR2">1</td>
+              <td id="numberOfsR2">11</td>
+              <td id="numberOfsR2"></td>
+</tr>
+
+<tr>
+              <td id="numberOfsR3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
+              <td id="numberOfsR3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
+              <td id="numberOfsR3"></td>
+</tr>
+</table>
+<hr>
+</div> 
 </body>
 </html>
 

@@ -35,7 +35,10 @@ if ($_SERVER['HTTP_REFERER'] == $url)
     <title> R & R | Report </title>
     <meta name ="viewport" content="width=devoce-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/reportmainstyles.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 </head>
 <body>
 <nav>
@@ -43,21 +46,53 @@ if ($_SERVER['HTTP_REFERER'] == $url)
 include_once('Userheader.html');
 ?>
 </nav>
-<br>
-<br>
-<br>
-    <div class="reportmainwrapper">
-        <h1>Local Barangay</h1>
-        <h2>Crime Incident or Not?</h2>
+
+<table class="reportmainwrapper">
+        <tr>
+        <th class="reportmainwrapper2">
+        <h1>Is it a crime?</h1>
+        <h2>lorem ipsum</h2>
+        </th>
+        <td class="reportmainwrapper3">
+        <h1>Crime Incident or Not?</h1>
+        <hr>
         <form action="B_emergencyornot.php" method="POST">
         <input type="hidden" id="yes" name="crime" value="Yes">
-        <button class="RPbutton" style="vertical-align:middle"><span>Yes</span></button><br>
+        <button class="RPbutton" >Yes</button><hr>
         </form>
         <form action="B_emergencyornot.php" method="POST">
         <input type="hidden" id="no" name="crime" value="No">
-        <button class="RPbutton" style="vertical-align:middle"><span>No</span></button><br>
+        <button class="RPbutton" >No</button>
         </form>
-    </div>   
+        </td>
+</tr>
+</table>
+<div class="footer2">
+          </div> 
+          
+          <div class="CreportdashbCon">
+<h1>Reports Today</h1>
+          <table class="Creportdashb">
+<tr>
+              <td id="numberOfsR1">Index Crimes</td>
+              <td id="numberOfsR1">Non-Index Crimes</td>
+              <td id="numberOfsR1"></td>
+</tr>
+
+<tr>
+              <td id="numberOfsR2">20</td>
+              <td id="numberOfsR2">8</td>
+              <td id="numberOfsR2"></td>
+</tr>
+
+<tr>
+              <td id="numberOfsR3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
+              <td id="numberOfsR3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
+              <td id="numberOfsR3"></td>
+</tr>
+</table>
+<hr>
+</div>
 </body>
 </html>
 
