@@ -27,32 +27,6 @@ th{
     text-transform:uppercase;
 }
 
-input[type=button]{
-    color: #ff0049;
-    padding: 5px;
-    cursor:pointer;
-    border: 1px solid #ff0049;
-    background-color: white;
-    font-size: 16px;
-    font-family: 'Open Sans', sans-serif;
-}
-
-input[type=button]:hover{
-    color: white;
-    background-color: #ff0049;
-}
-
-#AdminViewProfile, #AdminDelProfile{
-    color: #ff0049;
-}
-
-#AdminViewProfile:hover, #AdminDelProfile:hover{
-    cursor:pointer;
-    color: #ff0049;
-    text-decoration: underline;
-    background-color: rgb(245, 245, 245);
-}
-
 .profileInfo{
     width: 100%;
     background-color: #fafafa;
@@ -89,7 +63,6 @@ input[type=button]:hover{
 .userdetailsheader{
     background-color: #fafafa;
     width: 100%;
-    text-align:center;
     font-family: 'Open Sans', sans-serif;
     font-size: 20px;
     font-weight:bold;

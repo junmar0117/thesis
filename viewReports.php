@@ -17,18 +17,16 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 <html lang="en">
 <head>
     <meta charset = "utf-8">
-    <title> View Reports | R & R </title>
+    <title> R & R | View Report </title>
     <meta name ="viewport" content="width=devoce-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/viewR.css">
     <link rel="stylesheet" href="./css/popup.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFimWZwIvDnYDZS0pKqz25yCBY10DTzm4&signed_in=true&libraries=visualization&callback=initMap">></script>
-    <style> html, body, #map_canvas {
-    margin: 0;
-    padding: 0;
-    height: 100%}
-</style>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFimWZwIvDnYDZS0pKqz25yCBY10DTzm4&signed_in=true&libraries=visualization&callback=initMap"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <script>
             <?php 
             require 'connection.php';
@@ -119,10 +117,6 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 </head>
 <body>
     
-    <section>
-    <div class="blankWhite">
-    <br>
-</div>
 <?php 
 require 'connection.php'; 
 $sql_b = "SELECT * FROM b_admin where username = '$user' ";
@@ -139,7 +133,37 @@ if(mysqli_num_rows($row_b) > 0)
         Print '<nav>';
         include_once('B_Userheader.html');
         Print '</nav>';
-        Print '<div class="viewRepHead">Report Details</div>';
+
+        Print '<div class="viewRepHead">';
+        Print '<h1>Report Details</h1>';
+        Print '<div id="submitted" class="desc desc-submitted">';
+        Print '<div class="progress--attention">';
+        Print '<div class="inlinetext">';
+        Print '<h3>Status: Submitted<i class="fas fa-file-import" style="padding-left: 5px;"></i></h3>';
+        Print '</div></div></div>';
+
+        Print '<div id="progress" class="desc desc-progress">';
+        Print '<div class="progress--attention">';
+        Print '<div class="inlinetext">';
+        Print '<h3>Status: In Progress<i class="fas fa-spinner" style="padding-left: 5px;"></i></h3>';                      
+        Print '</div></div></div>';
+
+        Print '<div id="otw" class="desc desc-otw">';
+        Print '<div class="progress--attention">';
+        Print '<div class="inlinetext">';
+        Print '<h3>Status: On the Way<i class="fas fa-car" style="padding-left: 5px;"></i></h3>';
+        Print '</div></div></div>';
+
+        Print '<div id="complete" class="desc desc-complete">';
+        Print '<div class="progress--attention">';
+        Print '<div class="inlinetext">';
+        Print '<h3>Status: Finish<i class="fas fa-check-circle" style="padding-left: 5px;"></i></h3>';
+        Print '</div></div></div>';
+
+        Print '</div>';
+        Print '<div class="vrtContain">';
+        Print '<h2>Reports are subjected for verification by the administrator.</h2><hr>';
+        Print '<h3>User Information</h3>';
         Print '<table class="viewReportsTable">';
             
             require 'connection.php';    
@@ -152,29 +176,55 @@ if(mysqli_num_rows($row_b) > 0)
 				$completed = "";
             ?>
              <tr>
-             <td><?php echo "Name: "; echo $row['name']  ?></td>
-             <td><?php echo "Username: "; echo $row['username']  ?></td>
+             <th><?php echo "Name"?></th> 
+             <td><?php echo $row['name'] ?></td>
+             <th><?php echo "Username"?></th>
+             <td><?php echo $row['username']  ?></td>
              </tr>
-             <tr>
-             <td><?php echo "Date: "; echo $row['date']?></td>
-             <td><?php echo "Time: "; echo $row['time']?></td>
-             </tr>
-             <tr>
-             <td><?php echo "Place: "; echo $row['place']?></td>
-             <td><?php echo "Incident: "; echo $row['incident']?></td>
             </table>
+
+            <h3>Incident Information</h3>
+
             <table class="viewReportsTable">
              <tr>
-             <td><?php echo "Incident Description: "; echo $row['description']?></td>
+             <th><?php echo "Date"?></th>
+             <td><?php echo $row['date']?></td>
+             <th><?php echo "Time"?></th>
+             <td><?php echo $row['time']?></td>
+             </tr>
+             <tr>
+             <th><?php echo "Place"?></th>
+             <td><?php echo $row['place']?></td>
+             <th><?php echo "Incident"?></th>
+             <td><?php echo $row['incident']?></td>
             </tr>
             </table>
+            
+            <h3>Description</h3>
+
             <table class="viewReportsTable">
              <tr>
-             <div class="reportProof"><?php echo "location of incident"?></div>
+             <td><?php echo $row['description']?></td>
+            </tr>
+            </table>
+            
+
+            <h3><?php echo "Proof of Incident"?></h3>
+            <table class="viewReportsTable">
+                <tr>
+                <td><a href='<?php echo 'reportFIles/'.$row['file'];?>' target="_blank">View Image</a></td>
+            </tr>
+            </table>
+            
+            <h3><?php echo "Location of Incident"?></h3>
+            <table class="viewReportsTable">
+            <tr>
             <td><div class="reportProof"><div id="map_canvas" style="width: 100%; height: 400px;"></div></div></td>
              </tr>
             </table>
-            
+            <hr>
+            </div>
+
             <script>
             var map;
 
@@ -199,15 +249,7 @@ if(mysqli_num_rows($row_b) > 0)
             google.maps.event.addDomListener(window, "load", initialize());
             </script>
 
-            <div class="reportProof"><?php echo "Proof of Incident"?></div>
-            <div class="VRimgContainer">
-            <img src='<?php echo 'reportFIles/'.$row['file'];?>' id="myImg" style="height: 300px; width: 300px;"/>
-            <div id="myModal" class="modal">
-            <span class="close">&times;</span>
-            <img class="modal-content" id="img01">
-            <div id="caption"></div>
-            </div>
-            </div>
+            
             
              <div class="viewReportStatusUpdate">  
                 <?php
@@ -221,6 +263,7 @@ if(mysqli_num_rows($row_b) > 0)
                         <input type="hidden" name="id" value="<?php echo $id;?>">
                         <input type="submit" value="Accept Report">
                         </form>
+                        <br>
                     <?php
                     }
                     else if($row['status'] == "In Progress")
@@ -229,7 +272,7 @@ if(mysqli_num_rows($row_b) > 0)
                         <form action="acceptReport.php" method="POST">
                         <input type="hidden" name="id" value="<?php echo $id;?>">
                         <input type="submit" value="Assign/Dispatch">
-                        </form>
+                        </form><br>
                     <?php
                     }
                     else if($row['status'] == "On The Way")
@@ -238,80 +281,52 @@ if(mysqli_num_rows($row_b) > 0)
                         <form action="acceptReport.php" method="POST">
                         <input type="hidden" name="id" value="<?php echo $id;?>">
                         <input type="submit" value="Complete/Finish">
-                        </form>
+                        </form><br>
                     <?php
                     }
                 }
                 ?>                   
             </div>
-
-                <div id="submitted" class="desc desc-submitted">
-                <div class="progress--attention" style="text-align:center;">
-                
-                        <div class="inlineimage">
-                                <h1 style="font-size:48px; margin-bottom: 1px black">Current status</h1>
-                                <img src="./assets/status/reportsubmitted.png" style="width: 200px; margin-left: 2em;">
-                                
-                        </div>
-
-                        <div class="inlinetext">
-                            <label style="font-size:32px;">Submitted</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="progress" class="desc desc-progress">
-                <div class="progress--attention" style="text-align:center;">
-                
-                        <div class="inlineimage">
-                                <h1 style="font-size:48px; margin-bottom: 1px black">Current status</h1>
-                                <img src="./assets/status/processed.png" style="width: 200px; margin-left: 2em;">
-                                
-                        </div>
-
-                        <div class="inlinetext">
-                            <label style="font-size:32px;">In progress</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="otw" class="desc desc-otw">
-                <div class="progress--attention" style="text-align:center;">
-                
-                        <div class="inlineimage">
-                                <h1 style="font-size:48px; margin-bottom: 1px black">Current status</h1>
-                                <img src="./assets/status/otw.png" style="width: 200px; margin-left: 2em;">
-                                
-                        </div>
-
-                        <div class="inlinetext">
-                            <label style="font-size:32px;">On the way</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="complete" class="desc desc-complete">
-                <div class="progress--attention" style="text-align:center;">
-                
-                        <div class="inlineimage">
-                                <h1 style="font-size:48px; margin-bottom: 1px black">Current status</h1>
-                                <img src="./assets/status/finished.png" style="width: 200px; margin-left: 2em;">
-                                
-                        </div>
-
-                        <div class="inlinetext">
-                            <label style="font-size:32px;">Finish</label>
-                        </div>
-                    </div>
-                </div>
+            
 <?php
 }}else if(mysqli_num_rows($row_f) > 0)
 {
     Print '<nav>';
     include_once('F_Userheader.html');
     Print '</nav>';
-    Print '<div class="viewRepHead">Report Details</div>';
-    Print '<table class="viewReportsTable">';
+
+    Print '<div class="viewRepHead">';
+    
+        Print '<h1>Report Details</h1>';
+        Print '<div id="submitted" class="desc desc-submitted">';
+        Print '<div class="progress--attention">';
+        Print '<div class="inlinetext">';
+        Print '<h3>Status: Submitted<i class="fas fa-file-import" style="padding-left: 5px;"></i></h3>';
+        Print '</div></div></div>';
+
+        Print '<div id="progress" class="desc desc-progress">';
+        Print '<div class="progress--attention">';
+        Print '<div class="inlinetext">';
+        Print '<h3>Status: In Progress<i class="fas fa-spinner" style="padding-left: 5px;"></i></h3>';                      
+        Print '</div></div></div>';
+
+        Print '<div id="otw" class="desc desc-otw">';
+        Print '<div class="progress--attention">';
+        Print '<div class="inlinetext">';
+        Print '<h3>Status: On the Way<i class="fas fa-car" style="padding-left: 5px;"></i></h3>';
+        Print '</div></div></div>';
+
+        Print '<div id="complete" class="desc desc-complete">';
+        Print '<div class="progress--attention">';
+        Print '<div class="inlinetext">';
+        Print '<h3>Status: Finish<i class="fas fa-check-circle" style="padding-left: 5px;"></i></h3>';
+        Print '</div></div></div>';
+
+        Print '</div>';
+        Print '<div class="vrtContain">';
+        Print '<h2>Reports are subjected for verification by the administrator.</h2><hr>';
+        Print '<h3>User Information</h3>';
+        Print '<table class="viewReportsTable">';
         
         if($_SERVER['REQUEST_METHOD'] == "POST")
         {
@@ -323,27 +338,55 @@ if(mysqli_num_rows($row_b) > 0)
         {
         ?>
          <tr>
-             <td><?php echo "Name: "; echo $row['name']  ?></td>
-             <td><?php echo "Username: "; echo $row['username']  ?></td>
+             <th><?php echo "Name"?></th> 
+             <td><?php echo $row['name'] ?></td>
+             <th><?php echo "Username"?></th>
+             <td><?php echo $row['username']  ?></td>
              </tr>
-             <tr>
-             <td><?php echo "Date: "; echo $row['date']?></td>
-             <td><?php echo "Time: "; echo $row['time']?></td>
-             </tr>
-             <tr>
-             <td><?php echo "Place: "; echo $row['place']?></td>
-             <td><?php echo "Incident: "; echo $row['incident']?></td>
             </table>
+
+            <h3>Incident Information</h3>
+
             <table class="viewReportsTable">
              <tr>
-             <td><?php echo "Incident Description: "; echo $row['description']?></td>
+             <th><?php echo "Date"?></th>
+             <td><?php echo $row['date']?></td>
+             <th><?php echo "Time"?></th>
+             <td><?php echo $row['time']?></td>
+             </tr>
+             <tr>
+             <th><?php echo "Place"?></th>
+             <td><?php echo $row['place']?></td>
+             <th><?php echo "Incident"?></th>
+             <td><?php echo $row['incident']?></td>
             </tr>
             </table>
+            
+            <h3>Description</h3>
+
             <table class="viewReportsTable">
              <tr>
-            <td><div class="reportProof"><div id="map_canvas" style="width: 500px; height: 500px;"></div></div></td>
+             <td><?php echo $row['description']?></td>
+            </tr>
+            </table>
+            
+
+            <h3><?php echo "Proof of Incident"?></h3>
+            <table class="viewReportsTable">
+                <tr>
+                <td><a href='<?php echo 'reportFIles/'.$row['file'];?>' target="_blank">View Image</a></td>
+            </tr>
+            </table>
+            
+            <h3><?php echo "Location of Incident"?></h3>
+            <table class="viewReportsTable">
+            <tr>
+            <td><div class="reportProof"><div id="map_canvas" style="width: 100%; height: 400px;"></div></div></td>
              </tr>
             </table>
+            <hr>
+            </div>
+
             
             <script>
             var map;
@@ -371,18 +414,8 @@ if(mysqli_num_rows($row_b) > 0)
 
 
 
-            <div class="reportProof"><?php echo "Proof of Incident"?></div>
-            <div class="VRimgContainer">
-            <img src='<?php echo 'reportFIles/'.$row['file'];?>' id="myImg" style="height: 300px; width: 300px;"/>
-            <div id="myModal" class="modal">
-            <span class="close">&times;</span>
-            <img class="modal-content" id="img01">
-            <div id="caption"></div>
-            </div>
-            </div>
-            
-             <div class="viewReportStatusUpdate">  
-             <?php
+<div class="viewReportStatusUpdate">  
+                <?php
                 $query = mysqli_query($con, "SELECT * from reports where id = '$id' "); // SQL Query
                 while($row = mysqli_fetch_array($query))
                 {
@@ -393,6 +426,7 @@ if(mysqli_num_rows($row_b) > 0)
                         <input type="hidden" name="id" value="<?php echo $id;?>">
                         <input type="submit" value="Accept Report">
                         </form>
+                        <br>
                     <?php
                     }
                     else if($row['status'] == "In Progress")
@@ -401,7 +435,7 @@ if(mysqli_num_rows($row_b) > 0)
                         <form action="acceptReport.php" method="POST">
                         <input type="hidden" name="id" value="<?php echo $id;?>">
                         <input type="submit" value="Assign/Dispatch">
-                        </form>
+                        </form><br>
                     <?php
                     }
                     else if($row['status'] == "On The Way")
@@ -410,72 +444,12 @@ if(mysqli_num_rows($row_b) > 0)
                         <form action="acceptReport.php" method="POST">
                         <input type="hidden" name="id" value="<?php echo $id;?>">
                         <input type="submit" value="Complete/Finish">
-                        </form>
+                        </form><br>
                     <?php
                     }
                 }
-                ?>
-                </div>
-
-                <div id="submitted" class="desc desc-submitted">
-                <div class="progress--attention" style="text-align:center;">
-                
-                        <div class="inlineimage">
-                                <h1 style="font-size:48px; margin-bottom: 1px black">Current status</h1>
-                                <img src="./assets/status/reportsubmitted.png" style="width: 200px; margin-left: 2em;">
-                                
-                        </div>
-
-                        <div class="inlinetext">
-                            <label style="font-size:32px;">Submitted</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="progress" class="desc desc-progress">
-                <div class="progress--attention" style="text-align:center;">
-                
-                        <div class="inlineimage">
-                                <h1 style="font-size:48px; margin-bottom: 1px black">Current status</h1>
-                                <img src="./assets/status/processed.png" style="width: 200px; margin-left: 2em;">
-                                
-                        </div>
-
-                        <div class="inlinetext">
-                            <label style="font-size:32px;">In progress</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="otw" class="desc desc-otw">
-                <div class="progress--attention" style="text-align:center;">
-                
-                        <div class="inlineimage">
-                                <h1 style="font-size:48px; margin-bottom: 1px black">Current status</h1>
-                                <img src="./assets/status/otw.png" style="width: 200px; margin-left: 2em;">
-                                
-                        </div>
-
-                        <div class="inlinetext">
-                            <label style="font-size:32px;">On the way</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="complete" class="desc desc-complete">
-                <div class="progress--attention" style="text-align:center;">
-                
-                        <div class="inlineimage">
-                                <h1 style="font-size:48px; margin-bottom: 1px black">Current status</h1>
-                                <img src="./assets/status/finished.png" style="width: 200px; margin-left: 2em;">
-                                
-                        </div>
-
-                        <div class="inlinetext">
-                            <label style="font-size:32px;">Finish</label>
-                        </div>
-                    </div>
-                </div>
+                ?>                   
+            </div>
 
 <?php
 
@@ -484,8 +458,40 @@ if(mysqli_num_rows($row_b) > 0)
     Print '<nav>';
     include_once('P_Userheader.html');
     Print '</nav>';
-    Print '<div class="viewRepHead">Report Details</div>';
-    Print '<table class="viewReportsTable">';
+
+
+    Print '<div class="viewRepHead">';
+    
+        Print '<h1>Report Details</h1>';
+        Print '<div id="submitted" class="desc desc-submitted">';
+        Print '<div class="progress--attention">';
+        Print '<div class="inlinetext">';
+        Print '<h3>Status: Submitted<i class="fas fa-file-import" style="padding-left: 5px;"></i></h3>';
+        Print '</div></div></div>';
+
+        Print '<div id="progress" class="desc desc-progress">';
+        Print '<div class="progress--attention">';
+        Print '<div class="inlinetext">';
+        Print '<h3>Status: In Progress<i class="fas fa-spinner" style="padding-left: 5px;"></i></h3>';                      
+        Print '</div></div></div>';
+
+        Print '<div id="otw" class="desc desc-otw">';
+        Print '<div class="progress--attention">';
+        Print '<div class="inlinetext">';
+        Print '<h3>Status: On the Way<i class="fas fa-car" style="padding-left: 5px;"></i></h3>';
+        Print '</div></div></div>';
+
+        Print '<div id="complete" class="desc desc-complete">';
+        Print '<div class="progress--attention">';
+        Print '<div class="inlinetext">';
+        Print '<h3>Status: Finish<i class="fas fa-check-circle" style="padding-left: 5px;"></i></h3>';
+        Print '</div></div></div>';
+
+        Print '</div>';
+        Print '<div class="vrtContain">';
+        Print '<h2>Reports are subjected for verification by the administrator.</h2><hr>';
+        Print '<h3>User Information</h3>';
+        Print '<table class="viewReportsTable">';
         
         if($_SERVER['REQUEST_METHOD'] == "POST")
         {
@@ -497,35 +503,54 @@ if(mysqli_num_rows($row_b) > 0)
         {
         ?>
          <tr>
-             <td><?php echo "Name: "; echo $row['name']  ?></td>
-             <td><?php echo "Username: "; echo $row['username']  ?></td>
+             <th><?php echo "Name"?></th> 
+             <td><?php echo $row['name'] ?></td>
+             <th><?php echo "Username"?></th>
+             <td><?php echo $row['username']  ?></td>
              </tr>
-             <tr>
-             <td><?php echo "Date: "; echo $row['date']?></td>
-             <td><?php echo "Time: "; echo $row['time']?></td>
-             </tr>
-             <tr>
-             <td><?php echo "Place: "; echo $row['place']?></td>
-             <td><?php echo "Incident: "; echo $row['incident']?></td>
             </table>
+
+            <h3>Incident Information</h3>
+
             <table class="viewReportsTable">
              <tr>
-             <td><?php echo "Incident Description: "; echo $row['description']?></td>
+             <th><?php echo "Date"?></th>
+             <td><?php echo $row['date']?></td>
+             <th><?php echo "Time"?></th>
+             <td><?php echo $row['time']?></td>
+             </tr>
+             <tr>
+             <th><?php echo "Place"?></th>
+             <td><?php echo $row['place']?></td>
+             <th><?php echo "Incident"?></th>
+             <td><?php echo $row['incident']?></td>
             </tr>
             </table>
+            
+            <h3>Description</h3>
+
             <table class="viewReportsTable">
              <tr>
-             <td><?php echo "Incident Description: "; echo $row['description']?></td>
+             <td><?php echo $row['description']?></td>
             </tr>
             </table>
             
 
-
+            <h3><?php echo "Proof of Incident"?></h3>
             <table class="viewReportsTable">
-             <tr>
-            <td><div class="reportProof"><div id="map_canvas" style="width: 500px; height: 500px;"></div></div></td>
+                <tr>
+                <td><a href='<?php echo 'reportFIles/'.$row['file'];?>' target="_blank">View Image</a></td>
+            </tr>
+            </table>
+            
+            <h3><?php echo "Location of Incident"?></h3>
+            <table class="viewReportsTable">
+            <tr>
+            <td><div class="reportProof"><div id="map_canvas" style="width: 100%; height: 400px;"></div></div></td>
              </tr>
             </table>
+            <hr>
+            </div>
             
             <script>
             var map;
@@ -550,19 +575,9 @@ if(mysqli_num_rows($row_b) > 0)
             }
             google.maps.event.addDomListener(window, "load", initialize());
             </script>
-                
-            <div class="reportProof"><?php echo "Proof of Incidents"?></div>
-            <div class="VRimgContainer">
-            <img src='<?php echo 'reportFIles/'.$row['file'];?>' id="myImg" style="height: 300px; width: 300px;"/>
-            <div id="myModal" class="modal">
-            <span class="close">&times;</span>
-            <img class="modal-content" id="img01">
-            <div id="caption"></div>
-            </div>
-            </div>
-            
-            <div class="viewReportStatusUpdate">  
-            <?php
+          
+<div class="viewReportStatusUpdate">  
+                <?php
                 $query = mysqli_query($con, "SELECT * from reports where id = '$id' "); // SQL Query
                 while($row = mysqli_fetch_array($query))
                 {
@@ -573,6 +588,7 @@ if(mysqli_num_rows($row_b) > 0)
                         <input type="hidden" name="id" value="<?php echo $id;?>">
                         <input type="submit" value="Accept Report">
                         </form>
+                        <br>
                     <?php
                     }
                     else if($row['status'] == "In Progress")
@@ -581,7 +597,7 @@ if(mysqli_num_rows($row_b) > 0)
                         <form action="acceptReport.php" method="POST">
                         <input type="hidden" name="id" value="<?php echo $id;?>">
                         <input type="submit" value="Assign/Dispatch">
-                        </form>
+                        </form><br>
                     <?php
                     }
                     else if($row['status'] == "On The Way")
@@ -590,78 +606,48 @@ if(mysqli_num_rows($row_b) > 0)
                         <form action="acceptReport.php" method="POST">
                         <input type="hidden" name="id" value="<?php echo $id;?>">
                         <input type="submit" value="Complete/Finish">
-                        </form>
+                        </form><br>
                     <?php
                     }
                 }
-                ?>
-                </div>
-
-                <div id="submitted" class="desc desc-submitted">
-                <div class="progress--attention" style="text-align:center;">
-                
-                        <div class="inlineimage">
-                                <h1 style="font-size:48px; margin-bottom: 1px black">Current status</h1>
-                                <img src="./assets/status/reportsubmitted.png" style="width: 200px; margin-left: 2em;">
-                                
-                        </div>
-
-                        <div class="inlinetext">
-                            <label style="font-size:32px;">Submitted</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="progress" class="desc desc-progress">
-                <div class="progress--attention" style="text-align:center;">
-                
-                        <div class="inlineimage">
-                                <h1 style="font-size:48px; margin-bottom: 1px black">Current status</h1>
-                                <img src="./assets/status/processed.png" style="width: 200px; margin-left: 2em;">
-                                
-                        </div>
-
-                        <div class="inlinetext">
-                            <label style="font-size:32px;">In progress</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="otw" class="desc desc-otw">
-                <div class="progress--attention" style="text-align:center;">
-                
-                        <div class="inlineimage">
-                                <h1 style="font-size:48px; margin-bottom: 1px black">Current status</h1>
-                                <img src="./assets/status/otw.png" style="width: 200px; margin-left: 2em;">
-                                
-                        </div>
-
-                        <div class="inlinetext">
-                            <label style="font-size:32px;">On the way</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="complete" class="desc desc-complete">
-                <div class="progress--attention" style="text-align:center;">
-                
-                        <div class="inlineimage">
-                                <h1 style="font-size:48px; margin-bottom: 1px black">Current status</h1>
-                                <img src="./assets/status/finished.png" style="width: 200px; margin-left: 2em;">
-                                
-                        </div>
-
-                        <div class="inlinetext">
-                            <label style="font-size:32px;">Finish</label>
-                        </div>
-                    </div>
-                </div>
-
+                ?>                   
+            </div>
 <?php
 
 }}else{
         include_once('Userheader.html');
-        Print '<div class="viewRepHead">Report Details</div>';
+        
+        Print '<div class="viewRepHead">';
+    
+        Print '<h1>Report Details</h1>';
+        Print '<div id="submitted" class="desc desc-submitted">';
+        Print '<div class="progress--attention">';
+        Print '<div class="inlinetext">';
+        Print '<h3>Status: Submitted<i class="fas fa-file-import" style="padding-left: 5px;"></i></h3>';
+        Print '</div></div></div>';
+
+        Print '<div id="progress" class="desc desc-progress">';
+        Print '<div class="progress--attention">';
+        Print '<div class="inlinetext">';
+        Print '<h3>Status: In Progress<i class="fas fa-spinner" style="padding-left: 5px;"></i></h3>';                      
+        Print '</div></div></div>';
+
+        Print '<div id="otw" class="desc desc-otw">';
+        Print '<div class="progress--attention">';
+        Print '<div class="inlinetext">';
+        Print '<h3>Status: On the Way<i class="fas fa-car" style="padding-left: 5px;"></i></h3>';
+        Print '</div></div></div>';
+
+        Print '<div id="complete" class="desc desc-complete">';
+        Print '<div class="progress--attention">';
+        Print '<div class="inlinetext">';
+        Print '<h3>Status: Finish<i class="fas fa-check-circle" style="padding-left: 5px;"></i></h3>';
+        Print '</div></div></div>';
+
+        Print '</div>';
+        Print '<div class="vrtContain">';
+        Print '<h2>Reports are subjected for verification by the administrator.</h2><hr>';
+        Print '<h3>User Information</h3>';
         Print '<table class="viewReportsTable">';
             
             if($_SERVER['REQUEST_METHOD'] == "POST")
@@ -674,28 +660,54 @@ if(mysqli_num_rows($row_b) > 0)
             {
             ?>
              <tr>
-             <td><?php echo "Name: "; echo $row['name']  ?></td>
-             <td><?php echo "Username: "; echo $row['username']  ?></td>
-             </tr>
-             <tr>
-             <td><?php echo "Date: "; echo $row['date']?></td>
-             <td><?php echo "Time: "; echo $row['time']?></td>
-             </tr>
-             <tr>
-             <td><?php echo "Place: "; echo $row['place']?></td>
-             <td><?php echo "Incident: "; echo $row['incident']?></td>
+             <th><?php echo "Name"?></th> 
+             <td><?php echo $row['name'] ?></td>
+             <th><?php echo "Username"?></th>
+             <td><?php echo $row['username']  ?></td>
              </tr>
             </table>
-             <table class="viewReportsTable">
-             <tr>
-             <td><?php echo "Incident Description: "; echo $row['description']?></td>
-             </tr>
-            </table>
+
+            <h3>Incident Information</h3>
+
             <table class="viewReportsTable">
              <tr>
-            <td><div class="reportProof"><div id="map_canvas" style="width: 500px; height: 500px;"></div></div></td>
+             <th><?php echo "Date"?></th>
+             <td><?php echo $row['date']?></td>
+             <th><?php echo "Time"?></th>
+             <td><?php echo $row['time']?></td>
+             </tr>
+             <tr>
+             <th><?php echo "Place"?></th>
+             <td><?php echo $row['place']?></td>
+             <th><?php echo "Incident"?></th>
+             <td><?php echo $row['incident']?></td>
+            </tr>
+            </table>
+            
+            <h3>Description</h3>
+
+            <table class="viewReportsTable">
+             <tr>
+             <td><?php echo $row['description']?></td>
+            </tr>
+            </table>
+            
+
+            <h3><?php echo "Proof of Incident"?></h3>
+            <table class="viewReportsTable">
+                <tr>
+                <td><a href='<?php echo 'reportFIles/'.$row['file'];?>' target="_blank">View Image</a></td>
+            </tr>
+            </table>
+            
+            <h3><?php echo "Location of Incident"?></h3>
+            <table class="viewReportsTable">
+            <tr>
+            <td><div class="reportProof"><div id="map_canvas" style="width: 100%; height: 400px;"></div></div></td>
              </tr>
             </table>
+            <hr>
+            </div>
             
             <script>
             var map;
@@ -720,112 +732,11 @@ if(mysqli_num_rows($row_b) > 0)
             }
             google.maps.event.addDomListener(window, "load", initialize());
             </script>          
-             
-            <div class="reportProof"><?php echo "Proof of Incident"?></div>
-            <div class="VRimgContainer">
-            <img src='<?php echo 'reportFIles/'.$row['file'];?>' id="myImg" style="height: 300px; width: 300px;"/>
-            <div id="myModal" class="modal">
-            <span class="close">&times;</span>
-            <img class="modal-content" id="img01">
-            <div id="caption"></div>
-            </div>
-            </div>
-            
-            <div class="viewReportStatusUpdate">  
-            </div>
-
-                <div id="submitted" class="desc desc-submitted">
-                <div class="progress--attention" style="text-align:center;">
-                
-                        <div class="inlineimage">
-                                <h1 style="font-size:48px; margin-bottom: 1px black">Current status</h1>
-                                <img src="./assets/status/reportsubmitted.png" style="width: 200px; margin-left: 2em;">
-                                
-                        </div>
-
-                        <div class="inlinetext">
-                            <label style="font-size:32px;">Submitted</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="progress" class="desc desc-progress">
-                <div class="progress--attention" style="text-align:center;">
-                
-                        <div class="inlineimage">
-                                <h1 style="font-size:48px; margin-bottom: 1px black">Current status</h1>
-                                <img src="./assets/status/processed.png" style="width: 200px; margin-left: 2em;">
-                                
-                        </div>
-
-                        <div class="inlinetext">
-                            <label style="font-size:32px;">In progress</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="otw" class="desc desc-otw">
-                <div class="progress--attention" style="text-align:center;">
-                
-                        <div class="inlineimage">
-                                <h1 style="font-size:48px; margin-bottom: 1px black">Current status</h1>
-                                <img src="./assets/status/otw.png" style="width: 200px; margin-left: 2em;">
-                                
-                        </div>
-
-                        <div class="inlinetext">
-                            <label style="font-size:32px;">On the way</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="complete" class="desc desc-complete">
-                <div class="progress--attention" style="text-align:center;">
-                
-                        <div class="inlineimage">
-                                <h1 style="font-size:48px; margin-bottom: 1px black">Current status</h1>
-                                <img src="./assets/status/finished.png" style="width: 200px; margin-left: 2em;">
-                                
-                        </div>
-
-                        <div class="inlinetext">
-                            <label style="font-size:32px;">Finish</label>
-                        </div>
-                    </div>
-                </div>
 
             <?php
             }
         }
             ?>
-
-            
-        </table>
-        <br>
-    </section>
+        
 </body>
-
-
-<script>
-// Get the modal
-var modal = document.getElementById("myModal");
-
-// Get the image and insert it inside the modal - use its "alt" text as a caption
-var img = document.getElementById("myImg");
-var modalImg = document.getElementById("img01");
-var captionText = document.getElementById("caption");
-img.onclick = function(){
-  modal.style.display = "block";
-  modalImg.src = this.src;
-  captionText.innerHTML = this.alt;
-}
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() { 
-  modal.style.display = "none";
-}
-</script>
 </html>

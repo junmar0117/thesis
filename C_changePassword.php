@@ -109,9 +109,9 @@ include_once('Userheader.html');
 					<?php
 						}
 					?>
-  <input type="password" name="old_password" placeholder="Old Password"></input>
-  <input type="password" name="new_password" placeholder="New Password" id="newPW"></input>
-  <input type="password" name="confirm_newpassword" placeholder="Confirm New Password"></input>
+  <input type="password" name="old_password" placeholder="Old Password" required></input>
+  <input type="password" name="new_password" placeholder="New Password" id="newPW" required></input>
+  <input type="password" name="confirm_newpassword" placeholder="Confirm New Password" required></input>
 
   <hr>
   <input type="submit" name="submit" value="Update"></input>
