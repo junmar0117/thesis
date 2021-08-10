@@ -41,7 +41,7 @@ include_once('Userheader.html');
     
     <div class="profileBox">
         <div class="profileTagcontainer">
-            <h1>username</h1>
+            <h1>username ng user</h1>
                 
                     <form action="C_changePassword.php" method="GET">
                         <input type="hidden" name="id" value="<?php echo $civID?>">
