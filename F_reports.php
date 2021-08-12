@@ -177,7 +177,7 @@ function openTabForm(evt, tabFormName) {
 
         
 
-        
+        <hr>
 
         <input type="hidden" id="name" value="<?php echo $name?>">
         <input type="hidden" id="email" value="<?php echo $email?>">

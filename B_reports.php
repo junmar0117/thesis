@@ -182,7 +182,7 @@ function openTabForm(evt, tabFormName) {
   evt.currentTarget.className += " active";
 }
 </script>
-            
+            <hr>
 
         <input type="hidden" id="name" value="<?php echo $name?>">
         <input type="hidden" id="email" value="<?php echo $email?>">
