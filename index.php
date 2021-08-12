@@ -28,7 +28,7 @@ session_start();
     <div class="hpFirstSection">
         <div class="hpFirst">
             <div class="hfprb">
-            <a class="hpFirstHeader">Arm ourselves with knowledge to take action,</a>
+            <a class="hpFirstHeader">Arm ourselves with knowledge to take action,</a><br>
             <a class="hpFirstHeader" style="color:#000;">Report & Respond.</a>
             <br>
             <br>
@@ -134,7 +134,7 @@ session_start();
     <div class="indexContent2">
         <table class="indexAbout">
             <tr>
-                <th class="hpSecHeader2">R & R</th> 
+                <th class="hpSecHeader2">R И R</th> 
             </tr>   
             <tr>
                 <td>

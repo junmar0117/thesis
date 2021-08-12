@@ -21,7 +21,7 @@ if ($_SERVER['HTTP_REFERER'] == $url)
 <html lang="en">
 <head>
     <meta charset = "utf-8">
-    <title>R & R | Incident Reporting</title>
+    <title>R & R | View</title>
     <meta name ="viewport" content="width=devoce-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/viewCC.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -30,7 +30,7 @@ if ($_SERVER['HTTP_REFERER'] == $url)
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 
 </head>
-<body style="background-color: #f1f1f1;">
+<body>
 
     <nav>
         <?php
@@ -52,45 +52,62 @@ if ($_SERVER['HTTP_REFERER'] == $url)
             }
         ?>
     </nav>
-    <div class="vccc">
-    <br>
-    <br>
-    <br>
-    <br>
-    <h1 class="vccch">View</h1><br>
-    <div class="rowCard">
-      <?php
+    
+    <?php
       require 'connection.php';	
 			$query = mysqli_query($con, "SELECT * FROM announcements LEFT JOIN b_admin ON announcements.b_admin_id = b_admin.id WHERE a_id = $id"); // SQL Query
 						
 			while($row = mysqli_fetch_array($query))
 			{
 			?>
-        <div class="columnCard">
-        <img src="<?php echo './assets/announcements/'.$row['image']?>" width="100%" height="350px" >
-          <div class="card">
-          <div class="ccontentc">
-          <h3 class="ipbbthead"><?php echo $row['title']; ?></h3><hr>
-            <p class="ipbbthead3"><?php echo $row['name']; echo " / "; echo date('F jS, Y',strtotime($row['date_created'])) ?></p>
-          </div>
-      </div>
-        </div>
-      
 
-  <div class="columnCard">
-    
-    <div class="card">
-    <div class="ccontentc2">
-            <p class="ipbbthead2"><?php echo $row['contents']; ?></p><hr>
-    </div>
+      <div class="vccch">
+    <h1><?php echo $row['title']; ?></h1>
+    <p><?php echo $row['name']; echo " / "; echo date('F jS, Y',strtotime($row['date_created'])) ?></p>
+    <img src="<?php echo './assets/announcements/'.$row['image']?>" width="100%" height="500px">
       </div>
-  </div>
+    <div class="vccc">
+    <div class="vccc2">
+    <p class="ipbbthead2"><?php echo $row['contents']; ?></p>
+      </div>
+      </div>
+      <div class="vccc3">
+          
+            <p class="ipbbthead3"><?php echo $row['name']; echo " / "; echo date('F jS, Y',strtotime($row['date_created'])) ?></p>
+            <hr>
+      </div>
   <?php 
       }
       ?>
-</div>
-<br>
-  <br>
-</div>
+      <div class="vccc4">
+      <h4>Related</h4>
+<h1>Other Announcements</h1>
+<br><br>
+<table class="vccc5">
+    <tr>
+      <td>
+        <a>Title</a>
+        <h3>by 'user' on 'date'</h3>
+        <p>content</p>
+      </td>
+    </tr>
+    <tr>
+    <td>
+    <a>Title</a>
+    <h3>by 'user' on 'date'</h3>
+        <p>content</p>
+    </td>
+    </tr>
+    <tr>
+    <td>
+    <a>Title</a>
+    <h3>by 'user' on 'date'</h3>
+        <p>content</p>
+    </td>
+    </tr>
+    
+    </table>
+    </div>
+    <br>
 </body>
 </html>
