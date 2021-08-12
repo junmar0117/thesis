@@ -185,15 +185,7 @@ function openTabForm(evt, tabFormName) {
 }
 </script>
 
-        <div class="progress">          
-            <label class="statuslabel"><center>Status</center></label>
-            <ul>
-                <li>
-                    <img src="./assets/status/fillup.png"><br>
-                    <p>Fill Up Report Form</p>
-                </li>
-            </ul>
-            </div>
+    
 
         <input type="hidden" id="name" value="<?php echo $name?>">
         <input type="hidden" id="email" value="<?php echo $email?>">
