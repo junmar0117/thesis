@@ -19,12 +19,11 @@ $user = $_SESSION['user']; //assigns user value
     <meta name ="viewport" content="width=devoce-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/BFPreportstyle.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFimWZwIvDnYDZS0pKqz25yCBY10DTzm4&signed_in=true&libraries=visualization&callback=initMap">></script>
-    <style> html, body, #map_canvas {
-    margin: 0;
-    padding: 0;
-    height: 100%}
-</style>
 </head>
 <body>
 
@@ -33,32 +32,35 @@ $user = $_SESSION['user']; //assigns user value
         include_once('Userheader.html');
     ?>
 </nav>
+<div class="CreportHeader">
+    <h1>Bureau of Fire Protection Incident Report</h1>
+    <h2>Input all necessary information</h2>
+    <hr>
+    <h3>Status: lorem</h3>
+    </div>
     <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <h1 id="CreportHeader">Bureau of Fire Protection Incident Report</h1>
-
     <div class="CreportInci">
         
         <form action="sendReport.php" enctype="multipart/form-data" method="POST" id="myEmail">
 
         <div class="tab">
-        <button class="tablinks" onclick="openTabForm(event, 'what')">WHAT?</button>
-        <button class="tablinks" onclick="openTabForm(event, 'where')">WHERE?</button>
+        <button class="tablinks" onclick="openTabForm(event, 'what')">What?</button>
+        <button class="tablinks" onclick="openTabForm(event, 'where')">Where?</button>
         </div>
 
         <div id="what" class="CreportInputBox">
-            <br>
-            <label for="typeOfInci">Type of Incident: / WHAT?</label>
-            <br>
+        <h2>Incident Details</h2><hr>
+        <table class="bemerxy">
+    <tr>
+    <td>
+            <label for="typeOfInci">Type of Incident</label>
             <select name="type" id="type" required>
                 <option value="House Fire">House Fire</option>
                 <option value="Establishment Fire">Establishment Fire</option>
                 <option value="Others">Others</option>
             </select>
-        
+    </td>
+    <td>
         <?php
         require 'connection.php';  
         $queryID = mysqli_query($con, "SELECT * from civilians WHERE civilians.username = '".$_SESSION['user']."' LIMIT 1");
@@ -73,16 +75,16 @@ $user = $_SESSION['user']; //assigns user value
           $email = $row['email'];
         }
         ?>
-        <br>
-            <label for="descOfInci">Description of Incident / WHAT?</label>
-            <br>
-            <input type="text" id="descOfIncident" name="description" placeholder="Description of Incident" required>
-        <br>
             <label for="file">Proof of Incident</label>
-            <br>
             <input type="file" name="file" id="fileAttachment" required>
+            </td>
+    </tr>
+        </table>
+        <br>
+            <label for="descOfInci">Description of Incident</label><br>
+            <textarea id="descOfIncident" name="description" placeholder="Description of Incident" required></textarea>
+            <hr>
         </div>
-        
         <script>
 function openTabForm(evt, tabFormName) {
   var i, CreportInputBox, tablinks;
@@ -100,9 +102,11 @@ function openTabForm(evt, tabFormName) {
 </script>
 
         <div id="where" class="CreportInputBox">
-            <br>
-            <label for="typeOfInci">Barangay: / WHERE?</label>
-            <br>
+        <h2>Location Details</h2><hr>
+        <table class="bemerxy">
+    <tr>
+    <td>
+            <label for="typeOfInci">Barangay</label>
             <select name="barangay" id="barangay" required>
                 <option value="833">833</option>
                 <option value="834">834</option>
@@ -144,21 +148,31 @@ function openTabForm(evt, tabFormName) {
                 <option value="871">871</option>
                 <option value="872">872</option>
             </select>
-            <br>
-            <label for="placeOfInci">Place or Landmark of Incident / WHERE?</label>
-            <br>
+            </td>
+    <td>
+    <label for="placeOfInci">Latitude (use map)</label>
+            <input id="lat" name="lat" placeholder="Latitude" />
+            </td>
+    </tr>
+    <tr>
+        <td>
+
+            <label for="placeOfInci">Place or Landmark of Incident</label>
             <input type="text" id="placeOfIncident" name="place" placeholder="Place of Incident" required>
-            <label for="placeOfInci">Latitude / WHERE?</label>
-            <br>
-            <input id="lat" name="lat" />
-            <br>
-            <label for="placeOfInci">Langtitude / WHERE?</label>
-            <br>
-            <input id="long" name="long" />
-            <br>
+           
+            </td>
+    <td>
+           
+            <label for="placeOfInci">Longitude (use map)</label>
+            <input id="long" name="long" placeholder="Longitude"/>
+            </td>
+    </tr>
+    </table>
+            <hr>
+            
             <label for="placeOfInci">Marker on Google Maps / WHERE?</label><br>
-            <label for="placeOfInci" style="color:red;font-size:15px">Instructions: Drag the Marker to where the incident happened.</label>
-            <div id="map_canvas" style="width: 500px; height: 500px;"></div>               
+            <label for="placeOfInci" style="color:red;font-size:14px">Instructions: Drag the Marker to where the incident happened.</label>
+            <div id="map_canvas" style="width: 100%; height: 400px;"></div>               
         </div>
 
         
@@ -176,7 +190,7 @@ function openTabForm(evt, tabFormName) {
         <input type="hidden" id="email" value="<?php echo $email?>">
         <input type="hidden" id="subject" value="Reports from R | R!">
         <input type="hidden" id="body" value="<?php echo $name?> sent a report concerning the Bureau of Fire Protection! ">
-        <input type="submit" name="p_upload" value="S U B M I T" onclick="sendEmail()"><br>
+        <input type="submit" name="p_upload" value="Submit" onclick="sendEmail()"><br>
         </form>
     </div>
     <script>

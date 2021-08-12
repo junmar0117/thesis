@@ -22,7 +22,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     <meta name ="viewport" content="width=devoce-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/BFPreportstyle.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 </head>
 <body>
 
@@ -31,12 +34,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         include_once('Userheader.html');
     ?>
 </nav>
+<div class="CreportHeader">
+    <h1>Philippine National Police Incident Report</h1>
+    <h2>Input all necessary information</h2>
+    <hr>
+    <h3>Status: lorem</h3>
+    </div>
     <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <h1 id="CreportHeader">Philippine National Police Incident Report</h1>
     <div class="CreportInci">
         
         <form action="sendReportEmergency.php" enctype="multipart/form-data" method="POST" id="myEmail">
@@ -44,14 +48,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         <input type="hidden" name="emergency" value="<?php echo $emergency;?>">
 
         <div class="tab">
-            <button class="tablinks" onclick="openTabForm(event, 'what')">WHAT?</button>
-            <button class="tablinks" onclick="openTabForm(event, 'where')">WHERE?</button> 
+            <button class="tablinks" onclick="openTabForm(event, 'what')">What?</button>
+            <button class="tablinks" onclick="openTabForm(event, 'where')">Where?</button> 
         </div>
 
         <div id="where" class="CreportInputBox">
-            <br>
-            <label for="typeOfInci">Barangay: / WHERE?</label>
-            <br>
+        <h2>Location Details</h2><hr>
+        <table class="bemerxy">
+    <tr>
+    <td>
+            <label for="typeOfInci">Barangay</label>
+            
             <select name="barangay" id="barangay" required>
                 <option value="833">833</option>
                 <option value="834">834</option>
@@ -93,16 +100,22 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
                 <option value="871">871</option>
                 <option value="872">872</option>
             </select>
-        <br>
-            <label for="placeOfInci">Place or Landmark of Incident / WHERE?</label>
-            <br>
+            </td>
+    <td>
+            <label for="placeOfInci">Place or Landmark of Incident</label>
             <input type="text" id="placeOfIncident" name="place" placeholder="Place of Incident" required>
-        </div>
+            </td>
+    </tr>
+    </table>
+    <hr>
+</div>
 
         <div id="what" class="CreportInputBox">
-            <br>
-            <label for="typeOfInci">Type of Incident: / WHAT?</label>
-            <br>
+        <h2>Incident Details</h2><hr>
+        <table class="bemerxy">
+    <tr>
+    <td>
+            <label for="typeOfInci">Type of Incident</label>
             <select name="type" id="type" required>
                 <option value="Child Abuse">Child Abuse</option>
                 <option value="Violence Against Women">Violence Against Women</option>
@@ -112,7 +125,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
                 <option value="Fight">Community Conflict</option>
                 <option value="Others">Others</option>
             </select>
-        
+            </td>
+    <td>
 
         <?php
         require 'connection.php';  
@@ -129,12 +143,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         }
         ?>
 
-            <br>
+           
             <label for="file">Proof of Incident</label>
-            <br>
+           
             <input type="file" name="file" id="fileAttachment" required>
+        </td>
+    </tr>
+    </table>
+    <hr>
         </div>
-
         <script>
 function openTabForm(evt, tabFormName) {
   var i, CreportInputBox, tablinks;
@@ -164,7 +181,7 @@ function openTabForm(evt, tabFormName) {
         <input type="hidden" id="email" value="<?php echo $email?>">
         <input type="hidden" id="subject" value="Reports from R | R!">
         <input type="hidden" id="body" value="<?php echo $name?> sent a report concerning the Local Barangay! ">
-        <input type="submit" name="p_upload" value="S U B M I T" onclick="sendEmail()"><br>
+        <input type="submit" name="p_upload" value="Submit" onclick="sendEmail()"><br>
         </form>
     </div>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

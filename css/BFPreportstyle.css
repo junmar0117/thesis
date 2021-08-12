@@ -1,90 +1,133 @@
-@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Lexend:wght@500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@400;600&display=swap');
+
 body{
     margin: 0;
-    background-color: #f1f1f1;
-    background-size: cover;
-    background-position: center;
+    background-color: #fff;
 }
 
-#CreportHeader{
-    font-family: 'Dela Gothic One', cursive;
+.CreportHeader{
+    width: 100%;
+    background-color: #fafafa;
+    padding: 5% 10% 2% 10%;
+}
+
+.CreportHeader h1{
+    font-family: 'Raleway', sans-serif;
     font-size: 30px;
-    width: 85%;
-    background-color: white;
-    border-bottom: 1px solid #f1f1f1;
-    margin: 2% 5% 0% 5%;
-    padding-left:5%;
-    padding-top:4%;
-    padding-bottom:2%;
+    font-weight: 600;
+    width: 100%;
+    background-color: #fafafa;
+    color: #000;
+}
+
+.CreportHeader h2{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    width: 100%;
+    background-color: #fafafa;
+    color: #555;
+}
+
+.CreportHeader h3{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    width: 100%;
+    background-color: #fafafa;
+    color: #555;
 }
 
 .CreportInci{
     background-color: white;
-    padding: 2% 5% 10% 5%;
-    margin: 0% 5% 5% 5%;
-}
-
-label{
-    font-family: 'Lexend', sans-serif;
-    font-size: 20px;
+    margin: 0% 10% 5% 10%;
 }
 
 input[type=text], input[type=datetime-local]{
     cursor:text;
     border: none;
-    border-bottom: 1px solid #252525;
-    margin-top: 1%;
-    margin-bottom: 3%;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    font-size: 15px;
-    font-family: 'Lexend', sans-serif;
+    background-color: #fafafa;
+    padding: 10px;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    width: 100%;
+    color: #555;
 }
 
-input[type=text]{
+textarea{
     width: 100%;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    background-color: #fafafa;
+    color: #555;
+    padding: 10px;
+    border: 1px solid #fafafa;
+    height:100px;
+    resize:none;
+}
+
+
+.bemerxy{
+    width: 100%;
+}
+
+.bemerxy td{
+    width: 50%;
+    padding: 5px;
+    padding-left: 0;
+}
+
+#lat, #long{
+    border: 3px solid #fff;
+    background-color: #fafafa;
+    padding: 10px;
+    width: 100%;
+    border: 3px solid #fff;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    cursor:help;
+    color: #555;
 }
 
 input[type=file]{
     cursor: pointer;
-    margin-top: 1%;
-    margin-bottom: 3%;
-    padding: 15px;
-    background-color: #e2e2e2; 
-	border-radius: 5px;
-	font-size: 15px;
-    font-family: 'Lexend', sans-serif;
+    padding: 10px;
+    background-color: #fafafa; 
+	font-size: 16px;
+    font-weight: 400;
+    font-family: 'Open Sans', sans-serif;
+    color: #555;
+    width: 100%;
 }
 
 select{
     cursor: pointer;
-    margin-top: 1%;
-    margin-bottom: 3%;
-    padding: 15px;
-    background-color: #e2e2e2; 
-	border-radius: 5px;
-	font-size: 15px;
-    font-family: 'Lexend', sans-serif;
+    padding: 10px;
+    background-color: #fafafa; 
+	font-size: 16px;
+    font-weight: 400;
+    font-family: 'Open Sans', sans-serif;
     border: none;
+    color: #555;
+    width: 100%;
 }
 
 input[type=submit]{
-    float:right;
     cursor: pointer;
-    margin-top: 1%;
-    margin-bottom: 5%;
-    padding: 10px;
+    margin-bottom: 2%;
+    padding: 5px 10px;
     background-color: white; 
-    color:#ff0049;
-	font-size: 15px;
-    font-family: 'Lexend', sans-serif;
-    border: 2px solid #ff0049;
-    width: 30%;
-    transition: 0.1s;
+    color:#000;
+	font-size: 16px;
+    font-weight: 600;
+    font-family: 'Open Sans', sans-serif;
+    border: 1px solid #000;
 }
 
 input[type=submit]:hover{
-    background-color: #ff0049;
+    background-color: #000;
     color: white;
 }
 
@@ -181,8 +224,7 @@ p{
 /* Style the tab */
 .tab {
     overflow: hidden;
-    border: 1px solid #f1f1f1;
-    border-left: 2px solid #ff0049;
+    border-bottom: 1px solid #d3d3d3;
     background-color: #FFFFFF;
   }
   
@@ -195,36 +237,46 @@ p{
     cursor: pointer;
     padding: 14px 16px;
     transition: 0.3s;
-    font-size: 17px;
-    font-family: 'Lexend', sans-serif;
+    font-size: 20px;
+    font-family: 'Open Sans', sans-serif;
+    color: #000;
   }
   
   /* Change background color of buttons on hover */
   .tab button:hover {
-    background-color: #f1f1f1;
+    background-color: #fafafa;
   }
   
   /* Create an active/current tablink class */
   .tab button.active {
-    color: #FF0049;
+    color: #000;
+    background-color: #fafafa;
   }
   
   /* Style the tab content */
   .CreportInputBox {
     display: none;
-    padding: 6px 12px;
-    border: 1px solid #f1f1f1;
-    border-left: 2px solid #ff0049;
-    border-top: none;
-    font-family: 'Lexend', sans-serif;
+    padding: 5px 10px;
+    border: none;
+    font-family: 'Open Sans', sans-serif;
     background-color: #FFFFFF;
   }
-  
-  .formstabscontainer{
-      margin: 0 1% 0 1%;
+
+  .CreportInputBox label{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #555;
+  }
+
+  .CreportInputBox h2{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: #555;
   }
   
   .statuslabel{
-      color:#ff0049;
-      text-transform: uppercase;
+      color:#555;
+      text-transform: capitalize;
   }

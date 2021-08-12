@@ -152,6 +152,7 @@ textarea{
     border: 1px solid #fafafa;
     margin-bottom: 2%;
     height:100px;
+    resize:none;
 }
 
 .baddtd2 label {
