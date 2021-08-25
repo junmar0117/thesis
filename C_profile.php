@@ -41,7 +41,17 @@ include_once('Userheader.html');
     
     <div class="profileBox">
         <div class="profileTagcontainer">
-            <h1>username ng user</h1>
+            <?php
+            require 'connection.php';    
+            $query = mysqli_query($con, "SELECT * from civilians where username = '$user' "); // SQL Query
+            while($row = mysqli_fetch_array($query))
+            {
+            ?>
+            <h1><?php echo $row['username']?></h1>
+                        
+            <?php
+            }
+            ?>
                 
                     <form action="C_changePassword.php" method="GET">
                         <input type="hidden" name="id" value="<?php echo $civID?>">

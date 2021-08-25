@@ -136,8 +136,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
                 <option value="Sexual Harrassment">Sexual Harrassment</option>
                 <option value="Neighborhood Conflict">Neighborhood Conflict</option>
                 <option value="Fight">Fight</option>
-                <option value="Fight">Community Conflict</option>
-                <option value="Others">Others</option>
+                <option value="Community Conflict">Community Conflict</option>
             </select>
             </td>
     <td>

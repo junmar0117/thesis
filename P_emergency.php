@@ -117,12 +117,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     <td>
             <label for="typeOfInci">Type of Incident</label>
             <select name="type" id="type" required>
-                <option value="Child Abuse">Child Abuse</option>
-                <option value="Violence Against Women">Violence Against Women</option>
-                <option value="Sexual Harrassment">Sexual Harrassment</option>
-                <option value="Neighborhood Conflict">Neighborhood Conflict</option>
-                <option value="Fight">Fight</option>
-                <option value="Fight">Community Conflict</option>
+                <option value="Drugs">Drugs</option>
+                <option value="Theft and Robbery">Theft and Robbery</option>
+                <option value="Murder">Murder</option>
+                <option value="Physical Violence">Physical Violence</option>
+                <option value="Illegal Gambling">Illegal Gambling</option>
+                <option value="Missing and Found Persons">Missing and Found Persons</option>
+                <option value="Quarantine Violators">Quarantine Violators</option>
                 <option value="Others">Others</option>
             </select>
             </td>

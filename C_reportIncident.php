@@ -74,10 +74,22 @@ include_once('Userheader.html');
               <td id="numberOfsR1">Philippine National Police</td>
 </tr>
 
+            <?php
+            require 'connection.php';    
+            $query = mysqli_query($con, "SELECT * from reports where incident = 'Fire' "); // SQL Query
+            $fireCount = mysqli_num_rows($query);
+
+            $query1 = mysqli_query($con, "SELECT * from reports where incident = 'Police' "); // SQL Query
+            $policeCount= mysqli_num_rows($query1);
+
+            $query2 = mysqli_query($con, "SELECT * from reports where incident = 'Barangay' "); // SQL Query
+            $barangayCount= mysqli_num_rows($query2);
+            ?>
+
 <tr>
-              <td id="numberOfsR2">20</td>
-              <td id="numberOfsR2">8</td>
-              <td id="numberOfsR2">11</td>
+              <td id="numberOfsR2"><?php echo $barangayCount;?></td>
+              <td id="numberOfsR2"><?php echo $fireCount;?></td>
+              <td id="numberOfsR2"><?php echo $policeCount;?></td>
 </tr>
 
 <tr>
