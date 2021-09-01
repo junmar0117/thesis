@@ -183,7 +183,7 @@ function openTabForm(evt, tabFormName) {
         <input type="hidden" id="email" value="<?php echo $email?>">
         <input type="hidden" id="subject" value="Reports from R | R!">
         <input type="hidden" id="body" value="<?php echo $name?> sent a report concerning the Bureau of Fire Protection! ">
-        <input type="submit" name="p_upload" value="Submit" onclick="sendEmail()"><br>
+        <input type="submit" name="f_upload" value="Submit" onclick="sendEmail()"><br>
         </form>
     </div>
     <script>

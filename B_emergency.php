@@ -155,9 +155,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         }
         ?>
 
-        
-            <label for="file">Proof of Incident</label>
-            <input type="file" name="file" id="fileAttachment" required>
+        <label for="description">Description of Incident</label>
+        <input type="text" name="description" required>
+            
+    </td>
+    </tr>
+    <tr>
+    <td>
+        <label for="file">Proof of Incident</label>
+        <input type="file" name="file" id="fileAttachment" required>
     </td>
     </tr>
     </table>

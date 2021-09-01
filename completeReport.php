@@ -174,6 +174,22 @@ if(mysqli_num_rows($row_b) > 0)
 				$notFeatured = "";
                 $otw = "";
 				$completed = "";
+                $id = $row['id'];
+                $name = $row['name'];
+                $username = $row['username'];
+                $date = $row['date'];
+                $time = $row['time'];
+                $place = $row['place'];
+                $incident = $row['incident'];
+                $description = $row['description'];
+                $file = $row['file'];
+                $latitude = $row['latitude'];
+                $longitude = $row['longitude'];
+                $barangay = $row['barangay'];
+                $type = $row['type'];
+                $status = $row['status'];
+                $emergency = $row['emergency'];
+                $crime = $row['crime'];
             ?>
              <tr>
              <th><?php echo "Name"?></th> 
@@ -247,47 +263,29 @@ if(mysqli_num_rows($row_b) > 0)
                 });
             }
             google.maps.event.addDomListener(window, "load", initialize());
-            </script>
-
-            
-            
-             <div class="viewReportStatusUpdate">  
-                <?php
-                $query = mysqli_query($con, "SELECT * from reports where id = '$id' "); // SQL Query
-                while($row = mysqli_fetch_array($query))
-                {
-                    if($row['status'] == "Needs Attention")
-                    {
-                    ?>
-                        <form action="acceptReport.php" method="POST">
-                        <input type="hidden" name="id" value="<?php echo $id;?>">
-                        <input type="submit" value="Accept Report">
-                        </form>
-                        <br>
-                    <?php
-                    }
-                    else if($row['status'] == "In Progress")
-                    {
-                    ?>
-                        <form action="acceptReport.php" method="POST">
-                        <input type="hidden" name="id" value="<?php echo $id;?>">
-                        <input type="submit" value="Assign/Dispatch">
-                        </form><br>
-                    <?php
-                    }
-                    else if($row['status'] == "On The Way")
-                    {           
-                    ?>
-                        <form action="completeReport.php" method="POST">
-                        <input type="hidden" name="id" value="<?php echo $id;?>">
-                        <input type="submit" value="Complete/Finish">
-                        </form><br>
-                    <?php
-                    }
-                }
-                ?>                   
-            </div>
-            
+            </script>      
+        <form action="completeReportAction.php" method="POST">
+        <input type="text" name="who" placeholder="Who was involved?">
+        <input type="datetime-local" name="when" placeholder="When did it take place?">
+        <input type="text" name="why" placeholder="Why did it happen?">
+        <input type="text" name="how" placeholder="How did it happen?">
+        <input type="hidden" name="id" value="<?php echo $id;?>">
+        <input type="hidden" name="name" value="<?php echo $name;?>">
+        <input type="hidden" name="username" value="<?php echo $username;?>">
+        <input type="hidden" name="place" value="<?php echo $place;?>">
+        <input type="hidden" name="barangay" value="<?php echo $barangay;?>">
+        <input type="hidden" name="description" value="<?php echo $description;?>">
+        <input type="hidden" name="file" value="<?php echo $file;?>">
+        <input type="hidden" name="type" value="<?php echo $type;?>">
+        <input type="hidden" name="incident" value="<?php echo $incident;?>">
+        <input type="hidden" name="time" value="<?php echo $time;?>">
+        <input type="hidden" name="status" value="<?php echo $status;?>">
+        <input type="hidden" name="emergency" value="<?php echo $emergency;?>">
+        <input type="hidden" name="crime" value="<?php echo $crime;?>">
+        <input type="hidden" name="latitude" value="<?php echo $latitude;?>">
+        <input type="hidden" name="longitude" value="<?php echo $longitude;?>">
+        <input type="submit" name="submit">
+        </form>  
 <?php
 }}else if(mysqli_num_rows($row_f) > 0)
 {
@@ -336,6 +334,26 @@ if(mysqli_num_rows($row_b) > 0)
         $query = mysqli_query($con, "SELECT * from reports where id = '$id' "); // SQL Query
         while($row = mysqli_fetch_array($query))
         {
+                $featured = "";
+				$notFeatured = "";
+                $otw = "";
+				$completed = "";
+                $id = $row['id'];
+                $name = $row['name'];
+                $username = $row['username'];
+                $date = $row['date'];
+                $time = $row['time'];
+                $place = $row['place'];
+                $incident = $row['incident'];
+                $description = $row['description'];
+                $file = $row['file'];
+                $latitude = $row['latitude'];
+                $longitude = $row['longitude'];
+                $barangay = $row['barangay'];
+                $type = $row['type'];
+                $status = $row['status'];
+                $emergency = $row['emergency'];
+                $crime = $row['crime'];
         ?>
          <tr>
              <th><?php echo "Name"?></th> 
@@ -411,48 +429,29 @@ if(mysqli_num_rows($row_b) > 0)
             }
             google.maps.event.addDomListener(window, "load", initialize());
             </script> 
-
-
-
-<div class="viewReportStatusUpdate">  
-                <?php
-                $query = mysqli_query($con, "SELECT * from reports where id = '$id' "); // SQL Query
-                while($row = mysqli_fetch_array($query))
-                {
-                    if($row['status'] == "Needs Attention")
-                    {
-                    ?>
-                        <form action="acceptReport.php" method="POST">
-                        <input type="hidden" name="id" value="<?php echo $id;?>">
-                        <input type="submit" value="Accept Report">
-                        </form>
-                        <br>
-                    <?php
-                    }
-                    else if($row['status'] == "In Progress")
-                    {
-                    ?>
-                        <form action="acceptReport.php" method="POST">
-                        <input type="hidden" name="id" value="<?php echo $id;?>">
-                        <input type="submit" value="Assign/Dispatch">
-                        </form><br>
-                    <?php
-                    }
-                    else if($row['status'] == "On The Way")
-                    {           
-                    ?>
-                        <form action="completeReport.php" method="POST">
-                        <input type="hidden" name="id" value="<?php echo $id;?>">
-                        <input type="submit" value="Complete/Finish">
-                        </form><br>
-                    <?php
-                    }
-                }
-                ?>                   
-            </div>
-
+            <form action="completeReportAction.php" method="POST">
+        <input type="text" name="who" placeholder="Who was involved?">
+        <input type="datetime-local" name="when" placeholder="When did it take place?">
+        <input type="text" name="why" placeholder="Why did it happen?">
+        <input type="text" name="how" placeholder="How did it happen?">
+        <input type="hidden" name="id" value="<?php echo $id;?>">
+        <input type="hidden" name="name" value="<?php echo $name;?>">
+        <input type="hidden" name="username" value="<?php echo $username;?>">
+        <input type="hidden" name="place" value="<?php echo $place;?>">
+        <input type="hidden" name="barangay" value="<?php echo $barangay;?>">
+        <input type="hidden" name="description" value="<?php echo $description;?>">
+        <input type="hidden" name="file" value="<?php echo $file;?>">
+        <input type="hidden" name="type" value="<?php echo $type;?>">
+        <input type="hidden" name="incident" value="<?php echo $incident;?>">
+        <input type="hidden" name="time" value="<?php echo $time;?>">
+        <input type="hidden" name="status" value="<?php echo $status;?>">
+        <input type="hidden" name="emergency" value="<?php echo $emergency;?>">
+        <input type="hidden" name="crime" value="<?php echo $crime;?>">
+        <input type="hidden" name="latitude" value="<?php echo $latitude;?>">
+        <input type="hidden" name="longitude" value="<?php echo $longitude;?>">
+        <input type="submit" name="submit">
+        </form>  
 <?php
-
 }}else if(mysqli_num_rows($row_p) > 0)
 {
     Print '<nav>';
@@ -501,6 +500,26 @@ if(mysqli_num_rows($row_b) > 0)
         $query = mysqli_query($con, "SELECT * from reports where id = '$id' "); // SQL Query
         while($row = mysqli_fetch_array($query))
         {
+                $featured = "";
+				$notFeatured = "";
+                $otw = "";
+				$completed = "";
+                $id = $row['id'];
+                $name = $row['name'];
+                $username = $row['username'];
+                $date = $row['date'];
+                $time = $row['time'];
+                $place = $row['place'];
+                $incident = $row['incident'];
+                $description = $row['description'];
+                $file = $row['file'];
+                $latitude = $row['latitude'];
+                $longitude = $row['longitude'];
+                $barangay = $row['barangay'];
+                $type = $row['type'];
+                $status = $row['status'];
+                $emergency = $row['emergency'];
+                $crime = $row['crime'];
         ?>
          <tr>
              <th><?php echo "Name"?></th> 
@@ -575,168 +594,31 @@ if(mysqli_num_rows($row_b) > 0)
             }
             google.maps.event.addDomListener(window, "load", initialize());
             </script>
-          
-<div class="viewReportStatusUpdate">  
-                <?php
-                $query = mysqli_query($con, "SELECT * from reports where id = '$id' "); // SQL Query
-                while($row = mysqli_fetch_array($query))
-                {
-                    if($row['status'] == "Needs Attention")
-                    {
-                    ?>
-                        <form action="acceptReport.php" method="POST">
-                        <input type="hidden" name="id" value="<?php echo $id;?>">
-                        <input type="submit" value="Accept Report">
-                        </form>
-                        <br>
-                    <?php
-                    }
-                    else if($row['status'] == "In Progress")
-                    {
-                    ?>
-                        <form action="acceptReport.php" method="POST">
-                        <input type="hidden" name="id" value="<?php echo $id;?>">
-                        <input type="submit" value="Assign/Dispatch">
-                        </form><br>
-                    <?php
-                    }
-                    else if($row['status'] == "On The Way")
-                    {           
-                    ?>
-                        <form action="completeReport.php" method="POST">
-                        <input type="hidden" name="id" value="<?php echo $id;?>">
-                        <input type="submit" value="Complete/Finish">
-                        </form><br>
-                    <?php
-                    }
-                }
-                ?>                   
-            </div>
+            <form action="completeReportAction.php" method="POST">
+        <input type="text" name="who" placeholder="Who was involved?" required>
+        <input type="datetime-local" name="when" placeholder="When did it take place?" required>
+        <input type="text" name="why" placeholder="Why did it happen?" required>
+        <input type="text" name="how" placeholder="How did it happen?" required>
+        <input type="hidden" name="id" value="<?php echo $id;?>">
+        <input type="hidden" name="name" value="<?php echo $name;?>">
+        <input type="hidden" name="username" value="<?php echo $username;?>">
+        <input type="hidden" name="place" value="<?php echo $place;?>">
+        <input type="hidden" name="barangay" value="<?php echo $barangay;?>">
+        <input type="hidden" name="description" value="<?php echo $description;?>">
+        <input type="hidden" name="file" value="<?php echo $file;?>">
+        <input type="hidden" name="type" value="<?php echo $type;?>">
+        <input type="hidden" name="incident" value="<?php echo $incident;?>">
+        <input type="hidden" name="time" value="<?php echo $time;?>">
+        <input type="hidden" name="status" value="<?php echo $status;?>">
+        <input type="hidden" name="emergency" value="<?php echo $emergency;?>">
+        <input type="hidden" name="crime" value="<?php echo $crime;?>">
+        <input type="hidden" name="latitude" value="<?php echo $latitude;?>">
+        <input type="hidden" name="longitude" value="<?php echo $longitude;?>">
+        <input type="submit" name="submit">
+        </form>  
 <?php
-
-}}else{
-        include_once('Userheader.html');
-        
-        Print '<div class="viewRepHead">';
-    
-        Print '<h1>Report Details</h1>';
-        Print '<div id="submitted" class="desc desc-submitted">';
-        Print '<div class="progress--attention">';
-        Print '<div class="inlinetext">';
-        Print '<h3>Status: Submitted<i class="fas fa-file-import" style="padding-left: 5px;"></i></h3>';
-        Print '</div></div></div>';
-
-        Print '<div id="progress" class="desc desc-progress">';
-        Print '<div class="progress--attention">';
-        Print '<div class="inlinetext">';
-        Print '<h3>Status: In Progress<i class="fas fa-spinner" style="padding-left: 5px;"></i></h3>';                      
-        Print '</div></div></div>';
-
-        Print '<div id="otw" class="desc desc-otw">';
-        Print '<div class="progress--attention">';
-        Print '<div class="inlinetext">';
-        Print '<h3>Status: On the Way<i class="fas fa-car" style="padding-left: 5px;"></i></h3>';
-        Print '</div></div></div>';
-
-        Print '<div id="complete" class="desc desc-complete">';
-        Print '<div class="progress--attention">';
-        Print '<div class="inlinetext">';
-        Print '<h3>Status: Finish<i class="fas fa-check-circle" style="padding-left: 5px;"></i></h3>';
-        Print '</div></div></div>';
-
-        Print '</div>';
-        Print '<div class="vrtContain">';
-        Print '<h2>Reports are subjected for verification by the administrator.</h2><hr>';
-        Print '<h3>User Information</h3>';
-        Print '<table class="viewReportsTable">';
-            
-            if($_SERVER['REQUEST_METHOD'] == "POST")
-            {
-                $id = ($_POST['id']);
-            }
-            require 'connection.php';    
-            $query = mysqli_query($con, "SELECT * from reports where id = '$id' "); // SQL Query
-            while($row = mysqli_fetch_array($query))
-            {
-            ?>
-             <tr>
-             <th><?php echo "Name"?></th> 
-             <td><?php echo $row['name'] ?></td>
-             <th><?php echo "Username"?></th>
-             <td><?php echo $row['username']  ?></td>
-             </tr>
-            </table>
-
-            <h3>Incident Information</h3>
-
-            <table class="viewReportsTable">
-             <tr>
-             <th><?php echo "Date"?></th>
-             <td><?php echo $row['date']?></td>
-             <th><?php echo "Time"?></th>
-             <td><?php echo $row['time']?></td>
-             </tr>
-             <tr>
-             <th><?php echo "Place"?></th>
-             <td><?php echo $row['place']?></td>
-             <th><?php echo "Incident"?></th>
-             <td><?php echo $row['incident']?></td>
-            </tr>
-            </table>
-            
-            <h3>Description</h3>
-
-            <table class="viewReportsTable">
-             <tr>
-             <td><?php echo $row['description']?></td>
-            </tr>
-            </table>
-            
-
-            <h3><?php echo "Proof of Incident"?></h3>
-            <table class="viewReportsTable">
-                <tr>
-                <td><a href='<?php echo 'reportFIles/'.$row['file'];?>' target="_blank">View Image</a></td>
-            </tr>
-            </table>
-            
-            <h3><?php echo "Location of Incident"?></h3>
-            <table class="viewReportsTable">
-            <tr>
-            <td><div class="reportProof"><div id="map_canvas" style="width: 100%; height: 400px;"></div></div></td>
-             </tr>
-            </table>
-            <hr>
-            </div>
-            
-            <script>
-            var map;
-
-            function initialize() {
-            var myLatlng = new google.maps.LatLng(<?php echo $row['latitude']?>,<?php echo $row['longitude']?>);
-
-            var myOptions = {
-                zoom: 15,
-                center: myLatlng,
-                mapTypeId: google.maps.MapTypeId.ROADMAP
-                };
-
-            map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-
-            var marker = new google.maps.Marker({
-                draggable: true,
-                position: myLatlng,
-                map: map,
-                title: "Your location"
-                });
-            }
-            google.maps.event.addDomListener(window, "load", initialize());
-            </script>          
-
-            <?php
-            }
-        }
-            ?>
+}}
+?>
         
 </body>
 </html>
