@@ -73,7 +73,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 <body>
 <nav>
 <?php
-include_once('P_Userheader.html');
+include_once('P_Userheader.php');
 ?>
 </nav>
 

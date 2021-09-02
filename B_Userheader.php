@@ -1,3 +1,14 @@
+<?php
+	require 'connection.php';    
+    if(isset($_SESSION['name']))
+    {
+        $queryID = mysqli_query($con, "SELECT * from b_admin WHERE b_admin.username = '".$_SESSION['user']."' LIMIT 1");
+        while($row = mysqli_fetch_array($queryID))
+        {           
+            $name = $row['name'];
+        }
+    }
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,23 +23,25 @@
 <body>
 
 <div class="topnav" id="myTopnav">
-  <a href="F_profile.php" class= "logactive">RИR</a>
+  <a href="B_profile.php" class= "logactive">RИR</a>
   <div class="FRC">
     <div class="dropdown">
+    <a>Hello, <?php echo $name; ?></a>
       <button href="#" onclick="myFunction()" class="dropbtn">menu<i class="fas fa-caret-down" style="padding-left: 5px;"></i></button>
       <div id="myDropdown" class="dropdown-content">
-  <a href="F_profile.php">Profile</a>
+  <a href="B_profile.php">Profile</a>
+  <a href="B_addAnnouncements.php">Broadcast</a>
   <a href="announcements.php">Announcements</a>
-  <a href="F_monitor.php">Monitor</a>
+  <a href="B_monitor.php">Monitor</a>
   <a href="viewBarangays.php">Barangays</a>
+  <a href="B_pendingVerification.php">Verification</a>
   <a href="logout.php">Sign Out</a>
-
 </div>
 </div>
 </div>
 </div>
 
-<script>
+  <script>
 
     /* When the user clicks on the button,
     toggle between hiding and showing the dropdown content */
@@ -50,7 +63,7 @@
       }
     }
     
-</script>
+    </script>
 
 </body>
 </html>

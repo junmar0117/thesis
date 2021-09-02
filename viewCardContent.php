@@ -36,19 +36,19 @@ if ($_SERVER['HTTP_REFERER'] == $url)
         <?php
             if($_SESSION['type']=='civilian')
             {
-              include_once('Userheader.html');
+              include_once('Userheader.php');
             }
             else if($_SESSION['type']=='barangay')
             {
-              include_once('B_Userheader.html');
+              include_once('B_Userheader.php');
             }
             else if($_SESSION['type']=='police')
             {
-              include_once('P_Userheader.html');
+              include_once('P_Userheader.php');
             }
             else
             {
-              include_once('F_Userheader.html');
+              include_once('F_Userheader.php');
             }
         ?>
     </nav>

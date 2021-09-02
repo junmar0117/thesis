@@ -131,7 +131,7 @@ $row_p = mysqli_query($con, $sql_p);
 if(mysqli_num_rows($row_b) > 0)    
 {       
         Print '<nav>';
-        include_once('B_Userheader.html');
+        include_once('B_Userheader.php');
         Print '</nav>';
 
         Print '<div class="viewRepHead">';
@@ -292,7 +292,7 @@ if(mysqli_num_rows($row_b) > 0)
 }}else if(mysqli_num_rows($row_f) > 0)
 {
     Print '<nav>';
-    include_once('F_Userheader.html');
+    include_once('F_Userheader.php');
     Print '</nav>';
 
     Print '<div class="viewRepHead">';
@@ -456,7 +456,7 @@ if(mysqli_num_rows($row_b) > 0)
 }}else if(mysqli_num_rows($row_p) > 0)
 {
     Print '<nav>';
-    include_once('P_Userheader.html');
+    include_once('P_Userheader.php');
     Print '</nav>';
 
 
@@ -615,7 +615,7 @@ if(mysqli_num_rows($row_b) > 0)
 <?php
 
 }}else{
-        include_once('Userheader.html');
+        include_once('Userheader.php');
         
         Print '<div class="viewRepHead">';
     

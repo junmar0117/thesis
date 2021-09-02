@@ -35,7 +35,7 @@ $user = $_SESSION['user']; //assigns user value
 <body>
 <nav>
 <?php
-include_once('Userheader.html');
+include_once('Userheader.php');
 ?>
 </nav>
     

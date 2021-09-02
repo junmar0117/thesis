@@ -49,7 +49,7 @@ if ($_SERVER['HTTP_REFERER'] == $url)
 <body>
 <nav>
 <?php
-include_once('Userheader.html');
+include_once('Userheader.php');
 ?>
 </nav>
 <table class="reportmainwrapper">

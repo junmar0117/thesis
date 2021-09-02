@@ -32,7 +32,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 
 <nav>
     <?php
-        include_once('Userheader.html');
+        include_once('Userheader.php');
     ?>
 </nav>
 <div class="CreportHeader">

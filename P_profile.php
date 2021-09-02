@@ -42,7 +42,7 @@ $user = $_SESSION['user']; //assigns user value
 <body>
     <nav>
     <?php
-include_once('P_Userheader.html');
+include_once('P_Userheader.php');
 ?>
     </nav>
     <section class="profileSection">
