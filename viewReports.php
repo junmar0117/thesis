@@ -268,6 +268,7 @@ if(mysqli_num_rows($row_b) > 0)
                     ?>
                         <form action="acceptReport.php" method="POST">
                         <input type="hidden" name="id" value="<?php echo $id;?>">
+                        <input type="hidden" name="admin_id" value="<?php echo $b_id;?>">
                         <input type="submit" value="Accept Report">
                         </form>
                         <br>
@@ -438,7 +439,7 @@ if(mysqli_num_rows($row_b) > 0)
                     ?>
                         <form action="acceptReport.php" method="POST">
                         <input type="hidden" name="id" value="<?php echo $id;?>">
-                        <input type="hidden" name="f_id" value="<?php echo $f_id;?>">
+                        <input type="hidden" name="admin_id" value="<?php echo $f_id;?>">
                         <input type="submit" value="Accept Report">
                         </form>
                         <br>
@@ -521,10 +522,11 @@ if(mysqli_num_rows($row_b) > 0)
         }
 
         require 'connection.php';    
-        $query = mysqli_query($con, "SELECT * from reports LEFT JOIN f_admin ON reports.admin_id = f_admin.id where reports.report_id = '$id'"); // SQL Query
+        $query = mysqli_query($con, "SELECT * from reports LEFT JOIN p_admin ON reports.admin_id = p_admin.id where reports.report_id = '$id'"); // SQL Query
         while($row = mysqli_fetch_array($query))
         {
         ?>
+        <h3>Accepted By: <?php echo $row['name'];?></h3>
          <tr>
              <th><?php echo "Name"?></th> 
              <td><?php echo $row['names'] ?></td>
