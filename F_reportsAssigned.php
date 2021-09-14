@@ -138,7 +138,7 @@ if($user=="f_admin")
 
 }
 else {
-    Print'<h2 class="adminCreatedAccHead">REPORTS</h2>';
+    Print'<h2 class="adminCreatedAccHead">REPORTS ASSIGNED</h2>';
     Print '<table class="AdminProfileTable">';
     Print '<tr>';
     Print '<th>Account ID</th>';
@@ -149,20 +149,20 @@ else {
     Print '<th>Action</th>';
     Print '</tr>';
     require 'connection.php';    
-    $query = mysqli_query($con, "SELECT * from reports where incident = 'Fire' AND status = 'In Progress' OR incident = 'Fire' AND status = 'Needs Attention' ORDER BY report_id DESC"); // SQL Query
+    $query = mysqli_query($con, "SELECT * from reports INNER JOIN f_assigned ON reports.report_id = f_assigned.report_id where f_id = $f_id"); // SQL Query
     while($row = mysqli_fetch_array($query))
     {
     ?>
         <tr>
-        <td><?php echo $row['report_id']  ?></td>
+        <td><?php echo $row['id']  ?></td>
         <td><?php echo $row['names']  ?></td>
         <td><?php echo $row['date']; echo " - "; echo $row['time']?></td>
         <td><?php echo $row['incident']  ?></td>
         <td><?php echo $row['status'] ?></td>
         <td>
-            <form action="viewReports.php" method="POST">
+            <form action="completeReport.php" method="POST">
                 <input type="hidden" name="id" value="<?php echo $row['report_id']?>">
-                <button type="submit">View</button>
+                <button type="submit">Complete</button>
             </form>
         </td>
         </tr>

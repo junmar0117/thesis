@@ -30,7 +30,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
     <script>
             <?php 
             require 'connection.php';
-            $query = mysqli_query($con, "SELECT * from reports where id = '$id' "); // SQL Query
+            $query = mysqli_query($con, "SELECT * from reports where report_id = '$id' "); // SQL Query
             while($row = mysqli_fetch_array($query))
             {
                 if($row['status'] == "Needs Attention")
@@ -167,7 +167,13 @@ if(mysqli_num_rows($row_b) > 0)
         Print '<table class="viewReportsTable">';
             
             require 'connection.php';    
-            $query = mysqli_query($con, "SELECT * from reports where id = '$id' "); // SQL Query
+            $queryID = mysqli_query($con, "SELECT * from b_admin WHERE b_admin.username = '".$user."' LIMIT 1");
+            while($row = mysqli_fetch_array($queryID))
+            {
+                $b_id = $row['id'];
+            }
+
+            $query = mysqli_query($con, "SELECT * from reports LEFT JOIN b_admin ON reports.admin_id = b_admin.id where reports.report_id = '$id'"); // SQL Query
             while($row = mysqli_fetch_array($query))
             {
                 $featured = "";
@@ -175,11 +181,12 @@ if(mysqli_num_rows($row_b) > 0)
                 $otw = "";
 				$completed = "";
             ?>
+            <h3>Accepted By: <?php echo $row['name'];?></h3>
              <tr>
              <th><?php echo "Name"?></th> 
-             <td><?php echo $row['name'] ?></td>
+             <td><?php echo $row['names'] ?></td>
              <th><?php echo "Username"?></th>
-             <td><?php echo $row['username']  ?></td>
+             <td><?php echo $row['usernames']  ?></td>
              </tr>
             </table>
 
@@ -253,7 +260,7 @@ if(mysqli_num_rows($row_b) > 0)
             
              <div class="viewReportStatusUpdate">  
                 <?php
-                $query = mysqli_query($con, "SELECT * from reports where id = '$id' "); // SQL Query
+                $query = mysqli_query($con, "SELECT * from reports where report_id = '$id' "); // SQL Query
                 while($row = mysqli_fetch_array($query))
                 {
                     if($row['status'] == "Needs Attention")
@@ -269,7 +276,7 @@ if(mysqli_num_rows($row_b) > 0)
                     else if($row['status'] == "In Progress")
                     {
                     ?>
-                        <form action="acceptReport.php" method="POST">
+                        <form action="B_assigned.php" method="POST">
                         <input type="hidden" name="id" value="<?php echo $id;?>">
                         <input type="submit" value="Assign/Dispatch">
                         </form><br>
@@ -327,21 +334,28 @@ if(mysqli_num_rows($row_b) > 0)
         Print '<h2>Reports are subjected for verification by the administrator.</h2><hr>';
         Print '<h3>User Information</h3>';
         Print '<table class="viewReportsTable">';
-        
+
+        require 'connection.php';    
+        $queryID = mysqli_query($con, "SELECT * from f_admin WHERE f_admin.username = '".$user."' LIMIT 1");
+        while($row = mysqli_fetch_array($queryID))
+        {
+            $f_id = $row['id'];
+        }
+
         if($_SERVER['REQUEST_METHOD'] == "POST")
         {
             $id = ($_POST['id']);
-        }
-        require 'connection.php';    
-        $query = mysqli_query($con, "SELECT * from reports where id = '$id' "); // SQL Query
+        }   
+        $query = mysqli_query($con, "SELECT * from reports LEFT JOIN f_admin ON reports.admin_id = f_admin.id where reports.report_id = '$id'"); // SQL Query
         while($row = mysqli_fetch_array($query))
         {
         ?>
+        <h3>Accepted By: <?php echo $row['name'];?></h3>
          <tr>
              <th><?php echo "Name"?></th> 
-             <td><?php echo $row['name'] ?></td>
+             <td><?php echo $row['names'] ?></td>
              <th><?php echo "Username"?></th>
-             <td><?php echo $row['username']  ?></td>
+             <td><?php echo $row['usernames']  ?></td>
              </tr>
             </table>
 
@@ -416,7 +430,7 @@ if(mysqli_num_rows($row_b) > 0)
 
 <div class="viewReportStatusUpdate">  
                 <?php
-                $query = mysqli_query($con, "SELECT * from reports where id = '$id' "); // SQL Query
+                $query = mysqli_query($con, "SELECT * from reports where report_id = '$id' "); // SQL Query
                 while($row = mysqli_fetch_array($query))
                 {
                     if($row['status'] == "Needs Attention")
@@ -424,6 +438,7 @@ if(mysqli_num_rows($row_b) > 0)
                     ?>
                         <form action="acceptReport.php" method="POST">
                         <input type="hidden" name="id" value="<?php echo $id;?>">
+                        <input type="hidden" name="f_id" value="<?php echo $f_id;?>">
                         <input type="submit" value="Accept Report">
                         </form>
                         <br>
@@ -432,7 +447,7 @@ if(mysqli_num_rows($row_b) > 0)
                     else if($row['status'] == "In Progress")
                     {
                     ?>
-                        <form action="acceptReport.php" method="POST">
+                        <form action="F_assigned.php" method="POST">
                         <input type="hidden" name="id" value="<?php echo $id;?>">
                         <input type="submit" value="Assign/Dispatch">
                         </form><br>
@@ -497,16 +512,24 @@ if(mysqli_num_rows($row_b) > 0)
         {
             $id = ($_POST['id']);
         }
+
         require 'connection.php';    
-        $query = mysqli_query($con, "SELECT * from reports where id = '$id' "); // SQL Query
+        $queryID = mysqli_query($con, "SELECT * from p_admin WHERE p_admin.username = '".$user."' LIMIT 1");
+        while($row = mysqli_fetch_array($queryID))
+        {
+            $p_id = $row['id'];
+        }
+
+        require 'connection.php';    
+        $query = mysqli_query($con, "SELECT * from reports LEFT JOIN f_admin ON reports.admin_id = f_admin.id where reports.report_id = '$id'"); // SQL Query
         while($row = mysqli_fetch_array($query))
         {
         ?>
          <tr>
              <th><?php echo "Name"?></th> 
-             <td><?php echo $row['name'] ?></td>
+             <td><?php echo $row['names'] ?></td>
              <th><?php echo "Username"?></th>
-             <td><?php echo $row['username']  ?></td>
+             <td><?php echo $row['usernames']  ?></td>
              </tr>
             </table>
 
@@ -578,7 +601,7 @@ if(mysqli_num_rows($row_b) > 0)
           
 <div class="viewReportStatusUpdate">  
                 <?php
-                $query = mysqli_query($con, "SELECT * from reports where id = '$id' "); // SQL Query
+                $query = mysqli_query($con, "SELECT * from reports where report_id = '$id'"); // SQL Query
                 while($row = mysqli_fetch_array($query))
                 {
                     if($row['status'] == "Needs Attention")
@@ -586,6 +609,7 @@ if(mysqli_num_rows($row_b) > 0)
                     ?>
                         <form action="acceptReport.php" method="POST">
                         <input type="hidden" name="id" value="<?php echo $id;?>">
+                        <input type="hidden" name="admin_id" value="<?php echo $p_id;?>">
                         <input type="submit" value="Accept Report">
                         </form>
                         <br>
@@ -594,8 +618,8 @@ if(mysqli_num_rows($row_b) > 0)
                     else if($row['status'] == "In Progress")
                     {
                     ?>
-                        <form action="acceptReport.php" method="POST">
-                        <input type="hidden" name="id" value="<?php echo $id;?>">
+                        <form action="P_assigned.php" method="POST">
+                        <input type="hidden" name="id" value="<?php echo $id;?>">              
                         <input type="submit" value="Assign/Dispatch">
                         </form><br>
                     <?php

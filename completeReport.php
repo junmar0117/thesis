@@ -30,7 +30,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
     <script>
             <?php 
             require 'connection.php';
-            $query = mysqli_query($con, "SELECT * from reports where id = '$id' "); // SQL Query
+            $query = mysqli_query($con, "SELECT * from reports where report_id = '$id'"); // SQL Query
             while($row = mysqli_fetch_array($query))
             {
                 if($row['status'] == "Needs Attention")
@@ -331,16 +331,16 @@ if(mysqli_num_rows($row_b) > 0)
             $id = ($_POST['id']);
         }
         require 'connection.php';    
-        $query = mysqli_query($con, "SELECT * from reports where id = '$id' "); // SQL Query
+        $query = mysqli_query($con, "SELECT * from reports where report_id = '$id'"); // SQL Query
         while($row = mysqli_fetch_array($query))
         {
                 $featured = "";
 				$notFeatured = "";
                 $otw = "";
 				$completed = "";
-                $id = $row['id'];
-                $name = $row['name'];
-                $username = $row['username'];
+                $id = $row['report_id'];
+                $name = $row['names'];
+                $username = $row['usernames'];
                 $date = $row['date'];
                 $time = $row['time'];
                 $place = $row['place'];
@@ -357,9 +357,9 @@ if(mysqli_num_rows($row_b) > 0)
         ?>
          <tr>
              <th><?php echo "Name"?></th> 
-             <td><?php echo $row['name'] ?></td>
+             <td><?php echo $row['names'] ?></td>
              <th><?php echo "Username"?></th>
-             <td><?php echo $row['username']  ?></td>
+             <td><?php echo $row['usernames']  ?></td>
              </tr>
             </table>
 

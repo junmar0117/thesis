@@ -1,0 +1,142 @@
+<?php
+session_start();
+if($_SESSION['user']){ //checks if user is logged in
+}else{
+  header("location:index.php "); // redirects if user is not logged in
+}
+
+$user = $_SESSION['user']; //assigns user value
+?>
+<?php
+if($_SERVER['REQUEST_METHOD'] == "POST")
+{
+    $id = ($_POST['id']);
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset = "utf-8">
+    <title> R & R | Bureau of Fire Protection Incident Report </title>
+    <meta name ="viewport" content="width=devoce-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/BFPreportstyle.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFimWZwIvDnYDZS0pKqz25yCBY10DTzm4&signed_in=true&libraries=visualization&callback=initMap">></script>
+</head>
+<body>
+
+<nav>
+    <?php
+        include_once('B_Userheader.php');
+    ?>
+</nav>
+<div class="CreportHeader">
+    <h1>Barangay Incident Report</h1>
+    <h2>Input all necessary information</h2>
+    <hr>
+    <h3>Status: lorem</h3>
+    </div>
+    <br>
+    <div class="CreportInci">
+        
+        <form action="B_assignedAction.php" method="POST">
+        <h2>Incident Details</h2><hr>
+        <table class="bemerxy">
+    <tr>
+    <td>
+        <label for="typeOfInci">B Admins</label><br>
+        <?php
+        require 'connection.php';  
+        $queryID = mysqli_query($con, "SELECT * from b_admin");
+        while($row = mysqli_fetch_array($queryID))
+        {
+        ?>
+                <input type="radio" name="b_id" id="type" value="<?php echo $row['id'];?>"><?php echo $row['id']; echo "/"; echo $row['name'];?></input><br>
+                <input type="hidden" name="id" value="<?php echo $id;?>">
+        <?php
+        }
+        ?>
+    </td>
+    </tr>
+        </table>
+        </div>
+
+        <hr>
+        <input type="submit" value="Submit"><br>
+        </form>
+    <script>
+var map;
+
+function initialize() {
+var myLatlng = new google.maps.LatLng(14.591540,121.005699);
+
+var myOptions = {
+    zoom: 15,
+    center: myLatlng,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+
+map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+
+var marker = new google.maps.Marker({
+    draggable: true,
+    position: myLatlng,
+    map: map,
+    title: "Your location"
+    });
+
+    google.maps.event.addListener(marker, 'click', function (event) {
+    document.getElementById("latbox").value = event.latLng.lat();
+    document.getElementById("lngbox").value = event.latLng.lng();
+    });
+    google.maps.event.addListener(marker, 'dragend', function (event) {
+        document.getElementById("lat").value = event.latLng.lat();
+        document.getElementById("long").value = event.latLng.lng();
+    });
+}
+google.maps.event.addDomListener(window, "load", initialize());
+</script>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript">
+    function sendEmail()
+    {
+        var name = $("#name");
+        var email = $("#email");
+        var subject = $("#subject");
+        var body = $("#body");
+
+        if(isNotEmpty(name) && isNotEmpty(email) && isNotEmpty(subject) && isNotEmpty(body))
+        {
+            $.ajax({
+                url: 'sendEmail.php',
+                method: 'POST',
+                dataType: 'json',
+                data:{
+                    name: name.val(),
+                    email: email.val(),
+                    subject: subject.val(),
+                    body: body.val(),
+                }, success: function(response){
+                    $('#myEmail')[0].reset();
+                    $('.sent-notification').text("Message Sent!");
+                }
+            });
+        }
+    }
+    function isNotEmpty(caller){
+        if(caller.val() == ""){
+            caller.css('border', '1px solid red');
+            return false;
+        }else{
+            caller.css('border', '');
+            return true;
+        }
+    }
+    </script>
+</body>
+</html>

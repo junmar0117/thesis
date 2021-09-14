@@ -26,8 +26,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 
     if($bool)
     {
-        mysqli_query($con, "INSERT INTO complete_reports (username, name, involve, why, how, incident_time_date, place, barangay, description, file, type, incident, report_timesent, status, emergency, crime, latitude, longitude) VALUES ('$username','$name','$involve','$why','$how', '$when', '$place', '$barangay', '$description', '$file', '$type', '$incident', '$report_timesent', '$status', '$emergency', '$crime', '$latitude', '$longitude')"); //Inserts the value to table users
-        $query = "DELETE FROM `reports` WHERE `id` = $id";
+        mysqli_query($con, "INSERT INTO complete_reports (username, reports_id, name, involve, why, how, incident_time_date, place, barangay, description, file, type, incident, report_timesent, status, emergency, crime, latitude, longitude) VALUES ('$username','$id','$name','$involve','$why','$how', '$when', '$place', '$barangay', '$description', '$file', '$type', '$incident', '$report_timesent', '$status', '$emergency', '$crime', '$latitude', '$longitude')"); //Inserts the value to table users
+        $query = "UPDATE `reports` SET `status`= 'Completed' WHERE `report_id` = $id";
 	    $results = mysqli_query($con, $query); //Query the users table
         print '<script>alert("Report Successfully Filled!"); </script>'; // Prompts the user
         print '<script>window.location.assign("B_profile.php");</script>'; // redirects to register.php
