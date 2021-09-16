@@ -26,7 +26,6 @@
   <a href="P_profile.php" class= "logactive">RИR</a>
   <div class="FRC">
     <div class="dropdown">
-    <a>Hello, <?php echo $name; ?></a>
       <button href="#" onclick="myFunction()" class="dropbtn">menu<i class="fas fa-caret-down" style="padding-left: 5px;"></i></button>
       <div id="myDropdown" class="dropdown-content">
   <a href="P_profile.php">Profile</a>

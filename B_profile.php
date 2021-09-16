@@ -59,17 +59,11 @@ include_once('B_Userheader.php');
                     <br>
 </div>
     </div>
-        <br>
-        <div class="tab">
-    <button class="tablinks" onclick="openCity(event, 'addAccB')" id="defaultOpen">Add Account</button>
-    <button class="tablinks" onclick="openCity(event, 'addSchB')">Scheduling</button>
-    </div>
 <?php
 if($user=="b_admin")
 {
     
     Print '<div class="adminAccAdd">';
-    print '<div id="addAccB" class="tabcontent">';
     print '<table class="addAccTable">';
     print '<tr>';
     print '<td class="aaaHead">';
@@ -111,15 +105,9 @@ if($user=="b_admin")
     Print'</div>';
     Print'</div>';
     print '<hr>';
-    
 }
 ?>
 
-
-<div id="addSchB" class="tabcontent">
-  <!--- dito lalagay yung scheduling --->
-  <button onclick="document.getElementById("id01").style.display="block" class="adminAddSchedbtn">Add Schedule</button>
-</div>
 
   <script>
 function openCity(evt, cityName) {
