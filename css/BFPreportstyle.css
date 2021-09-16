@@ -43,6 +43,21 @@ body{
     margin: 0% 10% 5% 10%;
 }
 
+.CreportInci h2{
+    font-size: 20px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    color: #000;
+}
+
+.bassh {
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    color: #000;
+    padding: 0;
+}
+
 input[type=text], input[type=datetime-local]{
     cursor:text;
     border: none;

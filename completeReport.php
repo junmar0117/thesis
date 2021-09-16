@@ -239,7 +239,7 @@ if(mysqli_num_rows($row_b) > 0)
              </tr>
             </table>
             <hr>
-            </div>
+            
 
             <script>
             var map;
@@ -265,10 +265,14 @@ if(mysqli_num_rows($row_b) > 0)
             google.maps.event.addDomListener(window, "load", initialize());
             </script>      
         <form action="completeReportAction.php" method="POST">
-        <input type="text" name="who" placeholder="Who was involved?">
-        <input type="datetime-local" name="when" placeholder="When did it take place?">
-        <input type="text" name="why" placeholder="Why did it happen?">
-        <input type="text" name="how" placeholder="How did it happen?">
+        <h3>Who was involved</h3>
+        <input type="text" name="who" placeholder="...">
+        <h3>When did it take place?</h3>
+        <input type="datetime-local" name="when" placeholder="...">
+        <h3>Why did it happen?</h3>
+        <input type="text" name="why" placeholder="...">
+        <h3>How did it happen?</h3>
+        <input type="text" name="how" placeholder="...">
         <input type="hidden" name="id" value="<?php echo $id;?>">
         <input type="hidden" name="name" value="<?php echo $name;?>">
         <input type="hidden" name="username" value="<?php echo $username;?>">
@@ -284,8 +288,10 @@ if(mysqli_num_rows($row_b) > 0)
         <input type="hidden" name="crime" value="<?php echo $crime;?>">
         <input type="hidden" name="latitude" value="<?php echo $latitude;?>">
         <input type="hidden" name="longitude" value="<?php echo $longitude;?>">
-        <input type="submit" name="submit">
-        </form>  
+        <hr>
+        <input type="submit" name="submit" >
+        </form> 
+        </div> 
 <?php
 }}else if(mysqli_num_rows($row_f) > 0)
 {
@@ -403,7 +409,7 @@ if(mysqli_num_rows($row_b) > 0)
              </tr>
             </table>
             <hr>
-            </div>
+            
 
             
             <script>
@@ -430,10 +436,14 @@ if(mysqli_num_rows($row_b) > 0)
             google.maps.event.addDomListener(window, "load", initialize());
             </script> 
             <form action="completeReportAction.php" method="POST">
-        <input type="text" name="who" placeholder="Who was involved?">
-        <input type="datetime-local" name="when" placeholder="When did it take place?">
-        <input type="text" name="why" placeholder="Why did it happen?">
-        <input type="text" name="how" placeholder="How did it happen?">
+            <h3>Who was involved</h3>
+        <input type="text" name="who" placeholder="...">
+        <h3>When did it take place?</h3>
+        <input type="datetime-local" name="when" placeholder="...">
+        <h3>Why did it happen?</h3>
+        <input type="text" name="why" placeholder="...">
+        <h3>How did it happen?</h3>
+        <input type="text" name="how" placeholder="...">
         <input type="hidden" name="id" value="<?php echo $id;?>">
         <input type="hidden" name="name" value="<?php echo $name;?>">
         <input type="hidden" name="username" value="<?php echo $username;?>">
@@ -449,8 +459,10 @@ if(mysqli_num_rows($row_b) > 0)
         <input type="hidden" name="crime" value="<?php echo $crime;?>">
         <input type="hidden" name="latitude" value="<?php echo $latitude;?>">
         <input type="hidden" name="longitude" value="<?php echo $longitude;?>">
+        <hr>
         <input type="submit" name="submit">
         </form>  
+        </div>
 <?php
 }}else if(mysqli_num_rows($row_p) > 0)
 {
@@ -569,7 +581,7 @@ if(mysqli_num_rows($row_b) > 0)
              </tr>
             </table>
             <hr>
-            </div>
+            
             
             <script>
             var map;
@@ -595,10 +607,14 @@ if(mysqli_num_rows($row_b) > 0)
             google.maps.event.addDomListener(window, "load", initialize());
             </script>
             <form action="completeReportAction.php" method="POST">
-        <input type="text" name="who" placeholder="Who was involved?" required>
-        <input type="datetime-local" name="when" placeholder="When did it take place?" required>
-        <input type="text" name="why" placeholder="Why did it happen?" required>
-        <input type="text" name="how" placeholder="How did it happen?" required>
+            <h3>Who was involved</h3>
+        <input type="text" name="who" placeholder="..." required>
+        <h3>When did it take place?</h3>
+        <input type="datetime-local" name="when" placeholder="..." required>
+        <h3>Why did it happen?</h3>
+        <input type="text" name="why" placeholder="..." required>
+        <h3>How did it happen?</h3>
+        <input type="text" name="how" placeholder="..." required>
         <input type="hidden" name="id" value="<?php echo $id;?>">
         <input type="hidden" name="name" value="<?php echo $name;?>">
         <input type="hidden" name="username" value="<?php echo $username;?>">
@@ -614,8 +630,10 @@ if(mysqli_num_rows($row_b) > 0)
         <input type="hidden" name="crime" value="<?php echo $crime;?>">
         <input type="hidden" name="latitude" value="<?php echo $latitude;?>">
         <input type="hidden" name="longitude" value="<?php echo $longitude;?>">
+        <hr>
         <input type="submit" name="submit">
         </form>  
+        </div>
 <?php
 }}
 ?>

@@ -40,7 +40,7 @@ include_once('P_Userheader.php');
     </nav>
     <div class="monitorHeaderContainer">
     <h1>Philippine National Police Report Monitoring</h1>
-    <h2>subhead</h2>
+    <h2>View submitted PNP reports</h2>
     <br>
 </div>
 <br>
