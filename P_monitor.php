@@ -79,27 +79,27 @@ include_once('P_Userheader.php');
             } 
             $numSafeCount = count($safeCount);      
             
-            $query = mysqli_query($con, "SELECT * from reports where incident = 'Police' ORDER BY id DESC"); // SQL Query
+            $query = mysqli_query($con, "SELECT * from reports where incident = 'Police' ORDER BY report_id DESC"); // SQL Query
             while($row = mysqli_fetch_array($query))
             {
             ?>
                 <tr>
                 <td><?php echo $row['id']  ?></td>
-                <td><?php echo $row['name']  ?></td>
-                <td><?php echo $row['username']  ?></td>
+                <td><?php echo $row['names']  ?></td>
+                <td><?php echo $row['usernames']  ?></td>
                 <td><?php echo $row['date']; echo " - "; echo $row['time']?></td>
                 <td><?php echo $row['incident']  ?></td>
                 <td><?php echo $row['status'] ?></td>
                 <td><?php echo $numSafeCount?></td>
                 <td>
                     <form action="viewReports.php" method="POST">
-                        <input type="hidden" name="id" value="<?php echo $row['id']?>">
+                        <input type="hidden" name="id" value="<?php echo $row['report_id']?>">
                         <button type="submit" class="viewReportbtn2">View</button>
                     </form>
                 </td>
                 <td>
                     <form action="viewRecords.php" method="POST">
-                        <input type="hidden" name="report_id" value="<?php echo $row['id']?>">
+                        <input type="hidden" name="report_id" value="<?php echo $row['report_id']?>">
                         <button type="submit" class="viewReportbtn2">View</button>
                     </form>
                 </td>
