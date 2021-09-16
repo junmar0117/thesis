@@ -68,7 +68,7 @@ include_once('B_Userheader.php');
             <?php
             require 'connection.php';         
 
-            $query = mysqli_query($con, "SELECT * from reports ORDER BY id DESC"); // SQL Query
+            $query = mysqli_query($con, "SELECT * from reports ORDER BY report_id DESC"); // SQL Query
             while($row = mysqli_fetch_array($query))
             {          
                 $featured = "";
@@ -76,21 +76,21 @@ include_once('B_Userheader.php');
             ?>
             
                 <tr>
-                <td><?php echo $row['id']  ?></td>
-                <td><?php echo $row['name']  ?></td>
-                <td><?php echo $row['username']  ?></td>
+                <td><?php echo $row['report_id']  ?></td>
+                <td><?php echo $row['names']  ?></td>
+                <td><?php echo $row['usernames']  ?></td>
                 <td><?php echo $row['date']; echo " - "; echo $row['time']?></td>
                 <td><?php echo $row['incident']  ?></td>
                 <td><?php echo $row['status']?></td>
                 <td>
                     <form action="viewReports.php" method="POST">
-                        <input type="hidden" name="id" value="<?php echo $row['id']?>">
+                        <input type="hidden" name="id" value="<?php echo $row['report_id']?>">
                         <button type="submit" class="viewReportbtn2">View</button>
                     </form>
                 </td>
                 <td>
                     <form action="viewRecords.php" method="POST">
-                        <input type="hidden" name="report_id" value="<?php echo $row['id']?>">
+                        <input type="hidden" name="report_id" value="<?php echo $row['report_id']?>">
                         <button type="submit" class="viewReportbtn2">View</button>
                     </form>
                 </td>
@@ -107,7 +107,7 @@ include_once('B_Userheader.php');
 							?>
 							<form>
                             <label class="CBcontainer">
-							<input type="checkbox" value="<?php if($row['featured'] == 1){echo 2;}else{echo 1;}?>" name="featured" onchange="featured_reports(this.value,<?php echo $row['id'];?>)" <?php echo $featured ?>></input><br>
+							<input type="checkbox" value="<?php if($row['featured'] == 1){echo 2;}else{echo 1;}?>" name="featured" onchange="featured_reports(this.value,<?php echo $row['report_id'];?>)" <?php echo $featured ?>></input><br>
                             <span class="checkmark"></span>    
                         </label>
                         </form>
