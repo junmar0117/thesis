@@ -174,7 +174,7 @@ if(mysqli_num_rows($row_b) > 0)
 				$notFeatured = "";
                 $otw = "";
 				$completed = "";
-                $id = $row['id'];
+                $id = $row['report_id'];
                 $name = $row['names'];
                 $username = $row['usernames'];
                 $date = $row['date'];
