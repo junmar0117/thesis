@@ -140,7 +140,7 @@ include_once('Userheader.php');
             </tr>
             <?php
             require 'connection.php';    
-            $query = mysqli_query($con, "SELECT * from reports where username = '$user' ORDER BY id DESC"); // SQL Query
+            $query = mysqli_query($con, "SELECT * from reports where username = '$user' ORDER BY report_id DESC"); // SQL Query
             while($row = mysqli_fetch_array($query))
             {
             ?>
