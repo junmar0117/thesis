@@ -24,7 +24,7 @@ $user = $_SESSION['user']; //assigns user value
 <head>
     <meta charset = "utf-8">
     <title> R & R | Report Monitoring</title>
-    <meta name ="viewport" content="width=devoce-width, initial-scale=1.0">
+    <meta name ="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/BFP_profilestyle.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -41,7 +41,7 @@ include_once('B_Userheader.php');
 
     <div class="monitorHeaderContainer">
     <h1>Barangay Report Monitoring</h1>
-    <h2>Subhead</h2>
+    <h2>View submitted barangay reports</h2>
     <br>
 </div>
 <br>
