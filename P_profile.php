@@ -25,6 +25,7 @@ $user = $_SESSION['user']; //assigns user value
     while($row = mysqli_fetch_array($query))
     {
         $p_id = $row['id'];
+        $position =$row['position'];
     }
 ?>
 <!DOCTYPE html>
@@ -48,8 +49,8 @@ include_once('P_Userheader.php');
     <section class="profileSection">
     <div class="profileBox">
     <div class="profileTagcontainer">
-    <h1>USER: <?php echo $user;?></h1>
-        <h2>Philippine National Police (PNP) Administrator Account</h2>
+    <h1><?php echo $user;?></h1>
+    <h2><?php echo $position;?></h2>
     <form action="P_changePassword.php" method="GET">
         <input type="hidden" name="id" value="<?php echo $p_id;?>">
         <button class="viewReportbtn" type="submit">Change Password</button><i class="fas fa-caret-down" style="padding-left: 5px;"></i>

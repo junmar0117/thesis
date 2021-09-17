@@ -25,6 +25,7 @@ $user = $_SESSION['user']; //assigns user value
     while($row = mysqli_fetch_array($query))
     {
         $f_id = $row['id'];
+        $position =$row['position'];
     }
 ?>
 <!DOCTYPE html>
@@ -50,7 +51,7 @@ include_once('F_Userheader.php');
     <div class="profileBox">
     <div class="profileTagcontainer">
     <h1><?php echo $user;?></h1>
-        <h2>Bureau of Fire Protection (BFP) Administrator Account</h2>
+    <h2><?php echo $position;?></h2>
 
     <form action="F_changePassword.php" method="GET">
         <input type="hidden" name="id" value="<?php echo $f_id;?>">

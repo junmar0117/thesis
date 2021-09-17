@@ -25,6 +25,7 @@ $user = $_SESSION['user']; //assigns user value
     while($row = mysqli_fetch_array($query))
     {
         $b_id = $row['id'];
+        $position =$row['position'];
     }
 ?>
 <!DOCTYPE html>
@@ -50,13 +51,13 @@ include_once('B_Userheader.php');
 
     <div class="profileBox">
     <div class="profileTagcontainer">
-        <h1><?php echo $user;?></h1>
-        <h2>Local Barangay Administrator Account</h2>
+    <h1><?php echo $user;?></h1>
+    <h2><?php echo $position;?></h2>
     <form action="B_changePassword.php" method="GET">
-                        <input type="hidden" name="id" value="<?php echo $b_id;?>">
-                        <button class="viewReportbtn" type="submit">Change Password</button><i class="fas fa-caret-down" style="padding-left: 5px;"></i>
-                    </form>
-                    <br>
+    <input type="hidden" name="id" value="<?php echo $b_id;?>">
+    <button class="viewReportbtn" type="submit">Change Password</button><i class="fas fa-caret-down" style="padding-left: 5px;"></i>
+    </form>
+    <br>
 </div>
     </div>
 <?php
