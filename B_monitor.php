@@ -42,11 +42,11 @@ include_once('B_Userheader.php');
     <div class="monitorHeaderContainer">
     <h1>Barangay Report Monitoring</h1>
     <h2>View submitted barangay reports</h2>
+    <button class="viewReportbtn" type="submit">Generate Monthly Report for <?php echo date('F Y'); ?></button></i>
     <br>
 </div>
 <br>
     <div class="tab">
-        <button class="tablinks" onclick="openTabForm(event, 'alls')"  id="defaultOpen">All</button>
         <button class="tablinks" onclick="openTabForm(event, 'all')">All Barangay</button>
         <button class="tablinks" onclick="openTabForm(event, 'em')">Emergency</button>
         <button class="tablinks" onclick="openTabForm(event, 'nonem')">Non-Emergency</button>
