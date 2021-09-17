@@ -247,7 +247,7 @@ if(mysqli_num_rows($row_b) > 0)
             map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 
             var marker = new google.maps.Marker({
-                draggable: true,
+                
                 position: myLatlng,
                 map: map,
                 title: "Your location"
