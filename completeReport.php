@@ -516,7 +516,7 @@ if(mysqli_num_rows($row_b) > 0)
 				$notFeatured = "";
                 $otw = "";
 				$completed = "";
-                $id = $row['id'];
+                $id = $row['report_id'];
                 $name = $row['names'];
                 $username = $row['usernames'];
                 $date = $row['date'];
@@ -535,9 +535,9 @@ if(mysqli_num_rows($row_b) > 0)
         ?>
          <tr>
              <th><?php echo "Name"?></th> 
-             <td><?php echo $row['name'] ?></td>
+             <td><?php echo $row['names'] ?></td>
              <th><?php echo "Username"?></th>
-             <td><?php echo $row['username']  ?></td>
+             <td><?php echo $row['usernames']  ?></td>
              </tr>
             </table>
 
@@ -615,6 +615,7 @@ if(mysqli_num_rows($row_b) > 0)
         <input type="text" name="why" placeholder="..." required>
         <h3>How did it happen?</h3>
         <input type="text" name="how" placeholder="..." required>
+        
         <input type="hidden" name="id" value="<?php echo $id;?>">
         <input type="hidden" name="name" value="<?php echo $name;?>">
         <input type="hidden" name="username" value="<?php echo $username;?>">

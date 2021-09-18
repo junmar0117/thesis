@@ -1,4 +1,14 @@
 <?php
+$url = "";
+$url != 'P_monitor.php';
+
+if ($_SERVER['HTTP_REFERER'] == $url) 
+{
+  header('Location: P_profile.php'); //redirect to some other page
+  exit();
+}
+?>
+<?php
 session_start();
 if($_SESSION['user'] && $_SESSION['type']=='police')
 { //checks if user is logged in   
@@ -68,7 +78,7 @@ include_once('P_Userheader.php');
             $query = mysqli_query($con, "SELECT * from reports where incident = 'Barangay'"); // SQL Query
             while($row = mysqli_fetch_array($query))
             {
-                $r_id = $row['id'];   
+                $r_id = $row['report_id'];   
             }
 
             $querySafe = mysqli_query($con, "SELECT * from saferecords where report_id = $r_id and `safe` = 'Yes'");
@@ -84,7 +94,7 @@ include_once('P_Userheader.php');
             {
             ?>
                 <tr>
-                <td><?php echo $row['id']  ?></td>
+                <td><?php echo $row['report_id']  ?></td>
                 <td><?php echo $row['names']  ?></td>
                 <td><?php echo $row['usernames']  ?></td>
                 <td><?php echo $row['date']; echo " - "; echo $row['time']?></td>

@@ -1,4 +1,14 @@
 <?php
+$url = "";
+$url != 'B_pendingVerification.php';
+
+if ($_SERVER['HTTP_REFERER'] == $url) 
+{
+  header('Location: B_profile.php'); //redirect to some other page
+  exit();
+}
+?>
+<?php
 session_start();
 if($_SESSION['user'] && $_SESSION['type']=='barangay')
 { //checks if user is logged in   

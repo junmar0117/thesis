@@ -1,4 +1,14 @@
 <?php
+$url = "";
+$url != 'F_monitor.php';
+
+if ($_SERVER['HTTP_REFERER'] == $url) 
+{
+  header('Location: F_profile.php'); //redirect to some other page
+  exit();
+}
+?>
+<?php
 session_start();
 if($_SESSION['user'] && $_SESSION['type']=='fire')
 { //checks if user is logged in   

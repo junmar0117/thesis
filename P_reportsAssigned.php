@@ -1,16 +1,16 @@
 <?php
 $url = "";
-$url != 'F_reportsAssigned.php';
+$url != 'P_reportsAssigned.php';
 
 if ($_SERVER['HTTP_REFERER'] == $url) 
 {
-  header('Location: F_profile.php'); //redirect to some other page
+  header('Location: P_profile.php'); //redirect to some other page
   exit();
 }
 ?>
 <?php
 session_start();
-if($_SESSION['user'] && $_SESSION['type']=='fire')
+if($_SESSION['user'] && $_SESSION['type']=='police')
 { //checks if user is logged in   
 }else{
   header("location:index.php "); // redirects if user is not logged in
@@ -22,8 +22,8 @@ if($_SESSION['type']=='barangay'){
 if($_SESSION['type']=='civilian'){ 
     header("location:C_profile.php ");//checks if user is civilian account
 }
-if($_SESSION['type']=='police'){ 
-    header("location:P_profile.php "); //checks if user is police account
+if($_SESSION['type']=='fire'){ 
+    header("location:F_profile.php "); //checks if user is police account
 }
 
 $user = $_SESSION['user']; //assigns user value
@@ -31,10 +31,10 @@ $user = $_SESSION['user']; //assigns user value
 ?>
 <?php
     require 'connection.php';    
-    $query = mysqli_query($con, "SELECT * from f_admin where username = '".$_SESSION['user']."'"); // SQL Query
+    $query = mysqli_query($con, "SELECT * from p_admin where username = '".$_SESSION['user']."'"); // SQL Query
     while($row = mysqli_fetch_array($query))
     {
-        $f_id = $row['id'];
+        $p_id = $row['id'];
     }
 ?>
 <!DOCTYPE html>
@@ -52,7 +52,7 @@ $user = $_SESSION['user']; //assigns user value
 <body>
     <nav>
     <?php
-include_once('F_Userheader.php');
+include_once('P_Userheader.php');
 ?>
     </nav>
     <section class="profileSection">
@@ -62,8 +62,8 @@ include_once('F_Userheader.php');
     <h1><?php echo $user;?></h1>
         <h2>Bureau of Fire Protection (BFP) Administrator Account</h2>
 
-    <form action="F_changePassword.php" method="GET">
-        <input type="hidden" name="id" value="<?php echo $f_id;?>">
+    <form action="P_changePassword.php" method="GET">
+        <input type="hidden" name="id" value="<?php echo $p_id;?>">
         <button class="viewReportbtn" type="submit">Change Password</button><i class="fas fa-caret-down" style="padding-left: 5px;"></i>
     </form>
     <br>
@@ -72,7 +72,7 @@ include_once('F_Userheader.php');
 <br>
     <?php
     //Admin - Add Account
-    if($user=="f_admin"){
+    if($user=="p_admin"){
 
         Print '<div class="adminAccAdd">';
         print '<table class="addAccTable">';
@@ -119,7 +119,7 @@ include_once('F_Userheader.php');
 }
 ?>
     <?php
-if($user=="f_admin")
+if($user=="p_admin")
 {           
             //Accounts Created by Administrator        
             
@@ -133,7 +133,7 @@ if($user=="f_admin")
             Print '<th>Position</th>';
             Print '</tr>';
             require 'connection.php';    
-            $query = mysqli_query($con, "SELECT * from f_admin where username != 'f_admin' "); // SQL Query
+            $query = mysqli_query($con, "SELECT * from p_admin where username != 'p_admin' "); // SQL Query
             while($row = mysqli_fetch_array($query))
             {
             Print "<tr>";
@@ -159,19 +159,20 @@ else {
     Print '<th>Action</th>';
     Print '</tr>';
     require 'connection.php';    
-    $query = mysqli_query($con, "SELECT * from reports INNER JOIN f_assigned ON reports.report_id = f_assigned.report_id where f_id = $f_id"); // SQL Query
+    $query = mysqli_query($con, "SELECT * from reports INNER JOIN p_assigned ON reports.report_id = p_assigned.report_id where p_id = $p_id"); // SQL Query
     while($row = mysqli_fetch_array($query))
     {
     ?>
         <tr>
-        <td><?php echo $row['id']  ?></td>
+        <td><?php echo $row['report_id']  ?></td>
         <td><?php echo $row['names']  ?></td>
         <td><?php echo $row['date']; echo " - "; echo $row['time']?></td>
         <td><?php echo $row['incident']  ?></td>
         <td><?php echo $row['status'] ?></td>
         <td>
-            <form action="completeReport.php" method="POST">
+            <form action="completeReport_injury.php" method="POST">
                 <input type="hidden" name="id" value="<?php echo $row['report_id']?>">
+                <input type="hidden" name="assigned_id" value="<?php echo $row['report_id']?>">
                 <button type="submit">Complete</button>
             </form>
         </td>
@@ -189,7 +190,7 @@ else {
 </html>
 
 <?php
-if(isset($_POST['addF']))
+if(isset($_POST['addP']))
 { 
 
 	$name = ($_POST['name']);
@@ -201,7 +202,7 @@ if(isset($_POST['addF']))
 
    
 	require 'connection.php';
-	$query = "SELECT * from f_admin";
+	$query = "SELECT * from p_admin";
 	$results = mysqli_query($con, $query); //Query the users table
 
 	while($row = mysqli_fetch_array($results)) //display all rows from query    
@@ -230,7 +231,7 @@ if(isset($_POST['addF']))
           if($password === $cpassword)
           {
             $password = password_hash($password, PASSWORD_DEFAULT);
-            mysqli_query($con, "INSERT INTO f_admin (name, username, password,position) VALUES ('$name','$username','$password', '$position')"); //Inserts the value to table users
+            mysqli_query($con, "INSERT INTO p_admin (name, username, password,position) VALUES ('$name','$username','$password', '$position')"); //Inserts the value to table users
             print '<script>alert("Firefighter User added!"); </script>'; // Prompts the user
             print '<script>window.location.assign("F_profile.php");</script>'; // redirects to register.php
           }

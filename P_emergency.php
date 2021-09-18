@@ -119,12 +119,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
             <select name="type" id="type" required>
                 <option value="Drugs">Drugs</option>
                 <option value="Theft and Robbery">Theft and Robbery</option>
-                <option value="Murder">Murder</option>
-                <option value="Physical Violence">Physical Violence</option>
-                <option value="Illegal Gambling">Illegal Gambling</option>
-                <option value="Missing and Found Persons">Missing and Found Persons</option>
-                <option value="Quarantine Violators">Quarantine Violators</option>
-                <option value="Others">Others</option>
+                <option value="Physical Injury">Physical Injury</option>
+                <option value="Children at risk">Children at risk</option>
             </select>
             </td>
     <td>

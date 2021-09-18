@@ -1,3 +1,13 @@
+<?php
+$url = "";
+$url != 'P_changePassword.php';
+
+if ($_SERVER['HTTP_REFERER'] == $url) 
+{
+  header('Location: P_profile.php'); //redirect to some other page
+  exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <?php

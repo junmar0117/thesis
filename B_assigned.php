@@ -1,4 +1,14 @@
 <?php
+$url = "";
+$url != 'B_assigned.php';
+
+if ($_SERVER['HTTP_REFERER'] == $url) 
+{
+  header('Location: B_profile.php'); //redirect to some other page
+  exit();
+}
+?>
+<?php
 session_start();
 if($_SESSION['user']){ //checks if user is logged in
 }else{
