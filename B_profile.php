@@ -187,6 +187,42 @@ if($user=="b_admin")
             }
             Print '</table>';
             Print '</div>';
+            ?>
+            <h2 class="adminCreatedAccHead">Reports</h2>
+            <div style="overflow-x:auto;">
+            <table class="AdminProfileTable">
+            <tr>
+            <th>Report ID</th>
+            <th>Name of Reporter</th>
+            <th>Date Reported</th>
+            <th>Concern</th>
+            <th>Status</th>
+            <th>Action</th>
+            </tr>
+            <br>
+            <?php
+            require 'connection.php';    
+            $query = mysqli_query($con, "SELECT * from reports where incident = 'Barangay' AND status = 'In Progress' OR incident = 'Barangay' AND status = 'Needs Attention' ORDER BY report_id DESC"); // SQL Query
+            while($row = mysqli_fetch_array($query))
+            {
+            ?>
+            
+                <tr>
+                <td><?php echo $row['report_id']  ?></td>
+                <td><?php echo $row['names']  ?></td>
+                <td><?php echo $row['date']; echo " - "; echo $row['time']?></td>
+                <td><?php echo $row['incident']  ?></td>
+                <td><?php echo $row['status'] ?></td>
+                <td>
+                    <form action="viewReports.php" method="POST">
+                        <input type="hidden" name="id" value="<?php echo $row['report_id']?>">
+                        <button type="submit">View</button>
+                    </form>
+                </td>
+                </tr>
+            <?php
+            }
+            Print '</table>';
 }
 else {
     Print '<h2 class="adminCreatedAccHead">REPORTS ASSIGNED</h2>';

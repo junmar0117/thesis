@@ -1,29 +1,29 @@
 <?php
 $url = "";
-$url != 'P_reportsAssigned.php';
+$url != 'B_reportsAssigned.php';
 
 if ($_SERVER['HTTP_REFERER'] == $url) 
 {
-  header('Location: P_profile.php'); //redirect to some other page
+  header('Location: B_profile.php'); //redirect to some other page
   exit();
 }
 ?>
 <?php
 session_start();
-if($_SESSION['user'] && $_SESSION['type']=='police')
+if($_SESSION['user'] && $_SESSION['type']=='barangay')
 { //checks if user is logged in   
 }else{
   header("location:index.php "); // redirects if user is not logged in
 }
 
-if($_SESSION['type']=='barangay'){ 
-    header("location:B_profile.php ");//checks if user is barangay account
+if($_SESSION['type']=='fire'){ 
+    header("location:F_profile.php ");//checks if user is barangay account
 }
 if($_SESSION['type']=='civilian'){ 
     header("location:C_profile.php ");//checks if user is civilian account
 }
-if($_SESSION['type']=='fire'){ 
-    header("location:F_profile.php "); //checks if user is police account
+if($_SESSION['type']=='police'){ 
+    header("location:P_profile.php "); //checks if user is police account
 }
 
 $user = $_SESSION['user']; //assigns user value
@@ -31,10 +31,10 @@ $user = $_SESSION['user']; //assigns user value
 ?>
 <?php
     require 'connection.php';    
-    $query = mysqli_query($con, "SELECT * from p_admin where username = '".$_SESSION['user']."'"); // SQL Query
+    $query = mysqli_query($con, "SELECT * from b_admin where username = '".$_SESSION['user']."'"); // SQL Query
     while($row = mysqli_fetch_array($query))
     {
-        $p_id = $row['id'];
+        $b_id = $row['id'];
     }
 ?>
 <!DOCTYPE html>
@@ -52,7 +52,7 @@ $user = $_SESSION['user']; //assigns user value
 <body>
     <nav>
     <?php
-include_once('P_Userheader.php');
+include_once('B_Userheader.php');
 ?>
     </nav>
     <section class="profileSection">
@@ -62,8 +62,8 @@ include_once('P_Userheader.php');
     <h1><?php echo $user;?></h1>
         <h2>Bureau of Fire Protection (BFP) Administrator Account</h2>
 
-    <form action="P_changePassword.php" method="GET">
-        <input type="hidden" name="id" value="<?php echo $p_id;?>">
+    <form action="F_changePassword.php" method="GET">
+        <input type="hidden" name="id" value="<?php echo $f_id;?>">
         <button class="viewReportbtn" type="submit">Change Password</button><i class="fas fa-caret-down" style="padding-left: 5px;"></i>
     </form>
     <br>
@@ -72,7 +72,7 @@ include_once('P_Userheader.php');
 <br>
     <?php
     //Admin - Add Account
-    if($user=="p_admin"){
+    if($user=="b_admin"){
 
         Print '<div class="adminAccAdd">';
         print '<table class="addAccTable">';
@@ -108,7 +108,7 @@ include_once('P_Userheader.php');
                      Print'<input type="text" id="position" required="required" name="position" placeholder="Position: "><br>';
                 Print '</div>';
                 print '<hr>';
-                    Print'<input  class="adminAddAccbtn" type="submit" name="addP" value="Add Account +"></input><br><br>';
+                    Print'<input  class="adminAddAccbtn" type="submit" name="addB" value="Add Account +"></input><br><br>';
                     Print'</form>';
                     Print'</td>';
                     Print'</tr>';
@@ -119,7 +119,7 @@ include_once('P_Userheader.php');
 }
 ?>
     <?php
-if($user=="p_admin")
+if($user=="b_admin")
 {           
             //Accounts Created by Administrator        
             
@@ -133,7 +133,7 @@ if($user=="p_admin")
             Print '<th>Position</th>';
             Print '</tr>';
             require 'connection.php';    
-            $query = mysqli_query($con, "SELECT * from p_admin where username != 'p_admin' "); // SQL Query
+            $query = mysqli_query($con, "SELECT * from b_admin where username != 'b_admin' "); // SQL Query
             while($row = mysqli_fetch_array($query))
             {
             Print "<tr>";
@@ -159,20 +159,19 @@ else {
     Print '<th>Action</th>';
     Print '</tr>';
     require 'connection.php';    
-    $query = mysqli_query($con, "SELECT * from reports INNER JOIN p_assigned ON reports.report_id = p_assigned.report_id where p_id = $p_id"); // SQL Query
+    $query = mysqli_query($con, "SELECT * from reports INNER JOIN b_assigned ON reports.report_id = b_assigned.report_id where b_id = $b_id"); // SQL Query
     while($row = mysqli_fetch_array($query))
     {
     ?>
         <tr>
-        <td><?php echo $row['report_id']  ?></td>
+        <td><?php echo $row['id']  ?></td>
         <td><?php echo $row['names']  ?></td>
         <td><?php echo $row['date']; echo " - "; echo $row['time']?></td>
         <td><?php echo $row['incident']  ?></td>
         <td><?php echo $row['status'] ?></td>
         <td>
-            <form action="completeReport_injury.php" method="POST">
+            <form action="completeReport.php" method="POST">
                 <input type="hidden" name="id" value="<?php echo $row['report_id']?>">
-                <input type="hidden" name="assigned_id" value="<?php echo $row['report_id']?>">
                 <button type="submit">Complete</button>
             </form>
         </td>
@@ -190,7 +189,7 @@ else {
 </html>
 
 <?php
-if(isset($_POST['addP']))
+if(isset($_POST['addB']))
 { 
 
 	$name = ($_POST['name']);
@@ -202,7 +201,7 @@ if(isset($_POST['addP']))
 
    
 	require 'connection.php';
-	$query = "SELECT * from p_admin";
+	$query = "SELECT * from b_admin";
 	$results = mysqli_query($con, $query); //Query the users table
 
 	while($row = mysqli_fetch_array($results)) //display all rows from query    
@@ -231,7 +230,7 @@ if(isset($_POST['addP']))
           if($password === $cpassword)
           {
             $password = password_hash($password, PASSWORD_DEFAULT);
-            mysqli_query($con, "INSERT INTO p_admin (name, username, password,position) VALUES ('$name','$username','$password', '$position')"); //Inserts the value to table users
+            mysqli_query($con, "INSERT INTO b_admin (name, username, password,position) VALUES ('$name','$username','$password', '$position')"); //Inserts the value to table users
             print '<script>alert("Firefighter User added!"); </script>'; // Prompts the user
             print '<script>window.location.assign("F_profile.php");</script>'; // redirects to register.php
           }

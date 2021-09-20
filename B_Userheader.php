@@ -33,6 +33,7 @@
   <a href="announcements.php">Announcements</a>
   <a href="B_monitor.php">Monitor</a>
   <a href="viewBarangays.php">Barangays</a>
+  <a href="B_reportsAssigned.php">Assigned</a>
   <a href="B_pendingVerification.php">Verification</a>
   <a href="logout.php">Sign Out</a>
 </div>

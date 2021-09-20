@@ -1,8 +1,8 @@
 <?php
 session_start();
-if($_SESSION['user']){ //checks if user is logged in
+if($_SESSION['user'] == "p_admin"){ //checks if user is logged in
 }else{
-  header("location:index.php "); // redirects if user is not logged in
+  header("location:P_profile.php "); // redirects if user is not logged in
 }
 
 $user = $_SESSION['user']; //assigns user value
@@ -60,8 +60,8 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
         <?php
         }
         ?>
-    </td>
-    </tr>
+        </td>
+        </tr>
         </table>
         </div>
 

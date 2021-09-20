@@ -270,6 +270,8 @@ if(mysqli_num_rows($row_b) > 0)
             
              <div class="viewReportStatusUpdate">  
                 <?php
+                if($user == "b_admin")
+                {
                 $query = mysqli_query($con, "SELECT * from reports where report_id = '$id' "); // SQL Query
                 while($row = mysqli_fetch_array($query))
                 {
@@ -302,6 +304,7 @@ if(mysqli_num_rows($row_b) > 0)
                         </form><br>
                     <?php
                     }
+                }
                 }
                 ?>                   
             </div>
@@ -441,6 +444,8 @@ if(mysqli_num_rows($row_b) > 0)
 
 <div class="viewReportStatusUpdate">  
                 <?php
+                if($user == "f_admin")
+                {
                 $query = mysqli_query($con, "SELECT * from reports where report_id = '$id' "); // SQL Query
                 while($row = mysqli_fetch_array($query))
                 {
@@ -473,6 +478,7 @@ if(mysqli_num_rows($row_b) > 0)
                         </form><br>
                     <?php
                     }
+                }
                 }
                 ?>                   
             </div>
@@ -613,6 +619,8 @@ if(mysqli_num_rows($row_b) > 0)
           
 <div class="viewReportStatusUpdate">  
                 <?php
+                if($user == "p_admin")
+                {
                 $query = mysqli_query($con, "SELECT * from reports where report_id = '$id'"); // SQL Query
                 while($row = mysqli_fetch_array($query))
                 {
@@ -645,6 +653,7 @@ if(mysqli_num_rows($row_b) > 0)
                         </form><br>
                     <?php
                     }
+                }
                 }
                 ?>                   
             </div>
