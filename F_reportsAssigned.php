@@ -170,8 +170,9 @@ else {
         <td><?php echo $row['incident']  ?></td>
         <td><?php echo $row['status'] ?></td>
         <td>
-            <form action="completeReport.php" method="POST">
+            <form action="<?php if($row['type'] == "House Fire"){echo "completeReport_fire.php";}else if($row['type'] == "Establishment Fire"){echo "completeReport_fire.php";}?>" method="POST">
                 <input type="hidden" name="id" value="<?php echo $row['report_id']?>">
+                <input type="hidden" name="assigned_id" value="<?php echo $row['id']?>">
                 <button type="submit">Complete</button>
             </form>
         </td>

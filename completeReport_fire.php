@@ -1,10 +1,10 @@
 <?php
 $url = "";
-$url != 'completeReport_injury.php';
+$url != 'completeReport_fire.php';
 
 if ($_SERVER['HTTP_REFERER'] == $url) 
 {
-  header('Location: P_profile.php'); //redirect to some other page
+  header('Location: F_profile.php'); //redirect to some other page
   exit();
 }
 ?>
@@ -446,16 +446,115 @@ if(mysqli_num_rows($row_b) > 0)
             }
             google.maps.event.addDomListener(window, "load", initialize());
             </script> 
-            <form action="completeReportAction.php" method="POST">
-            <h3>Who was involved</h3>
-        <input type="text" name="who" placeholder="...">
+            <form action="completeReportAction_fire.php" method="POST">
+        <h3>SECTION 1 - INCIDENT (Complete for all incidents)</h3>
         <h3>When did it take place?</h3>
         <input type="datetime-local" name="when" placeholder="...">
-        <h3>Why did it happen?</h3>
-        <input type="text" name="why" placeholder="...">
-        <h3>How did it happen?</h3>
-        <input type="text" name="how" placeholder="...">
+        <h3>Building Name and Address</h3>
+        <input type="text" name="building_address" placeholder="...">
+        <h3>Building No.</h3>
+        <input type="number" name="building_number" placeholder="...">
+        <h3>Fixed Property</h3>
+        <input type="text" name="fixed_property" placeholder="...">
+        <h3>Type of Incident</h3>
+        <input type="text" name="incident_type" placeholder="...">
+        <h3>Occupants Were</h3>
+        <input type="radio" name="occupants_status" value="Not Evacuated">
+        <label for="notevacuated">Not Evacuated</label><br>
+        <input type="radio" name="occupants_status" value="Evacuated">
+        <label for="evacuated">Evacuated</label><br>
+        <input type="radio" name="occupants_status" value="Relocated">
+        <label for="relocated">Relocated</label><br>
+        <input type="radio" name="occupants_status" value="Both B and C">
+        <label for="both">Both B and C</label><br>
+        <h3>Did the Fire Department Respond?</h3>
+        <input type="radio" name="did_respond" value="Yes">
+        <label for="Yes">Yes</label><br>
+        <input type="radio" name="did_respond" value="No">
+        <label for="No">No</label><br>
+        <h3>Fire Department Called Via</h3>
+        <input type="number" name="called_via" placeholder="...">
+        <h3>Fire Department Respond Within Minutes Of Notification</h3>
+        <input type="radio" name="respond_within_minutes" value="Yes">
+        <label for="Yes">Yes</label><br>
+        <input type="radio" name="respond_within_minutes" value="No">
+        <label for="No">No</label><br>
+        <h3>Brief History of Incident</h3>
+        <input type="text" name="history" placeholder="...">
+        <h3>Action(s) Taken and Recommendations to Prevent Recurrence</h3>
+        <input type="text" name="actions_recommendations" placeholder="...">
+        <h3>No. of Injuries</h3>
+        <input type="number" name="num_injuries" placeholder="...">
+        <h3>No. of Deaths</h3>
+        <input type="number" name="num_deaths" placeholder="...">
+
+        <h3>SECTION 2 - FIRE (Complete for all fires)</h3>
+        <h3>Area of Fire Origin</h3>
+        <input type="text" name="fire_origin" placeholder="...">
+        <h3>Equipment Involved in Ignition</h3>
+        <input type="text" name="equipment" placeholder="...">
+        <h3>Form of Heat of Ignition</h3>
+        <input type="text" name="form_of_heat" placeholder="...">
+        <h3>Type of Material Ignited</h3>
+        <input type="text" name="type_material_ignited" placeholder="...">
+        <h3>Form of Material Ignited</h3>
+        <input type="text" name="form_of_material" placeholder="...">
+        <h3>Method of Extinguishment</h3>
+        <input type="text" name="method_of_extinguishment" placeholder="...">
+        <h3>Level of Fire Origin</h3>
+        <input type="text" name="level_of_fire" placeholder="...">
+
+        <h3>SECTION 3 - STRUCTURE FIRE (Complete if structure fires)</h3>
+        <h3>Extent of Flame Damage</h3>
+        <input type="text" name="extent_flame" placeholder="...">
+        <h3>Extent of Smoke Damage</h3>
+        <input type="text" name="extent_smoke" placeholder="...">
+        <h3>Detector Performance</h3>
+        <input type="text" name="detector_performance" placeholder="...">
+        <h3>Sprinkler Performance</h3>
+        <input type="text" name="sprinkler_performance" placeholder="...">
+        <h3>Type of Material Generating Most Smoke</h3>
+        <input type="text" name="type_most_smoke" placeholder="...">
+        <h3>Form of Material Generating Most Smoke</h3>
+        <input type="text" name="form_most_smoke" placeholder="...">
+        <h3>Avenue of Smoke Travel</h3>
+        <input type="text" name="avenue_smoke_travel" placeholder="...">
+
+        <h3>SECTION 4 - PROPERTY</h3>
+        <h3>Mobile Property</h3>
+        <input type="text" name="mobile_property" placeholder="...">
+        <h3>YR.</h3>
+        <input type="text" name="year1" placeholder="...">
+        <h3>Make</h3>
+        <input type="text" name="make1" placeholder="...">
+        <h3>Model</h3>
+        <input type="text" name="model1" placeholder="...">
+        <h3>Serial No.</h3>
+        <input type="text" name="serial_number1" placeholder="...">
+        <h3>License No. (if any)</h3>
+        <input type="text" name="license_number" placeholder="...">
+        <h3>Equipment Involved in Ignition</h3>
+        <input type="text" name="equipment_involved" placeholder="...">
+        <h3>YR.</h3>
+        <input type="text" name="year2" placeholder="...">
+        <h3>Make</h3>
+        <input type="text" name="make2" placeholder="...">
+        <h3>Model</h3>
+        <input type="text" name="model2" placeholder="...">
+        <h3>Serial No.</h3>
+        <input type="text" name="serial_number2" placeholder="...">
+        <h3>Voltage (if any)</h3>
+        <input type="text" name="voltage" placeholder="...">
+
+        <h3>SECTION 5 - PREPARER OF THIS REPORT</h3>
+        <h3>Investigator's Signature</h3>
+        <input type="text" name="reporter" placeholder="...">
+        <h3>Date Now</h3>
+        <input type="datetime-local" name="date_of_complete_report">
+
+
         <input type="hidden" name="id" value="<?php echo $id;?>">
+        <input type="hidden" name="assigned_id" value="<?php echo $assigned_id;?>">
         <input type="hidden" name="name" value="<?php echo $name;?>">
         <input type="hidden" name="username" value="<?php echo $username;?>">
         <input type="hidden" name="place" value="<?php echo $place;?>">
