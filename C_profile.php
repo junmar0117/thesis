@@ -145,14 +145,14 @@ include_once('Userheader.php');
             {
             ?>
              <tr>
-             <td><?php echo $row['id']  ?></td>
-             <td><?php echo $row['name']  ?></td>
+             <td><?php echo $row['report_id']  ?></td>
+             <td><?php echo $row['names']  ?></td>
              <td><?php echo $row['date']; echo " - "; echo $row['time']?></td>
              <td><?php echo $row['incident']  ?></td>
              <td><?php echo $row['status'] ?></td>
              <td>
                 <form action="viewReports.php" method="POST">
-                     <input type="hidden" name="id" value="<?php echo $row['id']?>">
+                     <input type="hidden" name="id" value="<?php echo $row['report_id']?>">
                      <button class="viewReportbtn" type="submit">View</button>
                 </form>
             </td>
