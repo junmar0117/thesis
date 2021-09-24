@@ -276,14 +276,8 @@ if(mysqli_num_rows($row_b) > 0)
             google.maps.event.addDomListener(window, "load", initialize());
             </script>      
         <form action="completeReportAction.php" method="POST">
-        <h3>Who was involved</h3>
-        <input type="text" name="who" placeholder="...">
         <h3>When did it take place?</h3>
         <input type="datetime-local" name="when" placeholder="...">
-        <h3>Why did it happen?</h3>
-        <input type="text" name="why" placeholder="...">
-        <h3>How did it happen?</h3>
-        <input type="text" name="how" placeholder="...">
         <input type="hidden" name="id" value="<?php echo $id;?>">
         <input type="hidden" name="name" value="<?php echo $name;?>">
         <input type="hidden" name="username" value="<?php echo $username;?>">

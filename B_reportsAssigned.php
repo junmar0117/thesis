@@ -170,8 +170,9 @@ else {
         <td><?php echo $row['incident']  ?></td>
         <td><?php echo $row['status'] ?></td>
         <td>
-            <form action="completeReport.php" method="POST">
+            <form action="B_victimchildornot.php" method="POST">
                 <input type="hidden" name="id" value="<?php echo $row['report_id']?>">
+                <input type="hidden" name="assigned_id" value="<?php echo $row['id']?>">
                 <button type="submit">Complete</button>
             </form>
         </td>
