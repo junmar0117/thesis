@@ -27,7 +27,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 ?>
 <?php
 $url = "";
-$url != 'B_crimeornot.php';
+$url != 'B_victimchildornot.php';
 
 if ($_SERVER['HTTP_REFERER'] == $url) 
 {
