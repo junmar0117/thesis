@@ -26,9 +26,10 @@
   </nav>
 
     <div id="floating-panel">
-      <h1>Reported Incidents Map<i class="fas fa-cog" style="padding-left:5px;"></i></h1>
+      
+      <h1><br> Reported Incidents Map</h1>
       <hr>
-      <h2>Menu</h2>
+      <h2><center>Options<i class="fas fa-cog" style="padding-left:5px;"></i></center></h2>
 
       <table class="hmaptab">
         <tr>
@@ -37,22 +38,6 @@
           <button class="hmbut" onclick="SwitchMap()"> On/Off<i class="fas fa-power-off" style="padding-left:5px;"></i></button>
 </td>
 
-        
-        <td>
-        
-          <button class="hmbut" onclick="changeGradient()">Gradient<i class="fas fa-brush" style="padding-left:5px;"></i></button>
-</td>
-</tr>
-        <tr>
-        <td>
-        
-          <button class="hmbut" onclick="changeRadius()">Radius<i class="fas fa-dot-circle" style="padding-left:5px;"></i></button>
-</td>
-        
-        <td>
-        
-          <button class="hmbut" onclick="changeOpacity()">Opacity<i class="fas fa-circle" style="padding-left:5px;"></i></button>
-</td>
 </tr>
 </table>
 
@@ -78,10 +63,6 @@ function initMap() {
       center: center
     });
 
-    var marker = new google.maps.Marker({
-      position: center,
-      map: map
-    });
 
     var allReport = JSON.parse(document.getElementById('allReport').innerHTML);
     showAllReport(allReport)
@@ -94,6 +75,27 @@ function showAllReport(allReport) {
             map:map
         });
     })
+}
+function showAllReport(allReport) {
+	var infoWind = new google.maps.InfoWindow;
+	Array.prototype.forEach.call(allReport, function(data){
+		var content = document.createElement('div');
+		var strong = document.createElement('strong');
+		
+		strong.textContent = data.type;
+		content.appendChild(strong);
+
+
+		var marker = new google.maps.Marker({
+	      position: new google.maps.LatLng(data.lat, data.lng),
+	      map: map
+	    });
+
+	    marker.addListener('click', function(){
+	    	infoWind.setContent(content);
+	    	infoWind.open(map, marker);
+	    })
+	})
 }
 
 
