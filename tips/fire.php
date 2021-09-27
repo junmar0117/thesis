@@ -30,7 +30,7 @@ session_start();
             <div class="hpFirstleftborder">
                 <br>
                 <br>
-                <p p id="tipsB">Tips when a Fire starts</p>
+                <p id="tipsB">Tips when a Fire starts</p>
                 <br>
                 
                     <p id="tipsC">Know how to safely operate a fire extinguisher
@@ -50,7 +50,7 @@ session_start();
                     <p id="tipsC"><b>Be respectful.</b> Talk directly with the neighbor involved about a problem situation. Don’t gossip; that damages relationships and creates trouble.
 </p>
                 <hr>
-                <p p id="tipsB">Tips if your clothes catch on fire</p>
+                <p id="tipsB">Tips if your clothes catch on fire</p>
                 
                     <p id="tipsC"><b>Stop</b> what you’re doing.
 </p>
