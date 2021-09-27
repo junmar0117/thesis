@@ -41,7 +41,7 @@ $user = $_SESSION['user']; //assigns user value
 <html lang="en">
 <head>
     <meta charset = "utf-8">
-    <title>R & R | Bureau of Fire Protection Profile (A)</title>
+    <title>AidPack | Bureau of Fire Protection Profile (A)</title>
     <meta name ="viewport" content="width=devoce-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/BFP_profilestyle.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -60,7 +60,7 @@ include_once('B_Userheader.php');
     <div class="profileBox">
     <div class="profileTagcontainer">
     <h1><?php echo $user;?></h1>
-        <h2>Bureau of Fire Protection (BFP) Administrator Account</h2>
+        <h2>Local Barangay Administrator Account</h2>
 
     <form action="F_changePassword.php" method="GET">
         <input type="hidden" name="id" value="<?php echo $f_id;?>">

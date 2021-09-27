@@ -23,7 +23,7 @@
 <body>
 
 <div class="topnav" id="myTopnav">
-  <a href="B_profile.php" class= "logactive">AidPack</a>
+  <a href="B_profile.php" class= "logactive">AidPack | <?php echo $user;?></a>
   <div class="FRC">
     <div class="dropdown">
       <?php
@@ -37,8 +37,8 @@
             }
       }
       ?>
-      <h3>Welcome, <?php echo $name;?></h3>
-      <button href="#" onclick="myFunction()" class="dropbtn">menu<i class="fas fa-caret-down" style="padding-left: 5px;"></i></button>
+      
+      <button href="#" onclick="myFunction()" class="dropbtn">Menu<i class="fas fa-caret-down" style="padding-left: 5px;"></i></button>
       <div id="myDropdown" class="dropdown-content">
   <a href="index.php">Home</a>
   <a href="B_profile.php">Profile</a>

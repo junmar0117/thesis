@@ -61,7 +61,7 @@ include_once('B_Userheader.php');
 </div>
     </div>
     <div class="tab">
-  <button class="tablinks" onclick="openCity(event, 'Accounts')">Accounts</button>
+  <button class="tablinks" id="defaultOpen" onclick="openCity(event, 'Accounts')">Accounts</button>
   <button class="tablinks" onclick="openCity(event, 'Reports')">Reports</button>
 </div>
 <?php

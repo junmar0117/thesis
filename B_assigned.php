@@ -63,13 +63,10 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
         while($row = mysqli_fetch_array($queryID))
         {
         ?>
-                <table class="bassh">
-                    <tr>
-                <td><input type="radio"  name="b_id" value="<?php echo $row['id'];?>"> <?php echo " "; echo $row['id']; echo " / "; echo $row['name']; ?></input></td>
-                </tr>
-        </table>
+                <div class="bassh">
+                <input type="radio"  name="b_id" value="<?php echo $row['id'];?>"> <?php echo " "; echo $row['id']; echo " / "; echo $row['name']; ?>
                 <input type="hidden" name="id" value="<?php echo $id;?>">
-        
+        </div>
         <?php
         }
         ?>

@@ -54,8 +54,10 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
         while($row = mysqli_fetch_array($queryID))
         {
         ?>
-                <input type="radio" name="f_id" id="type" value="<?php echo $row['id'];?>"><?php echo $row['id']; echo "/"; echo $row['name'];?></input><br>
+        <div class="bassh">
+                <input type="radio" name="f_id" id="type" value="<?php echo $row['id'];?>"><?php echo $row['id']; echo "/"; echo $row['name'];?></input>
                 <input type="hidden" name="id" value="<?php echo $id;?>">
+        </div>
         <?php
         }
         ?>
