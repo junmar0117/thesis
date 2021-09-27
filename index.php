@@ -37,7 +37,7 @@ session_start();
                 <p style="font-weight:bold;">Major response organizations from your local barangay to the</p>
                 <p style="font-weight:bold;">Philippine National Police, and Bureau of Fire Protection.</p><br>
                 <br>
-                <p>AidPack seeks to provide a variety of response to</p>
+                <p>AidPack seeks to provide a variety of reporting to</p>
                 <p>Pandacan, Manila</p>
                 <br>
                 <br>
@@ -49,7 +49,7 @@ session_start();
 
     <div class="indexContent3">
         <div class="indexPBB">
-            <div class="hpSecHeader3">Featured <a id="reportsColor">Reports</a></div>
+            <div class="hpSecHeader3"><a id="reportsColor">Featured Reports</a></div>
             <br>
             <br>
 

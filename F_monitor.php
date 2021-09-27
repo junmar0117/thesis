@@ -51,7 +51,7 @@ $user = $_SESSION['user']; //assigns user value
 
     <div class="monitorHeaderContainer">
     <h1>Bureau of Fire Protection Report Monitoring</h1>
-    <h2>Subhead</h2>
+    <h2>View submitted BFP reports</h2>
     <br>
 </div>
 <br>

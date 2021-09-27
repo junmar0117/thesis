@@ -195,4 +195,8 @@ textarea{
     .reportmainwrapper{
       margin: 10% 10% 0 10%;
     }
+
+    .baddtd2 h1, .baddtd h1, .baddtd h2{
+        font-size: 16px;
+    }
 }

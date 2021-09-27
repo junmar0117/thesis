@@ -189,9 +189,14 @@ body{
 @media only screen and (max-width: 600px) {
     .register-box, .login-box{
         width:100%;
+        padding-top: 20%;
     }
     
     .login-box > h1{
-        font-size: 25px;
+        font-size: 16px;
+    }
+
+    .rlch1, .rlch2, label{
+        font-size: 16px;
     }
 }

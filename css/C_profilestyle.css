@@ -305,4 +305,23 @@ label{
     h1{
         font-size: 20px;
     }
+
+    .profileTagcontainer{
+        padding-top: 20%;
+    }
+
+    .profileTagcontainer h1, .userdetailsheader, .profileRepHisHeader a{
+        font-size: 20px;
+    }
+
+    .profileTagcontainer2{
+        padding-top: 10%;
+    }
+    .profileTagcontainer2 h1, .profileTagcontainer2 h2{
+        font-size: 16px;
+
+    }
+    .profileReportBtn{
+        margin-left: 10%;
+    }
 }

@@ -511,4 +511,18 @@ a{
     .profileBox > h1{
         font-size: 20px;
     }
+    
+    .profileTagcontainer{
+        padding-top:15%;
+    }
+    .profileTagcontainer > h1, .profileTagcontainer > h2, .adminCreatedAccHead {
+        font-size: 20px;
+    }
+
+    .monitorHeaderContainer{
+        padding-top: 15%;
+    }
+    .monitorHeaderContainer > h1{
+        font-size: 20px;
+    }
 }

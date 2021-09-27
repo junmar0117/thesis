@@ -92,4 +92,12 @@ input[type=submit]:hover{
         margin-left: 5%;
         margin-right: 5%;
     }
+
+    .rlch1, .changePWContainer2 h3{
+        font-size: 16px;
+    }
+
+    .changePWContainer2{
+        padding-top: 15%;
+    }
 }
