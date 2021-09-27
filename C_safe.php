@@ -75,7 +75,7 @@ include_once('Userheader.php');
             </td>
             <td>
             <form action="safeAction.php" method="POST">
-                     <input type="hidden" name="report_id" value="<?php echo $row['id']?>">
+                     <input type="hidden" name="report_id" value="<?php echo $row['report_id']?>">
                      <input type="hidden" name="c_id" value="<?php echo $user_id?>">
                      <input type="hidden" name="name" value="<?php echo $name?>">
                      <input type="radio" id="Yes" name="safe" value="Yes">
