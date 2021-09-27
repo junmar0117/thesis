@@ -56,20 +56,20 @@ include_once('Userheader.php');
                 $name = $row['name'];
             }
 
-            $query = mysqli_query($con, "SELECT * from reports ORDER BY id DESC"); // SQL Query
+            $query = mysqli_query($con, "SELECT * from reports ORDER BY report_id DESC"); // SQL Query
             while($row = mysqli_fetch_array($query))
             {
             ?>
              <tr>
              <td><?php echo $row['type']  ?></td>
              <td><?php echo $row['barangay']  ?></td>
-             <td><?php echo $row['name']  ?></td>
+             <td><?php echo $row['names']  ?></td>
              <td><?php echo $row['date']; echo " - "; echo $row['time']?></td>
              <td><?php echo $row['incident']  ?></td>
              <td><?php echo $row['status'] ?></td>
              <td>
                 <form action="viewReports.php" method="POST">
-                     <input type="hidden" name="id" value="<?php echo $row['id']?>">
+                     <input type="hidden" name="id" value="<?php echo $row['report_id']?>">
                      <button class="viewReportbtn2" type="submit">View</button>
                 </form>
             </td>
