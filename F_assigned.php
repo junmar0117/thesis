@@ -36,9 +36,8 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 </nav>
 <div class="CreportHeader">
     <h1>Bureau of Fire Protection Incident Report</h1>
-    <h2>Input all necessary information</h2>
+    <h2>Select a staff to assign</h2>
     <hr>
-    <h3>Status: lorem</h3>
     </div>
     <br>
     <div class="CreportInci">

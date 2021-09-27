@@ -37,7 +37,7 @@ session_start();
                 <p style="font-weight:bold;">Major response organizations from your local barangay to the</p>
                 <p style="font-weight:bold;">Philippine National Police, and Bureau of Fire Protection.</p><br>
                 <br>
-                <p>R & R seeks to provide a variety of response to</p>
+                <p>AidPack seeks to provide a variety of response to</p>
                 <p>Pandacan, Manila</p>
                 <br>
                 <br>
@@ -132,7 +132,7 @@ session_start();
     <div class="indexContent2">
         <table class="indexAbout">
             <tr>
-                <th class="hpSecHeader2">R И R</th> 
+                <th class="hpSecHeader2">AidPack</th> 
             </tr>   
             <tr>
                 <td>
@@ -140,14 +140,14 @@ session_start();
                         <br><br>
                     <a class="AboutSubhead">Report to Respond</a>
                         <br><br>
-                    <p style="font-size: 18px;">R & R assists with incident reporting to connect response organizations with civilians.</p>
+                    <p style="font-size: 18px;">AidPack assists with incident reporting to connect response organizations with civilians.</p>
                 </td>
                 <td>
                     <a class="hpAboutHeader">+ US</a>
                         <br><br>
                     <a class="AboutSubhead">In Development</a>
                         <br><br>
-                    <p style="font-size: 18px;">R & R is currently in its development phase to test the intended features for the public before release.</p>
+                    <p style="font-size: 18px;">AidPack is currently in its development phase to test the intended features for the public before release.</p>
                 </td>
             </tr>
         </table>

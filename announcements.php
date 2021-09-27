@@ -54,7 +54,8 @@ if ($_SERVER['HTTP_REFERER'] == $url)
             if($_SESSION['user'] == "b_admin")
             {
             ?> 
-            <a href="B_addAnnouncements.php"><button>Add Announcements</button></a> 
+            <br>
+            <a class="addAnn" href="B_addAnnouncements.php">Add Announcements</a> 
             <?php
             }
             ?>

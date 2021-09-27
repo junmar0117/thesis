@@ -337,6 +337,21 @@ div.hpSecHeader4{
   border-color: #000;
 }
 
+.addAnn{
+  font-size: 20px;
+  color: #555;
+  font-weight: 400;
+  padding: 5px 10px;
+  border: 1px solid #d3d3d3;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #fff;
+}
+
+.addAnn:hover{
+  color: #000;
+  text-decoration: none;
+  border-color: #000;
+}
 @media only screen and (max-width: 600px) {
   .hpFirstHeader{
     font-size:35px;

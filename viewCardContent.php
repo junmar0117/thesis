@@ -21,7 +21,7 @@ if ($_SERVER['HTTP_REFERER'] == $url)
 <html lang="en">
 <head>
     <meta charset = "utf-8">
-    <title>R & R | View</title>
+    <title>AidPack | View</title>
     <meta name ="viewport" content="width=devoce-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/viewCC.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -79,35 +79,7 @@ if ($_SERVER['HTTP_REFERER'] == $url)
   <?php 
       }
       ?>
-      <div class="vccc4">
-      <h4>Related</h4>
-<h1>Other Announcements</h1>
-<br><br>
-<table class="vccc5">
-    <tr>
-      <td>
-        <a>Title</a>
-        <h3>by 'user' on 'date'</h3>
-        <p>content</p>
-      </td>
-    </tr>
-    <tr>
-    <td>
-    <a>Title</a>
-    <h3>by 'user' on 'date'</h3>
-        <p>content</p>
-    </td>
-    </tr>
-    <tr>
-    <td>
-    <a>Title</a>
-    <h3>by 'user' on 'date'</h3>
-        <p>content</p>
-    </td>
-    </tr>
-    
-    </table>
-    </div>
+      
     <br>
 </body>
 </html>

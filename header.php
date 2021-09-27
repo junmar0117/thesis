@@ -9,7 +9,7 @@
 <body>
 
 <div class="topnav" id="myTopnav">
-  <a href="index.php" class= "logactive">RИR</a>
+  <a href="index.php" class= "logactive">AidPack</a>
   <div class="FRC">
       <?php
       require 'connection.php';    
@@ -21,7 +21,6 @@
                 $name = $row['name'];
             }
       ?>
-      <h3>Welcome, Mr. <?php echo $name;?></h3>
       <div class="dropdown">
           <button href="#" onclick="myFunction()" class="dropbtn">Menu<i class="fas fa-caret-down" style="padding-left: 5px;"></i></button>
           <div id="myDropdown" class="dropdown-content">

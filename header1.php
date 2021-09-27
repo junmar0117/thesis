@@ -28,7 +28,7 @@
 <body>
 
 <div class="topnav" id="myTopnav">
-  <a href="index.php" class= "logactive">RИR</a>
+  <a href="index.php" class= "logactive">AidPack</a>
   <div class="FRC">
     <a href="C_register.php" class="signuphovercolor">Sign up</a>
 
