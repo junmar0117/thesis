@@ -29,6 +29,7 @@
   <div class="dropdown">
     <button href="#" onclick="myFunction()" class="dropbtn">menu<i class="fas fa-caret-down" style="padding-left: 5px;"></i></button>
     <div id="myDropdown" class="dropdown-content">
+    <a href="index.php">Home</a>
       <a href="C_profile.php">Profile</a>
   <a href="announcements.php">Announcements</a>
   <a href="C_safe.php">Status Update</a>

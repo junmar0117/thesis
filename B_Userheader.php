@@ -28,6 +28,7 @@
     <div class="dropdown">
       <button href="#" onclick="myFunction()" class="dropbtn">menu<i class="fas fa-caret-down" style="padding-left: 5px;"></i></button>
       <div id="myDropdown" class="dropdown-content">
+  <a href="index.php">Profile</a>
   <a href="B_profile.php">Profile</a>
   <a href="B_addAnnouncements.php">Broadcast</a>
   <a href="announcements.php">Announcements</a>
