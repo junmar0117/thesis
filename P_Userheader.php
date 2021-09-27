@@ -26,6 +26,18 @@
   <a href="P_profile.php" class= "logactive">RИR</a>
   <div class="FRC">
     <div class="dropdown">
+    <?php
+      require 'connection.php';    
+      if(isset($_SESSION['p_user']))
+      {
+            $queryID = mysqli_query($con, "SELECT * from p_admin WHERE p_admin.username = '".$_SESSION['p_user']."' LIMIT 1");
+            while($row = mysqli_fetch_array($queryID))
+            {           
+                $name = $row['name'];
+            }
+      }
+      ?>
+      <h3>Welcome, Mr. <?php echo $name;?></h3>
       <button href="#" onclick="myFunction()" class="dropbtn">menu<i class="fas fa-caret-down" style="padding-left: 5px;"></i></button>
       <div id="myDropdown" class="dropdown-content">
       <a href="index.php">Home</a>

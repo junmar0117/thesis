@@ -49,7 +49,16 @@ if ($_SERVER['HTTP_REFERER'] == $url)
     </nav>
     <div class="indexContent3">
         <div class="indexPBB">
-            <div class="hpSecHeader3"><a id="reportsColor">Announcements</a></div>
+            <div class="hpSecHeader3"><a id="reportsColor">Announcements</a>
+            <?php 
+            if($_SESSION['b_user'] == "b_admin")
+            {
+            ?> 
+            <a href="B_addAnnouncements.php"><button>Add Announcements</button></a> 
+            <?php
+            }
+            ?>
+            </div>
             <br>
             <br>
 
@@ -94,6 +103,3 @@ if ($_SERVER['HTTP_REFERER'] == $url)
           </div>  
 </body>
 </html>
-
-
-
