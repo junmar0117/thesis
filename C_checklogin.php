@@ -15,6 +15,7 @@ $password = ($_POST['password']);
                 if(password_verify($password, $row['password'])) // checks if there are any matching fields
                 {
                     $_SESSION['user'] = $username; //set the username in a session. This serves as a global variable
+                    $_SESSION['c_user'] = $username;
 					$_SESSION['type'] = 'civilian';//set the type in a session. This serves as a global variable
                     $_SESSION['name'] = $row['name'];
 					Print '<script>alert("Logged in successfully!");</script>'; //Prompts the user

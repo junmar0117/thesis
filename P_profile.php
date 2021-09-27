@@ -32,7 +32,7 @@ $user = $_SESSION['user']; //assigns user value
 <html lang="en">
 <head>
     <meta charset = "utf-8">
-    <title>R & R | Philippine National Police Profile (A)</title>
+    <title>AidPack | Philippine National Police Profile (A)</title>
     <meta name ="viewport" content="width=devoce-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/BFP_profilestyle.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -58,11 +58,14 @@ include_once('P_Userheader.php');
     <br>
 </div>
 </div>
-<br>
+<div class="tab">
+  <button class="tablinks" id="defaultOpen" onclick="openCity(event, 'Accounts')">Accounts</button>
+  <button class="tablinks" onclick="openCity(event, 'Reports')">Reports</button>
+</div>
     <?php
     if($user=="p_admin")
     {
-
+        Print '<div class="tabcontent" id="Accounts">';
         Print '<div class="adminAccAdd">';
         print '<table class="addAccTable">';
         print '<tr>';
@@ -103,10 +106,27 @@ include_once('P_Userheader.php');
                     Print'</tr>';
                     Print'</table>';
                 Print'</div>';
-                Print'</div>';
                 print '<hr>';
 }
 ?>
+  <script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
     <?php
 if($user=="p_admin")
 {
@@ -134,6 +154,8 @@ if($user=="p_admin")
             Print '</table>';
             Print '</div>';
             ?>
+            </div>
+            <div id="Reports" class="tabcontent">
             <h2 class="adminCreatedAccHead">Reports</h2>
             <div style="overflow-x:auto;">
             <table class="AdminProfileTable">
@@ -169,6 +191,7 @@ if($user=="p_admin")
             <?php
             }
             Print '</table>';
+            Print '</div>';
 }
 else {
     Print'<a class="profileRepHisHeader" style="text-align:center;">REPORTS ASSIGNED</a>';

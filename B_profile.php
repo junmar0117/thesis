@@ -32,7 +32,7 @@ $user = $_SESSION['user']; //assigns user value
 <html lang="en">
 <head>
     <meta charset = "utf-8">
-    <title>R & R | Local Barangay Profile (A)</title>
+    <title>AidPack | Local Barangay Profile (A)</title>
     <meta name ="viewport" content="width=devoce-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/BFP_profilestyle.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -60,16 +60,20 @@ include_once('B_Userheader.php');
     <br>
 </div>
     </div>
+    <div class="tab">
+  <button class="tablinks" id="defaultOpen" onclick="openCity(event, 'Accounts')">Accounts</button>
+  <button class="tablinks" onclick="openCity(event, 'Reports')">Reports</button>
+</div>
 <?php
 if($user=="b_admin")
 {
-    
+    Print '<div class="tabcontent" id="Accounts">';
     Print '<div class="adminAccAdd">';
     print '<table class="addAccTable">';
     print '<tr>';
     print '<td class="aaaHead">';
     Print '<h1>Add Account </h1>';
-    Print '<h2>subhead</h2>';
+    Print '<h2>Input account information</h2>';
     print '</td>';
     print '<td class="aaaHead2">';
         Print '<form action="B_profile.php" method="POST">';
@@ -103,7 +107,6 @@ if($user=="b_admin")
         Print'</td>';
         Print'</tr>';
         Print'</table>';
-    Print'</div>';
     Print'</div>';
     print '<hr>';
 }
@@ -188,6 +191,8 @@ if($user=="b_admin")
             Print '</table>';
             Print '</div>';
             ?>
+            </div>
+            <div id="Reports" class="tabcontent">
             <h2 class="adminCreatedAccHead">Reports</h2>
             <div style="overflow-x:auto;">
             <table class="AdminProfileTable">
@@ -223,8 +228,10 @@ if($user=="b_admin")
             <?php
             }
             Print '</table>';
+            Print '</div>';
 }
 else {
+    
     Print '<h2 class="adminCreatedAccHead">REPORTS ASSIGNED</h2>';
     Print '<table class="AdminProfileTable">';
     Print '<tr>';
@@ -258,6 +265,7 @@ else {
 }
 ?>
 </table>
+</div>
         </div>
     </div>
     </section>

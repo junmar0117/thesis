@@ -46,9 +46,8 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 </nav>
 <div class="CreportHeader">
     <h1>Barangay Incident Report</h1>
-    <h2>Input all necessary information</h2>
+    <h2>Select a staff to assign</h2>
     <hr>
-    <h3>Status: lorem</h3>
     </div>
     <br>
     <div class="CreportInci">
@@ -64,8 +63,10 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
         while($row = mysqli_fetch_array($queryID))
         {
         ?>
-                <h4 class="bassh"><input type="radio"  name="b_id" value="<?php echo $row['id'];?>"> <?php echo " "; echo $row['id']; echo " / "; echo $row['name']; ?></input></h4><br>
+                <div class="bassh">
+                <input type="radio"  name="b_id" value="<?php echo $row['id'];?>"> <?php echo " "; echo $row['id']; echo " / "; echo $row['name']; ?>
                 <input type="hidden" name="id" value="<?php echo $id;?>">
+        </div>
         <?php
         }
         ?>

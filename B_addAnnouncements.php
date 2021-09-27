@@ -10,7 +10,7 @@ if ($_SERVER['HTTP_REFERER'] == $url)
 ?>
 <?php
 session_start();
-if($_SESSION['user'] && $_SESSION['type']=='barangay')
+if($_SESSION['user'] == "b_admin" && $_SESSION['type']=="barangay")
 { //checks if user is logged in   
 }else{
   header("location:index.php "); // redirects if user is not logged in

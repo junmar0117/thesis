@@ -41,7 +41,7 @@ $user = $_SESSION['user']; //assigns user value
 <html lang="en">
 <head>
     <meta charset = "utf-8">
-    <title>R & R | Bureau of Fire Protection Profile (A)</title>
+    <title>AidPack | Bureau of Fire Protection Profile (A)</title>
     <meta name ="viewport" content="width=devoce-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/BFP_profilestyle.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -60,7 +60,7 @@ include_once('B_Userheader.php');
     <div class="profileBox">
     <div class="profileTagcontainer">
     <h1><?php echo $user;?></h1>
-        <h2>Bureau of Fire Protection (BFP) Administrator Account</h2>
+        <h2>Local Barangay Administrator Account</h2>
 
     <form action="F_changePassword.php" method="GET">
         <input type="hidden" name="id" value="<?php echo $f_id;?>">
@@ -151,7 +151,7 @@ else {
     Print'<h2 class="adminCreatedAccHead">REPORTS ASSIGNED</h2>';
     Print '<table class="AdminProfileTable">';
     Print '<tr>';
-    Print '<th>Account ID</th>';
+    Print '<th>Assigned ID</th>';
     Print '<th>Name of Reporter</th>';
     Print '<th>Date Reported</th>';
     Print '<th>Concern</th>';
@@ -170,6 +170,11 @@ else {
         <td><?php echo $row['incident']  ?></td>
         <td><?php echo $row['status'] ?></td>
         <td>
+            <form action="B_falseReport.php" method="POST">
+                <input type="hidden" name="id" value="<?php echo $row['report_id']?>">
+                <input type="hidden" name="assigned_id" value="<?php echo $row['id']?>">
+                <button type="submit">Marks as False</button>
+            </form>
             <form action="B_victimchildornot.php" method="POST">
                 <input type="hidden" name="id" value="<?php echo $row['report_id']?>">
                 <input type="hidden" name="assigned_id" value="<?php echo $row['id']?>">

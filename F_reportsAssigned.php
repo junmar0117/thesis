@@ -151,7 +151,7 @@ else {
     Print'<h2 class="adminCreatedAccHead">REPORTS ASSIGNED</h2>';
     Print '<table class="AdminProfileTable">';
     Print '<tr>';
-    Print '<th>Account ID</th>';
+    Print '<th>Assigned ID</th>';
     Print '<th>Name of Reporter</th>';
     Print '<th>Date Reported</th>';
     Print '<th>Concern</th>';
@@ -170,6 +170,11 @@ else {
         <td><?php echo $row['incident']  ?></td>
         <td><?php echo $row['status'] ?></td>
         <td>
+            <form action="F_falseReport.php" method="POST">
+                <input type="hidden" name="id" value="<?php echo $row['report_id']?>">
+                <input type="hidden" name="assigned_id" value="<?php echo $row['id']?>">
+                <button type="submit">Marks as False</button>
+            </form>
             <form action="<?php if($row['type'] == "House Fire"){echo "completeReport_fire.php";}else if($row['type'] == "Establishment Fire"){echo "completeReport_fire.php";}?>" method="POST">
                 <input type="hidden" name="id" value="<?php echo $row['report_id']?>">
                 <input type="hidden" name="assigned_id" value="<?php echo $row['id']?>">

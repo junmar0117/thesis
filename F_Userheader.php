@@ -23,11 +23,24 @@
 <body>
 
 <div class="topnav" id="myTopnav">
-  <a href="F_profile.php" class= "logactive">RИR</a>
+  <a href="F_profile.php" class= "logactive">AidPack | <?php echo $user;?></a>
   <div class="FRC">
     <div class="dropdown">
-      <button href="#" onclick="myFunction()" class="dropbtn">menu<i class="fas fa-caret-down" style="padding-left: 5px;"></i></button>
+    <?php
+      require 'connection.php';    
+      if(isset($_SESSION['f_user']))
+      {
+            $queryID = mysqli_query($con, "SELECT * from f_admin WHERE f_admin.username = '".$_SESSION['f_user']."' LIMIT 1");
+            while($row = mysqli_fetch_array($queryID))
+            {           
+                $name = $row['name'];
+            }
+      }
+      ?>
+      
+      <button href="#" onclick="myFunction()" class="dropbtn">Menu<i class="fas fa-caret-down" style="padding-left: 5px;"></i></button>
       <div id="myDropdown" class="dropdown-content">
+      <a href="index.php">Home</a>
   <a href="F_profile.php">Profile</a>
   <a href="announcements.php">Announcements</a>
   <a href="F_monitor.php">Monitor</a>

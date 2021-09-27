@@ -27,7 +27,6 @@ if ($_SERVER['HTTP_REFERER'] == $url)
 
 </head>
 <body>
-
     <nav>
         <?php
           if($_SESSION['user'] && $_SESSION['type']=='civilian')
@@ -50,7 +49,17 @@ if ($_SERVER['HTTP_REFERER'] == $url)
     </nav>
     <div class="indexContent3">
         <div class="indexPBB">
-            <div class="hpSecHeader3"><a id="reportsColor">Announcements</a></div>
+            <div class="hpSecHeader3"><a id="reportsColor">Announcements</a>
+            <?php 
+            if($_SESSION['user'] == "b_admin")
+            {
+            ?> 
+            <br>
+            <a class="addAnn" href="B_addAnnouncements.php">Add Announcements</a> 
+            <?php
+            }
+            ?>
+            </div>
             <br>
             <br>
 
@@ -95,6 +104,3 @@ if ($_SERVER['HTTP_REFERER'] == $url)
           </div>  
 </body>
 </html>
-
-
-
