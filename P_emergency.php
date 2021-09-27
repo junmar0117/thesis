@@ -38,7 +38,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     <h1>Philippine National Police Incident Report</h1>
     <h2>Input all necessary information</h2>
     <hr>
-    <h3>Status: lorem</h3>
     </div>
     <br>
     <div class="CreportInci">

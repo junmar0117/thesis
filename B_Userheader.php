@@ -23,7 +23,7 @@
 <body>
 
 <div class="topnav" id="myTopnav">
-  <a href="B_profile.php" class= "logactive">AidPack | <?php echo $user;?></a>
+  <a href="B_profile.php" class= "logactive">AidPack | <?php echo $name;?></a>
   <div class="FRC">
     <div class="dropdown">
       <?php

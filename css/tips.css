@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@400;600&display=swap');
+
+body{
+    margin:0;
+    background-color: #fff;
+}
+
+.hpFirstSection{
+    padding:0;
+}
+
+.hpFirst{
+    width:100%;
+    background-color: #fff;
+    padding: 0% 10% 0% 10%;
+}
+
+.hpFirstHeader:hover{
+   text-decoration: none;
+   color: black;
+}
+
+#tipsB{
+  font-family: 'Raleway', sans-serif;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+#tipsC{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+
+  }
+
+.hpFirstleftborder{
+    border-left: 1px solid #d3d3d3;
+    border-right: 1px solid #d3d3d3;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 12%;
+}
