@@ -5,7 +5,7 @@ session_start();
 <html lang="en">
 <head>
     <meta charset = "utf-8">
-    <title>R & R | Incident Reporting</title>
+    <title>AidPack</title>
     <meta name ="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/homepage.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -147,7 +147,7 @@ session_start();
                         <br><br>
                     <a class="AboutSubhead">In Development</a>
                         <br><br>
-                    <p style="font-size: 18px;">AidPack is currently in its development phase to test the intended features for the public before release.</p>
+                    <p style="font-size: 18px;">AidPack is currently in its development phase to test out the intended features for its target users.</p>
                 </td>
             </tr>
         </table>
