@@ -124,6 +124,13 @@ padding: 0% 10%;
     font-family: 'Open Sans', sans-serif;
 
   }
+
+  #pnote{
+    font-size: 14px;
+    color: #555;
+    font-weight: 400;
+    font-family: 'Open Sans', sans-serif;
+  }
   @media only screen and (max-width: 600px) {
     .RPbutton{
         font-size: 14px;

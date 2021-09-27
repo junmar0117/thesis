@@ -71,12 +71,12 @@ include_once('Userheader.php');
           </div> 
           
           <div class="CreportdashbCon">
-<h1>Reports Today</h1>
+<h1>Total Reports</h1>
           <table class="Creportdashb">
 <tr>
-              <td id="numberOfsR1">Index Crimes</td>
-              <td id="numberOfsR1">Non-Index Crimes</td>
-              <td id="numberOfsR1"></td>
+              <td id="numberOfsR1">Local Barangay</td>
+              <td id="numberOfsR1">Bureau of Fire Protection</td>
+              <td id="numberOfsR1">Philippine National Police</td>
 </tr>
 
 <?php
@@ -98,12 +98,13 @@ include_once('Userheader.php');
 </tr>
 
 <tr>
-              <td id="numberOfsR3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
-              <td id="numberOfsR3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
-              <td id="numberOfsR3"></td>
+              <td id="numberOfsR3">Total Reports have been submitted.  These reports needs the assistance of the local barangay to resolve community concerns or incidents. </td>
+              <td id="numberOfsR3">Total Reports have been submitted. These reports needs the assistance of the BFP to resolve community concerns or incidents. </td>
+              <td id="numberOfsR3">Total Reports have been submitted. These reports needs the assistance of the PNP to resolve community concerns or incidents.</td>
 </tr>
 </table>
 <hr>
+<p id="pnote">New reports are thoroughly investigated for proof. Response officials will be alerted of verified reports.</p>
 </div>
 </body>
 </html>

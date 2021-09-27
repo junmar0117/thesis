@@ -29,20 +29,20 @@ session_start();
             <div class="hpFirstleftborder">
                 <br>
                 <br>
-                <p id="tipsB">POLICE/INVESTIGATION ASSISTANCE</p>
+                <p id="tipsB">Police/Investigation Assistance</p>
                 <p id="tipsC">PNP Hotline: 177</p>
                 <p id="tipsC">Aleng Pulis Hotline: 0919 777 7377</p>
                 <p id="tipsC">PNP Women and Children Protection Center</p>
                 <p id="tipsC">24/7 AVAWCD Office: (02) 8532-6690</p>
                 <p id="tipsC">Email address: wcpc_pnp@yahoo.com / wcpc_vawcd@yahoo.com / avawcd.wcpc@pnp.gov.ph</p>
                 <hr>
-                <p id="tipsB">LEGAL ASSISTANCE</p>
+                <p id="tipsB">Legal Assistance</p>
                 <p id="tipsC">Public Attorney’s Office (PAO)</p>
                 <p id="tipsC">Hotline: (02) 8929-9436 local 106, 107, or 159 (local “0” for operator)</p>
                 <p id="tipsC">(+62) 9393233665</p>
                 <p id="tipsC">Email address: pao_executive@yahoo.com</p>
                 <hr>
-                <p id="tipsB">REFERRAL SERVICES</p>
+                <p id="tipsB">Referral Services</p>
                 <p id="tipsC">Inter-Agency Council on Violence Against Women and their Children</p>
                 <p id="tipsC">Mobile numbers: 09178671907 | 09178748961</p>
                 <p id="tipsC">Email address: iacvawc@pcw.gov.ph</p>
