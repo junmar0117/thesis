@@ -53,7 +53,7 @@ include_once('B_Userheader.php');
     <h1>Barangay Report Monitoring</h1>
     <h2>View submitted barangay reports</h2>
     <button class="viewReportbtn" type="submit">Generate Monthly Report for <?php echo date('F Y'); ?></button></i>
-    <br>
+    <hr>
 </div>
 <br>
     <div class="tab">

@@ -13,7 +13,7 @@ $user = $_SESSION['user']; //assigns user value
 <html lang="en">
 <head>
     <meta charset = "utf-8">
-    <title> R & R | Safety </title>
+    <title> AidPack | Safety </title>
     <meta name ="viewport" content="width=devoce-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/C_profilestyle.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -30,7 +30,7 @@ include_once('Userheader.php');
     <div class="profileBox">
         <div class="profileTagcontainer2">
             <br>
-            <h1>ARE YOU SAFE?</h1>
+            <h1>Are you Safe?</h1>
             <h2>Update your status with incidents around you.</h2>
             
         </div>
