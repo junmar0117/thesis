@@ -43,11 +43,11 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
     <div class="CreportInci">
         
         <form action="F_assignedAction.php" method="POST">
-        <h2>Incident Details</h2><hr>
+        <h2>BFP Admins</h2><hr>
         <table class="bemerxy">
     <tr>
     <td>
-        <label for="typeOfInci">F Admins</label><br>
+    
         <?php
         require 'connection.php';  
         $queryID = mysqli_query($con, "SELECT * from f_admin");
@@ -64,10 +64,11 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
     </td>
     </tr>
         </table>
-        </div>
-
         <hr>
         <input type="submit" value="Submit"><br>
+        </div>
+
+        
         </form>
     <script>
 var map;
