@@ -86,7 +86,7 @@ input[type=submit]:hover{
     border-top: 1px solid #d3d3d3;
   }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 600px) {
     .changePWContainer{
         width: 90%;
         margin-left: 5%;

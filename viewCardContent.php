@@ -64,7 +64,7 @@ if ($_SERVER['HTTP_REFERER'] == $url)
       <div class="vccch">
     <h1><?php echo $row['title']; ?></h1>
     <p><?php echo $row['name']; echo " / "; echo date('F jS, Y',strtotime($row['date_created'])) ?></p>
-    <img src="<?php echo './assets/announcements/'.$row['image']?>" width="100%" height="500px">
+    <img src="<?php echo './assets/announcements/'.$row['image']?>" width="100%" >
       </div>
     <div class="vccc">
     <div class="vccc2">
