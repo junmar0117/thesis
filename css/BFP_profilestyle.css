@@ -349,6 +349,13 @@ a{
     border-color: #555;
 }
 
+.adminMonitorRep td > a{
+    padding: 5px 0px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    border-color: #555;
+}
+
 .viewReportbtn{
     cursor:pointer;
     border:none;
