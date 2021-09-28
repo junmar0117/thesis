@@ -60,7 +60,29 @@ if(mysqli_num_rows($row_b) > 0)
     <br>
         <h1>Records</h1>
         <h2>View updated records.</h2>
-            
+        <?php
+        require 'connection.php';    
+        if($_SERVER["REQUEST_METHOD"] == "POST")
+        {
+            $r_id = $_POST['report_id'];
+        }        
+
+        $querySafe = mysqli_query($con, "SELECT * from saferecords where report_id = $r_id and `safe` = 'Yes'");
+        $safeCount = array();
+        while($row = mysqli_fetch_array($querySafe))
+        {
+            $safeCount[] = $row['safe'];
+        } 
+
+        $querySafe1 = mysqli_query($con, "SELECT * from saferecords where report_id = $r_id");
+        $rowcount = mysqli_num_rows($querySafe1);
+
+        $querySafe2 = mysqli_query($con, "SELECT * from saferecords where report_id = $r_id and `safe` = 'No'");
+        $notSafeCount = mysqli_num_rows($querySafe2);
+
+        $numSafeCount = count($safeCount); 
+        ?>
+        <h3>Total Records: <?php echo $rowcount;?> <br> Total Safe Records: <?php echo $numSafeCount;?> <br> Total Not Safe Records: <?php echo $notSafeCount;?></h3>
         </div>
 
         <div style="overflow=x:auto;">
@@ -72,11 +94,8 @@ if(mysqli_num_rows($row_b) > 0)
                 <th>Safe?</th>
             </tr>
             <?php
-            require 'connection.php';    
-            if($_SERVER["REQUEST_METHOD"] == "POST")
-            {
-                $r_id = $_POST['report_id'];
-            }  
+                
+
             $query = mysqli_query($con, "SELECT * from saferecords where report_id = $r_id"); // SQL Query
             while($row = mysqli_fetch_array($query))
             {

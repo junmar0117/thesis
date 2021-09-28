@@ -138,7 +138,6 @@ include_once('B_Userheader.php');
                 <th>Date Created</th>
                 <th>Concern</th>
                 <th>Status</th>
-                <th>Safe Count</th>
                 <th>View Report</th>
                 <th>View Record</th>
             </tr>
@@ -170,7 +169,6 @@ include_once('B_Userheader.php');
                 <td><?php echo $row['date']; echo " - "; echo $row['time']?></td>
                 <td><?php echo $row['incident']  ?></td>
                 <td><?php echo $row['status']?></td>
-                <td><?php echo $numSafeCount?></td>
                 <td>
                     <form action="viewReports.php" method="POST">
                         <input type="hidden" name="id" value="<?php echo $row['report_id']?>">
@@ -199,7 +197,6 @@ include_once('B_Userheader.php');
                 <th>Date Created</th>
                 <th>Concern</th>
                 <th>Status</th>
-                <th>Safe Count</th>
                 <th>View Report</th>
                 <th>View Record</th>
             </tr>
@@ -231,7 +228,6 @@ include_once('B_Userheader.php');
                 <td><?php echo $row['date']; echo " - "; echo $row['time']?></td>
                 <td><?php echo $row['incident']  ?></td>
                 <td><?php echo $row['status']?></td>
-                <td><?php echo $numSafeCount?></td>
                 <td>
                     <form action="viewReports.php" method="POST">
                         <input type="hidden" name="id" value="<?php echo $row['report_id']?>">

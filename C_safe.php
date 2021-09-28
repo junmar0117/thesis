@@ -37,6 +37,7 @@ include_once('Userheader.php');
         <div style="overflow-x:auto;">
         <table class="ProfileReportHistory">
             <tr>
+                <th>Report ID</th>
                 <th>Incident</th>
                 <th>Barangay</th>
                 <th>Name of Reporter</th>
@@ -61,6 +62,7 @@ include_once('Userheader.php');
             {
             ?>
              <tr>
+             <td><?php echo $row['report_id']  ?></td>
              <td><?php echo $row['type']  ?></td>
              <td><?php echo $row['barangay']  ?></td>
              <td><?php echo $row['names']  ?></td>
