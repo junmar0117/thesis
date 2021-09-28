@@ -56,7 +56,6 @@ $user = $_SESSION['user']; //assigns user value
             <select name="type" id="type" required>
                 <option value="House Fire">House Fire</option>
                 <option value="Establishment Fire">Establishment Fire</option>
-                <option value="Others">Others</option>
             </select>
     </td>
     <td>

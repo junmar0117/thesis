@@ -1,6 +1,16 @@
 <?php
 session_start();
 ?>
+<?php
+$url = "";
+$url != 'conflictNeighbor.php';
+
+if ($_SERVER['HTTP_REFERER'] == $url) 
+{
+  header('Location: ../C_profile.php'); //redirect to some other page
+  exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
