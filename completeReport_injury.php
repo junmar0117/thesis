@@ -694,6 +694,7 @@ of Investigator (Medics, Local Officials, etc) (Address/Contact Nr)</h3>
         <input type="text" name="preparedBy" placeholder="...">
 
         <input type="hidden" name="id" value="<?php echo $id;?>">
+        <input type="hidden" name="assigned_id" value="<?php echo $assigned_id;?>">
         <input type="hidden" name="name" value="<?php echo $name;?>">
         <input type="hidden" name="username" value="<?php echo $username;?>">
         <input type="hidden" name="place" value="<?php echo $place;?>">

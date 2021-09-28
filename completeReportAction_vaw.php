@@ -113,7 +113,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         $query = "UPDATE `reports` SET `status`= 'Completed' WHERE `report_id` = $id";
 	    $results = mysqli_query($con, $query); //Query the users table
 
-        $query = "DELETE FROM `p_assigned` WHERE `id` = $assigned_id";
+        $query = "DELETE FROM `b_assigned` WHERE `id` = $assigned_id";
 	    $results = mysqli_query($con, $query); //Query the users table
 
         print '<script>alert("Report Successfully Filled!"); </script>'; // Prompts the user
