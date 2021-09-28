@@ -57,10 +57,10 @@ include_once('B_Userheader.php');
         <tr>
         <th class="reportmainwrapper2">
         <h1>Is it urgent?</h1>
-        <h2>lorem ipsum</h2>
+        <h2>Select your choice</h2>
         </th>
         <td class="reportmainwrapper3">
-        <h1>Is the perpetrator/suspect child?</h1>
+        <h1>Is the child, the perpetrator/suspect?</h1>
         <hr>
         <form action="<?php if($victim == "Yes"){echo "completeReport_vawchild.php";}else if($victim == "No"){echo "completeReport_vawvictim_childperpe.php";}?>" method="POST">
         <input type="hidden" name="victim" value="<?php echo $victim?>"></input>
@@ -84,9 +84,9 @@ include_once('B_Userheader.php');
 <h1>Reports Today</h1>
           <table class="Creportdashb">
 <tr>
-              <td id="numberOfsR1">Emergency</td>
-              <td id="numberOfsR1">Non-emergency</td>
-              <td id="numberOfsR1"></td>
+              <td id="numberOfsR1">Local Barangay</td>
+              <td id="numberOfsR1">Bureau of Fire Protection</td>
+              <td id="numberOfsR1">Philippine National Police</td>
 </tr>
 
 <?php
@@ -108,12 +108,14 @@ include_once('B_Userheader.php');
 </tr>
 
 <tr>
-              <td id="numberOfsR3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
-              <td id="numberOfsR3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
-              <td id="numberOfsR3"></td>
+              <td id="numberOfsR3">Total Reports have been submitted. These reports needs the assistance of the local barangay to resolve community concerns or incidents.</td>
+              <td id="numberOfsR3">Total Reports have been submitted. These reports needs the assistance of the BFP to resolve community concerns or incidents. </td>
+              <td id="numberOfsR3">Total Reports have been submitted. These reports needs the assistance of the PNP to resolve community concerns or incidents.</td>
 </tr>
 </table>
 <hr>
+<p id="pnote">New reports are thoroughly investigated for proof. Response officials will be alerted of verified reports.</p>
+
 </div>
 </body>
 </html>
