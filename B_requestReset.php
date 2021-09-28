@@ -74,7 +74,7 @@ if(isset($_POST["email"]))
 
     <nav>
         <?php
-            include_once('header.html');
+            include_once('header.php');
         ?>
     </nav>
 

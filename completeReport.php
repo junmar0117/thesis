@@ -245,7 +245,7 @@ if(mysqli_num_rows($row_b) > 0)
             var map;
 
             function initialize() {
-            var myLatlng = new google.maps.LatLng(<?php echo $row['latitude']?>,<?php echo $row['longitude']?>);
+            var myLatlng = new google.maps.LatLng(<?php echo $row['lat']?>,<?php echo $row['lng']?>);
 
             var myOptions = {
                 zoom: 15,
@@ -347,8 +347,8 @@ if(mysqli_num_rows($row_b) > 0)
                 $incident = $row['incident'];
                 $description = $row['description'];
                 $file = $row['file'];
-                $latitude = $row['latitude'];
-                $longitude = $row['longitude'];
+                $latitude = $row['lat'];
+                $longitude = $row['lng'];
                 $barangay = $row['barangay'];
                 $type = $row['type'];
                 $status = $row['status'];
@@ -410,7 +410,7 @@ if(mysqli_num_rows($row_b) > 0)
             var map;
 
             function initialize() {
-            var myLatlng = new google.maps.LatLng(<?php echo $row['latitude']?>,<?php echo $row['longitude']?>);
+            var myLatlng = new google.maps.LatLng(<?php echo $row['lat']?>,<?php echo $row['lng']?>);
 
             var myOptions = {
                 zoom: 15,
@@ -519,8 +519,8 @@ if(mysqli_num_rows($row_b) > 0)
                 $incident = $row['incident'];
                 $description = $row['description'];
                 $file = $row['file'];
-                $latitude = $row['latitude'];
-                $longitude = $row['longitude'];
+                $latitude = $row['lat'];
+                $longitude = $row['lng'];
                 $barangay = $row['barangay'];
                 $type = $row['type'];
                 $status = $row['status'];
@@ -581,7 +581,7 @@ if(mysqli_num_rows($row_b) > 0)
             var map;
 
             function initialize() {
-            var myLatlng = new google.maps.LatLng(<?php echo $row['latitude']?>,<?php echo $row['longitude']?>);
+            var myLatlng = new google.maps.LatLng(<?php echo $row['lat']?>,<?php echo $row['lng']?>);
 
             var myOptions = {
                 zoom: 15,

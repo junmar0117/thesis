@@ -118,7 +118,7 @@ include_once('B_Userheader.php');
                 print '<hr>';
 }
 ?>
-    <?php
+<?php
 if($user=="b_admin")
 {           
             //Accounts Created by Administrator        
