@@ -1,11 +1,21 @@
 <?php
 session_start();
 ?>
+<?php
+$url = "";
+$url != 'fire.php';
+
+if ($_SERVER['HTTP_REFERER'] == $url) 
+{
+  header('Location: ../C_profile.php'); //redirect to some other page
+  exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset = "utf-8">
-    <title>R & R | Incident Reporting</title>
+    <title>AidPack | Tips</title>
     <meta name ="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/tips.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -18,7 +28,7 @@ session_start();
 
     <nav>
         <?php
-            include_once('../Userheader.php');
+            include_once('Userheader.php');
         ?>
     </nav>
     <br>
@@ -30,6 +40,8 @@ session_start();
             <div class="hpFirstleftborder">
                 <br>
                 <br>
+                <p id="tipsB">Tips and Contacts</p>
+                <hr>
                 <p id="tipsB">Tips when a Fire starts</p>
                 <br>
                 
@@ -66,7 +78,7 @@ session_start();
         </div>
     </div>
     
-  
+  <hr>
 </body>
 
 </html>

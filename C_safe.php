@@ -37,6 +37,7 @@ include_once('Userheader.php');
         <div style="overflow-x:auto;">
         <table class="ProfileReportHistory">
             <tr>
+                <th>Report ID</th>
                 <th>Incident</th>
                 <th>Barangay</th>
                 <th>Name of Reporter</th>
@@ -61,6 +62,7 @@ include_once('Userheader.php');
             {
             ?>
              <tr>
+             <td><?php echo $row['report_id']  ?></td>
              <td><?php echo $row['type']  ?></td>
              <td><?php echo $row['barangay']  ?></td>
              <td><?php echo $row['names']  ?></td>
@@ -78,7 +80,7 @@ include_once('Userheader.php');
                      <input type="hidden" name="report_id" value="<?php echo $row['report_id']?>">
                      <input type="hidden" name="c_id" value="<?php echo $user_id?>">
                      <input type="hidden" name="name" value="<?php echo $name?>">
-                     <input type="radio" id="Yes" name="safe" value="Yes">
+                     <input type="radio" id="Yes" name="safe" value="Yes" required>
                      <label for="male">Yes</label>
                      <input type="radio" id="No" name="safe" value="No">
                      <label for="female">No</label>

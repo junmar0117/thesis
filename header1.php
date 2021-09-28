@@ -1,23 +1,4 @@
 <!DOCTYPE html>
-<?php
-	require 'connection.php';    
-    if(isset($_SESSION['b_user']))
-    {
-        $queryID = mysqli_query($con, "SELECT * from b_admin WHERE b_admin.username = '".$_SESSION['b_user']."' LIMIT 1");
-        while($row = mysqli_fetch_array($queryID))
-        {           
-            $patient_lastName = $row['patient_lastName'];
-        }
-    }
-    else if(isset($_SESSION['doctor_username']))
-    {
-        $queryID = mysqli_query($con, "SELECT * from doctor WHERE doctor.doctor_username = '".$_SESSION['doctor_username']."' LIMIT 1");
-        while($row = mysqli_fetch_array($queryID))
-        {
-            $doctor_lastName = $row['doctor_lastName'];
-        }
-    }
-?>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -28,10 +9,12 @@
 <body>
 
 <div class="topnav" id="myTopnav">
-  <a href="index.php" class= "logactive">AidPack</a>
+  <a href="index.php" class= "logactive">AidPack | Guest</a>
   <div class="FRC">
     <a href="C_register.php" class="signuphovercolor">Sign up</a>
 
+  
+  <div class="FRC">
   <div class="dropdown">
     <button href="#" onclick="myFunction()" class="dropbtn">Sign in<i class="fas fa-caret-down" style="padding-left: 5px;"></i></button>
     <div id="myDropdown" class="dropdown-content">
@@ -41,13 +24,10 @@
       <a href="P_login.php">Police</a>
     </div>
   </div>
-  
-  
   </div>
 </div>
 
 <script>
-
 /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
 function myFunction() {
@@ -69,58 +49,5 @@ window.onclick = function(event) {
 }
 
 </script>
-
 </body>
 </html>
-
-
-<ul>
-						<li><a href="index.php" title="Home">Home</a></li>
-						<li><a href="doctor.php" title="Doctors">Doctors</a></li>
-						<li>
-						<?php 
-                            if(isset($_SESSION['patient_username']))
-                            {
-                            echo '<a href="bookmark.php">Bookmark</a>';
-                            }
-                            else
-                            {
-
-                            }
-                            ?>
-						</li>
-						<li><a href="aboutus.php" title="About Us">About Us</a></li>
-						<li><a href="blogspage.php" title="Blogs">Blogs</a></li>
-						<li><?php 
-                            if(isset($_SESSION['patient_username']) || isset($_SESSION['doctor_username']) )
-                            {
-                               
-                            }
-                            else
-                            {
-								echo '<a href="signin.php" title="Sign in or Register">Sign in or Register</a>';
-                            }
-                            ?></li>
-						<li><?php 
-                        if(isset($_SESSION['patient_username']))
-                        {
-                        	echo "Welcome,"." ".$patient_lastName;							
-                        }
-                        else if(isset($_SESSION['doctor_username']))
-                        {
-							echo "Welcome, Dr."." ".$doctor_lastName;
-                        }
-                        ?></li>
-						<li>
-						<?php 
-                            if(isset($_SESSION['doctor_username']))
-                            {
-                            echo '<a href="subscription.php" class="btn-subscribe">Services</a>';
-                            }
-                            else
-                            {
-
-                            }
-                            ?>
-						</li>
-					</ul>

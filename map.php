@@ -23,7 +23,7 @@ $user = $_SESSION['user']; //assigns user value
 <html>
   <head>
     <meta charset="utf-8">
-    <title>R & R | Heatmap</title>
+    <title>AidPack | Map</title>
     <meta name ="viewport" content="width=devoce-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/heatmap.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -46,25 +46,6 @@ $user = $_SESSION['user']; //assigns user value
       ?>
   </nav>
 
-    <div id="floating-panel">
-      
-      <h1><br> Reported Incidents Map</h1>
-      <hr>
-      <h2><center>Options<i class="fas fa-cog" style="padding-left:5px;"></i></center></h2>
-
-      <table class="hmaptab">
-        <tr>
-          <td>
-          
-          <button id="hide-markers" class="hmbut" onclick="showMarkers()"> On <i class="fas fa-power-off" style="padding-left:5px;"></i></button>
-          <button id="show-markers" class="hmbut" onclick="hideMarkers()"> Off <i class="fas fa-power-off" style="padding-left:5px;"></i></button>
-</td>
-
-</tr>
-</table>
-
-      <hr>
-    </div>
     <div id="map"></div>
     <?php 
 			require 'reportTable.php';

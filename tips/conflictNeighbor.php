@@ -1,11 +1,21 @@
 <?php
 session_start();
 ?>
+<?php
+$url = "";
+$url != 'conflictNeighbor.php';
+
+if ($_SERVER['HTTP_REFERER'] == $url) 
+{
+  header('Location: ../C_profile.php'); //redirect to some other page
+  exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset = "utf-8">
-    <title>R & R | Incident Reporting</title>
+    <title>AidPack | Tips</title>
     <meta name ="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/tips.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -18,7 +28,7 @@ session_start();
 
     <nav>
         <?php
-            include_once('../Userheader.php');
+            include_once('Userheader.php');
         ?>
     </nav>
     <br>
@@ -29,6 +39,8 @@ session_start();
             <div class="hpFirstleftborder">
                 <br>
                 <br>
+                <p id="tipsB">Tips and Contacts</p>
+                <hr>
                 <p id="tipsB">Tips to Prevent Neighborhood Conflict or Community Conflict</p>
                 <p id="tipsC"">Your behavior affects your neighbors, just as what they do effects you. The key way to prevent conflict with neighbors is to be a good neighbor yourself. Simple consideration and conversation with neighbors helps achieve a peaceful coexistence.</p>
                 <hr>
@@ -65,7 +77,7 @@ session_start();
         </div>
     </div>
     
-   
+   <hr>
 </body>
 </html>
 

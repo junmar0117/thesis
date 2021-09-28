@@ -1,6 +1,16 @@
 <?php
 session_start();
 ?>
+<?php
+$url = "";
+$url != 'childabuse.php';
+
+if ($_SERVER['HTTP_REFERER'] == $url) 
+{
+  header('Location: ../C_profile.php'); //redirect to some other page
+  exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +28,7 @@ session_start();
 
     <nav>
         <?php
-            include_once('../Userheader.php');
+            include_once('Userheader.php');
         ?>
     </nav>
     <br>
@@ -29,6 +39,8 @@ session_start();
             <div class="hpFirstleftborder">
                 <br>
                 <br>
+                <p id="tipsB">Tips and Contacts</p>
+                <hr>
                 <p id="tipsB">Police/Investigation Assistance</p>
                 <p id="tipsC">PNP Hotline: 177</p>
                 <p id="tipsC">Aleng Pulis Hotline: 0919 777 7377</p>
@@ -50,7 +62,7 @@ session_start();
             </div>
         </div>
     </div>
-    
+    <hr>
 </body>
 </html>
 

@@ -23,7 +23,7 @@
 <body>
 
 <div class="topnav" id="myTopnav">
-  <a href="P_profile.php" class= "logactive">AidPack | <?php echo $name;?></a>
+  <a href="P_profile.php" class= "logactive">AidPack | <?php echo mb_strimwidth($name, 0, 10, "...");?></a>
   <div class="FRC">
     <div class="dropdown">
     <?php

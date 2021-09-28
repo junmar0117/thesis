@@ -33,7 +33,7 @@ $user = $_SESSION['user']; //assigns user value
 <html lang="en">
 <head>
     <meta charset = "utf-8">
-    <title> R & R | Report Monitoring</title>
+    <title> AidPack | Report Monitoring</title>
     <meta name ="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/BFP_profilestyle.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -57,7 +57,7 @@ include_once('B_Userheader.php');
 </div>
 <br>
     <div class="tab">
-        <button class="tablinks" onclick="openTabForm(event, 'all')">All Barangay</button>
+        <button class="tablinks" id="defaultOpen" onclick="openTabForm(event, 'all')">All Barangay</button>
         <button class="tablinks" onclick="openTabForm(event, 'em')">Emergency</button>
         <button class="tablinks" onclick="openTabForm(event, 'nonem')">Non-Emergency</button>
     </div>    
@@ -138,7 +138,6 @@ include_once('B_Userheader.php');
                 <th>Date Created</th>
                 <th>Concern</th>
                 <th>Status</th>
-                <th>Safe Count</th>
                 <th>View Report</th>
                 <th>View Record</th>
             </tr>
@@ -170,7 +169,6 @@ include_once('B_Userheader.php');
                 <td><?php echo $row['date']; echo " - "; echo $row['time']?></td>
                 <td><?php echo $row['incident']  ?></td>
                 <td><?php echo $row['status']?></td>
-                <td><?php echo $numSafeCount?></td>
                 <td>
                     <form action="viewReports.php" method="POST">
                         <input type="hidden" name="id" value="<?php echo $row['report_id']?>">
@@ -199,7 +197,6 @@ include_once('B_Userheader.php');
                 <th>Date Created</th>
                 <th>Concern</th>
                 <th>Status</th>
-                <th>Safe Count</th>
                 <th>View Report</th>
                 <th>View Record</th>
             </tr>
@@ -231,7 +228,6 @@ include_once('B_Userheader.php');
                 <td><?php echo $row['date']; echo " - "; echo $row['time']?></td>
                 <td><?php echo $row['incident']  ?></td>
                 <td><?php echo $row['status']?></td>
-                <td><?php echo $numSafeCount?></td>
                 <td>
                     <form action="viewReports.php" method="POST">
                         <input type="hidden" name="id" value="<?php echo $row['report_id']?>">

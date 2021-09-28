@@ -41,7 +41,7 @@ $user = $_SESSION['user']; //assigns user value
 <html lang="en">
 <head>
     <meta charset = "utf-8">
-    <title>AidPack | Bureau of Fire Protection Profile (A)</title>
+    <title>AidPack | Reports Assigned</title>
     <meta name ="viewport" content="width=devoce-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/BFP_profilestyle.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -79,7 +79,7 @@ include_once('B_Userheader.php');
         print '<tr>';
         print '<td class="aaaHead">';
         Print '<h1>Add Account </h1>';
-        Print '<h2>subhead</h2>';
+        Print '<h2>Input account information</h2>';
         print '</td>';
         print '<td class="aaaHead2">';
         Print '<form action="F_profile.php" method="POST">';
@@ -118,7 +118,7 @@ include_once('B_Userheader.php');
                 print '<hr>';
 }
 ?>
-    <?php
+<?php
 if($user=="b_admin")
 {           
             //Accounts Created by Administrator        
@@ -170,11 +170,27 @@ else {
         <td><?php echo $row['incident']  ?></td>
         <td><?php echo $row['status'] ?></td>
         <td>
+
+        <!-- Trigger/Open The Modal -->
+<button id="myBtn">False Alarm</button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>Are you sure you want to delete this and mark as false?</p>
+            <button><a href="B_reportsAssigned.php">Back</a></button>
             <form action="B_falseReport.php" method="POST">
                 <input type="hidden" name="id" value="<?php echo $row['report_id']?>">
                 <input type="hidden" name="assigned_id" value="<?php echo $row['id']?>">
-                <button type="submit">Marks as False</button>
+                <button type="submit">Confirm</button>
             </form>
+  </div>
+
+        </div>
+
             <form action="B_victimchildornot.php" method="POST">
                 <input type="hidden" name="id" value="<?php echo $row['report_id']?>">
                 <input type="hidden" name="assigned_id" value="<?php echo $row['id']?>">
@@ -191,6 +207,34 @@ else {
     </div>
     </section>
     <br>
+
+    <script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
 </body>
 </html>
 

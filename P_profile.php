@@ -32,7 +32,7 @@ $user = $_SESSION['user']; //assigns user value
 <html lang="en">
 <head>
     <meta charset = "utf-8">
-    <title>AidPack | Philippine National Police Profile (A)</title>
+    <title>AidPack | Philippine National Police Profile</title>
     <meta name ="viewport" content="width=devoce-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/BFP_profilestyle.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -194,7 +194,7 @@ if($user=="p_admin")
             Print '</div>';
 }
 else {
-    Print'<a class="profileRepHisHeader" style="text-align:center;">REPORTS ASSIGNED</a>';
+    Print'<h2 class="adminCreatedAccHead">REPORTS ASSIGNED</h2>';
     Print '<table class="AdminProfileTable">';
     Print '<tr>';
     Print '<th>Account ID</th>';

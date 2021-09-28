@@ -10,7 +10,7 @@ if ($_SERVER['HTTP_REFERER'] == $url)
 ?>
 <?php
 session_start();
-if($_SESSION['user'] && $_SESSION['type']=='barangay')
+if($_SESSION['user'] == "b_admin" && $_SESSION['type']=='barangay')
 { //checks if user is logged in   
 }else{
   header("location:index.php "); // redirects if user is not logged in
@@ -33,7 +33,7 @@ $user = $_SESSION['user']; //assigns user value
 <html lang="en">
 <head>
     <meta charset = "utf-8">
-    <title> R & R | </title>
+    <title> AidPack | Verification</title>
     <meta name ="viewport" content="width=devoce-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/BFP_profilestyle.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -76,9 +76,23 @@ include_once('B_Userheader.php');
                 <td><?php echo $row['name'] ?></td>
                 <td><?php echo $row['username'] ?></td>
                 <td><?php echo $row['valid_id']?></td>
-                <td><img src='<?php echo 'assets/validid/'.$row['image'];?>' id="myImg" style="height: 100px; width: 100px;"/></td>
+                <td><a href='<?php echo 'assets/validid/'.$row['image'];?>' target="_blank">View Proof</a></td>
                 <td><?php echo $row['time_sent']?></td>          
                 <td>
+
+                <!-- Trigger/Open The Modal -->
+<button id="myBtn">Open Modal</button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>Some text in the Modal..</p>
+  </div>
+
+</div>
                     <form action="verifyUser.php" method="POST">
                         <input type="hidden" name="id" value="<?php echo $row['id']?>">
                         <input type="hidden" name="ids" value="<?php echo $row['ids']?>">
@@ -89,34 +103,36 @@ include_once('B_Userheader.php');
             <?php
             }
             ?>
-            <div id="myModal" class="modal">
-            <span class="close">&times;</span>
-            <img class="modal-content" id="img01">
-            <div id="caption"></div>
-            </div>
+            
         </table>
     </div>
 </body>
 <script>
+
 // Get the modal
 var modal = document.getElementById("myModal");
 
-// Get the image and insert it inside the modal - use its "alt" text as a caption
-var img = document.getElementById("myImg");
-var modalImg = document.getElementById("img01");
-var captionText = document.getElementById("caption");
-img.onclick = function(){
-  modal.style.display = "block";
-  modalImg.src = this.src;
-  captionText.innerHTML = this.alt;
-}
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
 // When the user clicks on <span> (x), close the modal
-span.onclick = function() { 
+span.onclick = function() {
   modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
 }
 </script>
 </html>

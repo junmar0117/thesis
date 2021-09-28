@@ -17,7 +17,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 <html lang="en">
 <head>
     <meta charset = "utf-8">
-    <title> R & R | Philippine National Police Incident Report </title>
+    <title> AidPack | Philippine National Police Incident Report </title>
     <meta name ="viewport" content="width=devoce-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/BFPreportstyle.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css">
@@ -132,10 +132,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
             <label for="typeOfInci">Type of Incident</label>
             
             <select name="type" id="type" required>
-                <option value="Drugs">Drugs</option>
-                <option value="Theft and Robbery">Theft and Robbery</option>
                 <option value="Physical Injury">Physical Injury</option>
-                <option value="Children at risk">Children at risk</option>
             </select>
             </td>
     <td>

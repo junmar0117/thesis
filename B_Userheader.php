@@ -23,7 +23,7 @@
 <body>
 
 <div class="topnav" id="myTopnav">
-  <a href="B_profile.php" class= "logactive">AidPack | <?php echo $name;?></a>
+  <a href="B_profile.php" class= "logactive">AidPack | <?php echo mb_strimwidth($name, 0, 10, "...");?></a>
   <div class="FRC">
     <div class="dropdown">
       <?php
@@ -47,7 +47,14 @@
   <a href="B_monitor.php">Monitor</a>
   <a href="viewBarangays.php">Barangays</a>
   <a href="B_reportsAssigned.php">Assigned</a>
+  <?php        
+  if($name == "Administrator")
+  {
+  ?>
   <a href="B_pendingVerification.php">Verification</a>
+  <?php
+  }
+  ?>
   <a href="logout.php">Sign Out</a>
 </div>
 </div>

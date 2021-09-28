@@ -32,7 +32,7 @@ if ($_SERVER['HTTP_REFERER'] == $url)
 <html lang="en">
 <head>
     <meta charset = "utf-8">
-    <title> R & R | Report </title>
+    <title> AidPack | Report </title>
     <meta name ="viewport" content="width=devoce-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/reportmainstyles.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -93,12 +93,13 @@ include_once('Userheader.php');
 </tr>
 
 <tr>
-              <td id="numberOfsR3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
-              <td id="numberOfsR3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
-              <td id="numberOfsR3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
+              <td id="numberOfsR3">Total Reports have been submitted. These reports needs the assistance of the local barangay to resolve community concerns or incidents. </td>
+              <td id="numberOfsR3">Total Reports have been submitted. These reports needs the assistance of the BFP to resolve community concerns or incidents. </td>
+              <td id="numberOfsR3">Total Reports have been submitted. These reports needs the assistance of the PNP to resolve community concerns or incidents.</td>
 </tr>
 </table>
 <hr>
+<p id="pnote">New reports are thoroughly investigated for proof. Response officials will be alerted of verified reports.</p>
 </div>
 </body>
 </html>

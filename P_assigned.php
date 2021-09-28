@@ -17,7 +17,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 <html lang="en">
 <head>
     <meta charset = "utf-8">
-    <title> R & R | Bureau of Fire Protection Incident Report </title>
+    <title> AidPack | Assigned</title>
     <meta name ="viewport" content="width=devoce-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/BFPreportstyle.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
@@ -43,11 +43,11 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
     <div class="CreportInci">
         
         <form action="P_assignedAction.php" method="POST">
-        <h2>Incident Details</h2><hr>
+        <h2>PNP Admins</h2><hr>
         <table class="bemerxy">
     <tr>
     <td>
-        <label for="typeOfInci">P Admins</label><br>
+        
         <?php
         require 'connection.php';  
         $queryID = mysqli_query($con, "SELECT * from p_admin");
@@ -55,7 +55,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
         {
         ?>
         <div class="bassh">
-                <input type="radio" name="p_id" id="type" value="<?php echo $row['id'];?>"><?php echo $row['id']; echo "/"; echo $row['name'];?></input>
+                <input type="radio" name="p_id" id="type" value="<?php echo $row['id'];?>"><?php echo " "; echo $row['id']; echo " / "; echo $row['name'];?></input>
                 <input type="hidden" name="id" value="<?php echo $id;?>">
         </div>
         <?php
@@ -64,10 +64,11 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
         </td>
         </tr>
         </table>
-        </div>
-
         <hr>
         <input type="submit" value="Submit"><br>
+        </div>
+
+        
         </form>
     <script>
 var map;

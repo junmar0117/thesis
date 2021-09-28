@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset = "utf-8">
-    <title>R & R | BFP Login</title>
+    <title>AidPack | BFP Login</title>
     <meta name ="viewport" content="width=devoce-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/C_register_login.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
