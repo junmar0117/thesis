@@ -23,6 +23,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 {
     $victim = $_POST['victim'];
     $id = $_POST['id'];
+    $assigned_id = $_POST['assigned_id'];
 }
 ?>
 <?php
@@ -65,12 +66,14 @@ include_once('B_Userheader.php');
         <form action="<?php if($victim == "Yes"){echo "completeReport_vawchild.php";}else if($victim == "No"){echo "completeReport_vawvictim_childperpe.php";}?>" method="POST">
         <input type="hidden" name="victim" value="<?php echo $victim?>"></input>
         <input type="hidden" name="suspect" value="Yes"></input>
+        <input type="hidden" name="assigned_id" value="<?php echo $assigned_id;?>">
         <input type="hidden" id="id" name="id" value="<?php echo $id;?>">
         <button class="RPbutton" style="vertical-align:middle">Yes</button><hr>
         </form>
         <form action="<?php if($victim == "Yes"){echo "completeReport_vawchildvictim.php";}else if($victim == "No"){echo "completeReport_vaw.php";}?>" method="POST">
         <input type="hidden" name="victim" value="<?php echo $victim?>"></input>
         <input type="hidden" name="suspect" value="No"></input>
+        <input type="hidden" name="assigned_id" value="<?php echo $assigned_id;?>">
         <input type="hidden" id="id" name="id" value="<?php echo $id;?>">
         <button class="RPbutton" style="vertical-align:middle">No</button>
         </form>

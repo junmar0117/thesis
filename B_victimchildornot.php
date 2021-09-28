@@ -23,6 +23,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 {
     $victim = $_POST['victim'];
     $id = $_POST['id'];
+    $assigned_id = $_POST['assigned_id'];
 }
 ?>
 <?php
@@ -65,11 +66,13 @@ include_once('B_Userheader.php');
         <hr>
         <form action="B_suspectchildornot.php" method="POST">
         <input type="hidden" id="yes" name="victim" value="Yes">
+        <input type="hidden" name="assigned_id" value="<?php echo $assigned_id;?>">
         <input type="hidden" id="id" name="id" value="<?php echo $id;?>">
         <button class="RPbutton" >Yes</button><hr>
         </form>
         <form action="B_suspectchildornot.php" method="POST">
         <input type="hidden" id="no" name="victim" value="No">
+        <input type="hidden" name="assigned_id" value="<?php echo $assigned_id;?>">
         <input type="hidden" id="id" name="id" value="<?php echo $id;?>">
         <button class="RPbutton" >No</button>
         </form>
