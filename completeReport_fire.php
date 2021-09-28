@@ -442,110 +442,231 @@ if(mysqli_num_rows($row_b) > 0)
             </script> 
             <form action="completeReportAction_fire.php" method="POST">
         <h3>SECTION 1 - INCIDENT (Complete for all incidents)</h3>
+        <hr>
+        <table class="coretab">
+            <tr>
+                <td>
         <h3>When did it take place?</h3>
         <input type="datetime-local" name="when" placeholder="...">
+        </td>
+        <td>
         <h3>Building Name and Address</h3>
         <input type="text" name="building_address" placeholder="...">
+        </td>
+        </tr>
+        <tr>
+            <td>
         <h3>Building No.</h3>
         <input type="number" name="building_number" placeholder="...">
+        </td>
+        <td>
         <h3>Fixed Property</h3>
         <input type="text" name="fixed_property" placeholder="...">
+        </td>
+        </tr>
+        </table>
         <h3>Type of Incident</h3>
         <input type="text" name="incident_type" placeholder="...">
+        <hr>
         <h3>Occupants Were</h3>
+        <table class="coretab">
+            <tr>
+                <td>
         <input type="radio" name="occupants_status" value="Not Evacuated">
-        <label for="notevacuated">Not Evacuated</label><br>
+        <label id="corelabel" for="notevacuated">Not Evacuated</label><br>
         <input type="radio" name="occupants_status" value="Evacuated">
-        <label for="evacuated">Evacuated</label><br>
+        <label id="corelabel" for="evacuated">Evacuated</label><br>
+        </td>
+        <td>
         <input type="radio" name="occupants_status" value="Relocated">
-        <label for="relocated">Relocated</label><br>
+        <label id="corelabel" for="relocated">Relocated</label><br>
         <input type="radio" name="occupants_status" value="Both B and C">
-        <label for="both">Both B and C</label><br>
+        <label id="corelabel" for="both">Both B and C</label><br>
+        </td>
+        </tr>
+        </table>
         <h3>Did the Fire Department Respond?</h3>
         <input type="radio" name="did_respond" value="Yes">
-        <label for="Yes">Yes</label><br>
+        <label id="corelabel" for="Yes">Yes</label><br>
         <input type="radio" name="did_respond" value="No">
-        <label for="No">No</label><br>
+        <label id="corelabel" for="No">No</label><br>
         <h3>Fire Department Called Via</h3>
         <input type="number" name="called_via" placeholder="...">
         <h3>Fire Department Respond Within Minutes Of Notification</h3>
         <input type="radio" name="respond_within_minutes" value="Yes">
-        <label for="Yes">Yes</label><br>
+        <label id="corelabel" for="Yes">Yes</label><br>
         <input type="radio" name="respond_within_minutes" value="No">
-        <label for="No">No</label><br>
+        <label id="corelabel" for="No">No</label><br>
         <h3>Brief History of Incident</h3>
         <input type="text" name="history" placeholder="...">
         <h3>Action(s) Taken and Recommendations to Prevent Recurrence</h3>
         <input type="text" name="actions_recommendations" placeholder="...">
+        <table class="coretab">
+            <tr>
+                <td>
         <h3>No. of Injuries</h3>
         <input type="number" name="num_injuries" placeholder="...">
+        </td>
+        <td>
         <h3>No. of Deaths</h3>
         <input type="number" name="num_deaths" placeholder="...">
-
+        </td>
+        </tr>
+        </table>
+<hr>
         <h3>SECTION 2 - FIRE (Complete for all fires)</h3>
+        <hr>
         <h3>Area of Fire Origin</h3>
         <input type="text" name="fire_origin" placeholder="...">
+        <table class="coretab">
+            <tr>
+                <td>
         <h3>Equipment Involved in Ignition</h3>
         <input type="text" name="equipment" placeholder="...">
+        </td>
+        <td>
         <h3>Form of Heat of Ignition</h3>
         <input type="text" name="form_of_heat" placeholder="...">
+        </td>
+        </tr>
+        <tr>
+            <td>
         <h3>Type of Material Ignited</h3>
         <input type="text" name="type_material_ignited" placeholder="...">
+        </td>
+        <td>
         <h3>Form of Material Ignited</h3>
         <input type="text" name="form_of_material" placeholder="...">
+        </td>
+        </tr>
+        <tr>
+            <td>
         <h3>Method of Extinguishment</h3>
         <input type="text" name="method_of_extinguishment" placeholder="...">
+        </td>
+        <td>
         <h3>Level of Fire Origin</h3>
         <input type="text" name="level_of_fire" placeholder="...">
-
+        </td>
+        </tr>
+        </table>
+        <hr>
         <h3>SECTION 3 - STRUCTURE FIRE (Complete if structure fires)</h3>
+        <hr>
+        <table class="coretab">
+            <tr>
+                <td>
         <h3>Extent of Flame Damage</h3>
         <input type="text" name="extent_flame" placeholder="...">
+        </td>
+        <td>
         <h3>Extent of Smoke Damage</h3>
         <input type="text" name="extent_smoke" placeholder="...">
+        </td>
+        </tr>
+        <tr>
+            <td>
         <h3>Detector Performance</h3>
         <input type="text" name="detector_performance" placeholder="...">
+        </td>
+        <td>
         <h3>Sprinkler Performance</h3>
         <input type="text" name="sprinkler_performance" placeholder="...">
+        </td>
+        </tr>
+        <tr>
+            <td>
         <h3>Type of Material Generating Most Smoke</h3>
         <input type="text" name="type_most_smoke" placeholder="...">
+        </td>
+        <td>
         <h3>Form of Material Generating Most Smoke</h3>
         <input type="text" name="form_most_smoke" placeholder="...">
+        </td>
+        </tr>
+        </table>
         <h3>Avenue of Smoke Travel</h3>
         <input type="text" name="avenue_smoke_travel" placeholder="...">
-
+<hr>
         <h3>SECTION 4 - PROPERTY</h3>
+        <hr>
+        <table class="coretab">
+            <tr>
+                <td>
         <h3>Mobile Property</h3>
         <input type="text" name="mobile_property" placeholder="...">
+        </td>
+        <td>
         <h3>YR.</h3>
         <input type="text" name="year1" placeholder="...">
+        </td>
+        </tr>
+        <tr>
+            <td>
         <h3>Make</h3>
         <input type="text" name="make1" placeholder="...">
+        </td>
+        <td>
         <h3>Model</h3>
         <input type="text" name="model1" placeholder="...">
+        </td>
+        </tr>
+        <tr>
+            <td>
         <h3>Serial No.</h3>
         <input type="text" name="serial_number1" placeholder="...">
+        </td>
+        <td>
         <h3>License No. (if any)</h3>
         <input type="text" name="license_number" placeholder="...">
+        </td>
+        </tr>
+        <tr>
+            <td>
         <h3>Equipment Involved in Ignition</h3>
         <input type="text" name="equipment_involved" placeholder="...">
+        </td>
+        <td>
         <h3>YR.</h3>
         <input type="text" name="year2" placeholder="...">
+        </td>
+        </tr>
+        <tr>
+            <td>
         <h3>Make</h3>
         <input type="text" name="make2" placeholder="...">
+        </td>
+        <td>
         <h3>Model</h3>
         <input type="text" name="model2" placeholder="...">
+        </td>
+        </tr>
+        <tr>
+            <td>
         <h3>Serial No.</h3>
         <input type="text" name="serial_number2" placeholder="...">
+        </td>
+        <td>
         <h3>Voltage (if any)</h3>
         <input type="text" name="voltage" placeholder="...">
-
+        </td>
+        </tr>
+        </table>
+<hr>
         <h3>SECTION 5 - PREPARER OF THIS REPORT</h3>
+        <hr>
+        <table class="coretab">
+            <tr>
+                <td>
         <h3>Investigator's Signature</h3>
         <input type="text" name="reporter" placeholder="...">
+        </td>
+        <td>
         <h3>Date Now</h3>
         <input type="datetime-local" name="date_of_complete_report">
-
+        </td>
+        </tr>
+        </table>
 
         <input type="hidden" name="id" value="<?php echo $id;?>">
         <input type="hidden" name="assigned_id" value="<?php echo $assigned_id;?>">

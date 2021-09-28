@@ -612,21 +612,43 @@ if(mysqli_num_rows($row_b) > 0)
             google.maps.event.addDomListener(window, "load", initialize());
             </script>
             <form action="completeReportAction_injury.php" method="POST">
+                <table class="coretab">
+                    <tr>
+                        <td>
             <h3>Who was involved</h3>
         <input type="text" name="who" placeholder="..." required>
+        </td>
+        <td>
         <h3>When did it take place?</h3>
         <input type="datetime-local" name="when" placeholder="..." required>
+        </td>
+        </tr>
+        <tr>
+            <td>
         <h3>Why did it happen?</h3>
         <input type="text" name="why" placeholder="..." required>
+        </td>
+        <td>
         <h3>How did it happen?</h3>
         <input type="text" name="how" placeholder="..." required>
+        </td>
+        </tr>
+        </table>
 
         <h3>Rank and Names of First Responders</h3>
         <input type="text" name="firstResponders" placeholder="...">
+        <table class="coretab">
+            <tr>
+                <td>
         <h3>Time First Responders Arrived at Crime Scene</h3>
         <input type="datetime-local" name="timeResponder" placeholder="...">
+        </td>
+        <td>
         <h3>Weather Condition</h3>
         <input type="text" name="weather" placeholder="...">
+        </td>
+        </tr>
+        </table>
         <h3>Names of Victims and Status</h3>
         <input type="text" name="victims" placeholder="...">
         <h3>Names of Persons Found at (inside) the Crime Scene by FR (Address/Contact Nrs)</h3>
@@ -644,14 +666,28 @@ of Investigator (Medics, Local Officials, etc) (Address/Contact Nr)</h3>
         <input type="text" name="evidence" placeholder="...">
         <h3>Areas where Initial Search were conducted</h3>
         <input type="text" name="initialSearch" placeholder="...">
+        <table class="coretab">
+            <tr>
+                <td>
         <h3>On-Scene Command Post (OSCP) established at</h3>
         <input type="text" name="oscp" placeholder="...">
+        </td>
+        <td>
         <h3>Time and Date of Arrival of Investigator at the CS</h3>
         <input type="text" name="arrivalInvestigator" placeholder="...">
+        </td>
+        </tr>
+        <tr>
+            <td>
         <h3>CS Received By Duty Investigator/ IOC</h3>
         <input type="text" name="csReceivedDutyInvestigator" placeholder="...">
+        </td>
+        <td>
         <h3>Time/Date</h3>
         <input type="datetime-local" name="timeOrDate" placeholder="...">
+        </td>
+        </tr>
+        </table>
         <h3>Witnessed By</h3>
         <input type="text" name="witnessedBy" placeholder="...">
         <h3>Prepared and Submitted by (Rank/Name/Designation of Officer)</h3>
