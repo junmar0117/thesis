@@ -28,7 +28,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 <html lang="en">
 <head>
     <meta charset = "utf-8">
-    <title> R & R | View Report </title>
+    <title> AidPack | Report </title>
     <meta name ="viewport" content="width=devoce-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/viewR.css">
     <link rel="stylesheet" href="./css/popup.css">
