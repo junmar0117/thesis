@@ -131,10 +131,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     <td>
             <label for="typeOfInci">Type of Incident</label>
             <select name="type" id="type" required>
-                <option value="Drugs">Drugs</option>
-                <option value="Theft and Robbery">Theft and Robbery</option>
                 <option value="Physical Injury">Physical Injury</option>
-                <option value="Children at risk">Children at risk</option>
             </select>
             </td>
     <td>
