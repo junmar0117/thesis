@@ -441,7 +441,7 @@ if(mysqli_num_rows($row_b) > 0)
         </tr>
         <tr>
         <td>
-        <h3>Do you have a Disability</h3>
+        <h3>Do you have a Disability?</h3>
         <input type="radio" id="withdisability" name="with_disability" value="Yes">
         <label id="corelabel" for="withdisability">With a Disability</label><br>
         <input type="radio" id="withoutdisability" name="with_disability" value="No">
