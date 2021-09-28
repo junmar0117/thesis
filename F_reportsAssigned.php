@@ -171,7 +171,7 @@ else {
         <td><?php echo $row['status'] ?></td>
         <td>
              <!-- Trigger/Open The Modal -->
-<button id="myBtn">Open Modal</button>
+<button id="myBtn" class="brabtn">False Alarm</button>
 
 <!-- The Modal -->
 <div id="myModal" class="modal">
@@ -193,7 +193,7 @@ else {
             <form action="<?php if($row['type'] == "House Fire"){echo "completeReport_fire.php";}else if($row['type'] == "Establishment Fire"){echo "completeReport_fire.php";}?>" method="POST">
                 <input type="hidden" name="id" value="<?php echo $row['report_id']?>">
                 <input type="hidden" name="assigned_id" value="<?php echo $row['id']?>">
-                <button type="submit">Complete</button>
+                <button class="brabtn" type="submit">Complete</button>
             </form>
         </td>
         </tr>

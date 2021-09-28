@@ -172,7 +172,7 @@ else {
         <td>
 
         <!-- Trigger/Open The Modal -->
-<button id="myBtn">False Alarm</button>
+<button id="myBtn" class="brabtn">False Alarm</button>
 
 <!-- The Modal -->
 <div id="myModal" class="modal">
@@ -181,11 +181,18 @@ else {
   <div class="modal-content">
     <span class="close">&times;</span>
     <p>Are you sure you want to delete this and mark as false?</p>
-            <button><a href="B_reportsAssigned.php">Back</a></button>
-            <form action="B_falseReport.php" method="POST">
+    <table class="backcontab">
+        <tr>
+            <td></td>
+            <td><button class="brabtn" onclick="document.location='B_reportsAssigned.php'">Back</button></td>
+            <td><form action="B_falseReport.php" method="POST">
                 <input type="hidden" name="id" value="<?php echo $row['report_id']?>">
                 <input type="hidden" name="assigned_id" value="<?php echo $row['id']?>">
-                <button type="submit">Confirm</button>
+                <button  class="brabtn" type="submit">Confirm</button>
+    </td>
+    <td></td>
+    </tr>
+    </table>
             </form>
   </div>
 
@@ -194,7 +201,7 @@ else {
             <form action="B_victimchildornot.php" method="POST">
                 <input type="hidden" name="id" value="<?php echo $row['report_id']?>">
                 <input type="hidden" name="assigned_id" value="<?php echo $row['id']?>">
-                <button type="submit">Complete</button>
+                <button class="brabtn" type="submit">Complete</button>
             </form>
         </td>
         </tr>
