@@ -52,7 +52,7 @@ include_once('B_Userheader.php');
     <div class="monitorHeaderContainer">
     <h1>Barangay Report Monitoring</h1>
     <h2>View submitted barangay reports</h2>
-    <a href="monthlyData.php"> <button  class="viewReportbtn" type="submit">Check Monthly Data for the Month of <?php echo date('F Y'); ?></button> </a>
+    <button  class="viewReportbtn" onclick="document.location='monthlyData.php'" type="submit">Check Monthly Data for the Month of <?php echo date('F Y'); ?></button>
     <hr>
 </div>
 <br>
