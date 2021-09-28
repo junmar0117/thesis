@@ -5,7 +5,7 @@ session_start();
 <html lang="en">
 <head>
     <meta charset = "utf-8">
-    <title>R & R | Incident Reporting</title>
+    <title>AidPack | Tips</title>
     <meta name ="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/tips.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
