@@ -29,6 +29,8 @@ session_start();
             <div class="hpFirstleftborder">
                 <br>
                 <br>
+                <p id="tipsB">Tips and Contacts</p>
+                <hr>
                 <p id="tipsB">Wounds first aid</p>
                 <p id="tipsC">A wound is any damage or break in the surface of the skin. Applying appropriate first aid to a wound can speed up the healing process and reduce the risk of infection. Wounds including minor cuts, lacerations, bites and abrasions can be treated with first aid. </p>
                 <br>
