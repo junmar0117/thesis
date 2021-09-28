@@ -292,6 +292,22 @@ label{
     color: #555;  
 }
 
+.totrec{
+    width: 100%;
+}
+
+.totrec td{
+    background-color:#FFFFFF;
+    width: 33.33%;
+    border: 1px solid #fafafa;
+}
+
+.totrec td > h3{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    color:#555;
+    font-weight: 400px;
+}
 @media only screen and (max-width: 600px) {
     .profilePicTable, .aboutdetailsheader, .profileInfo, .profileReportBtn, .profileRepHisHeader, .ProfileReportHistory, .profileTagcontainer{
         width: 100%;
