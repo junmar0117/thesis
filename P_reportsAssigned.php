@@ -181,12 +181,19 @@ else {
   <div class="modal-content">
     <span class="close">&times;</span>
             <p>Are you sure you want to delete this and mark as false?</p>
-            <button><a href="P_reportsAssigned.php">Back</a></button>
-            <form action="P_falseReport.php" method="POST">
+            <table class="backcontab">
+        <tr>
+            <td></td>
+            <td><button class="brabtn" onclick="document.location='P_reportsAssigned.php'">Back</button></td>
+            <td><form action="P_falseReport.php" method="POST">
                 <input type="hidden" name="id" value="<?php echo $row['report_id']?>">
                 <input type="hidden" name="assigned_id" value="<?php echo $row['id']?>">
-                <button type="submit">Marks as False</button>
+                <button  class="brabtn" type="submit">Confirm</button>
             </form>
+            </td>
+    <td></td>
+    </tr>
+    </table>
   </div>
 
 </div>

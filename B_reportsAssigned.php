@@ -189,11 +189,12 @@ else {
                 <input type="hidden" name="id" value="<?php echo $row['report_id']?>">
                 <input type="hidden" name="assigned_id" value="<?php echo $row['id']?>">
                 <button  class="brabtn" type="submit">Confirm</button>
+                </form>
     </td>
     <td></td>
     </tr>
     </table>
-            </form>
+            
   </div>
 
         </div>
