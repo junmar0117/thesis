@@ -17,7 +17,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 <html lang="en">
 <head>
     <meta charset = "utf-8">
-    <title> R & R | Bureau of Fire Protection Incident Report </title>
+    <title> AidPack | Assigned</title>
     <meta name ="viewport" content="width=devoce-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/BFPreportstyle.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>

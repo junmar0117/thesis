@@ -17,7 +17,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 <html lang="en">
 <head>
     <meta charset = "utf-8">
-    <title> R & R | Philippine National Police Incident Report </title>
+    <title> AidPack | Philippine National Police Incident Report </title>
     <meta name ="viewport" content="width=devoce-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/BFPreportstyle.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css">

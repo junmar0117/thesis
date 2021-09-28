@@ -41,7 +41,7 @@ $user = $_SESSION['user']; //assigns user value
 <html lang="en">
 <head>
     <meta charset = "utf-8">
-    <title>R & R | Bureau of Fire Protection Profile (A)</title>
+    <title>AidPack | Assigned</title>
     <meta name ="viewport" content="width=devoce-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/BFP_profilestyle.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
