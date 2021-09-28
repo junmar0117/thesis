@@ -23,7 +23,7 @@ $user = $_SESSION['user']; //assigns user value
 <html>
   <head>
     <meta charset="utf-8">
-    <title>R & R | Heatmap</title>
+    <title>AidPack | Map</title>
     <meta name ="viewport" content="width=devoce-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/heatmap.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
