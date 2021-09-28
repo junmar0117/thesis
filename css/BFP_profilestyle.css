@@ -530,13 +530,13 @@ a{
     background-color: #fefefe;
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
-    border: 1px solid #888;
+    border: 1px solid #555;
     width: 80%; /* Could be more or less, depending on screen size */
   }
   
   /* The Close Button */
   .close {
-    color: #aaa;
+    color: #555;
     float: right;
     font-size: 28px;
     font-weight: bold;
@@ -544,6 +544,20 @@ a{
   
   .close:hover,
   .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .close1 {
+    color: #555;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close1:hover,
+  .close1:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;

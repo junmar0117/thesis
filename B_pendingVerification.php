@@ -105,7 +105,6 @@ include_once('B_Userheader.php');
     </table>
             
   </div>
-
 </div>
 
 <button id="myBtn1"  class="brabtn">Reject</button>
