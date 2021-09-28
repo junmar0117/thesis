@@ -55,7 +55,7 @@ include_once('P_Userheader.php');
 </div>
 <br>
     <div class="tab">
-        <button class="tablinks" onclick="openTabForm(event, 'all')" id="defaultOpen">All</button>
+        <button class="tablinks" id="defaultOpen" onclick="openTabForm(event, 'all')" id="defaultOpen">All</button>
         <button class="tablinks" onclick="openTabForm(event, 'em')">Emergency</button>
         <button class="tablinks" onclick="openTabForm(event, 'nonem')">Non-Emergency</button>
     </div>  
