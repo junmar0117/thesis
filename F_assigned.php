@@ -43,11 +43,11 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
     <div class="CreportInci">
         
         <form action="F_assignedAction.php" method="POST">
-        <h2>Incident Details</h2><hr>
+        <h2>BFP Admins</h2><hr>
         <table class="bemerxy">
     <tr>
     <td>
-        <label for="typeOfInci">F Admins</label><br>
+    
         <?php
         require 'connection.php';  
         $queryID = mysqli_query($con, "SELECT * from f_admin");
@@ -55,7 +55,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
         {
         ?>
         <div class="bassh">
-                <input type="radio" name="f_id" id="type" value="<?php echo $row['id'];?>"><?php echo $row['id']; echo "/"; echo $row['name'];?></input>
+                <input type="radio" name="f_id" id="type" value="<?php echo $row['id'];?>"><?php echo " "; echo $row['id']; echo " / "; echo $row['name'];?></input>
                 <input type="hidden" name="id" value="<?php echo $id;?>">
         </div>
         <?php
@@ -64,10 +64,11 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
     </td>
     </tr>
         </table>
-        </div>
-
         <hr>
         <input type="submit" value="Submit"><br>
+        </div>
+
+        
         </form>
     <script>
 var map;

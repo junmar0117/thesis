@@ -57,7 +57,7 @@ include_once('B_Userheader.php');
 </div>
 <br>
     <div class="tab">
-        <button class="tablinks" onclick="openTabForm(event, 'all')">All Barangay</button>
+        <button class="tablinks" id="defaultOpen" onclick="openTabForm(event, 'all')">All Barangay</button>
         <button class="tablinks" onclick="openTabForm(event, 'em')">Emergency</button>
         <button class="tablinks" onclick="openTabForm(event, 'nonem')">Non-Emergency</button>
     </div>    

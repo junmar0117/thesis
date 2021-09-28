@@ -51,7 +51,7 @@ if ($_SERVER['HTTP_REFERER'] == $url)
         </div>
     </div>
     
-   
+   <hr>
 </body>
 
 </html>

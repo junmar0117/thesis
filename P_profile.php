@@ -194,7 +194,7 @@ if($user=="p_admin")
             Print '</div>';
 }
 else {
-    Print'<a class="profileRepHisHeader" style="text-align:center;">REPORTS ASSIGNED</a>';
+    Print'<h2 class="adminCreatedAccHead">REPORTS ASSIGNED</h2>';
     Print '<table class="AdminProfileTable">';
     Print '<tr>';
     Print '<th>Account ID</th>';
