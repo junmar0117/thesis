@@ -56,7 +56,8 @@ $user = $_SESSION['user']; //assigns user value
         <tr>
           <td>
           
-          <button class="hmbut" onclick="SwitchMap()"> On/Off<i class="fas fa-power-off" style="padding-left:5px;"></i></button>
+          <button id="hide-markers" class="hmbut" onclick="showMarkers()"> On <i class="fas fa-power-off" style="padding-left:5px;"></i></button>
+          <button id="show-markers" class="hmbut" onclick="hideMarkers()"> Off <i class="fas fa-power-off" style="padding-left:5px;"></i></button>
 </td>
 
 </tr>
@@ -89,14 +90,7 @@ function initMap() {
     showAllReport(allReport)
 }
 
-function showAllReport(allReport) {
-	Array.prototype.forEach.call(allReport,function(data){
-        var marker = new google.maps.Marker({
-            position: new google.maps.LatLng(data.lat, data.lng),
-            map:map
-        });
-    })
-}
+
 function showAllReport(allReport) {
 	var infoWind = new google.maps.InfoWindow;
 	Array.prototype.forEach.call(allReport, function(data){
@@ -117,6 +111,15 @@ function showAllReport(allReport) {
 	    	infoWind.open(map, marker);
 	    })
 	})
+}
+
+function hideMarkers() {
+  showAllReport(null);
+}
+
+// Shows any markers currently in the array.
+function showMarkers() {
+  showAllReport(allReport);
 }
 
 
