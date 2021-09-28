@@ -50,7 +50,7 @@ if (in_array($fileActualExt, $allowed)){
 
                 $fileDestination = 'reportFiles/'.$fileNameNew;
                 move_uploaded_file($fileTmpName,$fileDestination);
-                mysqli_query($con, "INSERT INTO reports (username,name, date, place, barangay, file, type, incident, time,status,emergency,crime,lat,lng) VALUES ('$user','$fullName','$date','$place','$barangay','$fileNameNew','$type','$incident','$time', '$status','$emergency','$crime','$lat','$long')"); //SQL query
+                mysqli_query($con, "INSERT INTO reports (usernames,names, date, place, barangay, file, type, incident, time,status,emergency,crime,lat,lng) VALUES ('$user','$fullName','$date','$place','$barangay','$fileNameNew','$type','$incident','$time', '$status','$emergency','$crime','$lat','$long')"); //SQL query
                 Print '<script>alert("Report sucessfully sent!");</script>'; //Prompts the user
                 Print '<script>window.location.assign("./tips/childabuse.php");</script>'; // redirects to login.php         
         }else{
@@ -111,7 +111,7 @@ if (in_array($fileActualExt, $allowed)){
 
                 $fileDestination = 'reportFiles/'.$fileNameNew;
                 move_uploaded_file($fileTmpName,$fileDestination);
-                mysqli_query($con, "INSERT INTO reports (username,name, date, place, barangay, file, type, incident, time,status,emergency,crime,lat,lng) VALUES ('$user','$fullName','$date','$place','$barangay','$fileNameNew','$type','$incident','$time', '$status','$emergency','$crime','$lat','$long')"); //SQL query
+                mysqli_query($con, "INSERT INTO reports (usernames,names, date, place, barangay, file, type, incident, time,status,emergency,crime,lat,lng) VALUES ('$user','$fullName','$date','$place','$barangay','$fileNameNew','$type','$incident','$time', '$status','$emergency','$crime','$lat','$long')"); //SQL query
                 Print '<script>alert("Report sucessfully sent!");</script>'; //Prompts the user
                 Print '<script>window.location.assign("./tips/fire.php");</script>'; // redirects to login.php
         }else{
@@ -171,7 +171,7 @@ if (in_array($fileActualExt, $allowed)){
 
                 $fileDestination = 'reportFiles/'.$fileNameNew;
                 move_uploaded_file($fileTmpName,$fileDestination);
-                mysqli_query($con, "INSERT INTO reports (username,name, date, place, barangay, file, type, incident, time,status,emergency,crime,lat,lng) VALUES ('$user','$fullName','$date','$place','$barangay','$fileNameNew','$type','$incident','$time', '$status','$emergency','$crime','$lat','$long')"); //SQL query
+                mysqli_query($con, "INSERT INTO reports (usernames,names, date, place, barangay, file, type, incident, time,status,emergency,crime,lat,lng) VALUES ('$user','$fullName','$date','$place','$barangay','$fileNameNew','$type','$incident','$time', '$status','$emergency','$crime','$lat','$long')"); //SQL query
                 Print '<script>alert("Report sucessfully sent!");</script>'; //Prompts the user
                 Print '<script>window.location.assign("./tips/injuries.php");</script>'; // redirects to login.php
         }else{

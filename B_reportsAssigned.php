@@ -172,7 +172,7 @@ else {
         <td>
 
         <!-- Trigger/Open The Modal -->
-<button id="myBtn">Open Modal</button>
+<button id="myBtn">False Alarm</button>
 
 <!-- The Modal -->
 <div id="myModal" class="modal">
@@ -180,18 +180,17 @@ else {
   <!-- Modal content -->
   <div class="modal-content">
     <span class="close">&times;</span>
-    <p>Some text in the Modal..</p>
-  </div>
-
-</div>
-
+    <p>Are you sure you want to delete this and mark as false?</p>
+            <button><a href="B_reportsAssigned.php">Back</a></button>
             <form action="B_falseReport.php" method="POST">
                 <input type="hidden" name="id" value="<?php echo $row['report_id']?>">
                 <input type="hidden" name="assigned_id" value="<?php echo $row['id']?>">
-                
-                
-                <button type="submit">Marks as False</button>
+                <button type="submit">Confirm</button>
             </form>
+  </div>
+
+        </div>
+
             <form action="B_victimchildornot.php" method="POST">
                 <input type="hidden" name="id" value="<?php echo $row['report_id']?>">
                 <input type="hidden" name="assigned_id" value="<?php echo $row['id']?>">

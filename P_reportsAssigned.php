@@ -180,15 +180,17 @@ else {
   <!-- Modal content -->
   <div class="modal-content">
     <span class="close">&times;</span>
-    <p>Some text in the Modal..</p>
-  </div>
-
-</div>
+            <p>Are you sure you want to delete this and mark as false?</p>
+            <button><a href="P_reportsAssigned.php">Back</a></button>
             <form action="P_falseReport.php" method="POST">
                 <input type="hidden" name="id" value="<?php echo $row['report_id']?>">
                 <input type="hidden" name="assigned_id" value="<?php echo $row['id']?>">
                 <button type="submit">Marks as False</button>
             </form>
+  </div>
+
+</div>
+            
             <form action="<?php if($row['type'] == "Injury"){echo "completeReport_injury.php";} ?>" method="POST">
                 <input type="hidden" name="id" value="<?php echo $row['report_id']?>">
                 <input type="hidden" name="assigned_id" value="<?php echo $row['id']?>">
