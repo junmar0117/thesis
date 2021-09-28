@@ -81,7 +81,7 @@ include_once('B_Userheader.php');
                 <td>
 
                 <!-- Trigger/Open The Modal -->
-<button id="myBtn">Open Modal</button>
+<button id="myBtn">Accept</button>
 
 <!-- The Modal -->
 <div id="myModal" class="modal">
@@ -89,15 +89,17 @@ include_once('B_Userheader.php');
   <!-- Modal content -->
   <div class="modal-content">
     <span class="close">&times;</span>
-    <p>Some text in the Modal..</p>
-  </div>
-
-</div>
+    <p>Are you sure you want to accept?</p>
+                    <button class="viewReportbtn"><a href="B_pendingVerification.php">Back</a></button>
                     <form action="verifyUser.php" method="POST">
                         <input type="hidden" name="id" value="<?php echo $row['id']?>">
                         <input type="hidden" name="ids" value="<?php echo $row['ids']?>">
                         <button type="submit" class="viewReportbtn">Accept</button>
                     </form>
+  </div>
+
+</div>
+                    
                 </td>
                 </tr>
             <?php
