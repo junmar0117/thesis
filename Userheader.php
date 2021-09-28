@@ -24,7 +24,7 @@
 <body>
 
 <div class="topnav" id="myTopnav">
-  <a href="C_profile.php" class= "logactive">AidPack | <?php echo $name;?></a>
+  <a href="C_profile.php" class= "logactive">AidPack | <?php echo mb_strimwidth($name, 0, 10, "...");?></a>
   <div class="FRC">
   <div class="dropdown">
     <button href="#" onclick="myFunction()" class="dropbtn">Menu<i class="fas fa-caret-down" style="padding-left: 5px;"></i></button>

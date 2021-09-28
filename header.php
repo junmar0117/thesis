@@ -9,8 +9,6 @@
 <body>
 
 <div class="topnav" id="myTopnav">
-  <a href="index.php" class= "logactive">AidPack</a>
-  <div class="FRC">
       <?php
       require 'connection.php';    
       if(isset($_SESSION['b_user']))
@@ -21,6 +19,8 @@
                 $name = $row['name'];
             }
       ?>
+  <a href="index.php" class= "logactive">AidPack | <?php echo mb_strimwidth($name, 0, 10, "...");?></a>
+  <div class="FRC">
       <div class="dropdown">
           <button href="#" onclick="myFunction()" class="dropbtn">Menu<i class="fas fa-caret-down" style="padding-left: 5px;"></i></button>
           <div id="myDropdown" class="dropdown-content">
@@ -35,6 +35,7 @@
           <a href="logout.php">Sign Out</a>
           </div>
       </div>
+          </div>
       <?php
       }
       else if(isset($_SESSION['f_user']))
@@ -45,7 +46,8 @@
                 $name = $row['name'];
             }
       ?>
-      <h3>Welcome, Mr. <?php echo $name;?></h3>
+      <a href="index.php" class= "logactive">AidPack | <?php echo mb_strimwidth($name, 0, 10, "...");?></a>
+      <div class="FRC">
       <div class="dropdown">
           <button href="#" onclick="myFunction()" class="dropbtn">Menu<i class="fas fa-caret-down" style="padding-left: 5px;"></i></button>
           <div id="myDropdown" class="dropdown-content">
@@ -58,6 +60,7 @@
           <a href="logout.php">Sign Out</a>
           </div>
       </div>
+      </div>
       <?php
       }
       else if(isset($_SESSION['p_user']))
@@ -68,7 +71,8 @@
           $name = $row['name'];
       }
       ?>
-      <h3>Welcome, Mr. <?php echo $name;?></h3>
+      <a href="index.php" class= "logactive">AidPack | <?php echo mb_strimwidth($name, 0, 10, "...");?></a>
+      <div class="FRC">
       <div class="dropdown">
           <button href="#" onclick="myFunction()" class="dropbtn">Menu<i class="fas fa-caret-down" style="padding-left: 5px;"></i></button>
           <div id="myDropdown" class="dropdown-content">
@@ -81,6 +85,7 @@
           <a href="logout.php">Sign Out</a>
           </div>
       </div>
+      </div>
       <?php
       }
       else if(isset($_SESSION['c_user']))
@@ -91,7 +96,8 @@
           $name = $row['name'];
       }
       ?>
-      <h3>Welcome, Mr. <?php echo $name;?></h3>
+      <a href="index.php" class= "logactive">AidPack | <?php echo mb_strimwidth($name, 0, 10, "...");?></a>
+      <div class="FRC">
       <div class="dropdown">
           <button href="#" onclick="myFunction()" class="dropbtn">Menu<i class="fas fa-caret-down" style="padding-left: 5px;"></i></button>
           <div id="myDropdown" class="dropdown-content">
@@ -104,6 +110,7 @@
           <a href="logout.php">Sign Out</a>
           </div>
       </div>
+    </div>
       <?php
       }
       else

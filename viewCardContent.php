@@ -34,22 +34,26 @@ if ($_SERVER['HTTP_REFERER'] == $url)
 
     <nav>
         <?php
-            if($_SESSION['type']=='civilian')
-            {
-              include_once('Userheader.php');
-            }
-            else if($_SESSION['type']=='barangay')
-            {
-              include_once('B_Userheader.php');
-            }
-            else if($_SESSION['type']=='police')
-            {
-              include_once('P_Userheader.php');
-            }
-            else
-            {
-              include_once('F_Userheader.php');
-            }
+          if(isset($_SESSION['c_user']))
+          {
+            include_once('Userheader.php');
+          }
+          else if(isset($_SESSION['b_user']))
+          {
+            include_once('B_Userheader.php');
+          }
+          else if(isset($_SESSION['p_user']))
+          {
+            include_once('P_Userheader.php');
+          }
+          else if(isset($_SESSION['f_user']))
+          {
+            include_once('F_Userheader.php');
+          }
+          else
+          {
+            include_once('header1.php');
+          }
         ?>
     </nav>
     
