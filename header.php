@@ -116,7 +116,9 @@
       else
       {
       ?>
-      <a href="index.php" class= "logactive">AidPack | </a>
+      <a href="index.php" class= "logactive">AidPack | Guest</a>
+      
+      <div class="FRC">
       <a href="C_register.php" class="signuphovercolor">Sign up</a>
         <div class="dropdown">
           <button href="#" onclick="myFunction()" class="dropbtn">Sign in<i class="fas fa-caret-down" style="padding-left: 5px;"></i></button>
@@ -126,6 +128,7 @@
             <a href="F_login.php">Firefighter</a>
             <a href="P_login.php">Police</a>
           </div>
+      </div>
       </div>
       <?php 
       }
