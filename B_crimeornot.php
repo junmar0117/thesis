@@ -32,7 +32,7 @@ if ($_SERVER['HTTP_REFERER'] == $url)
 <html lang="en">
 <head>
     <meta charset = "utf-8">
-    <title> R & R | Report </title>
+    <title> AidPack | Report </title>
     <meta name ="viewport" content="width=devoce-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/reportmainstyles.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -51,7 +51,7 @@ include_once('Userheader.php');
         <tr>
         <th class="reportmainwrapper2">
         <h1>Is it a crime?</h1>
-        <h2>lorem ipsum</h2>
+        <h2>Select your choice</h2>
         </th>
         <td class="reportmainwrapper3">
         <h1>Crime Incident or Not?</h1>

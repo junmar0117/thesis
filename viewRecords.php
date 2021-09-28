@@ -82,7 +82,14 @@ if(mysqli_num_rows($row_b) > 0)
 
         $numSafeCount = count($safeCount); 
         ?>
-        <h3>Total Records: <?php echo $rowcount;?> <br> Total Safe Records: <?php echo $numSafeCount;?> <br> Total Not Safe Records: <?php echo $notSafeCount;?></h3>
+        <hr>
+        <table class="totrec">
+        <tr>
+        <td><h3>Total Records: <?php echo $rowcount;?> <br> </h3></td>
+        <td><h3>Total Safe Records: <?php echo $numSafeCount;?> <br> </h3></td>
+        <td><h3>Total Not Safe Records: <?php echo $notSafeCount;?></h3></td>
+    </tr>    
+    </table>
         </div>
 
         <div style="overflow=x:auto;">

@@ -39,6 +39,8 @@ if ($_SERVER['HTTP_REFERER'] == $url)
             <div class="hpFirstleftborder">
                 <br>
                 <br>
+                <p id="tipsB">Tips and Contacts</p>
+                <hr>
                 <p id="tipsB">Police/Investigation Assistance</p>
                 <p id="tipsC">PNP Hotline: 177</p>
                 <p id="tipsC">Aleng Pulis Hotline: 0919 777 7377</p>

@@ -39,6 +39,8 @@ if ($_SERVER['HTTP_REFERER'] == $url)
             <div class="hpFirstleftborder">
                 <br>
                 <br>
+                <p id="tipsB">Tips and Contacts</p>
+                <hr>
                 <p id="tipsB">PNP</p>
                 <p id="tipsC">Dial 1-1-7 or Call the Nearest Police Station for Life-Threatening Police Emergency Assistance or On-going crime or illegal activities Only.
                 </p>

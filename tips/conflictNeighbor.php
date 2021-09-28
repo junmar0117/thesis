@@ -39,6 +39,8 @@ if ($_SERVER['HTTP_REFERER'] == $url)
             <div class="hpFirstleftborder">
                 <br>
                 <br>
+                <p id="tipsB">Tips and Contacts</p>
+                <hr>
                 <p id="tipsB">Tips to Prevent Neighborhood Conflict or Community Conflict</p>
                 <p id="tipsC"">Your behavior affects your neighbors, just as what they do effects you. The key way to prevent conflict with neighbors is to be a good neighbor yourself. Simple consideration and conversation with neighbors helps achieve a peaceful coexistence.</p>
                 <hr>

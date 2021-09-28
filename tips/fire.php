@@ -40,6 +40,8 @@ if ($_SERVER['HTTP_REFERER'] == $url)
             <div class="hpFirstleftborder">
                 <br>
                 <br>
+                <p id="tipsB">Tips and Contacts</p>
+                <hr>
                 <p id="tipsB">Tips when a Fire starts</p>
                 <br>
                 
