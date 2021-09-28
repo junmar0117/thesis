@@ -79,7 +79,7 @@ include_once('B_Userheader.php');
         print '<tr>';
         print '<td class="aaaHead">';
         Print '<h1>Add Account </h1>';
-        Print '<h2>subhead</h2>';
+        Print '<h2>Input account information</h2>';
         print '</td>';
         print '<td class="aaaHead2">';
         Print '<form action="F_profile.php" method="POST">';
