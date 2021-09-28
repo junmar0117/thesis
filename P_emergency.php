@@ -4,7 +4,6 @@ if($_SESSION['user']){ //checks if user is logged in
 }else{
   header("location:index.php "); // redirects if user is not logged in
 }
-
 $user = $_SESSION['user']; //assigns user value
 ?>
 <?php
@@ -26,6 +25,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFimWZwIvDnYDZS0pKqz25yCBY10DTzm4&signed_in=true&libraries=visualization&callback=initMap">></script>
+
+
 </head>
 <body>
 
@@ -100,14 +102,27 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
                 <option value="872">872</option>
             </select>
             </td>
-    <td>
+            <td>
+    <label for="placeOfInci">Latitude (use map)</label>
+            <input id="lat" name="lat" placeholder="Move the marker" disabled/>
+    </td>
+    </tr>
+    <tr>
+        <td>
             <label for="placeOfInci">Place or Landmark of Incident</label>
             <input type="text" id="placeOfIncident" name="place" placeholder="Place of Incident" required>
+    </td>
+    <td>
+    <label for="placeOfInci">Longitude (use map)</label>
+    <input id="long" name="long" placeholder="Move the marker" disabled/>
             </td>
     </tr>
     </table>
-    <hr>
-</div>
+            <hr>
+            <label for="placeOfInci">Marker on Google Maps</label><br>
+            <label for="placeOfInci" style="color:red;font-size:14px">Instructions: Drag the Marker to where the incident happened.</label>
+            <div id="map_canvas" style="width: 100%; height: 400px;"></div>
+        </div>
 
         <div id="what" class="CreportInputBox">
         <h2>Incident Details</h2><hr>
@@ -178,7 +193,42 @@ document.getElementById("defaultOpen").click();
         <input type="hidden" id="body" value="<?php echo $name?> sent a report concerning the Local Barangay! ">
         <input type="submit" name="p_upload" value="Submit" onclick="sendEmail()"><br>
         </form>
-    </div>
+</div>
+
+      
+    <script>
+var map;
+
+function initialize() {
+var myLatlng = new google.maps.LatLng(14.591540,121.005699);
+
+var myOptions = {
+    zoom: 15,
+    center: myLatlng,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+
+map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+
+var marker = new google.maps.Marker({
+    draggable: true,
+    position: myLatlng,
+    map: map,
+    title: "Your location"
+    });
+
+    google.maps.event.addListener(marker, 'click', function (event) {
+    document.getElementById("latbox").value = event.latLng.lat();
+    document.getElementById("lngbox").value = event.latLng.lng();
+    });
+    google.maps.event.addListener(marker, 'dragend', function (event) {
+        document.getElementById("lat").value = event.latLng.lat();
+        document.getElementById("long").value = event.latLng.lng();
+    });
+}
+google.maps.event.addDomListener(window, "load", initialize());
+</script>
+
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script type="text/javascript">
     function sendEmail()

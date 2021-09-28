@@ -104,19 +104,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
             </td>
     <td>
     <label for="placeOfInci">Latitude (use map)</label>
-            <input id="lat" name="lat" placeholder="Latitude" />
-            </td>
+            <input id="lat" name="lat" placeholder="Move the marker" disabled/>
+    </td>
     </tr>
     <tr>
         <td>
             <label for="placeOfInci">Place or Landmark of Incident</label>
-            
             <input type="text" id="placeOfIncident" name="place" placeholder="Place of Incident" required>
-            </td>
+    </td>
     <td>
-           
-            <label for="placeOfInci">Longitude (use map)</label>
-            <input id="long" name="long" placeholder="Longitude"/>
+    <label for="placeOfInci">Longitude (use map)</label>
+    <input id="long" name="long" placeholder="Move the marker" disabled/>
             </td>
     </tr>
     </table>
