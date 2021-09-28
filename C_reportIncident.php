@@ -93,7 +93,7 @@ include_once('Userheader.php');
 </tr>
 
 <tr>
-              <td id="numberOfsR3">Total Reports have been submitted. These reports needs the assistance of the local barangay to resolve community concerns or incidents. </td>
+              <td id="numberOfsR3">Total Reports have been submitted. These reports needs the assistance of the Local Barangay to resolve community concerns or incidents. </td>
               <td id="numberOfsR3">Total Reports have been submitted. These reports needs the assistance of the BFP to resolve community concerns or incidents. </td>
               <td id="numberOfsR3">Total Reports have been submitted. These reports needs the assistance of the PNP to resolve community concerns or incidents.</td>
 </tr>

@@ -4,7 +4,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     require 'connection.php';  
 	$validID =  ($_POST['validID']);
     $civilian_id = ($_POST['id']);
-    $image = ($_POST['file']);
 
     $file = $_FILES['file'];
     $fileName = $file['name'];
@@ -24,7 +23,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
                     $fileDestination = './assets/validid/'.$fileNameNew;
                     move_uploaded_file($fileTmpName,$fileDestination);
                     mysqli_query($con, "INSERT INTO verification_proof (civilian_id, `image`, `valid_id`) VALUES ('$civilian_id','$fileNameNew','$validID')"); //Inserts the value to table users
-                    header("Location: C_profile.php?success=Success");
+                    Print '<script>alert("Request for Verification Sent!");</script>'; //Prompts the user
+                    Print '<script>window.location.assign("C_profile.php");</script>'; // redirects to login.php
                     //header("location:allreports.php ");
             }else{
                 echo "Your file is too big!";
