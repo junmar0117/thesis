@@ -47,7 +47,14 @@
   <a href="B_monitor.php">Monitor</a>
   <a href="viewBarangays.php">Barangays</a>
   <a href="B_reportsAssigned.php">Assigned</a>
+  <?php        
+  if($name == "Administrator")
+  {
+  ?>
   <a href="B_pendingVerification.php">Verification</a>
+  <?php
+  }
+  ?>
   <a href="logout.php">Sign Out</a>
 </div>
 </div>

@@ -46,39 +46,14 @@ $allowed = array('jpg','jpeg','png','mp4');
 if (in_array($fileActualExt, $allowed)){
     if($fileError === 0){
         if($fileSize < 10000000){
-            if($type == "Child Abuse" || $type == "Violence Against Women")
-            {
                 $fileNameNew = uniqid('', true).".". $fileActualExt;
 
                 $fileDestination = 'reportFiles/'.$fileNameNew;
                 move_uploaded_file($fileTmpName,$fileDestination);
-                mysqli_query($con, "INSERT INTO reports (username,name, date, place, barangay, description, file, type, incident, time,status,emergency,crime,latitude,longitude) VALUES ('$user','$fullName','$date','$place','$barangay', '$description','$fileNameNew','$type','$incident', now(), '$status','$emergency','$crime','$lat','$long')"); //SQL query
+                mysqli_query($con, "INSERT INTO reports (username,name, date, place, barangay, description, file, type, incident, time,status,emergency,crime,lat,lng) VALUES ('$user','$fullName','$date','$place','$barangay', '$description','$fileNameNew','$type','$incident', now(), '$status','$emergency','$crime','$lat','$long')"); //SQL query
                 Print '<script>alert("Report sucessfully sent!");</script>'; //Prompts the user
                 Print '<script>window.location.assign("./tips/childabuse.php");</script>'; // redirects to login.php
-                //header("location:allreports.php ");     
-            }
-            else if($type == "House Fire" || $type == "Establishment Fire")
-            {
-                $fileNameNew = uniqid('', true).".". $fileActualExt;
-
-                $fileDestination = 'reportFiles/'.$fileNameNew;
-                move_uploaded_file($fileTmpName,$fileDestination);
-                mysqli_query($con, "INSERT INTO reports (username,name, date, place, barangay, description, file, type, incident, time,status,emergency,crime,latitude,longitude) VALUES ('$user','$fullName','$date','$place','$barangay', '$description','$fileNameNew','$type','$incident', now(), '$status','$emergency','$crime','$lat','$long')"); //SQL query
-                Print '<script>alert("Report sucessfully sent!");</script>'; //Prompts the user
-                Print '<script>window.location.assign("./tips/fire.php");</script>'; // redirects to login.php
-                //header("location:allreports.php ");     
-            }
-            else if($type == "Physical Injury")
-            {
-                $fileNameNew = uniqid('', true).".". $fileActualExt;
-
-                $fileDestination = 'reportFiles/'.$fileNameNew;
-                move_uploaded_file($fileTmpName,$fileDestination);
-                mysqli_query($con, "INSERT INTO reports (username,name, date, place, barangay, description, file, type, incident, time,status,emergency,crime,latitude,longitude) VALUES ('$user','$fullName','$date','$place','$barangay', '$description','$fileNameNew','$type','$incident', now(), '$status','$emergency','$crime','$lat','$long')"); //SQL query
-                Print '<script>alert("Report sucessfully sent!");</script>'; //Prompts the user
-                Print '<script>window.location.assign("./tips/injuries.php");</script>'; // redirects to login.php
-                //header("location:allreports.php ");     
-            }
+                //header("location:allreports.php ");              
         }else{
             echo "Your file is too big!";
         }
@@ -131,14 +106,14 @@ $allowed = array('jpg','jpeg','png','mp4');
 if (in_array($fileActualExt, $allowed)){
     if($fileError === 0){
         if($fileSize < 10000000){
-            $fileNameNew = uniqid('', true).".". $fileActualExt;
+                $fileNameNew = uniqid('', true).".". $fileActualExt;
 
-            $fileDestination = 'reportFiles/'.$fileNameNew;
-            move_uploaded_file($fileTmpName,$fileDestination);
-            mysqli_query($con, "INSERT INTO reports (username,name, date, place, barangay, description, file, type, incident, time,status,latitude,longitude) VALUES ('$user','$fullName','$date','$place','$barangay', '$description','$fileNameNew','$type','$incident', now(), '$status','$lat','$long')"); //SQL query
-            Print '<script>alert("Report sucessfully sent!");</script>'; //Prompts the user
-            Print '<script>window.location.assign("./tips/fire.php");</script>'; // redirects to login.php
-            //header("location:allreports.php ");
+                $fileDestination = 'reportFiles/'.$fileNameNew;
+                move_uploaded_file($fileTmpName,$fileDestination);
+                mysqli_query($con, "INSERT INTO reports (username,name, date, place, barangay, description, file, type, incident, time,status,emergency,crime,lat,lng) VALUES ('$user','$fullName','$date','$place','$barangay', '$description','$fileNameNew','$type','$incident', now(), '$status','$emergency','$crime','$lat','$long')"); //SQL query
+                Print '<script>alert("Report sucessfully sent!");</script>'; //Prompts the user
+                Print '<script>window.location.assign("./tips/fire.php");</script>'; // redirects to login.php
+                //header("location:allreports.php ");     
         }else{
             echo "Your file is too big!";
         }
@@ -192,15 +167,14 @@ $allowed = array('jpg','jpeg','png','mp4');
 if (in_array($fileActualExt, $allowed)){
     if($fileError === 0){
         if($fileSize < 10000000){
-            $fileNameNew = uniqid('', true).".". $fileActualExt;
+                $fileNameNew = uniqid('', true).".". $fileActualExt;
 
-            $fileDestination = 'reportFiles/'.$fileNameNew;
-            move_uploaded_file($fileTmpName,$fileDestination);
-            mysqli_query($con, "INSERT INTO reports (username,name, date, place, barangay, description, file, type, incident, time,status,emergency,crime,latitude,longitude) VALUES ('$user','$fullName','$date','$place','$barangay', '$description','$fileNameNew','$type','$incident', now(), '$status','$emergency','$crime','$lat','$long')"); //SQL query
-            Print '<script>alert("Report sucessfully sent!");</script>'; //Prompts the user
-            Print '<script>window.location.assign("./tips/pnpCategories.php");</script>'; // redirects to login.php
-            //header("location:allreports.php ");
-
+                $fileDestination = 'reportFiles/'.$fileNameNew;
+                move_uploaded_file($fileTmpName,$fileDestination);
+                mysqli_query($con, "INSERT INTO reports (username,name, date, place, barangay, description, file, type, incident, time,status,emergency,crime,lat,lng) VALUES ('$user','$fullName','$date','$place','$barangay', '$description','$fileNameNew','$type','$incident', now(), '$status','$emergency','$crime','$lat','$long')"); //SQL query
+                Print '<script>alert("Report sucessfully sent!");</script>'; //Prompts the user
+                Print '<script>window.location.assign("./tips/injuries.php");</script>'; // redirects to login.php
+                //header("location:allreports.php ");     
         }else{
             echo "Your file is too big!";
         }
