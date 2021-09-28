@@ -276,6 +276,7 @@ if(mysqli_num_rows($row_b) > 0)
             google.maps.event.addDomListener(window, "load", initialize());
             </script>      
         <form action="completeReportAction_vawchild.php" method="POST">
+        
         <h3><b>National Violence Against Women (NVAW) Documentation System</b></h3><hr>
         <table class="coretab">
             <tr>
