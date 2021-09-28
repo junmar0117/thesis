@@ -277,261 +277,407 @@ if(mysqli_num_rows($row_b) > 0)
             </script>      
         <form action="completeReportAction_vawchildvictim.php" method="POST">
         <h3><b>National Violence Against Women (NVAW) Documentation System</b></h3>
+        <hr>
+        <table class="coretab">
+            <tr>
+                <td>
         <h3>Handling Organization</h3>
         <input type="text" name="handling_organization" placeholder="...">
+        </td>
+        <td>
         <h3>When did it take place?</h3>
-        <input type="date" name="when" placeholder="...">
+        <input type="datetime-local" name="when" placeholder="...">
+        </td>
+        </tr>
+        </table>
         <h3>Address</h3>
         <input type="text" name="address" placeholder="...">
+        <table class="coretab">
+            <tr>
+                <td>
         <h3>Region</h3>
         <input type="text" name="region" placeholder="...">
-        <h3>Province</h3>
+        </td>
+        <td>
+            <h3>Province</h3>
         <input type="text" name="province" placeholder="...">
+        </td>
+        </tr>
+        <tr>
+            <td>
         <h3>City/Municipality</h3>
         <input type="text" name="city" placeholder="...">
+        </td>
+        <td>
         <h3>Barangay</h3>
         <input type="text" name="barangayy" placeholder="...">
+        </td>
+        </tr>
+        <tr>
+            <td>
         <h3>Intake By</h3>
         <input type="text" name="intake_by" placeholder="Last Name, First Name, Middle Name">
+        </td>
+        <td>
         <h3>Position</h3>
         <input type="text" name="position" placeholder="...">
+        </td>
+        </tr>
+        </table>
         <h3>Case Manager</h3>
         <input type="text" name="case_manager" placeholder="Last Name, First Name, Middle Name">
-
-        <h3><b>If Victim-Survivor is a Child</b></h3>
+<hr>
+        <h3><b>If the Victim-Survivor is a Child</b></h3>
+        <hr>
+        <table class="coretab">
+            <tr>
+                <td>
         <h3>Name of Parent/Guardian</h3>
         <input type="text" name="parent_guardian" placeholder="Last Name, First Name, Middle Name">
+        </td>
+        <td>
         <h3>Relationship of Guardian to Victim-Survivor</h3>
         <input type="text" name="relationship_of_guardain" placeholder="...">
+        </td>
+        </tr>
+        </table>
         <h3>Address of Guardian</h3>
         <input type="text" name="parentguardian_address" placeholder="...">
+        <table class="coretab">
+            <tr>
+                <td>
         <h3>Region</h3>
         <input type="text" name="parentguardian_region" placeholder="...">
+        </td>
+        <td>
         <h3>Province</h3>
         <input type="text" name="parentguardian_province" placeholder="...">
+        </td>
+        </tr>
+        <tr>
+            <td>
         <h3>City/Municipality</h3>
         <input type="text" name="parentguardian_city" placeholder="...">
+        </td>
+        <td>
         <h3>Barangay</h3>
         <input type="text" name="parentguardian_barangayy" placeholder="...">
+        </td>
+        </tr>
+        </table>
         <h3>Contact No. of Parent/Guardian</h3>
         <input type="number" name="contact_no_parent_guardian" placeholder="...">
-
+<hr>
         <h3><b>Perpetrator Information</b></h3>
+        <hr>
+        <table class="coretab">
+            <tr>
+                <td>
         <h3>Name</h3>
         <input type="text" name="perpetrator_name" placeholder="Last Name, First Name, Middle Name">
+        </td>
+        <td>
         <h3>Alias</h3>
         <input type="text" name="alias" placeholder="...">
+        </td>
+        </tr>
+        </table>
         <h3>Sex</h3>
         <input type="radio" id="male" name="perpetrator_sex" value="Male">
-        <label for="Male">Male</label><br>
+        <label id="corelabel" for="Male">Male</label><br>
         <input type="radio" id="female" name="perpetrator_sex" value="Female">
-        <label for="Female">Female</label><br>
+        <label id="corelabel" for="Female">Female</label><br>
+        <table class="coretab">
+            <tr>
+                <td>
         <h3>Date of Birth</h3>
-        <input type="date" name="perpetrator_date_of_birth" placeholder="...">
+        <input type="datetime-local" name="perpetrator_date_of_birth" placeholder="...">
+        </td>
+        <td>
         <h3>Age</h3>
         <input type="number" name="perpetrator_age" placeholder="...">
-
+        </td>
+        </tr>
+        <tr>
+        <td>
         <h3>Civil Status</h3>
         <input type="radio" id="single" name="perpetrator_civil_status" value="Single">
-        <label for="Single">Single</label><br>
+        <label id="corelabel" for="Single">Single</label><br>
         <input type="radio" id="married" name="perpetrator_civil_status" value="Married">
-        <label for="Married">Married</label><br>
+        <label id="corelabel" for="Married">Married</label><br>
         <input type="radio" id="livein" name="perpetrator_civil_status" value="Live-In">
-        <label for="Live-In">Live-In</label><br>
+        <label id="corelabel" for="Live-In">Live-In</label><br>
         <input type="radio" id="widowed" name="perpetrator_civil_status" value="Widowed">
-        <label for="Widowed">Widowed</label><br>
+        <label id="corelabel" for="Widowed">Widowed</label><br>
         <input type="radio" id="separated" name="perpetrator_civil_status" value="Separated">
-        <label for="Separated">Separated</label><br>
-
+        <label id="corelabel" for="Separated">Separated</label><br>
+        </td>
+        <td>
         <h3>Highest Educational Attainment</h3>
         <input type="radio" id="noformaleducation" name="perpetrator_educational_attainment" value="No Formal Education">
-        <label for="noformaleducation">No Formal Education</label><br>
+        <label id="corelabel" for="noformaleducation">No Formal Education</label><br>
         <input type="radio" id="elementary" name="perpetrator_educational_attainment" value="Elementary Level Graduated">
-        <label for="elementary">Elementary Level Graduated</label><br>
+        <label id="corelabel" for="elementary">Elementary Level Graduated</label><br>
         <input type="radio" id="highschool" name="perpetrator_educational_attainment" value="High School Level Graduated">
-        <label for="highschool">High School Level Graduated</label><br>
+        <label id="corelabel" for="highschool">High School Level Graduated</label><br>
         <input type="radio" id="vocational" name="perpetrator_educational_attainment" value="Vocational">
-        <label for="vocational">Vocational</label><br>
+        <label id="corelabel" for="vocational">Vocational</label><br>
         <input type="radio" id="college" name="perpetrator_educational_attainment" value="College Level Graduated">
-        <label for="college">College Level Graduated</label><br>
+        <label id="corelabel" for="college">College Level Graduated</label><br>
         <input type="radio" id="postgraduate" name="perpetrator_educational_attainment" value="Post Graduate">
-        <label for="postgraduate">Post Graduate</label><br>
+        <label id="corelabel" for="postgraduate">Post Graduate</label><br>
         <input type="radio" id="noresponse" name="perpetrator_educational_attainment" value="No Response">
-        <label for="noresponse">No Response</label><br>
+        <label id="corelabel" for="noresponse">No Response</label><br>
         <input type="radio" id="others" name="perpetrator_educational_attainment" value="Others">
-        <label for="others">Others</label><br>
-
+        <label id="corelabel" for="others">Others</label><br>
+        </td>
+        </tr>
+        </table>
+        <hr>
+        <table class="coretab">
+            <tr>
+                <td>
         <h3>Nationality</h3>
         <input type="text" name="perpetrator_nationality" placeholder="...">
+        </td>
+        <td>
         <h3>Passport No. (If non-Filipino)</h3>
         <input type="number" name="perpetrator_passport_no" placeholder="...">
+        </td>
+        </tr>
+        </table>
         <h3>Occupation</h3>
         <input type="text" name="perpetrator_occupation" placeholder="...">
         <h3>Identifying Marks</h3>
         <input type="text" name="identifying_marks" placeholder="...">
 
         <h3>Religion</h3>
+        <hr>
+        <table class="coretab">
+            <tr>
+                <td>
         <input type="radio" id="romancatholic" name="perpetrator_religion" value="Roman Catholic">
-        <label for="romancatholic">Roman Catholic</label><br>
+        <label id="corelabel" for="romancatholic">Roman Catholic</label><br>
         <input type="radio" id="islam" name="perpetrator_religion" value="Islam">
-        <label for="islam">Islam</label><br>
+        <label id="corelabel" for="islam">Islam</label><br>
         <input type="radio" id="protestant" name="perpetrator_religion" value="Protestant">
-        <label for="protestant">Protestant</label><br>
+        <label id="corelabel" for="protestant">Protestant</label><br>
+        </td>
+        <td>
         <input type="radio" id="aglipayan" name="perpetrator_religion" value="Aglipayan">
-        <label for="aglipayan">Aglipayan</label><br>
+        <label id="corelabel" for="aglipayan">Aglipayan</label><br>
         <input type="radio" id="others" name="perpetrator_religion" value="Others">
-        <label for="others">Others</label><br>
+        <label id="corelabel" for="others">Others</label><br>
+        </td>
+        </tr>
+        </table>
 
         <h3>Address</h3>
         <input type="text" name="perpetrator_address" placeholder="...">
+        <table class="coretab">
+            <tr>
+                <td>
         <h3>Region</h3>
         <input type="text" name="perpetrator_region" placeholder="...">
+        </td>
+        <td>
         <h3>Province</h3>
         <input type="text" name="perpetrator_province" placeholder="...">
+        </td>
+        </tr>
+        <tr>
+            <td>
         <h3>City/Municipality</h3>
         <input type="text" name="perpetrator_city" placeholder="...">
+        </td>
+        <td>
         <h3>Barangay</h3>
         <input type="text" name="perpetrator_barangayy" placeholder="...">
-
+        </td>
+        </tr>
+        </table>
+        
         <h3>Relationship of Perpetrator to Victim</h3>
+        <hr>
+        <table class="coretab">
+            <tr>
+                <td>
         <input type="radio" id="currentspouse" name="relationship_perpetrator_to_victim" value="Current Spouse/Partner">
-        <label for="currentspouse">Current Spouse/Partner</label><br>
+        <label id="corelabel" for="currentspouse">Current Spouse/Partner</label><br>
         <input type="radio" id="formerspouse" name="relationship_perpetrator_to_victim" value="Former Spouse/Partner">
-        <label for="formerspouse">Former Spouse/Partner</label><br>
+        <label id="corelabel" for="formerspouse">Former Spouse/Partner</label><br>
         <input type="radio" id="currentfiance" name="relationship_perpetrator_to_victim" value="Current Fiance/Dating Relationship">
-        <label for="currentfiance">Current Fiance/Dating Relationship</label><br>
+        <label id="corelabel" for="currentfiance">Current Fiance/Dating Relationship</label><br>
         <input type="radio" id="formerfiance" name="relationship_perpetrator_to_victim" value="Former Fiance/Dating Relationship">
-        <label for="formerfiance">Former Fiance/Dating Relationship</label><br>
+        <label id="corelabel" for="formerfiance">Former Fiance/Dating Relationship</label><br>
         <input type="radio" id="employee_manager_supervisor" name="relationship_perpetrator_to_victim" value="Employee/Manager/Supervisor">
-        <label for="employee_manager_supervisor">Employee/Manager/Supervisor</label><br>
+        <label id="corelabel" for="employee_manager_supervisor">Employee/Manager/Supervisor</label><br>
         <input type="radio" id="agent_of_employer" name="relationship_perpetrator_to_victim" value="Agent of the Employer">
-        <label for="agent_of_employer">Agent of the Employer</label><br>
+        <label id="corelabel" for="agent_of_employer">Agent of the Employer</label><br>
         <input type="radio" id="teacher_instructor_professor" name="relationship_perpetrator_to_victim" value="Teacher/Instructor/Professor">
-        <label for="teacher_instructor_professor">Teacher/Instructor/Professor</label><br>
+        <label id="corelabel" for="teacher_instructor_professor">Teacher/Instructor/Professor</label><br>
+        </td>
+        <td>
         <input type="radio" id="coach_trainer" name="relationship_perpetrator_to_victim" value="Coach/Trainer">
-        <label for="coach_trainer">Coach/Trainer</label><br>
+        <label id="corelabel" for="coach_trainer">Coach/Trainer</label><br>
         <input type="radio" id="authority_service_provider" name="relationship_perpetrator_to_victim" value="People of Authority/Service Provider">
-        <label for="authority_service_provider">People of Authority/Service Provider</label><br>
+        <label id="corelabel" for="authority_service_provider">People of Authority/Service Provider</label><br>
         <input type="radio" id="neighbors_peers" name="relationship_perpetrator_to_victim" value="Neighbors/Peers/Co-Workers/Associates">
-        <label for="neighbors_peers">Neighbors/Peers/Co-Workers/Associates</label><br>
+        <label id="corelabel" for="neighbors_peers">Neighbors/Peers/Co-Workers/Associates</label><br>
         <input type="radio" id="stranger" name="relationship_perpetrator_to_victim" value="Stranger">
-        <label for="stranger">Stranger</label><br>
+        <label id="corelabel" for="stranger">Stranger</label><br>
         <input type="radio" id="immediate_family" name="relationship_perpetrator_to_victim" value="Immediate Family (e.g. Father, Mother)">
-        <label for="immediate_family">Immediate Family (e.g. father, mother)</label><br>
+        <label id="corelabel" for="immediate_family">Immediate Family (e.g. father, mother)</label><br>
         <input type="radio" id="other_relatives" name="relationship_perpetrator_to_victim" value="Other Relatives (e.g. Uncle, Cousin)">
-        <label for="other_relatives">Other Relatives (e.g. Uncle, Cousin)</label><br>
+        <label id="corelabel" for="other_relatives">Other Relatives (e.g. Uncle, Cousin)</label><br>
         <input type="radio" id="others" name="relationship_perpetrator_to_victim" value="Others">
-        <label for="others">Others</label><br>
-
+        <label id="corelabel" for="others">Others</label>
+        </td>
+        </tr>
+        </table>
+<hr>
         <h3><b>Incident Information</b></h3>
+        <hr>
         <h3>RA 9262 Anti Violence Against Women and Their Children Act</h3>
         <input type="checkbox" id="sexual" name="sexual_abuse" value="Yes">
-        <label for="sexual">Sexual Abuse</label>
+        <label id="corelabel" for="sexual">Sexual Abuse</label>
         <input type="checkbox" id="psychological" name="psychological" value="Yes">
-        <label for="psychological">Psychological</label>
+        <label id="corelabel" for="psychological">Psychological</label>
         <input type="checkbox" id="physical" name="physical1" value="Yes">
-        <label for="physical">Physical</label>
+        <label id="corelabel" for="physical">Physical</label>
         <input type="checkbox" id="economic" name="economic" value="Yes">
-        <label for="economic">Economic</label>
+        <label id="corelabel" for="economic">Economic</label>
         <input type="checkbox" id="others" name="others_incident" value="Yes">
-        <label for="others">Others</label>
+        <label id="corelabel" for="others">Others</label>
 
-        <br>
+        <hr>
 
         <h3>RA 8353 Anti-Rape Law of 1995</h3>
         <input type="checkbox" id="rape_sexual_intercourse" name="rape_sexual_intercourse" value="Yes">
-        <label for="rape_sexual_intercourse">Rape by Sexual Intercourse</label>
+        <label id="corelabel" for="rape_sexual_intercourse">Rape by Sexual Intercourse</label>
         <input type="checkbox" id="rape_sexual_assault" name="rape_sexual_assault" value="Yes">
-        <label for="rape_sexual_assault">Rape by Sexual Assault</label>
+        <label id="corelabel" for="rape_sexual_assault">Rape by Sexual Assault</label>
 
-        <br>
+        <hr>
 
         <h3>RA 7877 Anti-Sexual Harassment Act</h3>
         <input type="checkbox" id="verbal" name="verbal" value="Yes">
-        <label for="verbal">Verbal</label>
+        <label id="corelabel" for="verbal">Verbal</label>
         <input type="checkbox" id="physical" name="physical2" value="Yes">
-        <label for="physical">Physical</label>
+        <label id="corelabel" for="physical">Physical</label>
         <input type="checkbox" id="use_of_objects" name="use_of_objects" value="Yes">
-        <label for="use_of_objects">Use of Objects, Pictures, Letters, or Notes with sexual under-pinnings</label>
+        <label id="corelabel" for="use_of_objects">Use of Objects, Pictures, Letters, or Notes with sexual under-pinnings</label>
 
-        <br>
+        <hr>
 
         <h3>RA 7610 Special Protection of Children Against Child Abuse, Exploitation and Discrimination Act</h3>
         <input type="checkbox" id="child_prostitution" name="child_prostitution" value="Yes">
-        <label for="child_prostitution">Engage, facilitate, promote, or attempt to commit child prostitution</label>
+        <label id="corelabel" for="child_prostitution">Engage, facilitate, promote, or attempt to commit child prostitution</label>
         <input type="checkbox" id="lascivious_conduct" name="lascivious_conduct" value="Yes">
-        <label for="lascivious_conduct">Sexual Intercourse or Lascivious Conduct</label>
+        <label id="corelabel" for="lascivious_conduct">Sexual Intercourse or Lascivious Conduct</label>
 
-        <br>
+        <hr>
 
         <input type="checkbox" id="anti_trafficking" name="anti_trafficking" value="RA 9208: Anti-Trafficking in Persons Act of 2003">
-        <label for="anti_trafficking">RA 9208: Anti-Trafficking in Persons Act of 2003</label><br>
+        <label id="corelabel" for="anti_trafficking">RA 9208: Anti-Trafficking in Persons Act of 2003</label><br>
         <input type="checkbox" id="anti_child_porn" name="anti_child_porn" value="RA 9775: Anti-Child Pornography Act">
-        <label for="anti_child_porn">RA 9775: Anti-Child Pornography Act</label><br>
+        <label id="corelabel" for="anti_child_porn">RA 9775: Anti-Child Pornography Act</label><br>
         <input type="checkbox" id="anti_voyeurism" name="anti_voyeurism" value="RA 9995: Anti-Photo and Video Voyeurism Act 2009">
-        <label for="anti_voyeurism">RA 9995: Anti-Photo and Video Voyeurism Act 2009</label><br>
+        <label id="corelabel" for="anti_voyeurism">RA 9995: Anti-Photo and Video Voyeurism Act 2009</label><br>
+        <hr>
         <h3>Revised Penal Code</h3>
         <input type="checkbox" id="acts_of_lasciviousness" name="acts_of_lasciviousness" value="Art 336: Acts of Lasciviousness">
-        <label for="acts_of_lasciviousness">Art 336: Acts of Lasciviousness</label><br>
+        <label id="corelabel" for="acts_of_lasciviousness">Art 336: Acts of Lasciviousness</label><br>
         <input type="checkbox" id="others" name="others_penal_code" value="Others">
-        <label for="others">Others</label><br>
+        <label id="corelabel" for="others">Others</label>
+        <hr>
 
         <h3>Description of Incident</h3>
         <input type="text" name="description_incident" placeholder="...">
+        <table class="coretab">
+            <tr>
+                <td>
         <h3>Date of Latest Incident</h3>
-        <input type="date" name="date_latest_incident" placeholder="...">
+        <input type="datetime-local" name="date_latest_incident" placeholder="...">
+        </td>
+        <td>
         <h3>Geographic Location of Incident</h3>
         <input type="text" name="incident_address" placeholder="...">
+        </td>
+        </tr>
+        <tr>
+            <td>
         <h3>Region</h3>
         <input type="text" name="incident_region" placeholder="...">
+        </td>
+        <td>
         <h3>Province</h3>
         <input type="text" name="incident_province" placeholder="...">
+        </td>
+        </tr>
+        <tr>
+            <td>
         <h3>City/Municipality</h3>
         <input type="text" name="incident_city" placeholder="...">
+        </td>
+        <td>
         <h3>Barangay</h3>
         <input type="text" name="incident_barangayy" placeholder="...">
-
+        </td>
+        </tr>
+        </table>
+        
         <h3>Place of Incident</h3>
+        <hr>
+        <table class="coretab">
+            <tr>
+                <td>
         <input type="radio" id="home" name="place_of_incident" value="Home">
-        <label for="home">Home</label><br>
+        <label id="corelabel" for="home">Home</label><br>
         <input type="radio" id="work" name="place_of_incident" value="Work">
-        <label for="work">Work</label><br>
+        <label id="corelabel" for="work">Work</label><br>
         <input type="radio" id="school" name="place_of_incident" value="School">
-        <label for="school">School</label><br>
+        <label id="corelabel" for="school">School</label><br>
         <input type="radio" id="commerical_places" name="place_of_incident" value="Commercial Places">
-        <label for="commerical_places">Commercial Places</label><br>
+        <label id="corelabel" for="commerical_places">Commercial Places</label><br>
         <input type="radio" id="religious_institutions" name="place_of_incident" value="Religious Institutions">
-        <label for="religious_institutions">Religious Institutions</label><br>
+        <label id="corelabel" for="religious_institutions">Religious Institutions</label><br>
+        </td>
+<td>
         <input type="radio" id="medical_treatment" name="place_of_incident" value="Places of Medical Treatment">
-        <label for="medical_treatment">Places of Medical Treatment</label><br>
+        <label id="corelabel" for="medical_treatment">Places of Medical Treatment</label><br>
         <input type="radio" id="transport" name="place_of_incident" value="Transport and Connecting Sites">
-        <label for="transport">Transport and Connecting Sites</label><br>
+        <label id="corelabel" for="transport">Transport and Connecting Sites</label><br>
         <input type="radio" id="brothels" name="place_of_incident" value="Brothels and Similar Establishments">
-        <label for="brothels">Brothels and Similar Establishments</label><br>
+        <label id="corelabel" for="brothels">Brothels and Similar Establishments</label><br>
         <input type="radio" id="others" name="place_of_incident" value="Others">
-        <label for="others">Others</label><br>
+        <label id="corelabel" for="others">Others</label><br>
         <input type="radio" id="noresponse" name="place_of_incident" value="No Response">
-        <label for="noresponse">No Response</label><br>
-
-        <h3>Witnesses</h3>
+        <label id="corelabel" for="noresponse">No Response</label>
+        </td>
+        </tr>
+        </table>
+<hr>
+        <h3><b>Witnesses</b></h3>
+        <hr>
         <h3>Name</h3>
         <input type="text" name="witness_names" placeholder="...">
         <h3>Address</h3>
         <input type="text" name="witness_address" placeholder="...">
         <h3>Contact No.</h3>
         <input type="number" name="witness_contact_no" placeholder="...">
-
+<hr>
         <h3>Note to Barangay VAW Desk Officer: If the victim does not want to continue or pursue the case, please indicate herein the reason</h3>
         <input type="checkbox" id="lost_of_interest" name="lost_of_interest" value="Lost of interest to file">
-        <label for="lost_of_interest">Lost of interest to file</label><br>
+        <label id="corelabel" for="lost_of_interest">Lost of interest to file</label><br>
         <input type="checkbox" id="reconciled" name="reconciled" value="Reconciled with the Perpetrator (w/o mediation)">
-        <label for="reconciled">Reconciled with the Perpetrator (w/o mediation)</label><br>
+        <label id="corelabel" for="reconciled">Reconciled with the Perpetrator (w/o mediation)</label><br>
         <input type="checkbox" id="transfer_residence" name="transfer_residence" value="Transfer Residence">
-        <label for="transfer_residence">Transfer Residence</label><br>
+        <label id="corelabel" for="transfer_residence">Transfer Residence</label><br>
         <input type="checkbox" id="lack_of_support" name="lack_of_support" value="Lack of Support">
-        <label for="lack_of_support">Lack of Support</label><br>
+        <label id="corelabel" for="lack_of_support">Lack of Support</label><br>
         <input type="checkbox" id="lack_of_confidence" name="lack_of_confidence" value="Lack of Confidence with Service Provider">
-        <label for="lack_of_confidence">Lack of Confidence with Service Provider</label><br>
+        <label id="corelabel" for="lack_of_confidence">Lack of Confidence with Service Provider</label><br>
         <input type="text" id="others" name="others_case" placeholder="If others, Please Specify">
 
         <input type="hidden" name="assigned_id" value="<?php echo $assigned_id;?>">

@@ -132,6 +132,31 @@ input[type=datetime-local]{
   font-size: 16px;
 }
 
+input[type=number]{
+  padding: 10px;
+  border: 3px solid #fff;
+  width:100%;
+  background-color: #fafafa;
+  color: #555;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+}
+
+.coretab{
+  width: 100%
+}
+
+.coretab td{
+  width: 50%
+}
+
+
+#corelabel{
+  color: #555;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+}
+
 .map_canvas{
   text-align: center;
 }
