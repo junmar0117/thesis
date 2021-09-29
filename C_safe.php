@@ -57,7 +57,7 @@ include_once('Userheader.php');
                 $name = $row['name'];
             }
 
-            $query = mysqli_query($con, "SELECT * from reports ORDER BY report_id DESC"); // SQL Query
+            $query = mysqli_query($con, "SELECT * from reports where status = 'In Progress' ORDER BY report_id DESC"); // SQL Query
             while($row = mysqli_fetch_array($query))
             {
             ?>
