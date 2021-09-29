@@ -52,7 +52,14 @@ include_once('Userheader.php');
             <?php
             }
             ?>
-                
+                <?php
+                    require 'connection.php';    
+                    $query = mysqli_query($con, "SELECT * from civilians where username = '$user' "); // SQL Query
+                    while($row = mysqli_fetch_array($query))
+                        {
+                            $civID = $row['id'];
+                        }
+                ?>
                     <form action="C_changePassword.php" method="GET">
                         <input type="hidden" name="id" value="<?php echo $civID?>">
                         <button class="viewReportbtn" type="submit">Change Password </button><i class="fas fa-caret-down" style="padding-left: 5px;"></i>

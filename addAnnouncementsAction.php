@@ -7,6 +7,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     $time = ($_POST['time']);
     $content = ($_POST['content']);
     $image = ($_POST['file']);
+    $featured = 0;
 
     $file = $_FILES['file'];
     $fileName = $file['name'];
@@ -25,7 +26,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 
                     $fileDestination = './assets/announcements/'.$fileNameNew;
                     move_uploaded_file($fileTmpName,$fileDestination);
-                    mysqli_query($con, "INSERT INTO announcements (b_admin_id, `title`, `image`, `contents`,`date_created`) VALUES ('$id','$title','$fileNameNew','$content','$time')"); //Inserts the value to table users
+                    mysqli_query($con, "INSERT INTO announcements (b_admin_id, `title`, `image`, `contents`,`date_created`,`featured`) VALUES ('$id','$title','$fileNameNew','$content','$time',`$featured`)"); //Inserts the value to table users
                     header("Location: B_addAnnouncements.php?success=Success");
                     //header("location:allreports.php ");
             }else{
