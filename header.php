@@ -16,7 +16,7 @@
             $queryID = mysqli_query($con, "SELECT * from b_admin WHERE b_admin.username = '".$_SESSION['b_user']."' LIMIT 1");
             while($row = mysqli_fetch_array($queryID))
             {           
-                $name = $row['name'];
+                $name = $row['b_name'];
             }
       ?>
   <a href="index.php" class= "logactive">AidPack | <?php echo mb_strimwidth($name, 0, 10, "...");?></a>
@@ -43,7 +43,7 @@
       $queryID = mysqli_query($con, "SELECT * from f_admin WHERE f_admin.username = '".$_SESSION['f_user']."' LIMIT 1");
             while($row = mysqli_fetch_array($queryID))
             {           
-                $name = $row['name'];
+                $name = $row['f_name'];
             }
       ?>
       <a href="index.php" class= "logactive">AidPack | <?php echo mb_strimwidth($name, 0, 10, "...");?></a>
@@ -68,7 +68,7 @@
       $queryID = mysqli_query($con, "SELECT * from p_admin WHERE p_admin.username = '".$_SESSION['p_user']."' LIMIT 1");
       while($row = mysqli_fetch_array($queryID))
       {           
-          $name = $row['name'];
+          $name = $row['p_name'];
       }
       ?>
       <a href="index.php" class= "logactive">AidPack | <?php echo mb_strimwidth($name, 0, 10, "...");?></a>

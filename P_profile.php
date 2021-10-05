@@ -146,7 +146,7 @@ if($user=="p_admin")
             {
             Print "<tr>";
             Print '<td>'. $row['id'] . "</td>";
-            Print '<td>'. $row['name'] . "</td>";
+            Print '<td>'. $row['p_name'] . "</td>";
             Print '<td>'. $row['username'] . "</td>";
             Print '<td>'. $row['position'] . "</td>";
             Print "</tr>";
@@ -277,7 +277,7 @@ if(isset($_POST['addP']))
           if($password === $cpassword)
           {
             $password = password_hash($password, PASSWORD_DEFAULT);
-            mysqli_query($con, "INSERT INTO p_admin (name, username, password,position) VALUES ('$name','$username','$password', '$position')"); //Inserts the value to table users
+            mysqli_query($con, "INSERT INTO p_admin (p_name, username, password,position) VALUES ('$name','$username','$password', '$position')"); //Inserts the value to table users
             print '<script>alert("Police User added!"); </script>'; // Prompts the user
             print '<script>window.location.assign("P_profile.php");</script>'; // redirects to register.php
           }

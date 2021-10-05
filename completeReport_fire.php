@@ -22,6 +22,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 {
     $id = ($_POST['id']);
     $assigned_id = ($_POST['assigned_id']);
+    $f_id = ($_POST['f_id']);
 }
 ?>
 <!DOCTYPE html>
@@ -342,7 +343,7 @@ if(mysqli_num_rows($row_b) > 0)
             $id = ($_POST['id']);
         }
         require 'connection.php';    
-        $query = mysqli_query($con, "SELECT * from reports where report_id = '$id'"); // SQL Query
+        $query = mysqli_query($con, "SELECT * from reports INNER JOIN civilians ON reports.usernames = civilians.username where report_id = '$id'"); // SQL Query
         while($row = mysqli_fetch_array($query))
         {
                 $featured = "";
@@ -440,7 +441,7 @@ if(mysqli_num_rows($row_b) > 0)
             }
             google.maps.event.addDomListener(window, "load", initialize());
             </script> 
-            <form action="completeReportAction_fire.php" method="POST">
+            <form action="completeReportAction_fire.php" method="POST" id="myEmail">
         <h3>SECTION 1 - INCIDENT (Complete for all incidents)</h3>
         <hr>
         <table class="coretab">
@@ -668,7 +669,13 @@ if(mysqli_num_rows($row_b) > 0)
         </tr>
         </table>
 
+        <input type="hidden" id="names" value="AidPack | R & R">
+        <input type="hidden" id="email" value="<?php echo $row['email'];?>">
+        <input type="hidden" id="subject" value="Reports from AidPack | R & R">
+        <input type="hidden" id="body" value="Your report has been completed! Thank you for reporting and lets help each other keep our community safe! Keep safe!">
+
         <input type="hidden" name="id" value="<?php echo $id;?>">
+        <input type="hidden" name="f_id" value="<?php echo $f_id;?>">
         <input type="hidden" name="assigned_id" value="<?php echo $assigned_id;?>">
         <input type="hidden" name="name" value="<?php echo $name;?>">
         <input type="hidden" name="username" value="<?php echo $username;?>">
@@ -685,7 +692,7 @@ if(mysqli_num_rows($row_b) > 0)
         <input type="hidden" name="latitude" value="<?php echo $latitude;?>">
         <input type="hidden" name="longitude" value="<?php echo $longitude;?>">
         <hr>
-        <input type="submit" name="submit">
+        <input type="submit" name="submit" onclick="sendEmail1()">
         </form>  
         </div>
 <?php
@@ -901,4 +908,43 @@ of Investigator (Medics, Local Officials, etc) (Address/Contact Nr)</h3>
 ?>
         
 </body>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+    function sendEmail1()
+    {
+        var name = $("#names");
+        var email = $("#email");
+        var subject = $("#subject");
+        var body = $("#body");
+
+        if(isNotEmpty(name) && isNotEmpty(email) && isNotEmpty(subject) && isNotEmpty(body))
+        {
+            $.ajax({
+                url: 'sendEmail1.php',
+                method: 'POST',
+                dataType: 'json',
+                data:{
+                    name: name.val(),
+                    email: email.val(),
+                    subject: subject.val(),
+                    body: body.val(),
+                }, success: function(response){
+                    $('#myEmail')[0].reset();
+                    $('.sent-notification').text("Message Sent!");
+                }
+            });
+        }
+    }
+    function isNotEmpty(caller){
+        if(caller.val() == ""){
+            caller.css('border', '1px solid red');
+            return false;
+        }else{
+            caller.css('border', '');
+            return true;
+        }
+    }
+    </script>
+
 </html>

@@ -59,12 +59,12 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
     <td>
         <?php
         require 'connection.php';  
-        $queryID = mysqli_query($con, "SELECT * from b_admin");
+        $queryID = mysqli_query($con, "SELECT * from b_admin where username != 'b_admin'");
         while($row = mysqli_fetch_array($queryID))
         {
         ?>
                 <div class="bassh">
-                <input type="radio"  name="b_id" value="<?php echo $row['id'];?>"> <?php echo " "; echo $row['id']; echo " / "; echo $row['name']; ?>
+                <input type="radio"  name="b_id" value="<?php echo $row['id'];?>"> <?php echo " "; echo $row['id']; echo " / "; echo $row['b_name']; echo " / "; echo $row['position'];?>
                 <input type="hidden" name="id" value="<?php echo $id;?>">
         </div>
         <?php

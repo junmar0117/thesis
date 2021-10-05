@@ -138,7 +138,7 @@ if($user=="p_admin")
             {
             Print "<tr>";
             Print '<td>'. $row['id'] . "</td>";
-            Print '<td>'. $row['name'] . "</td>";
+            Print '<td>'. $row['p_name'] . "</td>";
             Print '<td>'. $row['username'] . "</td>";
             Print '<td>'. $row['position'] . "</td>";
             Print "</tr>";
@@ -198,7 +198,7 @@ else {
 
 </div>
             
-            <form action="<?php if($row['type'] == "Injury"){echo "completeReport_injury.php";} ?>" method="POST">
+            <form action="<?php if($row['type'] == "Physical Injury"){echo "completeReport_injury.php";} ?>" method="POST">
                 <input type="hidden" name="id" value="<?php echo $row['report_id']?>">
                 <input type="hidden" name="assigned_id" value="<?php echo $row['id']?>">
                 <button class="brabtn" type="submit">Complete</button>

@@ -60,11 +60,15 @@ include_once('F_Userheader.php');
     <br>
 </div>
 </div>
+<div class="tab">
+  <button class="tablinks" id="defaultOpen" onclick="openCity(event, 'Accounts')">Accounts</button>
+  <button class="tablinks" onclick="openCity(event, 'Reports')">Reports</button>
+</div>
 <br>
     <?php
     //Admin - Add Account
     if($user=="f_admin"){
-
+        Print '<div class="tabcontent" id="Accounts">';
         Print '<div class="adminAccAdd">';
         print '<table class="addAccTable">';
         print '<tr>';
@@ -105,17 +109,33 @@ include_once('F_Userheader.php');
                     Print'</tr>';
                     Print'</table>';
                 Print'</div>';
-                Print'</div>';
                 print '<hr>';
 }
 ?>
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
     <?php
 if($user=="f_admin")
 {           
             //Accounts Created by Administrator        
             
             Print '<h2 class="adminCreatedAccHead">Accounts</h2>';
-            Print '<div style="overflow-x:auto;">';
             Print '<table class="AdminProfileTable">';
             Print '<tr>';
             Print '<th>Account ID</th>';
@@ -129,14 +149,52 @@ if($user=="f_admin")
             {
             Print "<tr>";
             Print '<td>'. $row['id'] . "</td>";
-            Print '<td>'. $row['name'] . "</td>";
+            Print '<td>'. $row['f_name'] . "</td>";
             Print '<td>'. $row['username'] . "</td>";
             Print '<td>'. $row['position'] . "</td>";
             Print "</tr>";
             }
             Print '</table>';
+            ?>
+            </div>
+            <div id="Reports" class="tabcontent">
+            <h2 class="adminCreatedAccHead">Reports</h2>
+            <div style="overflow-x:auto;">
+            <table class="AdminProfileTable">
+            <tr>
+            <th>Report ID</th>
+            <th>Name of Reporter</th>
+            <th>Date Reported</th>
+            <th>Concern</th>
+            <th>Status</th>
+            <th>Action</th>
+            </tr>
+            <br>
+            <?php
+            require 'connection.php';    
+            $query = mysqli_query($con, "SELECT * from reports where incident = 'Police' AND status = 'In Progress' OR incident = 'Police' AND status = 'Needs Attention' ORDER BY report_id DESC"); // SQL Query
+            while($row = mysqli_fetch_array($query))
+            {
+            ?>
+            
+                <tr>
+                <td><?php echo $row['report_id']  ?></td>
+                <td><?php echo $row['names']  ?></td>
+                <td><?php echo $row['date']; echo " - "; echo $row['time']?></td>
+                <td><?php echo $row['incident']  ?></td>
+                <td><?php echo $row['status'] ?></td>
+                <td>
+                    <form action="viewReports.php" method="POST">
+                        <input type="hidden" name="id" value="<?php echo $row['report_id']?>">
+                        <button type="submit">View</button>
+                    </form>
+                </td>
+                </tr>
+            <?php
+            }
+            Print '</table>';
             Print '</div>';
-
+            Print '</div>';
 }
 else {
     Print'<h2 class="adminCreatedAccHead">REPORTS</h2>';
@@ -221,7 +279,7 @@ if(isset($_POST['addF']))
           if($password === $cpassword)
           {
             $password = password_hash($password, PASSWORD_DEFAULT);
-            mysqli_query($con, "INSERT INTO f_admin (name, username, password,position) VALUES ('$name','$username','$password', '$position')"); //Inserts the value to table users
+            mysqli_query($con, "INSERT INTO f_admin (f_name, username, password,position) VALUES ('$name','$username','$password', '$position')"); //Inserts the value to table users
             print '<script>alert("Firefighter User added!"); </script>'; // Prompts the user
             print '<script>window.location.assign("F_profile.php");</script>'; // redirects to register.php
           }

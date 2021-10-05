@@ -152,7 +152,7 @@ document.getElementById("defaultOpen").click();
             </td>
     <td>
     <label for="placeOfInci">Latitude (use map)</label>
-            <input id="lat" name="lat" placeholder="Move the marker" disabled/>
+            <input id="lat" name="lat" placeholder="Move the marker"/>
     </td>
     </tr>
     <tr>
@@ -162,7 +162,7 @@ document.getElementById("defaultOpen").click();
     </td>
     <td>
     <label for="placeOfInci">Longitude (use map)</label>
-    <input id="long" name="long" placeholder="Move the marker" disabled/>
+    <input id="long" name="long" placeholder="Move the marker"/>
             </td>
     </tr>
     </table>

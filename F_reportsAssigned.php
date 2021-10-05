@@ -200,6 +200,7 @@ else {
             <form action="<?php if($row['type'] == "House Fire"){echo "completeReport_fire.php";}else if($row['type'] == "Establishment Fire"){echo "completeReport_fire.php";}?>" method="POST">
                 <input type="hidden" name="id" value="<?php echo $row['report_id']?>">
                 <input type="hidden" name="assigned_id" value="<?php echo $row['id']?>">
+                <input type="hidden" name="f_id" value="<?php echo $f_id;?>">
                 <button class="brabtn" type="submit">Complete</button>
             </form>
         </td>

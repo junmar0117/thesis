@@ -5,7 +5,7 @@
         $queryID = mysqli_query($con, "SELECT * from b_admin WHERE b_admin.username = '".$_SESSION['user']."' LIMIT 1");
         while($row = mysqli_fetch_array($queryID))
         {           
-            $name = $row['name'];
+            $name = $row['b_name'];
         }
     }
 ?>
@@ -33,7 +33,7 @@
             $queryID = mysqli_query($con, "SELECT * from b_admin WHERE b_admin.username = '".$_SESSION['b_user']."' LIMIT 1");
             while($row = mysqli_fetch_array($queryID))
             {           
-                $name = $row['name'];
+                $name = $row['b_name'];
             }
       }
       ?>
@@ -45,6 +45,7 @@
   <a href="B_addAnnouncements.php">Broadcast</a>
   <a href="announcements.php">Announcements</a>
   <a href="B_monitor.php">Monitor</a>
+  <a href="B_completedReports.php">Completed Reports</a>
   <a href="viewBarangays.php">Barangays</a>
   <a href="B_reportsAssigned.php">Assigned</a>
   <?php        

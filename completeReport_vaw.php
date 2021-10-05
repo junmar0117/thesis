@@ -758,15 +758,15 @@ if(mysqli_num_rows($row_b) > 0)
         <input type="number" name="witness_contact_no" placeholder="...">
 <hr>
         <h3>Note to Barangay VAW Desk Officer: If the victim does not want to continue or pursue the case, please indicate herein the reason</h3>
-        <input type="checkbox" id="lost_of_interest" name="lost_of_interest" value="Lost of interest to file">
+        <input type="checkbox" id="lost_of_interest" name="lost_of_interest" value="Yes">
         <label id="corelabel" for="lost_of_interest">Lost of interest to file</label><br>
-        <input type="checkbox" id="reconciled" name="reconciled" value="Reconciled with the Perpetrator (w/o mediation)">
+        <input type="checkbox" id="reconciled" name="reconciled" value="Yes">
         <label id="corelabel" for="reconciled">Reconciled with the Perpetrator (w/o mediation)</label><br>
-        <input type="checkbox" id="transfer_residence" name="transfer_residence" value="Transfer Residence">
+        <input type="checkbox" id="transfer_residence" name="transfer_residence" value="Yes">
         <label id="corelabel" for="transfer_residence">Transfer Residence</label><br>
-        <input type="checkbox" id="lack_of_support" name="lack_of_support" value="Lack of Support">
+        <input type="checkbox" id="lack_of_support" name="lack_of_support" value="Yes">
         <label id="corelabel" for="lack_of_support">Lack of Support</label><br>
-        <input type="checkbox" id="lack_of_confidence" name="lack_of_confidence" value="Lack of Confidence with Service Provider">
+        <input type="checkbox" id="lack_of_confidence" name="lack_of_confidence" value="Yes">
         <label id="corelabel" for="lack_of_confidence">Lack of Confidence with Service Provider</label><br>
         <input type="text" id="others" name="others_case" placeholder="If others, Please Specify">
 

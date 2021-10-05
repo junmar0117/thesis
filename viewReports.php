@@ -272,16 +272,21 @@ if(mysqli_num_rows($row_b) > 0)
                 <?php
                 if($user == "b_admin")
                 {
-                $query = mysqli_query($con, "SELECT * from reports where report_id = '$id' "); // SQL Query
+                $query = mysqli_query($con, "SELECT * from reports INNER JOIN civilians ON reports.usernames = civilians.username where report_id = '$id' "); // SQL Query
                 while($row = mysqli_fetch_array($query))
                 {
                     if($row['status'] == "Needs Attention")
                     {
                     ?>
-                        <form action="acceptReport.php" method="POST">
+                        <form action="acceptReport.php" method="POST" id="myEmail">
+                        <input type="hidden" id="name" value="AidPack | R & R">
+                        <input type="hidden" id="email" value="<?php echo $row['email'];?>">
+                        <input type="hidden" id="subject" value="Reports from AidPack | R & R">
+                        <input type="hidden" id="body" value="Your report has been accepted! Please take note of the tips and keep calm! Thank you for reporting and stay safe!">
+
                         <input type="hidden" name="id" value="<?php echo $id;?>">
                         <input type="hidden" name="admin_id" value="<?php echo $b_id;?>">
-                        <input type="submit" value="Accept Report">
+                        <input type="submit" value="Accept Report" onclick="sendEmail1()">
                         </form>
                         <br>
                     <?php
@@ -289,18 +294,14 @@ if(mysqli_num_rows($row_b) > 0)
                     else if($row['status'] == "In Progress")
                     {
                     ?>
-                        <form action="B_assigned.php" method="POST">
+                        <form action="B_assigned.php" method="POST" id="myEmail">
+                        <input type="hidden" id="name" value="AidPack | R & R">
+                        <input type="hidden" id="email" value="<?php echo $row['email'];?>">
+                        <input type="hidden" id="subject" value="Reports from AidPack | R & R">
+                        <input type="hidden" id="body" value="Someone has been assigned to go to your place and they are on the way already! Thank you for your patience and keep safe again!">
+
                         <input type="hidden" name="id" value="<?php echo $id;?>">
-                        <input type="submit" value="Assign/Dispatch">
-                        </form><br>
-                    <?php
-                    }
-                    else if($row['status'] == "On The Way")
-                    {           
-                    ?>
-                        <form action="completeReport.php" method="POST">
-                        <input type="hidden" name="id" value="<?php echo $id;?>">
-                        <input type="submit" value="Complete/Finish">
+                        <input type="submit" value="Assign/Dispatch" onclick="sendEmail1()">
                         </form><br>
                     <?php
                     }
@@ -364,7 +365,7 @@ if(mysqli_num_rows($row_b) > 0)
         while($row = mysqli_fetch_array($query))
         {
         ?>
-        <h3>Accepted By: <?php echo $row['name'];?></h3>
+        <h3>Accepted By: <?php echo $row['f_name'];?></h3>
          <tr>
              <th><?php echo "Name"?></th> 
              <td><?php echo $row['names'] ?></td>
@@ -446,16 +447,22 @@ if(mysqli_num_rows($row_b) > 0)
                 <?php
                 if($user == "f_admin")
                 {
-                $query = mysqli_query($con, "SELECT * from reports where report_id = '$id' "); // SQL Query
+                $query = mysqli_query($con, "SELECT * from reports INNER JOIN civilians ON reports.usernames = civilians.username where report_id = '$id'"); // SQL Query
                 while($row = mysqli_fetch_array($query))
                 {
+
                     if($row['status'] == "Needs Attention")
                     {
                     ?>
-                        <form action="acceptReport.php" method="POST">
+                        <form action="acceptReport.php" method="POST" id="myEmail">
+                        <input type="hidden" id="name" value="AidPack | R & R">
+                        <input type="hidden" id="email" value="<?php echo $row['email'];?>">
+                        <input type="hidden" id="subject" value="Reports from AidPack | R & R">
+                        <input type="hidden" id="body" value="Your report has been accepted! Please take note of the tips and keep calm! Thank you for reporting and stay safe!">
+
                         <input type="hidden" name="id" value="<?php echo $id;?>">
                         <input type="hidden" name="admin_id" value="<?php echo $f_id;?>">
-                        <input type="submit" value="Accept Report">
+                        <input type="submit" value="Accept Report" onclick="sendEmail1()">
                         </form>
                         <br>
                     <?php
@@ -463,18 +470,14 @@ if(mysqli_num_rows($row_b) > 0)
                     else if($row['status'] == "In Progress")
                     {
                     ?>
-                        <form action="F_assigned.php" method="POST">
+                        <form action="F_assigned.php" method="POST" id="myEmail">
+                        <input type="hidden" id="name" value="AidPack | R & R">
+                        <input type="hidden" id="email" value="<?php echo $row['email'];?>">
+                        <input type="hidden" id="subject" value="Reports from AidPack | R & R">
+                        <input type="hidden" id="body" value="Someone has been assigned to go to your place and they are on the way already! Thank you for your patience and keep safe again!">
+
                         <input type="hidden" name="id" value="<?php echo $id;?>">
-                        <input type="submit" value="Assign/Dispatch">
-                        </form><br>
-                    <?php
-                    }
-                    else if($row['status'] == "On The Way")
-                    {           
-                    ?>
-                        <form action="completeReport.php" method="POST">
-                        <input type="hidden" name="id" value="<?php echo $id;?>">
-                        <input type="submit" value="Complete/Finish">
+                        <input type="submit" value="Assign/Dispatch" onclick="sendEmail1()">
                         </form><br>
                     <?php
                     }
@@ -542,7 +545,7 @@ if(mysqli_num_rows($row_b) > 0)
         while($row = mysqli_fetch_array($query))
         {
         ?>
-        <h3>Accepted By: <?php echo $row['name'];?></h3>
+        <h3>Accepted By: <?php echo $row['p_name'];?></h3>
          <tr>
              <th><?php echo "Name"?></th> 
              <td><?php echo $row['names'] ?></td>
@@ -621,16 +624,21 @@ if(mysqli_num_rows($row_b) > 0)
                 <?php
                 if($user == "p_admin")
                 {
-                $query = mysqli_query($con, "SELECT * from reports where report_id = '$id'"); // SQL Query
+                $query = mysqli_query($con, "SELECT * from reports INNER JOIN civilians ON reports.usernames = civilians.username where report_id = '$id'"); // SQL Query
                 while($row = mysqli_fetch_array($query))
                 {
                     if($row['status'] == "Needs Attention")
                     {
                     ?>
-                        <form action="acceptReport.php" method="POST">
+                        <form action="acceptReport.php" method="POST" id="myEmail">
+                        <input type="hidden" id="name" value="AidPack | R & R">
+                        <input type="hidden" id="email" value="<?php echo $row['email'];?>">
+                        <input type="hidden" id="subject" value="Reports from AidPack | R & R">
+                        <input type="hidden" id="body" value="Your report has been accepted! Please take note of the tips and keep calm! Thank you for reporting and stay safe!">
+
                         <input type="hidden" name="id" value="<?php echo $id;?>">
                         <input type="hidden" name="admin_id" value="<?php echo $p_id;?>">
-                        <input type="submit" value="Accept Report">
+                        <input type="submit" value="Accept Report" onclick="sendEmail1()">
                         </form>
                         <br>
                     <?php
@@ -638,21 +646,18 @@ if(mysqli_num_rows($row_b) > 0)
                     else if($row['status'] == "In Progress")
                     {
                     ?>
-                        <form action="P_assigned.php" method="POST">
+                        <form action="P_assigned.php" method="POST" id="myEmail">
+                        <input type="hidden" id="name" value="AidPack | R & R">
+                        <input type="hidden" id="email" value="<?php echo $row['email'];?>">
+                        <input type="hidden" id="subject" value="Reports from AidPack | R & R">
+                        <input type="hidden" id="body" value="Someone has been assigned to go to your place and they are on the way already! Thank you for your patience and keep safe again!">
+
                         <input type="hidden" name="id" value="<?php echo $id;?>">              
-                        <input type="submit" value="Assign/Dispatch">
+                        <input type="submit" value="Assign/Dispatch" onclick="sendEmail1()">
                         </form><br>
                     <?php
                     }
-                    else if($row['status'] == "On The Way")
-                    {           
-                    ?>
-                        <form action="completeReport.php" method="POST">
-                        <input type="hidden" name="id" value="<?php echo $id;?>">
-                        <input type="submit" value="Complete/Finish">
-                        </form><br>
-                    <?php
-                    }
+                    
                 }
                 }
                 ?>                   
@@ -785,4 +790,42 @@ if(mysqli_num_rows($row_b) > 0)
             ?>
         
 </body>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+    function sendEmail1()
+    {
+        var name = $("#name");
+        var email = $("#email");
+        var subject = $("#subject");
+        var body = $("#body");
+
+        if(isNotEmpty(name) && isNotEmpty(email) && isNotEmpty(subject) && isNotEmpty(body))
+        {
+            $.ajax({
+                url: 'sendEmail1.php',
+                method: 'POST',
+                dataType: 'json',
+                data:{
+                    name: name.val(),
+                    email: email.val(),
+                    subject: subject.val(),
+                    body: body.val(),
+                }, success: function(response){
+                    $('#myEmail')[0].reset();
+                    $('.sent-notification').text("Message Sent!");
+                }
+            });
+        }
+    }
+    function isNotEmpty(caller){
+        if(caller.val() == ""){
+            caller.css('border', '1px solid red');
+            return false;
+        }else{
+            caller.css('border', '');
+            return true;
+        }
+    }
+    </script>
 </html>

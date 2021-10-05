@@ -612,28 +612,9 @@ if(mysqli_num_rows($row_b) > 0)
             google.maps.event.addDomListener(window, "load", initialize());
             </script>
             <form action="completeReportAction_injury.php" method="POST">
-                <table class="coretab">
-                    <tr>
-                        <td>
-            <h3>Who was involved</h3>
-        <input type="text" name="who" placeholder="..." required>
-        </td>
-        <td>
+                
         <h3>When did it take place?</h3>
         <input type="datetime-local" name="when" placeholder="..." required>
-        </td>
-        </tr>
-        <tr>
-            <td>
-        <h3>Why did it happen?</h3>
-        <input type="text" name="why" placeholder="..." required>
-        </td>
-        <td>
-        <h3>How did it happen?</h3>
-        <input type="text" name="how" placeholder="..." required>
-        </td>
-        </tr>
-        </table>
 
         <h3>Rank and Names of First Responders</h3>
         <input type="text" name="firstResponders" placeholder="...">
@@ -674,7 +655,7 @@ of Investigator (Medics, Local Officials, etc) (Address/Contact Nr)</h3>
         </td>
         <td>
         <h3>Time and Date of Arrival of Investigator at the CS</h3>
-        <input type="text" name="arrivalInvestigator" placeholder="...">
+        <input type="datetime-local" name="arrivalInvestigator" placeholder="...">
         </td>
         </tr>
         <tr>

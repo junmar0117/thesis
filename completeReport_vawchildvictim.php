@@ -579,17 +579,17 @@ if(mysqli_num_rows($row_b) > 0)
 
         <hr>
 
-        <input type="checkbox" id="anti_trafficking" name="anti_trafficking" value="RA 9208: Anti-Trafficking in Persons Act of 2003">
+        <input type="checkbox" id="anti_trafficking" name="anti_trafficking" value="Yes">
         <label id="corelabel" for="anti_trafficking">RA 9208: Anti-Trafficking in Persons Act of 2003</label><br>
-        <input type="checkbox" id="anti_child_porn" name="anti_child_porn" value="RA 9775: Anti-Child Pornography Act">
+        <input type="checkbox" id="anti_child_porn" name="anti_child_porn" value="Yes">
         <label id="corelabel" for="anti_child_porn">RA 9775: Anti-Child Pornography Act</label><br>
-        <input type="checkbox" id="anti_voyeurism" name="anti_voyeurism" value="RA 9995: Anti-Photo and Video Voyeurism Act 2009">
+        <input type="checkbox" id="anti_voyeurism" name="anti_voyeurism" value="Yes">
         <label id="corelabel" for="anti_voyeurism">RA 9995: Anti-Photo and Video Voyeurism Act 2009</label><br>
         <hr>
         <h3>Revised Penal Code</h3>
-        <input type="checkbox" id="acts_of_lasciviousness" name="acts_of_lasciviousness" value="Art 336: Acts of Lasciviousness">
+        <input type="checkbox" id="acts_of_lasciviousness" name="acts_of_lasciviousness" value="Yes">
         <label id="corelabel" for="acts_of_lasciviousness">Art 336: Acts of Lasciviousness</label><br>
-        <input type="checkbox" id="others" name="others_penal_code" value="Others">
+        <input type="text" id="others" name="others_penal_code">
         <label id="corelabel" for="others">Others</label>
         <hr>
 
@@ -669,15 +669,15 @@ if(mysqli_num_rows($row_b) > 0)
         <input type="number" name="witness_contact_no" placeholder="...">
 <hr>
         <h3>Note to Barangay VAW Desk Officer: If the victim does not want to continue or pursue the case, please indicate herein the reason</h3>
-        <input type="checkbox" id="lost_of_interest" name="lost_of_interest" value="Lost of interest to file">
+        <input type="checkbox" id="lost_of_interest" name="lost_of_interest" value="Yes">
         <label id="corelabel" for="lost_of_interest">Lost of interest to file</label><br>
-        <input type="checkbox" id="reconciled" name="reconciled" value="Reconciled with the Perpetrator (w/o mediation)">
+        <input type="checkbox" id="reconciled" name="reconciled" value="Yes">
         <label id="corelabel" for="reconciled">Reconciled with the Perpetrator (w/o mediation)</label><br>
-        <input type="checkbox" id="transfer_residence" name="transfer_residence" value="Transfer Residence">
+        <input type="checkbox" id="transfer_residence" name="transfer_residence" value="Yes">
         <label id="corelabel" for="transfer_residence">Transfer Residence</label><br>
-        <input type="checkbox" id="lack_of_support" name="lack_of_support" value="Lack of Support">
+        <input type="checkbox" id="lack_of_support" name="lack_of_support" value="Yes">
         <label id="corelabel" for="lack_of_support">Lack of Support</label><br>
-        <input type="checkbox" id="lack_of_confidence" name="lack_of_confidence" value="Lack of Confidence with Service Provider">
+        <input type="checkbox" id="lack_of_confidence" name="lack_of_confidence" value="Yes">
         <label id="corelabel" for="lack_of_confidence">Lack of Confidence with Service Provider</label><br>
         <input type="text" id="others" name="others_case" placeholder="If others, Please Specify">
 
