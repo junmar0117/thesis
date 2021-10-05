@@ -191,7 +191,7 @@ if(mysqli_num_rows($row_b) > 0)
                 $otw = "";
 				$completed = "";
             ?>
-            <h3>Accepted By: <?php echo $row['name'];?></h3>
+            <h3>Accepted By: <?php echo $row['b_name'];?></h3>
              <tr>
              <th><?php echo "Name"?></th> 
              <td><?php echo $row['names'] ?></td>

@@ -21,7 +21,6 @@ $user = $_SESSION['user']; //assigns user value
 <?php
 if($_SERVER["REQUEST_METHOD"] == "POST")
 {
-    $victim = $_POST['victim'];
     $id = $_POST['id'];
     $assigned_id = $_POST['assigned_id'];
 }

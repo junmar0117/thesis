@@ -22,7 +22,17 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 {
     $id = ($_POST['id']);
     $assigned_id = ($_POST['assigned_id']);
+    $b_id = ($_POST['b_id']);
 }
+?>
+<?php
+    require 'connection.php';    
+    $query = mysqli_query($con, "SELECT * from b_admin where username = '".$_SESSION['user']."'"); // SQL Query
+    while($row = mysqli_fetch_array($query))
+    {
+        $b_id = $row['id'];
+        $position =$row['position'];
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -540,6 +550,7 @@ if(mysqli_num_rows($row_b) > 0)
         <label id="corelabel" for="lack_of_confidence">Lack of Confidence with Service Provider</label><br>
         <input type="text" id="others" name="others_case" placeholder="If others, Please Specify">
 
+        <input type="hidden" name="b_id" value="<?php echo $b_id;?>">
         <input type="hidden" name="assigned_id" value="<?php echo $assigned_id;?>">
         <input type="hidden" name="id" value="<?php echo $id;?>">
         <input type="hidden" name="name" value="<?php echo $name;?>">
@@ -809,7 +820,7 @@ if(mysqli_num_rows($row_b) > 0)
         <h3>Date Now</h3>
         <input type="datetime-local" name="date_of_complete_report">
 
-
+        <input type="hidden" name="b_id" value="<?php echo $b_id;?>">
         <input type="hidden" name="id" value="<?php echo $id;?>">
         <input type="hidden" name="assigned_id" value="<?php echo $assigned_id;?>">
         <input type="hidden" name="name" value="<?php echo $name;?>">
