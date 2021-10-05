@@ -45,7 +45,7 @@
   <a href="B_addAnnouncements.php">Broadcast</a>
   <a href="announcements.php">Announcements</a>
   <a href="B_monitor.php">Monitor</a>
-  <a href="B_completedReports.php">Completed Reports</a>
+  <a href="B_completedReports.php">Completed</a>
   <a href="viewBarangays.php">Barangays</a>
   <a href="B_reportsAssigned.php">Assigned</a>
   <?php        
