@@ -38,7 +38,7 @@ $user = $_SESSION['user']; //assigns user value
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+<script src="https://kit.fontawesome.com/9731ed0fae.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <nav>
@@ -86,6 +86,10 @@ if($user=="b_admin")
                     Print'<span></span>';
                     Print'<input type="text" id="username" required="required" name="username" placeholder="Username "><br>';
                 Print '</div>';
+
+                Print'<div class="txt_field">';
+                    Print'<input type="email" id="email" required="required" name="email" placeholder="Email "><br>';
+                Print'</div>';
 
                 Print' <div class="txt_field">';
                     Print'<span></span>';
@@ -279,6 +283,7 @@ if(isset($_POST['addB']))
 
 	$name = ($_POST['name']);
 	$username = ($_POST['username']);
+	$email = ($_POST['email']);
 	$password = ($_POST['password']);
     $cpassword = ($_POST['cpassword']);
     $position = ($_POST['position']);
@@ -314,7 +319,7 @@ if(isset($_POST['addB']))
           if($password === $cpassword)
           {
             $password = password_hash($password, PASSWORD_DEFAULT);
-            mysqli_query($con, "INSERT INTO b_admin (b_name, username, password,position) VALUES ('$name','$username','$password', '$position')"); //Inserts the value to table users
+            mysqli_query($con, "INSERT INTO b_admin (b_name, username, password,email,position) VALUES ('$name','$username','$password', '$email','$position')"); //Inserts the value to table users
             print '<script>alert("Barangay User added!"); </script>'; // Prompts the user
             print '<script>window.location.assign("B_profile.php");</script>'; // redirects to register.php
           }

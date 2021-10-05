@@ -84,6 +84,11 @@ include_once('P_Userheader.php');
                     Print'<span></span>';
                     Print'<input type="text" id="username" required="required" name="username" placeholder="Username: "><br>';
                 Print '</div>';
+                
+                Print'<div class="txt_field">';
+                    Print'<span></span>';
+                    Print'<input type="email" id="email" required="required" name="email" placeholder="Email: "><br>';
+                Print '</div>';
 
                 Print' <div class="txt_field">';
                     Print'<span></span>';
@@ -241,6 +246,7 @@ if(isset($_POST['addP']))
 
 	$name = ($_POST['name']);
 	$username = ($_POST['username']);
+	$email = ($_POST['email']);
 	$password = ($_POST['password']);
     $cpassword = ($_POST['cpassword']);
     $position = ($_POST['position']);
@@ -277,7 +283,7 @@ if(isset($_POST['addP']))
           if($password === $cpassword)
           {
             $password = password_hash($password, PASSWORD_DEFAULT);
-            mysqli_query($con, "INSERT INTO p_admin (p_name, username, password,position) VALUES ('$name','$username','$password', '$position')"); //Inserts the value to table users
+            mysqli_query($con, "INSERT INTO p_admin (p_name, username, password,email,position) VALUES ('$name','$username','$password', '$email','$position')"); //Inserts the value to table users
             print '<script>alert("Police User added!"); </script>'; // Prompts the user
             print '<script>window.location.assign("P_profile.php");</script>'; // redirects to register.php
           }

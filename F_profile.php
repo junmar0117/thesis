@@ -87,6 +87,11 @@ include_once('F_Userheader.php');
                     Print'<span></span>';
                     Print'<input type="text" id="username" required="required" name="username" placeholder="Username: "><br>';
                 Print '</div>';
+                
+                Print'<div class="txt_field">';
+                    Print'<span></span>';
+                    Print'<input type="email" id="email" required="required" name="email" placeholder="Email: "><br>';
+                Print '</div>';
 
                 Print' <div class="txt_field">';
                     Print'<span></span>';
@@ -172,7 +177,7 @@ if($user=="f_admin")
             <br>
             <?php
             require 'connection.php';    
-            $query = mysqli_query($con, "SELECT * from reports where incident = 'Police' AND status = 'In Progress' OR incident = 'Police' AND status = 'Needs Attention' ORDER BY report_id DESC"); // SQL Query
+            $query = mysqli_query($con, "SELECT * from reports where incident = 'Fire' AND status = 'In Progress' OR incident = 'Fire' AND status = 'Needs Attention' ORDER BY report_id DESC"); // SQL Query
             while($row = mysqli_fetch_array($query))
             {
             ?>
@@ -243,6 +248,7 @@ if(isset($_POST['addF']))
 
 	$name = ($_POST['name']);
 	$username = ($_POST['username']);
+	$email = ($_POST['email']);
 	$password = ($_POST['password']);
     $cpassword = ($_POST['cpassword']);
     $position = ($_POST['position']);
@@ -279,7 +285,7 @@ if(isset($_POST['addF']))
           if($password === $cpassword)
           {
             $password = password_hash($password, PASSWORD_DEFAULT);
-            mysqli_query($con, "INSERT INTO f_admin (f_name, username, password,position) VALUES ('$name','$username','$password', '$position')"); //Inserts the value to table users
+            mysqli_query($con, "INSERT INTO f_admin (f_name, username, password,email,position) VALUES ('$name','$username','$password', '$email','$position')"); //Inserts the value to table users
             print '<script>alert("Firefighter User added!"); </script>'; // Prompts the user
             print '<script>window.location.assign("F_profile.php");</script>'; // redirects to register.php
           }
