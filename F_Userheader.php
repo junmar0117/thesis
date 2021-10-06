@@ -44,7 +44,7 @@
   <a href="F_profile.php">Profile</a>
   <a href="announcements.php">Announcements</a>
   <a href="F_monitor.php">Monitor</a>
-  <a href="F_completedReports.php">Completed Reports</a>
+  <a href="F_completedReports.php">Completed</a>
   <a href="viewBarangays.php">Barangays</a>
   <a href="F_reportsAssigned.php">Assigned</a>
   <a href="logout.php">Sign Out</a>
