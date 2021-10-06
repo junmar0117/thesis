@@ -246,7 +246,7 @@ if(mysqli_num_rows($row_b) > 0)
             var map;
 
             function initialize() {
-            var myLatlng = new google.maps.LatLng(<?php echo $row['latitude']?>,<?php echo $row['longitude']?>);
+            var myLatlng = new google.maps.LatLng(<?php echo $row['lat']?>,<?php echo $row['lng']?>);
 
             var myOptions = {
                 zoom: 15,
@@ -421,7 +421,7 @@ if(mysqli_num_rows($row_b) > 0)
             var map;
 
             function initialize() {
-            var myLatlng = new google.maps.LatLng(<?php echo $row['latitude']?>,<?php echo $row['longitude']?>);
+            var myLatlng = new google.maps.LatLng(<?php echo $row['lat']?>,<?php echo $row['lng']?>);
 
             var myOptions = {
                 zoom: 15,
@@ -600,7 +600,7 @@ if(mysqli_num_rows($row_b) > 0)
             var map;
 
             function initialize() {
-            var myLatlng = new google.maps.LatLng(<?php echo $row['latitude']?>,<?php echo $row['longitude']?>);
+            var myLatlng = new google.maps.LatLng(<?php echo $row['lat']?>,<?php echo $row['lng']?>);
 
             var myOptions = {
                 zoom: 15,
@@ -764,7 +764,7 @@ if(mysqli_num_rows($row_b) > 0)
             var map;
 
             function initialize() {
-            var myLatlng = new google.maps.LatLng(<?php echo $row['latitude']?>,<?php echo $row['longitude']?>);
+            var myLatlng = new google.maps.LatLng(<?php echo $row['lat']?>,<?php echo $row['lng']?>);
 
             var myOptions = {
                 zoom: 15,

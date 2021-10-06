@@ -140,6 +140,7 @@ include_once('B_Userheader.php');
                 <th>Status</th>
                 <th>View Report</th>
                 <th>View Record</th>
+                <th>Feature</th>
             </tr>
             <?php
             require 'connection.php';   
@@ -181,6 +182,22 @@ include_once('B_Userheader.php');
                         <button type="submit" class="viewReportbtn2">View</button>
                     </form>
                 </td>
+                <?php
+								if($row['featured'] == 1)
+								{
+									$featured = "Checked";
+								}
+								else
+								{
+									$notFeatured = "Checked";
+								}
+							?>
+							<form>
+                            <label class="CBcontainer">
+							<input type="checkbox" value="<?php if($row['featured'] == 1){echo 2;}else{echo 1;}?>" name="featured" onchange="featured_reports(this.value,<?php echo $row['report_id'];?>)" <?php echo $featured ?>></input><br>
+                            <span class="checkmark"></span>    
+                        </label>
+                        </form>
                 </tr>
             <?php
         }
@@ -240,6 +257,9 @@ include_once('B_Userheader.php');
                         <button type="submit" class="viewReportbtn2">View</button>
                     </form>
                 </td>
+                <td>
+
+            </td>
                 </tr>
             <?php
         }

@@ -96,7 +96,7 @@ session_start();
             <?php
 		require 'connection.php';
 
-		$postQuery = "SELECT * FROM announcements LEFT JOIN b_admin ON announcements.b_admin_id = b_admin.id WHERE date_created < now() AND featured = 1 LIMIT 3";
+		$postQuery = "SELECT * FROM announcements LEFT JOIN b_admin ON announcements.b_admin_id = b_admin.id WHERE date_created > now() AND featured = 1 LIMIT 3";
 		$runPQ = mysqli_query($con, $postQuery);
 		while($row = mysqli_fetch_assoc($runPQ))
 		{
