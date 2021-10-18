@@ -17,7 +17,8 @@ $password = ($_POST['password']);
                     $_SESSION['user'] = $username; //set the username in a session. This serves as a global variable
                     $_SESSION['c_user'] = $username;
 					$_SESSION['type'] = 'civilian';//set the type in a session. This serves as a global variable
-                    $_SESSION['name'] = $row['name'];
+                    $_SESSION['fname'] = $row['fname'];
+                    $_SESSION['lname'] = $row['lname'];
 					Print '<script>alert("Logged in successfully!");</script>'; //Prompts the user
 					header("location:C_profile.php"); // redirects the user to the authenticated home page
                 }

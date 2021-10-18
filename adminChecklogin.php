@@ -18,7 +18,8 @@ if(isset($_POST['b_login']))
                   $_SESSION['user'] = $username; //set the username in a session. This serves as a global variable
                   $_SESSION['b_user'] = $username; 
                   $_SESSION['type'] = 'barangay';//set the type in a session. This serves as a global variable
-                  $_SESSION['name'] = $row['b_name'];
+                  $_SESSION['fname'] = $row['b_fname'];
+                  $_SESSION['lname'] = $row['b_lname'];
                   header("location: B_profile.php"); // redirects the user to the authenticated home page
                 }
                 else
@@ -56,7 +57,8 @@ if(isset($_POST['f_login']))
                   $_SESSION['user'] = $username; //set the username in a session. This serves as a global variable
                   $_SESSION['f_user'] = $username;
                   $_SESSION['type'] = 'fire';//set the type in a session. This serves as a global variable
-                  $_SESSION['name'] = $row['f_name'];
+                  $_SESSION['fname'] = $row['f_fname'];
+                  $_SESSION['lname'] = $row['f_lname'];
                   header("location: F_profile.php"); // redirects the user to the authenticated home page
                 }
                 else
@@ -94,7 +96,8 @@ if(isset($_POST['p_login']))
                   $_SESSION['user'] = $username; //set the username in a session. This serves as a global variable
                   $_SESSION['p_user'] = $username;
                   $_SESSION['type'] = 'police';//set the type in a session. This serves as a global variable
-                  $_SESSION['name'] = $row['p_name'];
+                  $_SESSION['fname'] = $row['p_fname'];
+                  $_SESSION['lname'] = $row['p_lname'];
                   header("location: P_profile.php"); // redirects the user to the authenticated home page
                 }
                 else

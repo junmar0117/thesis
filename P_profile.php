@@ -77,7 +77,12 @@ include_once('P_Userheader.php');
         Print '<form action="P_profile.php" method="POST">';
                 Print '<div class="txt_field">';
                     Print '<span></span>';
-                    Print '<input type="text" id="name" required="required" name="name" placeholder="Name: "><br>';
+                    Print '<input type="text" id="fname" required="required" name="fname" placeholder="First Name: "><br>';
+                Print '</div>';
+
+                Print '<div class="txt_field">';
+                    Print '<span></span>';
+                    Print '<input type="text" id="lname" required="required" name="lname" placeholder="Last Name: "><br>';
                 Print '</div>';
 
                 Print'<div class="txt_field">';
@@ -92,12 +97,12 @@ include_once('P_Userheader.php');
 
                 Print' <div class="txt_field">';
                     Print'<span></span>';
-                    Print'<input type="password" id="password" required="required" name="password" placeholder="Password: "><br>';
+                    Print'<input type="password" id="password" required="required" name="password" placeholder="Password: " pattern="(?=.*[^\w])(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number, one uppercase and lowercase letter, one special case character, and at least 8 or more characters"><br>';
                 Print '</div>';
 
                 Print' <div class="txt_field">';
                     Print'<span></span>';
-                    Print'<input type="password" id="password" required="required" name="cpassword" placeholder="Confirm Password: "><br>';
+                    Print'<input type="password" id="password" required="required" name="cpassword" placeholder="Confirm Password: " pattern="(?=.*[^\w])(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number, one uppercase and lowercase letter, one special case character, and at least 8 or more characters"><br>';
                 Print '</div>';
 
                 Print'<div class="txt_field">';
@@ -244,7 +249,8 @@ else {
 if(isset($_POST['addP']))
 { 
 
-	$name = ($_POST['name']);
+	$fname = ucwords(($_POST['fname']));
+    $lname = ucwords(($_POST['lname']));
 	$username = ($_POST['username']);
 	$email = ($_POST['email']);
 	$password = ($_POST['password']);
@@ -283,7 +289,7 @@ if(isset($_POST['addP']))
           if($password === $cpassword)
           {
             $password = password_hash($password, PASSWORD_DEFAULT);
-            mysqli_query($con, "INSERT INTO p_admin (p_name, username, password,email,position) VALUES ('$name','$username','$password', '$email','$position')"); //Inserts the value to table users
+            mysqli_query($con, "INSERT INTO p_admin (p_fname, p_lname, username, password,email,position) VALUES ('$fname','$lname','$username','$password', '$email','$position')"); //Inserts the value to table users
             print '<script>alert("Police User added!"); </script>'; // Prompts the user
             print '<script>window.location.assign("P_profile.php");</script>'; // redirects to register.php
           }

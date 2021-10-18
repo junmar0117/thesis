@@ -1,11 +1,12 @@
 <?php
 	require 'connection.php';    
-    if(isset($_SESSION['name']))
+    if(isset($_SESSION['user']))
     {
         $queryID = mysqli_query($con, "SELECT * from civilians WHERE civilians.username = '".$_SESSION['user']."' LIMIT 1");
         while($row = mysqli_fetch_array($queryID))
         {           
-            $name = $row['name'];
+            $fname = $row['fname'];
+            $lname = $row['lname'];
         }
     }
 ?>
@@ -24,7 +25,7 @@
 <body>
 
 <div class="topnav" id="myTopnav">
-  <a href="C_profile.php" class= "logactive">AidPack | <?php echo mb_strimwidth($name, 0, 10, "...");?></a>
+  <a href="C_profile.php" class= "logactive">AidPack | <?php echo mb_strimwidth($lname, 0, 10, "...");?></a>
   <div class="FRC">
   <div class="dropdown">
     <button href="#" onclick="myFunction()" class="dropbtn">Menu<i class="fas fa-caret-down" style="padding-left: 5px;"></i></button>

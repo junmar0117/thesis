@@ -1,11 +1,12 @@
 <?php
 	require 'connection.php';    
-    if(isset($_SESSION['name']))
+    if(isset($_SESSION['user']))
     {
         $queryID = mysqli_query($con, "SELECT * from f_admin WHERE f_admin.username = '".$_SESSION['user']."' LIMIT 1");
         while($row = mysqli_fetch_array($queryID))
         {           
-            $name = $row['f_name'];
+          $fname = $row['f_fname'];
+          $lname = $row['f_lname'];
         }
     }
 ?>
@@ -23,7 +24,7 @@
 <body>
 
 <div class="topnav" id="myTopnav">
-  <a href="F_profile.php" class= "logactive">AidPack | <?php echo mb_strimwidth($name, 0, 10, "...");?></a>
+  <a href="F_profile.php" class= "logactive">AidPack | <?php echo mb_strimwidth($lname, 0, 10, "...");?></a>
   <div class="FRC">
     <div class="dropdown">
     <?php
@@ -33,7 +34,8 @@
             $queryID = mysqli_query($con, "SELECT * from f_admin WHERE f_admin.username = '".$_SESSION['f_user']."' LIMIT 1");
             while($row = mysqli_fetch_array($queryID))
             {           
-                $name = $row['f_name'];
+              $fname = $row['f_fname'];
+              $lname = $row['f_lname'];
             }
       }
       ?>

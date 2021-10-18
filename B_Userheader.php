@@ -1,11 +1,12 @@
 <?php
 	require 'connection.php';    
-    if(isset($_SESSION['name']))
+    if(isset($_SESSION['user']))
     {
         $queryID = mysqli_query($con, "SELECT * from b_admin WHERE b_admin.username = '".$_SESSION['user']."' LIMIT 1");
         while($row = mysqli_fetch_array($queryID))
         {           
-            $name = $row['b_name'];
+            $fname = $row['b_fname'];
+            $lname = $row['b_lname'];
         }
     }
 ?>
@@ -23,7 +24,7 @@
 <body>
 
 <div class="topnav" id="myTopnav">
-  <a href="B_profile.php" class= "logactive">AidPack | <?php echo mb_strimwidth($name, 0, 10, "...");?></a>
+  <a href="B_profile.php" class= "logactive">AidPack | <?php echo mb_strimwidth($lname, 0, 10, "...");?></a>
   <div class="FRC">
     <div class="dropdown">
       <?php
@@ -33,12 +34,16 @@
             $queryID = mysqli_query($con, "SELECT * from b_admin WHERE b_admin.username = '".$_SESSION['b_user']."' LIMIT 1");
             while($row = mysqli_fetch_array($queryID))
             {           
-                $name = $row['b_name'];
+                $fname = $row['b_fname'];
+                $lname = $row['b_lname'];
             }
+
+            $query = mysqli_query($con, "SELECT * from verification_proof"); // SQL Query
+            $verificationCount = mysqli_num_rows($query);
       }
       ?>
       
-      <button href="#" onclick="myFunction()" class="dropbtn">Menu<i class="fas fa-caret-down" style="padding-left: 5px;"></i></button>
+      <button href="#" onclick="myFunction()" class="dropbtn">Menu<?php echo " "; echo $verificationCount; ?><i class="fas fa-caret-down" style="padding-left: 5px;"></i></button>
       <div id="myDropdown" class="dropdown-content">
   <a href="index.php">Home</a>
   <a href="B_profile.php">Profile</a>
@@ -49,10 +54,10 @@
   <a href="viewBarangays.php">Barangays</a>
   <a href="B_reportsAssigned.php">Assigned</a>
   <?php        
-  if($name == "Administrator")
+  if($fname == "Administrator")
   {
   ?>
-  <a href="B_pendingVerification.php">Verification</a>
+  <a href="B_pendingVerification.php">Verification<?php echo " "; echo $verificationCount; ?></a>
   <?php
   }
   ?>

@@ -130,12 +130,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     <tr>
     <td>
             <label for="typeOfInci">Type of Incident</label>
-            <select name="type" id="type" required>
+            <select name="type" id="type" required  onchange="showDiv(this)">
+                <option hidden disabled selected value> -- Select an option -- </option>
                 <option value="Physical Injury">Physical Injury</option>
-            </select>
+            </select>         
             </td>
     <td>
-
         <?php
         require 'connection.php';  
         $queryID = mysqli_query($con, "SELECT * from civilians WHERE civilians.username = '".$_SESSION['user']."' LIMIT 1");
@@ -146,7 +146,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         $query = mysqli_query($con, "SELECT * from civilians WHERE civilians.id = $id LIMIT 1"); // SQL Query
         while($row = mysqli_fetch_array($query))
         {
-          $name = $row['name'];
+          $fname = $row['fname'];
+          $lname = $row['lname'];
           $email = $row['email'];
         }
         ?>
@@ -158,13 +159,32 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     </tr>
     <tr>
     <td>
-        <label for="file">Proof of Incident</label>
+        <label for="file">Proof of Incident (Attach a photo/video regarding the incident)</label>
+        <label for="file">**Accepted file formats: .jpg, .jpeg, .png, .mp4**</label>
         <input type="file" name="file" id="fileAttachment" required>
     </td>
     </tr>
     </table>
     <hr>
         </div>
+
+            <script type="text/javascript">
+            function showDiv(select)
+            {
+                if(select.value=="Physical Injury")
+                {
+                    document.getElementById('physical_injury').style.display = "block";
+                } 
+                else
+                {
+                    document.getElementById('physical_injury').style.display = "none";
+                }
+            } 
+            </script>
+
+
+            <div id="physical_injury" style="display:none;">Physical Injury</div>
+        
         <script>
 function openTabForm(evt, tabFormName) {
   var i, CreportInputBox, tablinks;

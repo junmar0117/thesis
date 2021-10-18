@@ -128,10 +128,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     <tr>
     <td>
             <label for="typeOfInci">Type of Incident</label>
-            <select name="type" id="type" required>
+            <select name="type" id="type" required onchange="showDiv(this)">
+                <option hidden disabled selected value> -- Select an option -- </option>
                 <option value="Child Abuse">Child Abuse</option>
                 <option value="Violence Against Women">Violence Against Women</option>
-            </select>
+            </select>         
             </td>
     <td>
         
@@ -146,19 +147,45 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         $query = mysqli_query($con, "SELECT * from civilians WHERE civilians.id = $id LIMIT 1"); // SQL Query
         while($row = mysqli_fetch_array($query))
         {
-          $name = $row['name'];
+          $fname = $row['fname'];
+          $lname = $row['lname'];
           $email = $row['email'];
         }
         ?>
 
-        
-<label for="file">Proof of Incident</label>
-            <input type="file" name="file" id="fileAttachment" required>
+<label for="description">Description of Incident</label>
+        <input type="text" name="description" required>        
+        </td>
+    </tr>
+    <tr>
+    <td>
+        <label for="file">Proof of Incident (Attach a photo/video regarding the incident)</label>
+        <label for="file">**Accepted file formats: .jpg, .jpeg, .png, .mp4**</label>
+        <input type="file" name="file" id="fileAttachment" required>
     </td>
     </tr>
     </table>
     <hr>
         </div>
+
+        <script type="text/javascript">
+        function showDiv(select)
+        {
+            if(select.value=="Child Abuse")
+            {
+                document.getElementById('child_abuse').style.display = "block";
+                document.getElementById('vaw').style.display = "none";
+            }
+            else if(select.value=="Violence Against Women")
+            {
+                document.getElementById('child_abuse').style.display = "none";
+                document.getElementById('vaw').style.display = "block";
+            }
+        } 
+        </script>
+
+        <div id="child_abuse" style="display:none;">Child Abuse</div>
+        <div id="vaw" style="display:none;">Violence Against Women</div>
 
         <script>
 function openTabForm(evt, tabFormName) {

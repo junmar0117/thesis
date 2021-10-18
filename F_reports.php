@@ -53,11 +53,13 @@ $user = $_SESSION['user']; //assigns user value
     <tr>
     <td>
             <label for="typeOfInci">Type of Incident</label>
-            <select name="type" id="type" required>
+            <select name="type" id="type" required onchange="showDiv(this)">
+                <option hidden disabled selected value> -- Select an option -- </option>
                 <option value="House Fire">House Fire</option>
                 <option value="Establishment Fire">Establishment Fire</option>
-            </select>
+            </select>        
     </td>
+
     <td>
         <?php
         require 'connection.php';  
@@ -69,11 +71,13 @@ $user = $_SESSION['user']; //assigns user value
         $query = mysqli_query($con, "SELECT * from civilians WHERE civilians.id = $id LIMIT 1"); // SQL Query
         while($row = mysqli_fetch_array($query))
         {
-          $name = $row['name'];
+          $fname = $row['fname'];
+          $lname = $row['lname'];
           $email = $row['email'];
         }
         ?>
-            <label for="file">Proof of Incident</label>
+            <label for="file">Proof of Incident (Attach a photo/video regarding the incident)</label>
+            <label for="file">**Accepted file formats: .jpg, .jpeg, .png, .mp4**</label>
             <input type="file" name="file" id="fileAttachment" required>
             </td>
     </tr>
@@ -173,7 +177,24 @@ document.getElementById("defaultOpen").click();
             <div id="map_canvas" style="width: 100%; height: 400px;"></div>               
         </div>
 
-        
+        <script type="text/javascript">
+        function showDiv(select)
+        {
+            if(select.value=="House Fire")
+            {
+                document.getElementById('house_fire').style.display = "block";
+                document.getElementById('establishment_fire').style.display = "none";
+            }
+            else if(select.value=="Establishment Fire")
+            {
+                document.getElementById('house_fire').style.display = "none";
+                document.getElementById('establishment_fire').style.display = "block";
+            }          
+        } 
+        </script>        
+
+        <div id="house_fire" style="display:none;">House Fire</div>
+        <div id="establishment_fire" style="display:none;">Establishment Fire</div>
 
         <hr>
 
