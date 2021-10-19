@@ -56,6 +56,31 @@ include_once('B_Userheader.php');
     <hr>
 </div>
 <br>
+
+            <?php
+            require 'connection.php';    
+            $query = mysqli_query($con, "SELECT * from complete_report_vaw"); // SQL Query
+            $vaw = mysqli_num_rows($query);
+
+            $query1 = mysqli_query($con, "SELECT * from complete_report_vawchild"); // SQL Query
+            $vawchild= mysqli_num_rows($query1);
+
+            $query2 = mysqli_query($con, "SELECT * from complete_report_vawchildvictim"); // SQL Query
+            $vawchildvictim= mysqli_num_rows($query2);
+
+            $query3 = mysqli_query($con, "SELECT * from complete_report_vawvictim_childperpe"); // SQL Query
+            $vawvictim= mysqli_num_rows($query3);
+            
+            $query4 = mysqli_query($con, "SELECT * from complete_report_fire where 'type' = 'Establishment Fire'"); // SQL Query
+            $establishmentfire= mysqli_num_rows($query4);
+
+            $query5 = mysqli_query($con, "SELECT * from complete_report_fire where 'type' = 'House Fire'"); // SQL Query
+            $housefire= mysqli_num_rows($query5);
+
+            $query6 = mysqli_query($con, "SELECT * from complete_report_injury"); // SQL Query
+            $injury= mysqli_num_rows($query6);
+            ?>
+
     <div class="tab">
         <button class="tablinks" id="defaultOpen" onclick="openTabForm(event, 'vaw')">VAW</button>
         <button class="tablinks" id="defaultOpen" onclick="openTabForm(event, 'vawc')">VAW (Child Perpetrator)</button>
@@ -77,6 +102,7 @@ include_once('B_Userheader.php');
                 <th>Status</th>
                 <th>View Report</th>
             </tr>
+            <?php echo '<h2><center>Total Cases: ' . $vaw . '</center></h2>';?>
             <?php
             require 'connection.php';         
 
@@ -119,6 +145,7 @@ include_once('B_Userheader.php');
                 <th>Status</th>
                 <th>View Report</th>
             </tr>
+            <?php echo '<h2><center>Total Cases: ' . $vawchild . '</center></h2>';?>
             <?php
             require 'connection.php';         
 
@@ -137,7 +164,7 @@ include_once('B_Userheader.php');
                 <td><?php echo $row['incident']  ?></td>
                 <td><?php echo $row['status']?></td>
                 <td>
-                    <form action="viewReports.php" method="POST">
+                    <form action="viewCompletedReports.php" method="POST">
                         <input type="hidden" name="id" value="<?php echo $row['c_id']?>">
                         <input type="hidden" name="report_id" value="<?php echo $row['reports_id']?>">
                         <input type="submit" class="viewReportbtn2" value="View" name="vawchild"></input>
@@ -161,6 +188,7 @@ include_once('B_Userheader.php');
                 <th>Status</th>
                 <th>View Report</th>
             </tr>
+            <?php echo '<h2><center>Total Cases: ' . $vawchildvictim . '</center></h2>';?>
             <?php
             require 'connection.php';   
             $query = mysqli_query($con, "SELECT * from complete_report_vawchildvictim ORDER BY c_id DESC"); // SQL Query
@@ -176,7 +204,7 @@ include_once('B_Userheader.php');
                 <td><?php echo $row['incident']  ?></td>
                 <td><?php echo $row['status']?></td>
                 <td>
-                    <form action="viewReports.php" method="POST">
+                    <form action="viewCompletedReports.php" method="POST">
                         <input type="hidden" name="id" value="<?php echo $row['c_id']?>">
                         <input type="hidden" name="report_id" value="<?php echo $row['reports_id']?>">
                         <input type="submit" class="viewReportbtn2" value="View" name="vawchildvictim"></input>
@@ -200,6 +228,7 @@ include_once('B_Userheader.php');
                 <th>Status</th>
                 <th>View Report</th>
             </tr>
+            <?php echo '<h2><center>Total Cases: ' . $vawvictim . '</center></h2>';?>
             <?php
             require 'connection.php';   
             $query = mysqli_query($con, "SELECT * from complete_report_vawvictim_childperpe ORDER BY c_id DESC"); // SQL Query
@@ -215,7 +244,7 @@ include_once('B_Userheader.php');
                 <td><?php echo $row['incident']  ?></td>
                 <td><?php echo $row['status']?></td>
                 <td>
-                    <form action="viewReports.php" method="POST">
+                    <form action="viewCompletedReports.php" method="POST">
                         <input type="hidden" name="id" value="<?php echo $row['c_id']?>">
                         <input type="hidden" name="report_id" value="<?php echo $row['reports_id']?>">
                         <input type="submit" class="viewReportbtn2" value="View" name="vawvictimchildperpe"></input>
@@ -239,6 +268,7 @@ include_once('B_Userheader.php');
                 <th>Status</th>
                 <th>View Report</th>
             </tr>
+            <?php echo '<h2><center>Total Cases: ' . $housefire . '</center></h2>';?>
             <?php
             require 'connection.php';   
             $query = mysqli_query($con, "SELECT * from complete_report_fire where `type` = 'House Fire' ORDER BY c_id DESC"); // SQL Query
@@ -278,6 +308,7 @@ include_once('B_Userheader.php');
                 <th>Status</th>
                 <th>View Report</th>
             </tr>
+            <?php echo '<h2><center>Total Cases: ' . $establishmentfire . '</center></h2>';?>
             <?php
             require 'connection.php';   
             $query = mysqli_query($con, "SELECT * from complete_report_fire where `type` = 'Establishment Fire' ORDER BY c_id DESC"); // SQL Query
@@ -293,7 +324,7 @@ include_once('B_Userheader.php');
                 <td><?php echo $row['incident']  ?></td>
                 <td><?php echo $row['status']?></td>
                 <td>
-                    <form action="viewReports.php" method="POST">
+                    <form action="viewCompletedReports.php" method="POST">
                         <input type="hidden" name="id" value="<?php echo $row['c_id']?>">
                         <input type="hidden" name="report_id" value="<?php echo $row['reports_id']?>">
                         <input type="submit" class="viewReportbtn2" value="View" name="fire"></input>
@@ -317,9 +348,10 @@ include_once('B_Userheader.php');
                 <th>Status</th>
                 <th>View Report</th>
             </tr>
+            <?php echo '<h2><center>Total Cases: ' . $injury . '</center></h2>';?>
             <?php
             require 'connection.php';   
-            $query = mysqli_query($con, "SELECT * from complete_report_injury ORDER BY id DESC"); // SQL Query
+            $query = mysqli_query($con, "SELECT * from complete_report_injury ORDER BY c_id DESC"); // SQL Query
             while($row = mysqli_fetch_array($query))
             {                   
             ?>
@@ -332,15 +364,16 @@ include_once('B_Userheader.php');
                 <td><?php echo $row['incident']  ?></td>
                 <td><?php echo $row['status']?></td>
                 <td>
-                    <form action="viewReports.php" method="POST">
-                        <input type="hidden" name="id" value="<?php echo $row['report_id']?>">
+                    <form action="viewCompletedReports.php" method="POST">
+                        <input type="hidden" name="id" value="<?php echo $row['c_id']?>">
+                        <input type="hidden" name="report_id" value="<?php echo $row['reports_id']?>">
                         <button type="submit" class="viewReportbtn2">View</button>
                     </form>
                 </td>               
                 </tr>
             <?php
-        }
-        ?>
+            }
+            ?>
         </table>
     </div>
 

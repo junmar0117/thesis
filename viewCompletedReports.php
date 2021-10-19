@@ -193,7 +193,7 @@ if(mysqli_num_rows($row_b) > 0)
                 $otw = "";
 				$completed = "";
             ?>
-            <h3>Accepted By: <?php echo $row['b_name'];?></h3>
+            <h3>Accepted By: <?php echo $row['b_fname']; echo " "; echo $row['b_lname'];?></h3>
             <tr>
              <th><?php echo "ID: ";?></th> 
              <td><?php  echo $row['c_id']; ?></td>
@@ -706,7 +706,7 @@ if(mysqli_num_rows($row_b) > 0)
                 $otw = "";
 				$completed = "";
             ?>
-            <h3>Accepted By: <?php echo $row['b_name'];?></h3>
+            <h3>Accepted By: <?php echo $row['b_fname']; echo " "; echo $row['b_lname'];?></h3>
             <tr>
              <th><?php echo "ID: ";?></th> 
              <td><?php  echo $row['c_id']; ?></td>
@@ -1158,7 +1158,7 @@ else if(isset($_POST['vawchild']))
                 $otw = "";
 				$completed = "";
             ?>
-            <h3>Accepted By: <?php echo $row['b_name'];?></h3>
+            <h3>Accepted By: <?php echo $row['b_fname']; echo " "; echo $row['b_lname'];?></h3>
             <tr>
              <th><?php echo "ID: ";?></th> 
              <td><?php  echo $row['c_id']; ?></td>
@@ -1609,7 +1609,7 @@ else if(isset($_POST['vawchild']))
                 $otw = "";
 				$completed = "";
             ?>
-            <h3>Accepted By: <?php echo $row['b_name'];?></h3>
+            <h3>Accepted By: <?php echo $row['b_fname']; echo " "; echo $row['b_lname'];?></h3>
             <tr>
              <th><?php echo "ID: ";?></th> 
              <td><?php  echo $row['c_id']; ?></td>
@@ -2088,7 +2088,7 @@ else if(isset($_POST['vawchild']))
                 $otw = "";
 				$completed = "";
             ?>
-            <h3>Accepted By: <?php echo $row['b_name'];?></h3>
+            <h3>Accepted By: <?php echo $row['b_fname']; echo " "; echo $row['b_lname'];?></h3>
             <tr>
              <th><?php echo "ID: ";?></th> 
              <td><?php  echo $row['c_id']; ?></td>
@@ -2612,7 +2612,7 @@ else if(isset($_POST['vawchild']))
         while($row = mysqli_fetch_array($query))
         {
         ?>
-        <h3>Accepted By: <?php echo $row['f_name'];?></h3>
+        <h3>Accepted By: <?php echo $row['f_fname']; echo " "; echo $row['f_lname'];?></h3>
             <tr>
              <th><?php echo "ID: ";?></th> 
              <td><?php  echo $row['c_id']; ?></td>
@@ -2963,7 +2963,7 @@ else if(isset($_POST['vawchild']))
                 $otw = "";
 				$completed = "";
             ?>
-            <h3>Accepted By: <?php echo $row['p_name'];?></h3>
+            <h3>Accepted By: <?php echo $row['p_fname']; echo " "; echo $row['p_lname'];?></h3>
             <tr>
              <th><?php echo "ID: ";?></th> 
              <td><?php  echo $row['c_id']; ?></td>
