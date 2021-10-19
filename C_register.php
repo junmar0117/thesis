@@ -1,4 +1,7 @@
-
+<?php
+$vkey = uniqid(true);
+$code = $vkey;
+?>
 <html lang="en">
 <head>
     <meta charset = "utf-8">
@@ -27,7 +30,7 @@
     <div >
         <h2 class="rlch1">Create Account</h2>
         
-        <form action="C_register.php" method="POST">
+        <form action="C_register.php" method="POST" id="myEmail">
             
         <div class="register-box2">
         <label>Enter First Name</label>
@@ -124,7 +127,12 @@
             
         </div>
 <br>
-            <input type="submit" value="Register" class="C_registerbtn">
+            <input type="hidden" name="codes" value="<?php echo $code; ?>">
+            <input type="hidden" id="name" value="AidPack | R & R">
+            <input type="hidden" id="subject" value="Reports from AidPack | R & R">
+            <input type="hidden" id="body" value="<a href='http://localhost/thesiss/verify.php?vkey=<?php echo $code; ?>'>Register Account</a>">
+
+            <input type="submit" value="Register" class="C_registerbtn" onclick="sendEmail1()">
             <a href="C_login.php" id="signininstead">Already have an account? Log in here.</a>
         </form>
 
@@ -135,6 +143,45 @@
 <div class="footer3">
           </div>
 </body>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+    function sendEmail1()
+    {
+        var name = $("#name");
+        var email = $("#email");
+        var subject = $("#subject");
+        var body = $("#body");
+
+        if(isNotEmpty(name) && isNotEmpty(email) && isNotEmpty(subject) && isNotEmpty(body))
+        {
+            $.ajax({
+                url: 'sendEmail1.php',
+                method: 'POST',
+                dataType: 'json',
+                data:{
+                    name: name.val(),
+                    email: email.val(),
+                    subject: subject.val(),
+                    body: body.val(),
+                }, success: function(response){
+                    $('#myEmail')[0].reset();
+                    $('.sent-notification').text("Message Sent!");
+                }
+            });
+        }
+    }
+    function isNotEmpty(caller){
+        if(caller.val() == ""){
+            caller.css('border', '1px solid red');
+            return false;
+        }else{
+            caller.css('border', '');
+            return true;
+        }
+    }
+    </script>
+
 </html>
 
 <?php
@@ -149,6 +196,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 	$username = ($_POST['username']);
 	$password = ($_POST['password']);
     $cpassword = ($_POST['cpassword']);
+    $vkey1 = ($_POST['codes']);
     
     $bool = true;
 
@@ -175,8 +223,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
           if($password === $cpassword)
           {
           $password = password_hash($password, PASSWORD_DEFAULT);
-          mysqli_query($con, "INSERT INTO civilians (fname, lname, birthday, address,email,contact_no,username, password) VALUES ('$fname','$lname','$birthday','$barangays','$email','$contact_no','$username','$password')"); //Inserts the value to table users
-          print '<script>alert("Successfully Registered!"); </script>'; // Prompts the user
+          mysqli_query($con, "INSERT INTO civilians (fname, lname, birthday, address,email,contact_no,username, password,vkey) VALUES ('$fname','$lname','$birthday','$barangays','$email','$contact_no','$username','$password','$vkey1')"); //Inserts the value to table users
+          print '<script>alert("Successfully Registered! A verification email has been sent to the email address that you provided."); </script>'; // Prompts the user
           print '<script>window.location.assign("C_login.php");</script>'; // redirects to register.php
           }
           else

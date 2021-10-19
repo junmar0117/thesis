@@ -12,19 +12,29 @@ $password = ($_POST['password']);
         {
             while($row = mysqli_fetch_assoc($results)) //display all rows from query
             {  
-                if(password_verify($password, $row['password'])) // checks if there are any matching fields
-                {
-                    $_SESSION['user'] = $username; //set the username in a session. This serves as a global variable
-                    $_SESSION['c_user'] = $username;
-					$_SESSION['type'] = 'civilian';//set the type in a session. This serves as a global variable
-                    $_SESSION['fname'] = $row['fname'];
-                    $_SESSION['lname'] = $row['lname'];
-					Print '<script>alert("Logged in successfully!");</script>'; //Prompts the user
-					header("location:C_profile.php"); // redirects the user to the authenticated home page
+                $email_verified = $row['email_verified'];
+
+                if($email_verified == 1)
+                { 
+                    if(password_verify($password, $row['password'])) // checks if there are any matching fields
+                    {
+                        $_SESSION['user'] = $username; //set the username in a session. This serves as a global variable
+                        $_SESSION['c_user'] = $username;
+                        $_SESSION['type'] = 'civilian';//set the type in a session. This serves as a global variable
+                        $_SESSION['fname'] = $row['fname'];
+                        $_SESSION['lname'] = $row['lname'];
+                        Print '<script>alert("Logged in successfully!");</script>'; //Prompts the user
+                        header("location:C_profile.php"); // redirects the user to the authenticated home page
+                    }
+                    else
+                    {
+                        Print '<script>alert("Incorrect Credential, Please try again!");</script>'; //Prompts the user
+                        Print '<script>window.location.assign("C_login.php");</script>'; // redirects to login.php
+                    }
                 }
                 else
                 {
-                    Print '<script>alert("Incorrect Credential, Please try again!");</script>'; //Prompts the user
+                    Print '<script>alert("Account not yet verified through email");</script>'; //Prompts the user
                     Print '<script>window.location.assign("C_login.php");</script>'; // redirects to login.php
                 }
             }
