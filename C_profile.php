@@ -110,25 +110,33 @@ include_once('Userheader.php');
                     <br>
                     
                     </div>
-            <br>
-            <div>
+            
+
+            
+            <div class="repbtnalign" style="text-align:center;">
                 <?php
                 $query = mysqli_query($con, "SELECT * from civilians where username = '$user' "); // SQL Query
                 while($row = mysqli_fetch_array($query))
                 {
                     if($row['verified'] == 1)
                     {
+                        echo '<h1 id="prbdnot">Click the button if you wish to report</h1>';
+                        echo '<br>';
                         echo '<a href="C_reportIncident.php" class="profileReportBtn">REPORT INCIDENT <i class="fas fa-unlock-alt" style="padding-left: 5px;"></i></a>';
+                        echo '<hr>';
                     }
                     else
                     {
-                        echo '<a class="profileReportBtnDisabled">REPORT INCIDENT <i class="fas fa-user-lock" style="padding-left: 5px;"></i></a>';
-                        
+                        echo '<h1 id="prbdnot">Please verify your account to access the feature below</h1>';
+                        echo '<br>';
+                        echo '<a class="profileReportBtnDisabled">REPORT INCIDENT<i class="fas fa-user-lock" style="padding-left: 5px;"></i></a>';
+                        echo '<hr>';
                     }
                 }
                 ?>
             </div>
-                <br>
+            
+                
             <div class="profileRepHisHeader" style="text-align:right;">
                 <a> Report History</a>
                 <br>
