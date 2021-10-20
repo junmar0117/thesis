@@ -76,7 +76,19 @@ include_once('B_Userheader.php');
                 <td><?php echo $row['fname']; echo " "; echo $row['lname'];?></td>
                 <td><?php echo $row['username'] ?></td>
                 <td><?php echo $row['valid_id']?></td>
-                <td><a href='<?php echo 'assets/validid/'.$row['image'];?>' target="_blank">View Proof</a></td>
+                <td><a id="myBtn2">View Proof</a></td>
+                <!-- Trigger/Open The Modal -->
+
+<!-- The Modal -->
+<div id="myModal2" class="modal">
+
+<!-- Modal content -->
+<div class="modal-content">
+  <span class="close2">&times;</span>
+  <?php echo 'assets/validid/'.$row['image'];?>
+</div>
+
+</div>
                 <td><?php echo $row['time_sent']?></td>          
                 <td>
 
@@ -196,6 +208,34 @@ span1.onclick = function() {
 window.onclick = function(event) {
   if (event.target == modal1) {
     modal1.style.display = "none";
+  }
+}
+</script>
+
+<script>
+// Get the modal
+var modal2 = document.getElementById("myModal2");
+
+// Get the button that opens the modal
+var btn2 = document.getElementById("myBtn2");
+
+// Get the <span> element that closes the modal
+var span2 = document.getElementsByClassName("close2")[0];
+
+// When the user clicks on the button, open the modal
+btn2.onclick = function() {
+  modal2.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span2.onclick = function() {
+  modal2.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal2) {
+    modal2.style.display = "none";
   }
 }
 </script>
