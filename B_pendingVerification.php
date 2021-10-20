@@ -73,7 +73,7 @@ include_once('B_Userheader.php');
             ?>         
                 <tr>
                 <td><?php echo $row['civilian_id'] ?></td>
-                <td><?php echo $row['name'] ?></td>
+                <td><?php echo $row['fname']; echo " "; echo $row['lname'];?></td>
                 <td><?php echo $row['username'] ?></td>
                 <td><?php echo $row['valid_id']?></td>
                 <td><a href='<?php echo 'assets/validid/'.$row['image'];?>' target="_blank">View Proof</a></td>
