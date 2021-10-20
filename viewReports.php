@@ -191,7 +191,7 @@ if(mysqli_num_rows($row_b) > 0)
                 $otw = "";
 				$completed = "";
             ?>
-            <h3>Accepted By: <?php echo $row['b_name'];?></h3>
+            <h3>Accepted By: <?php echo $row['b_fname']; echo " "; echo $row['b_lname'];?></h3>
              <tr>
              <th><?php echo "Name"?></th> 
              <td><?php echo $row['names'] ?></td>
@@ -238,7 +238,7 @@ if(mysqli_num_rows($row_b) > 0)
   <!-- Modal content -->
   <div class="modal-content">
     <span class="close">&times;</span>
-    <?php echo 'reportFIles/'.$row['file'];?>
+    <img src="<?php echo 'reportFIles/'.$row['file'];?>" alt="Proof">
   </div>
 
 </div>
