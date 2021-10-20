@@ -31,27 +31,34 @@ $code = $vkey;
         <h2 class="rlch1">Create Account</h2>
         
         <form action="C_register.php" method="POST" id="myEmail">
-            
+
+            <table class="cressubt">
+                <tr>
+                    <td>
         <div class="register-box2">
-        <label>Enter First Name</label>
+        <label>First Name</label>
             <input type="text" id="name" required="required" name="fname" placeholder="">
         
         </div>
-
+</td>
+<td>
         <div class="register-box2">
-        <label>Enter Last Name</label>
+        <label>Last Name</label>
             <input type="text" id="name" required="required" name="lname" placeholder="">
         
         </div>
+</td>
+</tr>
+</table>
 
         <div class="register-box2">
-        <label>Enter Date of birth</label>
+        <label>Date of birth</label>
             <input type="date" id="age" required="required" name="birthday" placeholder="">
            
         </div>
 
         <div class="register-box2">
-        <label>Enter Barangay</label>
+        <label>Barangay</label>
         <br>
             <select name="barangays" id="barangays" required="required">
                 <option value="833">Barangay 833</option>
@@ -98,25 +105,25 @@ $code = $vkey;
         </div>
 
         <div class="register-box2">
-        <label>Enter Email</label>
-            <input type="text" id="email" required="required" name="email" placeholder="">
-            
-        </div>
-
-        <div class="register-box2">
-        <label>Enter Contact Number</label>
+        <label>Contact Number</label>
             <input type="tel" id="contact_no" required="required" name="contact_number" placeholder="" pattern="[0,9]{2}[0-9]{9}">
             
         </div>
 
         <div class="register-box2">
-        <label>Enter Username</label>
+        <label>Email</label>
+            <input type="text" id="email" required="required" name="email" placeholder="">
+            
+        </div>
+
+        <div class="register-box2">
+        <label>Username</label>
             <input type="text" id="username" required="required" name="username" placeholder="">
             
         </div>
 
         <div class="register-box2">
-        <label>Enter Password</label>
+        <label>Password</label>
             <input type="password" id="form_password" required="required" name="password" placeholder="" pattern="(?=.*[^\w])(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number, one uppercase and lowercase letter, one special case character, and at least 8 or more characters">
             
         </div>

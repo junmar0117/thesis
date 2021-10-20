@@ -50,12 +50,16 @@ body{
     font-size: 20px;
 }
 
-.register-box .register-box2 input{
+.cressubt td{
+padding-right: 2px;
+}
+
+.register-box .register-box2 input, .register-box .register-box2 select{
     width: 100%;
     padding: 5px 0;
     font-size: 16px;
     color: #000000;
-    margin-bottom: 2px;
+    margin: 2px;
     border: 1px solid #000;
 }
 
