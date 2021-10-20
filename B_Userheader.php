@@ -43,7 +43,7 @@
       }
       ?>
       
-      <button href="#" onclick="myFunction()" class="dropbtn">Menu<?php echo " "; echo $verificationCount; ?><i class="fas fa-caret-down" style="padding-left: 5px;"></i></button>
+      <button href="#" onclick="myFunction()" class="dropbtn">Menu <p id="notifbar"><?php echo " "; echo $verificationCount; ?></p><i class="fas fa-caret-down" style="padding-left: 5px;"></i></button>
       <div id="myDropdown" class="dropdown-content">
   <a href="index.php">Home</a>
   <a href="B_profile.php">Profile</a>
@@ -57,7 +57,7 @@
   if($fname == "Administrator")
   {
   ?>
-  <a href="B_pendingVerification.php">Verification<?php echo " "; echo $verificationCount; ?></a>
+  <a href="B_pendingVerification.php">Verification<p id="notifbar"><?php echo $verificationCount; ?></p></a>
   <?php
   }
   ?>

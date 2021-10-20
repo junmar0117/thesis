@@ -52,6 +52,13 @@ body {
   float: right;
 }
 
+#notifbar{
+  color:#fff; 
+  display:inline;
+  background-color: red;
+  padding: 2px 5px 2px 5px;
+  border-radius: 10px;
+}
 /* Dropdown Button */
 .dropbtn {
   display: block;
