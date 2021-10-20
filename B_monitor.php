@@ -160,7 +160,9 @@ include_once('B_Userheader.php');
 
             $query = mysqli_query($con, "SELECT * from reports where incident = 'Barangay' ORDER BY report_id DESC"); // SQL Query
             while($row = mysqli_fetch_array($query))
-            {                   
+            {      
+                $featured = "";     
+                $notFeatured = "";        
             ?>
             
                 <tr>
@@ -182,6 +184,7 @@ include_once('B_Userheader.php');
                         <button type="submit" class="viewReportbtn2">View</button>
                     </form>
                 </td>
+                <td>
                 <?php
 								if($row['featured'] == 1)
 								{
@@ -194,10 +197,11 @@ include_once('B_Userheader.php');
 							?>
 							<form>
                             <label class="CBcontainer">
-							<input type="checkbox" value="<?php if($row['featured'] == 1){echo 2;}else{echo 1;}?>" name="featured" onchange="featured_reports(this.value,<?php echo $row['report_id'];?>)" <?php echo $featured ?>></input><br>
+							<input type="checkbox" value="<?php if($row['featured'] == 0){echo 1;}else{echo 0;}?>" name="featured" onchange="featured_reports(this.value,<?php echo $row['report_id'];?>)" <?php echo $featured ?>></input><br>
                             <span class="checkmark"></span>    
                         </label>
                         </form>
+                            </td>
                 </tr>
             <?php
         }
@@ -257,9 +261,6 @@ include_once('B_Userheader.php');
                         <button type="submit" class="viewReportbtn2">View</button>
                     </form>
                 </td>
-                <td>
-
-            </td>
                 </tr>
             <?php
         }
