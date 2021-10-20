@@ -16,10 +16,11 @@
             $queryID = mysqli_query($con, "SELECT * from b_admin WHERE b_admin.username = '".$_SESSION['b_user']."' LIMIT 1");
             while($row = mysqli_fetch_array($queryID))
             {           
-                $name = $row['b_name'];
+                $fname = $row['b_fname'];
+                $lname = $row['b_lname'];
             }
       ?>
-  <a href="index.php" class= "logactive">AidPack | <?php echo mb_strimwidth($name, 0, 10, "...");?></a>
+  <a href="index.php" class= "logactive">AidPack | <?php echo mb_strimwidth($lname, 0, 10, "...");?></a>
   <div class="FRC">
       <div class="dropdown">
           <button href="#" onclick="myFunction()" class="dropbtn">Menu<i class="fas fa-caret-down" style="padding-left: 5px;"></i></button>
@@ -43,7 +44,8 @@
       $queryID = mysqli_query($con, "SELECT * from f_admin WHERE f_admin.username = '".$_SESSION['f_user']."' LIMIT 1");
             while($row = mysqli_fetch_array($queryID))
             {           
-                $name = $row['f_name'];
+              $fname = $row['f_fname'];
+              $lname = $row['f_lname'];
             }
       ?>
       <a href="index.php" class= "logactive">AidPack | <?php echo mb_strimwidth($name, 0, 10, "...");?></a>
@@ -68,7 +70,8 @@
       $queryID = mysqli_query($con, "SELECT * from p_admin WHERE p_admin.username = '".$_SESSION['p_user']."' LIMIT 1");
       while($row = mysqli_fetch_array($queryID))
       {           
-          $name = $row['p_name'];
+        $fname = $row['p_fname'];
+        $lname = $row['p_lname'];
       }
       ?>
       <a href="index.php" class= "logactive">AidPack | <?php echo mb_strimwidth($name, 0, 10, "...");?></a>
