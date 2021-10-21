@@ -69,7 +69,7 @@ include_once('Userheader.php');
             </select>
             <br>
             <hr>
-            <h3>Select a copy of your valid ID<i class="fas fa-caret-down" style="padding-left: 5px;"></i></h3>
+            <h3>Select an image of your valid ID<i class="fas fa-caret-down" style="padding-left: 5px;"></i></h3>
             <input type="file" name="file" id="file">
             <hr>
             <input type="submit" name="submit"></input>
