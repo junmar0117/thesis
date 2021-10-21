@@ -165,8 +165,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
             }
         } 
         </script>
-
-        <div id="physical_injury" style="display:none;">Physical Injury</div>
+        <h2>Incident Description</h2>
+        <div id="physical_injury" style="display:none;">Physical injury means damage to any bodily tissue to the extent that the tissue must undergo a healing process in order to be restored to a sound and healthy condition, or damage to any bodily tissue to the extent that the tissue cannot be restored to a sound and healthy condition, or damage to any bodily tissue which results in the death of the person who has sustained the damage.</div>
 
         <?php
         require 'connection.php';  

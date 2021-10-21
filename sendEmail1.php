@@ -25,9 +25,9 @@ if(isset($_POST['name']) && isset($_POST['email']))
      
     //email settings
     $mail->isHTML(true);
-    $mail->setFrom($email, $name);
+    $mail->setFrom($email, 'AidPack R | R');
     $mail->addAddress($email);
-    $mail->Subject = ('$subject');
+    $mail->Subject = ($subject);
     $mail->Body = $body; 
 
     if($mail->send())

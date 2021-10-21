@@ -85,7 +85,7 @@ include_once('B_Userheader.php');
 <!-- Modal content -->
 <div class="modal-content">
   <span class="close2">&times;</span>
-  <?php echo 'assets/validid/'.$row['image'];?>
+  <img src="<?php echo 'assets/validid/'.$row['image'];?>" alt="Proof">
 </div>
 
 </div>

@@ -183,9 +183,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
             }
         } 
         </script>
-
-        <div id="child_abuse" style="display:none;">Child Abuse</div>
-        <div id="vaw" style="display:none;">Violence Against Women</div>
+        <h2>Incident Description</h2>
+        <div id="child_abuse" style="display:none;">Child abuse or child maltreatment is physical, sexual, and/or psychological maltreatment or neglect of a child or children, especially by a parent or a caregiver. Child abuse may include any act or failure to act by a parent or a caregiver that results in actual or potential harm to a child and can occur in a child's home, or in the organizations, schools, or communities the child interacts with.</div>
+        <div id="vaw" style="display:none;">VAW is “any act of gender-based violence that results in, or is likely to result in physical, sexual or psychological harm or suffering to women, including threats of such acts, coercion or arbitrary deprivation of liberty, whether occurring in public and private life. Gender-based violence is any violence inflicted on women because of their sex.”</div>
 
         <script>
 function openTabForm(evt, tabFormName) {
