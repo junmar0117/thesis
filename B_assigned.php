@@ -64,7 +64,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
         {
         ?>
                 <div class="bassh">
-                <input type="radio"  name="b_id" value="<?php echo $row['id'];?>"> <?php echo " "; echo $row['id']; echo " / "; echo $row['b_name']; echo " / "; echo $row['position'];?>
+                <input type="radio"  name="b_id" value="<?php echo $row['id'];?>"> <?php echo " "; echo $row['id']; echo " / "; echo $row['b_fname']; echo " "; echo $row['b_lname']; echo " / "; echo $row['position'];?>
                 <input type="hidden" name="id" value="<?php echo $id;?>">
         </div>
         <?php

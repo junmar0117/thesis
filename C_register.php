@@ -136,7 +136,7 @@ $code = $vkey;
 <br>
             <input type="hidden" name="codes" value="<?php echo $code; ?>">
             <input type="hidden" id="name" value="AidPack | R & R">
-            <input type="hidden" id="subject" value="Reports from AidPack | R & R">
+            <input type="hidden" id="subject" value="Account Verification from AidPack | R & R">
             <input type="hidden" id="body" value="<a href='http://localhost/thesiss/verify.php?vkey=<?php echo $code; ?>'>Register Account</a>">
 
             <input type="submit" value="Register" class="C_registerbtn" onclick="sendEmail1()">
