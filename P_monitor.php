@@ -71,7 +71,6 @@ include_once('P_Userheader.php');
                 <th>Status</th>
                 <th>Safe Count</th>
                 <th>View Report</th>            
-                <th>View Record</th>
             </tr>
             <?php
             require 'connection.php';   
@@ -104,12 +103,6 @@ include_once('P_Userheader.php');
                 <td>
                     <form action="viewReports.php" method="POST">
                         <input type="hidden" name="id" value="<?php echo $row['report_id']?>">
-                        <button type="submit" class="viewReportbtn2">View</button>
-                    </form>
-                </td>
-                <td>
-                    <form action="viewRecords.php" method="POST">
-                        <input type="hidden" name="report_id" value="<?php echo $row['report_id']?>">
                         <button type="submit" class="viewReportbtn2">View</button>
                     </form>
                 </td>

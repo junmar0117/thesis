@@ -50,9 +50,7 @@ include_once('B_Userheader.php');
     </nav>
 
     <div class="monitorHeaderContainer">
-    <h1>Barangay Report Monitoring</h1>
-    <h2>View submitted barangay reports</h2>
-    <button  class="viewReportbtn" onclick="document.location='monthlyData.php'" type="submit">Check Monthly Data for the Month of <?php echo date('F Y'); ?></button>
+    <h1>Feature Announcements</h1>
     <hr>
 </div>
 <br>
@@ -73,14 +71,17 @@ include_once('B_Userheader.php');
             require 'connection.php';      
             $query = mysqli_query($con, "SELECT * from announcements ORDER BY a_id DESC"); // SQL Query
             while($row = mysqli_fetch_array($query))
-            {                   
+            {   
+                $featured = "";
+                $notFeatured = "";             
             ?>
             
                 <tr>
                 <td><?php echo $row['a_id']  ?></td>
                 <td><?php echo $row['title']  ?></td>
                 <td><?php echo $row['contents']  ?></td>
-                <td><?php echo $row['date_created'];?></td>               
+                <td><?php echo $row['date_created'];?></td>         
+                <td>      
                 <?php
 								if($row['featured'] == 1)
 								{
@@ -93,11 +94,12 @@ include_once('B_Userheader.php');
 							?>
 							<form>
                             <label class="CBcontainer">
-							<input type="checkbox" value="<?php if($row['featured'] == 0){echo 1;}else{echo 0;}?>" name="featured" onchange="featured_reports(this.value,<?php echo $row['report_id'];?>)" <?php echo $featured ?>></input><br>
+							<input type="checkbox" value="<?php if($row['featured'] == 0){echo 1;}else{echo 0;}?>" name="featured" onchange="featured_reports(this.value,<?php echo $row['a_id'];?>)" <?php echo $featured ?>></input><br>
                             <span class="checkmark"></span>   
                         </label>
                         </form>
                 </tr>
+                </td>
             <?php
         }
         ?>

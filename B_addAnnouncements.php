@@ -76,7 +76,7 @@ include_once('B_Userheader.php');
             
             <label for="placeOfInci">Content</label>
             
-            <textarea required></textarea>
+            <textarea name="content" required></textarea>
 
             
             <label for="placeOfInci">Date</label>

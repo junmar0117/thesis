@@ -66,7 +66,6 @@ $user = $_SESSION['user']; //assigns user value
                 <th>Status</th>
                 <th>Safe Count</th>
                 <th>View Report</th>            
-                <th>View Record</th>
             </tr>
 
             <?php
@@ -101,12 +100,6 @@ $user = $_SESSION['user']; //assigns user value
                 <td>
                     <form action="viewReports.php" method="POST">
                         <input type="hidden" name="id" value="<?php echo $row['report_id']?>">
-                        <button type="submit" class="viewReportbtn2">View</button>
-                    </form>
-                </td>
-                <td>
-                    <form action="viewRecords.php" method="POST">
-                        <input type="hidden" name="report_id" value="<?php echo $row['report_id']?>">
                         <button type="submit" class="viewReportbtn2">View</button>
                     </form>
                 </td>

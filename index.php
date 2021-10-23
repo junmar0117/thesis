@@ -69,7 +69,7 @@ session_start();
         </div>
         <br>
     <div class="minorCC2">
-    <p class="ipbbthead3">i</p>
+    <p class="ipbbthead3"></p>
       <h3 class="ipbbthead"><?php echo $row['type']; ?></h3>
       <p class="ipbbthead2"><?php echo mb_strimwidth($row['description'], 0, 150, "..."); ?></p>
         </div>
@@ -96,7 +96,7 @@ session_start();
             <?php
 		require 'connection.php';
 
-		$postQuery = "SELECT * FROM announcements LEFT JOIN b_admin ON announcements.b_admin_id = b_admin.id WHERE date_created > now() AND featured = 1 LIMIT 3";
+		$postQuery = "SELECT * FROM announcements LEFT JOIN b_admin ON announcements.b_admin_id = b_admin.id WHERE date_created < now() AND featured = 1 LIMIT 3";
 		$runPQ = mysqli_query($con, $postQuery);
 		while($row = mysqli_fetch_assoc($runPQ))
 		{
@@ -112,7 +112,7 @@ session_start();
                         <p class="ipbbthead2"><?php echo mb_strimwidth($row['contents'], 0, 150, "..."); ?></p>
                     </div>
                     <hr>
-                <p class="ipbbthead3"><?php echo $row['name']; echo " / "; echo date('F jS, Y',strtotime($row['date_created'])) ?></p>
+                <p class="ipbbthead3"><?php echo $row['b_fname']; echo " / "; echo date('F jS, Y',strtotime($row['date_created'])) ?></p>
                     <hr>
                 <form method="POST" action="viewCardContent.php">
 					<input type="hidden" name="id" value="<?php echo $row['a_id'];?>">

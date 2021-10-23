@@ -56,6 +56,16 @@ include_once('F_Userheader.php');
     <hr>
 </div>
 <br>
+
+<?php
+            require 'connection.php';            
+            $query4 = mysqli_query($con, "SELECT * from complete_report_fire where 'type' = 'Establishment Fire'"); // SQL Query
+            $establishmentfire= mysqli_num_rows($query4);
+
+            $query5 = mysqli_query($con, "SELECT * from complete_report_fire where 'type' = 'House Fire'"); // SQL Query
+            $housefire= mysqli_num_rows($query5);
+            ?>
+
     <div class="tab">
         <button class="tablinks" onclick="openTabForm(event, 'housefire')">House Fire</button>
         <button class="tablinks" onclick="openTabForm(event, 'establishmentfire')">Establishment Fire</button>
@@ -72,6 +82,7 @@ include_once('F_Userheader.php');
                 <th>Status</th>
                 <th>View Report</th>
             </tr>
+            <?php echo '<h2><center>Total Cases: ' . $housefire . '</center></h2>';?>
             <?php
             require 'connection.php';   
             $query = mysqli_query($con, "SELECT * from complete_report_fire where `type` = 'House Fire' ORDER BY c_id DESC"); // SQL Query
@@ -111,6 +122,7 @@ include_once('F_Userheader.php');
                 <th>Status</th>
                 <th>View Report</th>
             </tr>
+            <?php echo '<h2><center>Total Cases: ' . $establishmentfire . '</center></h2>';?>
             <?php
             require 'connection.php';   
             $query = mysqli_query($con, "SELECT * from complete_report_fire where `type` = 'Establishment Fire' ORDER BY c_id DESC"); // SQL Query

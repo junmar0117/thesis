@@ -139,8 +139,14 @@ include_once('B_Userheader.php');
                 <th>Concern</th>
                 <th>Status</th>
                 <th>View Report</th>
-                <th>View Record</th>
+                <?php        
+                if($fname == "Administrator")
+                {
+                ?>
                 <th>Feature</th>
+                <?php
+                }
+                ?>
             </tr>
             <?php
             require 'connection.php';   
@@ -179,13 +185,9 @@ include_once('B_Userheader.php');
                     </form>
                 </td>
                 <td>
-                    <form action="viewRecords.php" method="POST">
-                        <input type="hidden" name="report_id" value="<?php echo $row['report_id']?>">
-                        <button type="submit" class="viewReportbtn2">View</button>
-                    </form>
-                </td>
-                <td>
-                <?php
+                <?php       
+                if($fname == "Administrator")
+                {
 								if($row['featured'] == 1)
 								{
 									$featured = "Checked";
@@ -205,6 +207,7 @@ include_once('B_Userheader.php');
                 </tr>
             <?php
         }
+        }
         ?>
         </table>
     </div>
@@ -219,7 +222,6 @@ include_once('B_Userheader.php');
                 <th>Concern</th>
                 <th>Status</th>
                 <th>View Report</th>
-                <th>View Record</th>
             </tr>
             <?php
             require 'connection.php';   
@@ -255,12 +257,6 @@ include_once('B_Userheader.php');
                         <button type="submit" class="viewReportbtn2">View</button>
                     </form>
                 </td>
-                <td>
-                    <form action="viewRecords.php" method="POST">
-                        <input type="hidden" name="report_id" value="<?php echo $row['report_id']?>">
-                        <button type="submit" class="viewReportbtn2">View</button>
-                    </form>
-                </td>
                 </tr>
             <?php
         }
@@ -279,7 +275,6 @@ include_once('B_Userheader.php');
                 <th>Status</th>
                 <th>Safe Count</th>
                 <th>View Report</th>
-                <th>View Record</th>
             </tr>
             <?php
             require 'connection.php';   
@@ -313,12 +308,6 @@ include_once('B_Userheader.php');
                 <td>
                     <form action="viewReports.php" method="POST">
                         <input type="hidden" name="id" value="<?php echo $row['report_id']?>">
-                        <button type="submit" class="viewReportbtn2">View</button>
-                    </form>
-                </td>
-                <td>
-                    <form action="viewRecords.php" method="POST">
-                        <input type="hidden" name="report_id" value="<?php echo $row['report_id']?>">
                         <button type="submit" class="viewReportbtn2">View</button>
                     </form>
                 </td>

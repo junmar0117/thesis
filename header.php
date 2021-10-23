@@ -3,7 +3,7 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="./css/indexHeaderStyles.css">
+<link rel="stylesheet" href="./css/CBFP_headerstyles.css">
 
 </head>
 <body>
@@ -18,21 +18,50 @@
             {           
                 $fname = $row['b_fname'];
                 $lname = $row['b_lname'];
-            }
+                $b_id = $row['id'];
+              }
+  
+              $query = mysqli_query($con, "SELECT * from verification_proof"); // SQL Query
+              $verificationCount = mysqli_num_rows($query);
+  
+              $query = mysqli_query($con, "SELECT * from b_assigned where b_id = $b_id"); // SQL Query
+              $assignedCount = mysqli_num_rows($query);
       ?>
   <a href="index.php" class= "logactive">AidPack | <?php echo mb_strimwidth($lname, 0, 10, "...");?></a>
   <div class="FRC">
       <div class="dropdown">
-          <button href="#" onclick="myFunction()" class="dropbtn">Menu<i class="fas fa-caret-down" style="padding-left: 5px;"></i></button>
+          <button href="#" onclick="myFunction()" class="dropbtn">Menu<p id="notifbar"><?php if($fname == "Administrator"){echo $verificationCount; }else{echo " "; echo $assignedCount; }?></p><i class="fas fa-caret-down" style="padding-left: 5px;"></i></button>
           <div id="myDropdown" class="dropdown-content">
           <a href="index.php">Home</a>
           <a href="B_profile.php">Profile</a>
+          <?php        
+          if($fname == "Administrator")
+          {
+          ?>
           <a href="B_addAnnouncements.php">Broadcast</a>
+          <?php
+          }
+          ?>
           <a href="announcements.php">Announcements</a>
           <a href="B_monitor.php">Monitor</a>
+          <a href="B_completedReports.php">Completed</a>
           <a href="viewBarangays.php">Barangays</a>
-          <a href="B_reportsAssigned.php">Assigned</a>
-          <a href="B_pendingVerification.php">Verification</a>
+          <?php        
+          if($fname != "Administrator")
+          {
+          ?>
+          <a href="B_reportsAssigned.php">Assigned<p id="notifbar"><?php echo $assignedCount; ?></p></a>
+          <?php
+          }
+          ?>
+          <?php        
+          if($fname == "Administrator")
+          {
+          ?>
+          <a href="B_pendingVerification.php">Verification<p id="notifbar"><?php echo $verificationCount; ?></p></a>
+          <?php
+          }
+          ?>
           <a href="logout.php">Sign Out</a>
           </div>
       </div>
@@ -46,19 +75,31 @@
             {           
               $fname = $row['f_fname'];
               $lname = $row['f_lname'];
+              $f_id = $row['id'];
             }
+
+            $query = mysqli_query($con, "SELECT * from f_assigned where f_id = $f_id"); // SQL Query
+            $assignedCount = mysqli_num_rows($query);
       ?>
-      <a href="index.php" class= "logactive">AidPack | <?php echo mb_strimwidth($name, 0, 10, "...");?></a>
+      <a href="index.php" class= "logactive">AidPack | <?php echo mb_strimwidth($lname, 0, 10, "...");?></a>
       <div class="FRC">
       <div class="dropdown">
-          <button href="#" onclick="myFunction()" class="dropbtn">Menu<i class="fas fa-caret-down" style="padding-left: 5px;"></i></button>
+          <button href="#" onclick="myFunction()" class="dropbtn">Menu<p id="notifbar"><?php if($fname != "Administrator"){echo $assignedCount; }?><i class="fas fa-caret-down" style="padding-left: 5px;"></i></button>
           <div id="myDropdown" class="dropdown-content">
           <a href="index.php">Home</a>
           <a href="F_profile.php">Profile</a>
           <a href="announcements.php">Announcements</a>
           <a href="F_monitor.php">Monitor</a>
+          <a href="F_completedReports.php">Completed</a>
           <a href="viewBarangays.php">Barangays</a>
-          <a href="F_reportsAssigned.php">Assigned</a>
+          <?php        
+          if($fname != "Administrator")
+          {
+          ?>
+          <a href="F_reportsAssigned.php">Assigned<p id="notifbar"><?php echo $assignedCount; ?></p></a>
+          <?php
+          }
+          ?>
           <a href="logout.php">Sign Out</a>
           </div>
       </div>
@@ -72,19 +113,31 @@
       {           
         $fname = $row['p_fname'];
         $lname = $row['p_lname'];
+        $p_id = $row['id'];
       }
+
+      $query = mysqli_query($con, "SELECT * from p_assigned where p_id = $p_id"); // SQL Query
+      $assignedCount = mysqli_num_rows($query);
       ?>
-      <a href="index.php" class= "logactive">AidPack | <?php echo mb_strimwidth($name, 0, 10, "...");?></a>
+      <a href="index.php" class= "logactive">AidPack | <?php echo mb_strimwidth($lname, 0, 10, "...");?></a>
       <div class="FRC">
       <div class="dropdown">
-          <button href="#" onclick="myFunction()" class="dropbtn">Menu<i class="fas fa-caret-down" style="padding-left: 5px;"></i></button>
+          <button href="#" onclick="myFunction()" class="dropbtn">Menu<p id="notifbar"><?php if($fname != "Administrator"){echo $assignedCount; }?></p><i class="fas fa-caret-down" style="padding-left: 5px;"></i></button>
           <div id="myDropdown" class="dropdown-content">
           <a href="index.php">Home</a>
           <a href="P_profile.php">Profile</a>
           <a href="announcements.php">Announcements</a>
           <a href="P_monitor.php">Monitor</a>
+          <a href="P_completedReports.php">Completed</a>
           <a href="viewBarangays.php">Barangays</a>
-          <a href="P_reportsAssigned.php">Assigned</a>
+          <?php        
+          if($fname != "Administrator")
+          {
+          ?>
+          <a href="P_reportsAssigned.php">Assigned<p id="notifbar"><?php echo $assignedCount; ?></p></a>
+          <?php
+          }
+          ?>
           <a href="logout.php">Sign Out</a>
           </div>
       </div>

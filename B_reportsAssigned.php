@@ -36,6 +36,8 @@ $user = $_SESSION['user']; //assigns user value
     {
         $b_id = $row['id'];
     }
+
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -138,7 +140,7 @@ if($user=="b_admin")
             {
             Print "<tr>";
             Print '<td>'. $row['id'] . "</td>";
-            Print '<td>'. $row['name'] . "</td>";
+            Print '<td>'. $row['b_fname'] . " " . $row['b_lname'] ."</td>";
             Print '<td>'. $row['username'] . "</td>";
             Print '<td>'. $row['position'] . "</td>";
             Print "</tr>";

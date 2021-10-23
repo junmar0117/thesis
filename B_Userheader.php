@@ -36,23 +36,41 @@
             {           
                 $fname = $row['b_fname'];
                 $lname = $row['b_lname'];
+                $b_id = $row['id'];
             }
 
             $query = mysqli_query($con, "SELECT * from verification_proof"); // SQL Query
             $verificationCount = mysqli_num_rows($query);
+
+            $query = mysqli_query($con, "SELECT * from b_assigned where b_id = $b_id"); // SQL Query
+            $assignedCount = mysqli_num_rows($query);
       }
       ?>
       
-      <button href="#" onclick="myFunction()" class="dropbtn">Menu <p id="notifbar"><?php echo " "; echo $verificationCount; ?></p><i class="fas fa-caret-down" style="padding-left: 5px;"></i></button>
+      <button href="#" onclick="myFunction()" class="dropbtn">Menu <p id="notifbar"><?php if($fname == "Administrator"){echo $verificationCount; }else{echo " "; echo $assignedCount; }?></p><i class="fas fa-caret-down" style="padding-left: 5px;"></i></button>
       <div id="myDropdown" class="dropdown-content">
   <a href="index.php">Home</a>
   <a href="B_profile.php">Profile</a>
+  <?php        
+  if($fname == "Administrator")
+  {
+  ?>
   <a href="B_addAnnouncements.php">Broadcast</a>
+  <?php
+  }
+  ?>
   <a href="announcements.php">Announcements</a>
   <a href="B_monitor.php">Monitor</a>
   <a href="B_completedReports.php">Completed</a>
   <a href="viewBarangays.php">Barangays</a>
-  <a href="B_reportsAssigned.php">Assigned</a>
+  <?php        
+  if($fname != "Administrator")
+  {
+  ?>
+  <a href="B_reportsAssigned.php">Assigned<p id="notifbar"><?php echo $assignedCount; ?></p></a>
+  <?php
+  }
+  ?>
   <?php        
   if($fname == "Administrator")
   {

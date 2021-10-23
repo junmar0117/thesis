@@ -36,11 +36,15 @@
             {           
               $fname = $row['f_fname'];
               $lname = $row['f_lname'];
+              $f_id = $row['id'];
             }
+
+            $query = mysqli_query($con, "SELECT * from f_assigned where f_id = $f_id"); // SQL Query
+            $assignedCount = mysqli_num_rows($query);
       }
       ?>
       
-      <button href="#" onclick="myFunction()" class="dropbtn">Menu<i class="fas fa-caret-down" style="padding-left: 5px;"></i></button>
+      <button href="#" onclick="myFunction()" class="dropbtn">Menu<p id="notifbar"><?php if($fname != "Administrator"){echo $assignedCount; }?></p><i class="fas fa-caret-down" style="padding-left: 5px;"></i></button>
       <div id="myDropdown" class="dropdown-content">
       <a href="index.php">Home</a>
   <a href="F_profile.php">Profile</a>
@@ -48,7 +52,14 @@
   <a href="F_monitor.php">Monitor</a>
   <a href="F_completedReports.php">Completed</a>
   <a href="viewBarangays.php">Barangays</a>
-  <a href="F_reportsAssigned.php">Assigned</a>
+  <?php        
+  if($fname != "Administrator")
+  {
+  ?>
+  <a href="F_reportsAssigned.php">Assigned<p id="notifbar"><?php echo $assignedCount; ?></p></a>
+  <?php
+  }
+  ?>
   <a href="logout.php">Sign Out</a>
 
 </div>

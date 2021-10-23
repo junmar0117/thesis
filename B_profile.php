@@ -302,7 +302,7 @@ if(isset($_POST['addB']))
 	while($row = mysqli_fetch_array($results)) //display all rows from query    
 	{
 		
-        $table_users = $row['name']; // the first username row is passed on to $table_users, and so on until the query is finished
+        $table_users = $row['b_fname']; // the first username row is passed on to $table_users, and so on until the query is finished
 		if($name == $table_users) // checks if there are any matching fields
 		{
 			$bool = false; // sets bool to false

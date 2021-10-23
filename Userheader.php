@@ -33,7 +33,6 @@
     <a href="index.php">Home</a>
     <a href="C_profile.php">Profile</a>
     <a href="announcements.php">Announcements</a>
-    <a href="C_safe.php">Status Update</a>
     <a href="viewBarangays.php">Barangays</a>
     <a href="map.php">Map</a>
     <a href="logout.php">Sign Out</a>

@@ -56,6 +56,14 @@ include_once('P_Userheader.php');
     <hr>
 </div>
 <br>
+
+<?php
+            require 'connection.php';    
+
+            $query6 = mysqli_query($con, "SELECT * from complete_report_injury"); // SQL Query
+            $injury= mysqli_num_rows($query6);
+            ?>
+
     <div class="tab">
         <button class="tablinks" onclick="openTabForm(event, 'physicalinjury')">Physical Injury</button>
     </div>    
@@ -71,6 +79,7 @@ include_once('P_Userheader.php');
                 <th>Status</th>
                 <th>View Report</th>
             </tr>
+            <?php echo '<h2><center>Total Cases: ' . $injury . '</center></h2>';?>
             <?php
             require 'connection.php';   
             $query = mysqli_query($con, "SELECT * from complete_report_injury ORDER BY c_id DESC"); // SQL Query

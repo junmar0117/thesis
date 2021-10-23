@@ -56,6 +56,7 @@ if ($_SERVER['HTTP_REFERER'] == $url)
             ?> 
             <br>
             <a class="addAnn" href="B_addAnnouncements.php">Add Announcements</a> 
+            <a class="addAnn" href="B_featureAnnouncement.php">Feature Announcements</a> 
             <?php
             }
             ?>
@@ -80,7 +81,7 @@ if ($_SERVER['HTTP_REFERER'] == $url)
       <p class="ipbbthead2"><?php echo mb_strimwidth($row['contents'], 0, 150, "..."); ?></p>
     </div>
       <hr>
-      <p class="ipbbthead3"> <?php echo $row['name']; echo " / "; echo date('F jS, Y',strtotime($row['date_created'])) ?> </p>
+      <p class="ipbbthead3"> <?php echo $row['b_fname']; echo " / "; echo date('F jS, Y',strtotime($row['date_created'])) ?> </p>
       <hr>
       <form method="POST" action="viewCardContent.php">
 					<input type="hidden" name="id" value="<?php echo $row['a_id'];?>">
